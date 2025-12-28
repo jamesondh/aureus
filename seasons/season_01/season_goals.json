@@ -1,0 +1,15 @@
+{
+  "season_id": "season_01",
+  "arc_description": "The collision between old Roman virtue and new Roman money, as a moral prosecutor and a ruthless financier wage war for the soul of the Republic—with the prosecutor's wife secretly playing both sides.",
+  "faction_goals": {
+    "f_capital": "Survive the investigation, protect assets, and discredit the prosecution",
+    "f_law": "Build an airtight case against Varo and restore public faith in justice"
+  },
+  "major_threads": [
+    "thr_grain_shortage",
+    "thr_varo_investigation",
+    "thr_drusilla_secret",
+    "thr_marcus_loyalty"
+  ],
+  "target_episodes": 8
+}

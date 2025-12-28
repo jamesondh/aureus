@@ -18,7 +18,13 @@ Operators are the atomic "moves" available to agents and the Director. They enco
     { "path": "state.path.to.modify", "op": "add|subtract|set|multiply", "value": 10 }
   ],
   "side_effect_risks": [
-    { "id": "risk_id", "text": "What might go wrong", "prob": 0.3 }
+    { 
+      "id": "risk_id", 
+      "text": "What might go wrong", 
+      "prob": 0.3,
+      "consequence_operator": "OP_CONSEQUENCE_ID",
+      "consequence_delay": "immediate|same_episode|next_episode"
+    }
   ],
   "scene_suggestions": ["scene_type_1", "scene_type_2"],
   "allowed_inventions": { "extras": 2, "new_facts": 1 },
@@ -32,9 +38,11 @@ Operators are the atomic "moves" available to agents and the Director. They enco
 ```
 
 **Fields:**
-- `prereqs`: Conditions checked before operator can fire (all must pass)
-- `effects`: State modifications applied on success
-- `side_effect_risks`: Probabilistic complications the Director may trigger
+- `prereqs`: Conditions checked before operator can fire (all must pass). See Section 4.4 in the main spec for expression language syntax.
+- `effects`: State modifications applied on success. Paths use absolute notation (see Section 8.3).
+- `side_effect_risks`: Probabilistic complications resolved during Director planning (see Section 4.5).
+  - `consequence_operator`: Optional operator triggered if side effect fires
+  - `consequence_delay`: When the consequence occurs (`immediate`, `same_episode`, `next_episode`)
 - `allowed_inventions`: Limits on what the Writer can create (extras, minor facts)
 
 ---
@@ -61,8 +69,20 @@ Bribe or pressure a witness to change testimony.
     { "path": "target.bdi.intentions", "op": "add", "value": "TESTIFY_FOR_ACTOR" }
   ],
   "side_effect_risks": [
-    { "id": "risk_double_cross", "text": "Witness takes money but stays loyal", "prob": 0.2 },
-    { "id": "risk_entrapment", "text": "Offer recorded by opponent", "prob": 0.1 }
+    { 
+      "id": "risk_double_cross", 
+      "text": "Witness takes money but stays loyal", 
+      "prob": 0.2,
+      "consequence_operator": "OP_WITNESS_BETRAYAL",
+      "consequence_delay": "same_episode"
+    },
+    { 
+      "id": "risk_entrapment", 
+      "text": "Offer recorded by opponent", 
+      "prob": 0.1,
+      "consequence_operator": "OP_EVIDENCE_SURFACES",
+      "consequence_delay": "next_episode"
+    }
   ],
   "scene_suggestions": ["bathhouse_meeting", "slave_proxy_exchange", "midnight_garden"],
   "writer_guidance": {
@@ -94,7 +114,13 @@ Use legal authority to lock opponent's resources.
     { "path": "world.global.unrest", "op": "add", "value": 1 }
   ],
   "side_effect_risks": [
-    { "id": "risk_market_crash", "text": "Panic in the Forum causes general market dip", "prob": 0.4 }
+    { 
+      "id": "risk_market_crash", 
+      "text": "Panic in the Forum causes general market dip", 
+      "prob": 0.4,
+      "consequence_operator": null,
+      "consequence_delay": "immediate"
+    }
   ],
   "scene_suggestions": ["forum_proclamation", "bank_run", "doorstep_writ_delivery"],
   "writer_guidance": {

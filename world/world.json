@@ -1,0 +1,72 @@
+{
+  "world_id": "res_publica_v1",
+  "time": {
+    "year_bce": 68,
+    "season": "winter",
+    "day": 12
+  },
+  "locations": [
+    {
+      "id": "rome_forum",
+      "name": "The Roman Forum",
+      "visual_dna": {
+        "architecture": "A massive marble plaza stretching between the Capitoline and Palatine hills. Weathered pillars line the edges, casting long shadows. Statues of ancestors watch from pedestals.",
+        "lighting_default": "Harsh Mediterranean sun, deep shadows under colonnades.",
+        "atmosphere": "Crowds of citizens, merchants shouting, the smell of incense from nearby temples mixed with sweat and dust.",
+        "key_props": ["rostra speaking platform", "temple steps", "bronze statues", "merchant stalls"]
+      }
+    },
+    {
+      "id": "villa_varo_tablinum",
+      "name": "Varo's Study",
+      "visual_dna": {
+        "architecture": "A rectangular room with high ceilings. Faded frescoes of maritime scenes on the walls. A large wooden table dominates the center, covered in scrolls and wax tablets.",
+        "lighting_default": "Oil lamps casting long shadows. A single high window admits gray daylight.",
+        "atmosphere": "Controlled chaos—organized disorder of a working space. Maps pinned to walls. The smell of ink and old papyrus.",
+        "key_props": ["large oak table", "bronze map stand", "iron strongbox in corner", "clay oil lamps"]
+      }
+    },
+    {
+      "id": "domus_fabius_atrium",
+      "name": "Fabius House - Atrium",
+      "visual_dna": {
+        "architecture": "A traditional Roman atrium with impluvium at center. Ancestral masks line the walls. Modest but dignified furnishings showing old money restraint.",
+        "lighting_default": "Natural light from compluvium, dappled by rain on winter days.",
+        "atmosphere": "Quiet dignity, the weight of tradition. Servants move silently.",
+        "key_props": ["impluvium pool", "ancestral masks", "bronze lararium", "worn mosaic floor"]
+      }
+    },
+    {
+      "id": "thermae_publicae",
+      "name": "Public Baths",
+      "visual_dna": {
+        "architecture": "Vaulted ceilings, steam-filled chambers, marble benches along walls. Echoing acoustics.",
+        "lighting_default": "Diffused light through high windows, steam softening all edges.",
+        "atmosphere": "The roar of water, quiet conversations, the smell of oil and sweat.",
+        "key_props": ["marble benches", "bronze strigils", "oil flasks", "towel piles"]
+      }
+    },
+    {
+      "id": "subura_tavern",
+      "name": "The Crooked Cup Tavern",
+      "visual_dna": {
+        "architecture": "Low ceilings, smoke-stained beams, rough wooden tables. A counter with amphorae behind.",
+        "lighting_default": "Dim oil lamps, shadows everywhere.",
+        "atmosphere": "Loud voices, dice rattling, the smell of cheap wine and unwashed bodies.",
+        "key_props": ["wine amphorae", "gaming dice", "rough benches", "scarred counter"]
+      }
+    }
+  ],
+  "global": {
+    "unrest": 3,
+    "grain_price_index": 1.2,
+    "scandal_temperature": 2,
+    "legal_exposure": 1
+  },
+  "extra_templates": {
+    "roman_crowd_plebeian": "Common Roman citizens in rough-spun tunics, weathered faces, calloused hands.",
+    "roman_guard": "A soldier in iron-banded leather armor, short sword at hip, helmet under arm.",
+    "household_slave": "A young person in simple gray tunic, barefoot, eyes downcast.",
+    "roman_senator": "An older man in a white toga with purple border, dignified bearing, silver hair."
+  }
+}

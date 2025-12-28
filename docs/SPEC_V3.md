@@ -1,7 +1,8 @@
 # SPEC_V3 — Aureus: Neuro-Symbolic Narrative Engine
 
-> **Version:** 3.1  
+> **Version:** 3.2  
 > **Status:** Working Draft  
+> **Last Updated:** 2024-12-28  
 > **Appendices:** [Schemas](spec/APPENDIX_A_SCHEMAS.md) | [Operators](spec/APPENDIX_B_OPERATORS.md) | [Examples](spec/APPENDIX_C_EXAMPLES.md) | [Style](spec/APPENDIX_D_STYLE.md) | [Production](spec/APPENDIX_E_PRODUCTION.md)
 
 ---
@@ -143,7 +144,23 @@ All state lives in version-controlled JSON files. See [Appendix A](spec/APPENDIX
 | **Thread** | question, priority, cadence | Audience-facing narrative promise |
 | **Operator** | prereqs, effects, risks | Atomic "move" in the simulation |
 
-### 3.3 Persistence Strategy
+### 3.3 Stat Scales
+
+All numeric stats use consistent scales:
+
+| Category | Range | Description |
+|----------|-------|-------------|
+| **Character stats** | 0-100 | dignitas, auctoritas, wealth, popularity |
+| **Relationship weights** | 0-100 | loyalty, fear, resentment, respect, dependency |
+| **Faction stats** | -3 to +3 | Relative position (economic, legal, political, narrative) |
+| **World metrics** | 0-10 | unrest, scandal_temperature, legal_exposure |
+| **Secret stats** | 0.0-1.0 | legal_value, public_damage, credibility |
+| **BDI weights** | 0.0-1.0 | priority, confidence, commitment |
+| **Thread priority** | 0.0-1.0 | Importance for episode selection |
+
+**Faction Stats Note:** Faction stats use a relative scale because they represent competitive position. A faction at +3 dominates; at -3, they're losing ground. Zero is neutral/stable.
+
+### 3.4 Persistence Strategy
 
 Each episode commit captures:
 1. The plan that drove generation
@@ -185,6 +202,168 @@ Operators are the "verbs" of the system. They encode what characters can do and 
 - **Thriller operators:** 10-14 per episode
 - **Soap operators:** 6-10 per episode
 - **Mandatory beats:** 1 reveal, 1 reversal, 1 confrontation, 1 cliffhanger
+
+### 4.4 Expression Language
+
+Operator prerequisites and effects use a simple expression DSL for evaluating conditions and specifying state changes.
+
+#### 4.4.1 Grammar
+
+```
+expression     := comparison | membership | existence
+comparison     := path operator value
+membership     := path "includes" value
+existence      := path "exists"
+
+path           := context "." property ("." property)*
+context        := "actor" | "target" | "world" | "relationship"
+property       := identifier | array_access
+array_access   := identifier "[" (number | string) "]"
+
+operator       := "==" | "!=" | ">" | "<" | ">=" | "<="
+value          := number | string | boolean | path
+```
+
+#### 4.4.2 Context Variables
+
+| Context | Description | Resolution |
+|---------|-------------|------------|
+| `actor` | Character performing the operator | Resolved from operator's `actor_id` |
+| `target` | Character receiving the action | Resolved from operator's `target_id` |
+| `world` | Global world state | Resolved from `world.json` |
+| `relationship` | Edge between actor and target | Resolved from `relationships.json` where `from=actor` and `to=target` |
+
+#### 4.4.3 Path Resolution
+
+Paths are dot-separated property accessors:
+
+```
+actor.stats.wealth          → characters[actor_id].stats.wealth
+target.bdi.desires[0].text  → characters[target_id].bdi.desires[0].text
+world.global.unrest         → world.global.unrest
+relationship.weights.fear   → relationships[actor→target].weights.fear
+```
+
+**Special Paths:**
+- `actor.offices` → Flattened list of office IDs held by actor (from `assets.offices`)
+- `actor.knowledge` → List of secret IDs known by actor (from `secrets.holders`)
+- `actor.location` → Current location ID (from `characters[id].status.location_id`)
+
+#### 4.4.4 Operators and Semantics
+
+| Operator | Example | Meaning |
+|----------|---------|---------|
+| `==` | `actor.faction_id == "f_capital"` | Equality check |
+| `!=` | `target.status.alive != false` | Inequality check |
+| `>` | `actor.stats.wealth > 50` | Greater than |
+| `>=` | `relationship.weights.loyalty >= 60` | Greater than or equal |
+| `<` | `world.global.unrest < 8` | Less than |
+| `<=` | `target.stats.dignitas <= actor.stats.dignitas` | Less than or equal |
+| `includes` | `actor.offices includes "powers.SUBPOENA"` | List membership |
+| `exists` | `target.bdi.intentions exists` | Non-null check |
+
+#### 4.4.5 Compound Expressions
+
+Multiple prerequisites are evaluated with implicit AND:
+
+```json
+{
+  "prereqs": [
+    { "expr": "actor.stats.wealth > target.stats.wealth * 10" },
+    { "expr": "target.stats.loyalty < 50" }
+  ]
+}
+```
+
+All expressions must evaluate to `true` for the operator to be eligible.
+
+**Arithmetic in Comparisons:**
+- Basic arithmetic (`+`, `-`, `*`, `/`) is supported on the right-hand side
+- Example: `actor.stats.wealth > target.stats.wealth * 10`
+
+#### 4.4.6 Effect Paths
+
+Effects use the same path syntax but are always **absolute** (resolved against the full state):
+
+```json
+{
+  "effects": [
+    { "path": "characters.char_varo.stats.wealth", "op": "subtract", "value": 5000 },
+    { "path": "world.global.unrest", "op": "add", "value": 2 },
+    { "path": "relationships.rel_varo_quintus.weights.fear", "op": "add", "value": 10 }
+  ]
+}
+```
+
+**Shorthand Expansion:** In scene packets, relative paths are expanded by the Director:
+- `actor.stats.wealth` → `characters.{actor_id}.stats.wealth`
+- `target.bdi.intentions` → `characters.{target_id}.bdi.intentions`
+- `relationship.weights.fear` → `relationships.{rel_id}.weights.fear`
+
+### 4.5 Side Effect Resolution
+
+Side effects are probabilistic complications that add unpredictability to operator execution.
+
+#### 4.5.1 Resolution Timing
+
+Side effects are resolved **during Director planning** (Stage C), not at write-time. This ensures:
+1. The Writer receives deterministic instructions
+2. Beat sheets reflect actual outcomes
+3. Downstream scenes can react to triggered side effects
+
+#### 4.5.2 Resolution Process
+
+```
+For each operator selected by Director:
+  1. Roll against each side_effect_risk.prob
+  2. If triggered, add side effect to beat's triggered_side_effects
+  3. Director must schedule consequences (may require additional beats)
+```
+
+#### 4.5.3 Side Effect Schema
+
+```json
+{
+  "side_effect_risks": [
+    { 
+      "id": "risk_double_cross", 
+      "text": "Witness takes money but stays loyal", 
+      "prob": 0.2,
+      "consequence_operator": "OP_WITNESS_BETRAYAL",
+      "consequence_delay": "immediate|same_episode|next_episode"
+    }
+  ]
+}
+```
+
+#### 4.5.4 Director Response
+
+When a side effect triggers:
+
+| Delay | Director Action |
+|-------|-----------------|
+| `immediate` | Insert consequence beat directly after triggering beat |
+| `same_episode` | Schedule consequence beat later in episode (Act 2 or 3) |
+| `next_episode` | Add to `cliffhanger_constraints.pending_consequences` |
+
+#### 4.5.5 Audit Trail
+
+All rolls are logged in `episode_plan.json`:
+
+```json
+{
+  "side_effect_rolls": [
+    {
+      "beat_id": "b_04_a",
+      "operator_id": "OP_WITNESS_FLIP_FINANCIAL",
+      "risk_id": "risk_double_cross",
+      "prob": 0.2,
+      "roll": 0.73,
+      "triggered": false
+    }
+  ]
+}
+```
 
 ---
 
@@ -276,6 +455,67 @@ Transforms episode script into synthesized audio and video. Four sub-stages:
 **Human-in-the-Loop:**
 - New speaking characters block production until voice is assigned in `casting.json`
 - Visual style is set globally in `constraints.json`; no per-episode approval needed
+
+**Implementation Note:** Stage I is implemented after Stages A-H are stable. The text generation pipeline (A-H) is the core deliverable; production is an enhancement layer.
+
+### 5.3 Pipeline Error Recovery
+
+When failures exceed normal regeneration budgets, the pipeline enters error recovery mode.
+
+#### 5.3.1 Failure Categories
+
+| Category | Trigger | Recovery Strategy |
+|----------|---------|-------------------|
+| **Planning Failure** | Director produces infeasible plan 3x | Reduce operator set, simplify constraints |
+| **Scene Failure** | Same scene fails 3x after regeneration | Fallback to simplified beat, log for manual review |
+| **Episode Failure** | >12 scene regenerations total | Checkpoint, allow manual intervention |
+| **Verification Loop** | Verifier and Writer disagree 3x | Escalate to Opus with both perspectives |
+
+#### 5.3.2 Circuit Breakers
+
+```json
+{
+  "pipeline_limits": {
+    "max_director_retries": 3,
+    "max_scene_retries": 3,
+    "max_episode_regenerations": 12,
+    "max_verification_loops": 3,
+    "checkpoint_on_failure": true
+  }
+}
+```
+
+#### 5.3.3 Graceful Degradation
+
+When recovery fails, the system can degrade gracefully:
+
+1. **Simplify Operators:** Replace complex multi-prerequisite operators with simpler alternatives
+2. **Reduce Beat Count:** Drop optional beats, keep mandatory types only
+3. **Checkpoint State:** Save partial progress to allow manual continuation
+4. **Generate Diagnostic Report:** Output failure analysis for human review
+
+#### 5.3.4 Failure Report Schema
+
+```json
+{
+  "failure_report": {
+    "episode_id": "ep_03",
+    "failure_type": "scene_failure",
+    "failed_scene_id": "SC12",
+    "attempts": 3,
+    "last_error": {
+      "type": "invariant_violation",
+      "rule": "H3",
+      "message": "Cash ledger imbalance: spent 50000, available 30000"
+    },
+    "state_checkpoint": "ep_03_checkpoint_sc11.json",
+    "suggested_fixes": [
+      "Reduce bribe amount in OP_WITNESS_FLIP",
+      "Add wealth transfer in earlier scene"
+    ]
+  }
+}
+```
 
 ---
 
@@ -456,9 +696,54 @@ OUTPUT:
 }
 ```
 
-**Operations:** `add`, `subtract`, `set`, `multiply`, `transfer`
+**Operations:** `add`, `subtract`, `set`, `multiply`, `transfer`, `append`, `remove`
 
-### 8.3 Claims Handling
+### 8.3 Delta Path Resolution
+
+All delta paths are **absolute** and map directly to the repository structure:
+
+| Path Prefix | Resolves To |
+|-------------|-------------|
+| `world.*` | `world.json` |
+| `characters.*` | `characters.json` |
+| `relationships.*` | `relationships.json` |
+| `assets.*` | `assets.json` |
+| `secrets.*` | `secrets.json` |
+| `threads.*` | `threads.json` |
+| `factions.*` | `factions.json` |
+
+**Examples:**
+
+```json
+// Modify a character stat
+{ "path": "characters.char_varo.stats.wealth", "op": "subtract", "value": 5000 }
+
+// Modify a relationship weight
+{ "path": "relationships.rel_varo_quintus.weights.fear", "op": "add", "value": 10 }
+
+// Append to an array
+{ "path": "characters.char_varo.bdi.intentions", "op": "append", "value": { "id": "i_new", "operator_id": "OP_FLEE", "commitment": 0.8 } }
+
+// Remove from an array (by ID)
+{ "path": "characters.char_varo.bdi.intentions", "op": "remove", "match": { "id": "i_varo_1" } }
+
+// Transfer between ledger entries
+{ "path": "assets.cash_ledger", "op": "transfer", "from": "char_varo", "to": "char_drusilla", "denarii": 10000 }
+```
+
+### 8.4 Scene Packet Delta Shorthand
+
+In scene packets, the Director may use **shorthand paths** for readability:
+
+| Shorthand | Expansion (given actor=char_varo, target=char_quintus) |
+|-----------|--------------------------------------------------------|
+| `actor.stats.wealth` | `characters.char_varo.stats.wealth` |
+| `target.bdi.intentions` | `characters.char_quintus.bdi.intentions` |
+| `relationship.weights.fear` | `relationships.rel_varo_quintus.weights.fear` |
+
+The State Engine expands shorthand before applying deltas. Committed deltas in `episode_deltas.json` always use absolute paths.
+
+### 8.5 Claims Handling
 
 Writer claims are:
 1. Checked against `allowed_inventions` limits
@@ -466,7 +751,7 @@ Writer claims are:
 3. Rejected → forced out via regeneration
 4. Downgraded → converted to rumors/beliefs (if useful but not canon)
 
-### 8.4 Automatic Decay (Entropy Pass)
+### 8.6 Automatic Decay (Entropy Pass)
 
 Before commit, apply decay to active secrets:
 
@@ -553,6 +838,59 @@ Track in `episode_metrics.json`:
 
 Threads with `episodes_since_progress > max_cadence` get priority in next episode plan.
 
+### 10.4 Thread Advancement Lifecycle
+
+A thread is considered **advanced** when any of the following occur:
+
+| Advancement Type | Criteria | Example |
+|------------------|----------|---------|
+| **Beat Reference** | A beat explicitly references the thread in `primary_thread_id` | Beat resolves a complication in the grain shortage |
+| **Delta Impact** | An applied delta modifies state relevant to the thread | `world.global.grain_price_index` changes |
+| **Secret Reveal** | A secret linked to the thread is revealed | Grain hoarding scheme exposed |
+| **Relationship Shift** | A relationship central to the thread changes by ≥20 in any weight | Alliance between grain factions breaks |
+
+**Thread State Transitions:**
+
+```
+open → advancing → resolved
+         ↓
+      stalled (if episodes_since_progress > max_cadence)
+         ↓
+      urgent (Director must prioritize)
+```
+
+**Update Process (Stage H - Commit):**
+
+1. For each thread, check if any advancement criteria were met
+2. If advanced: set `last_advanced_episode = current_episode`, `episodes_since_progress = 0`
+3. If not advanced: increment `episodes_since_progress`
+4. If thread is fully resolved: set `status = "resolved"`
+
+### 10.5 Beat Type Taxonomy
+
+Beats are the logical units of narrative action. Each beat has a type that defines its dramatic function.
+
+| Type | Description | Requirements |
+|------|-------------|--------------|
+| **SETUP** | Establish situation, introduce problem | Must create tension or question |
+| **REVEAL** | Expose hidden information | Must change at least one character's knowledge state |
+| **REVERSAL** | Plan backfires, unexpected consequence | Must negate or invert a previous beat's outcome |
+| **CONFRONTATION** | Direct conflict between characters | Must materially change a relationship |
+| **DECISION** | Character commits to significant choice | Must trigger at least one operator |
+| **CLIFFHANGER** | Unresolved tension at episode end | Must create immediate or near-term threat/question |
+
+**Episode Requirements (Clarified):**
+
+Every episode must include:
+- At least 1 REVEAL
+- At least 1 REVERSAL  
+- At least 1 CONFRONTATION
+- Exactly 1 CLIFFHANGER (always final beat)
+
+Additional beat types (SETUP, DECISION) are used as needed but not mandated.
+
+**Verification:** The Verifier checks beat type distribution during Stage F. Missing mandatory types trigger a planning-level failure, requiring Director regeneration.
+
 ---
 
 ## 11. Output Specifications
@@ -595,21 +933,28 @@ Generated from deltas (not prose):
 
 ## 13. Roadmap
 
-### v3.0 (Foundation)
-- JSON world bible + Git commits
-- Operator library (25-40 operators)
-- Director + Writer + Verifier pipeline
-- BDI-lite proposals
-- GraphRAG-lite retrieval
-- Regeneration budgets + metrics
+### v3.0 (Foundation — Core Pipeline)
+**Priority: Implement First**
 
-### v3.1 (This Spec — Production Pipeline)
-- Voice synthesis via ElevenLabs
-- Image generation via DALL-E 3
-- Video assembly via FFmpeg/MoviePy
+- JSON world bible + Git commits
+- Expression language evaluator
+- Operator library (25-40 operators)
+- Director + Writer + Verifier pipeline (Stages A-H)
+- BDI-lite proposals
+- GraphRAG-lite retrieval (k-hop neighborhood extraction)
+- Regeneration budgets + metrics
+- Pipeline error recovery
+
+### v3.1 (Production Pipeline)
+**Priority: Implement After v3.0 is Stable**
+
+- Voice synthesis via ElevenLabs (Stage I-B)
+- Image generation via DALL-E 3 (Stage I-C)
+- Video assembly via FFmpeg/MoviePy (Stage I-D)
 - Visual DNA for characters and locations
 - Performance blocks for dialogue delivery
 - Casting registry with human-in-the-loop
+- Storyboarder for visual beat selection (Stage I-A)
 
 ### v3.2 (Performance)
 - SQLite index for faster state queries

@@ -1,0 +1,24 @@
+{
+  "factions": [
+    {
+      "id": "f_capital",
+      "name": "Publicani Consortium",
+      "stats": {
+        "economic_position": 2,
+        "legal_exposure": 1,
+        "political_capital": 1,
+        "public_narrative": -1
+      }
+    },
+    {
+      "id": "f_law",
+      "name": "Moral Prosecutors",
+      "stats": {
+        "economic_position": -1,
+        "legal_exposure": 0,
+        "political_capital": 2,
+        "public_narrative": 2
+      }
+    }
+  ]
+}

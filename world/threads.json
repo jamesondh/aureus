@@ -1,0 +1,54 @@
+{
+  "threads": [
+    {
+      "id": "thr_grain_shortage",
+      "priority": 0.9,
+      "question": "Will grain ships arrive before unrest breaks into violence?",
+      "status": "open",
+      "advance_cadence": { "max_episodes_without_progress": 2 },
+      "last_advanced_episode": 0,
+      "episodes_since_progress": 0,
+      "related_state_paths": [
+        "world.global.grain_price_index",
+        "world.global.unrest",
+        "assets.grain.inventory_units"
+      ],
+      "related_secrets": []
+    },
+    {
+      "id": "thr_varo_investigation",
+      "priority": 0.95,
+      "question": "Will Quintus find enough evidence to indict Varo?",
+      "status": "open",
+      "advance_cadence": { "max_episodes_without_progress": 2 },
+      "last_advanced_episode": 0,
+      "episodes_since_progress": 0,
+      "related_state_paths": [
+        "world.global.legal_exposure"
+      ],
+      "related_secrets": ["sec_varo_pirate_bribes"]
+    },
+    {
+      "id": "thr_drusilla_secret",
+      "priority": 0.85,
+      "question": "Will Quintus discover his wife's financial betrayal?",
+      "status": "open",
+      "advance_cadence": { "max_episodes_without_progress": 3 },
+      "last_advanced_episode": 0,
+      "episodes_since_progress": 0,
+      "related_state_paths": [],
+      "related_secrets": ["sec_drusilla_short_position"]
+    },
+    {
+      "id": "thr_marcus_loyalty",
+      "priority": 0.7,
+      "question": "Will Marcus flip on Varo to save himself?",
+      "status": "open",
+      "advance_cadence": { "max_episodes_without_progress": 3 },
+      "last_advanced_episode": 0,
+      "episodes_since_progress": 0,
+      "related_state_paths": [],
+      "related_secrets": ["sec_varo_pirate_bribes"]
+    }
+  ]
+}

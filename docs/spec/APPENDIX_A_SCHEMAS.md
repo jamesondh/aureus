@@ -95,7 +95,7 @@ Political/economic groupings that characters belong to.
 }
 ```
 
-**Stat Ranges:** All stats use a -3 to +3 scale where 0 is neutral.
+**Stat Ranges:** Faction stats use a -3 to +3 relative scale where 0 is neutral. See Section 3.3 in the main spec for the complete stat scale reference.
 
 ---
 
@@ -347,7 +347,14 @@ Open narrative questions the audience is tracking.
       "question": "Will grain ships arrive before unrest breaks into violence?",
       "status": "open",
       "advance_cadence": { "max_episodes_without_progress": 2 },
-      "last_advanced_episode": 0
+      "last_advanced_episode": 0,
+      "episodes_since_progress": 0,
+      "related_state_paths": [
+        "world.global.grain_price_index",
+        "world.global.unrest",
+        "assets.grain.inventory_units"
+      ],
+      "related_secrets": ["sec_grain_hoarding"]
     },
     {
       "id": "thr_inquiry_forms",
@@ -355,13 +362,26 @@ Open narrative questions the audience is tracking.
       "question": "Will the praetor secure a commission and witnesses?",
       "status": "open",
       "advance_cadence": { "max_episodes_without_progress": 2 },
-      "last_advanced_episode": 0
+      "last_advanced_episode": 0,
+      "episodes_since_progress": 0,
+      "related_state_paths": [
+        "world.global.legal_exposure"
+      ],
+      "related_secrets": []
     }
   ]
 }
 ```
 
 **Status Values:** `open`, `resolved`, `abandoned`
+
+**Fields:**
+- `priority`: 0.0-1.0, higher = more important for episode selection
+- `episodes_since_progress`: Incremented each episode if not advanced; reset on advancement
+- `related_state_paths`: State paths that, when modified, count as thread advancement
+- `related_secrets`: Secret IDs that, when revealed, count as thread advancement
+
+See Section 10.4 in the main spec for the complete thread advancement lifecycle.
 
 ---
 

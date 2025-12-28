@@ -1,0 +1,84 @@
+{
+  "edges": [
+    {
+      "id": "rel_varo_quintus",
+      "from": "char_caelus_varo",
+      "to": "char_quintus_fabius",
+      "type": "adversary",
+      "weights": { "loyalty": 0, "fear": 10, "resentment": 40, "respect": 20 },
+      "flags": { "public_feud": true }
+    },
+    {
+      "id": "rel_quintus_varo",
+      "from": "char_quintus_fabius",
+      "to": "char_caelus_varo",
+      "type": "adversary",
+      "weights": { "loyalty": 0, "fear": 30, "resentment": 95, "respect": 5 },
+      "flags": { "public_feud": true }
+    },
+    {
+      "id": "rel_varo_drusilla",
+      "from": "char_caelus_varo",
+      "to": "char_drusilla",
+      "type": "confidante",
+      "weights": { "loyalty": 85, "fear": 5, "resentment": 0, "dependency": 70 },
+      "flags": { "transactional": true, "therapist_dynamic": true }
+    },
+    {
+      "id": "rel_drusilla_varo",
+      "from": "char_drusilla",
+      "to": "char_caelus_varo",
+      "type": "confidante",
+      "weights": { "loyalty": 60, "fear": 25, "resentment": 10, "dependency": 40 },
+      "flags": { "transactional": true }
+    },
+    {
+      "id": "rel_quintus_drusilla",
+      "from": "char_quintus_fabius",
+      "to": "char_drusilla",
+      "type": "spouse",
+      "weights": { "loyalty": 90, "fear": 40, "resentment": 10, "dependency": 90 },
+      "flags": { "financial_separation": true }
+    },
+    {
+      "id": "rel_drusilla_quintus",
+      "from": "char_drusilla",
+      "to": "char_quintus_fabius",
+      "type": "spouse",
+      "weights": { "loyalty": 70, "fear": 5, "resentment": 30, "dependency": 20 },
+      "flags": { "managing_upward": true }
+    },
+    {
+      "id": "rel_varo_marcus",
+      "from": "char_caelus_varo",
+      "to": "char_marcus_accountant",
+      "type": "patron_of",
+      "weights": { "loyalty": 30, "fear": 80, "resentment": 0, "dependency": 95 },
+      "flags": { "knows_secrets": true }
+    },
+    {
+      "id": "rel_marcus_varo",
+      "from": "char_marcus_accountant",
+      "to": "char_caelus_varo",
+      "type": "client_of",
+      "weights": { "loyalty": 45, "fear": 90, "resentment": 60, "dependency": 100 },
+      "flags": { "trapped": true }
+    },
+    {
+      "id": "rel_gaius_varo",
+      "from": "char_gaius_crassipes",
+      "to": "char_caelus_varo",
+      "type": "ally",
+      "weights": { "loyalty": 40, "fear": 20, "resentment": 15, "respect": 70 },
+      "flags": { "opportunistic": true }
+    },
+    {
+      "id": "rel_gaius_quintus",
+      "from": "char_gaius_crassipes",
+      "to": "char_quintus_fabius",
+      "type": "ally",
+      "weights": { "loyalty": 30, "fear": 10, "resentment": 0, "respect": 50 },
+      "flags": { "opportunistic": true }
+    }
+  ]
+}

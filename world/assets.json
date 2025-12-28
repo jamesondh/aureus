@@ -1,0 +1,49 @@
+{
+  "assets": {
+    "grain": {
+      "inventory_units": 120,
+      "controlled_by": ["char_caelus_varo"],
+      "warehouse_locations": ["warehouses_aventine"]
+    },
+    "contracts": [
+      {
+        "id": "con_asia_minor_tax",
+        "type": "tax_farming",
+        "status": "pending",
+        "stakeholders": ["char_caelus_varo", "char_gaius_crassipes"]
+      },
+      {
+        "id": "con_grain_supply_68",
+        "type": "grain_supply",
+        "status": "active",
+        "stakeholders": ["char_caelus_varo"]
+      }
+    ],
+    "cash_ledger": [
+      { "holder": "char_caelus_varo", "denarii": 500000 },
+      { "holder": "char_quintus_fabius", "denarii": 15000 },
+      { "holder": "char_drusilla", "denarii": 80000 },
+      { "holder": "char_marcus_accountant", "denarii": 25000 },
+      { "holder": "char_gaius_crassipes", "denarii": 120000 }
+    ],
+    "networks": [
+      {
+        "id": "net_varo_express",
+        "name": "The Relay",
+        "owner": "char_caelus_varo",
+        "type": "intelligence",
+        "stats": { "velocity_bonus_days": 3, "reliability": 0.9 },
+        "upkeep_cost": 5000
+      }
+    ],
+    "offices": [
+      {
+        "id": "off_quaestio_repetundis",
+        "name": "Extortion Court Presidency",
+        "owner": "char_quintus_fabius",
+        "type": "legal_authority",
+        "powers": ["SUBPOENA", "FREEZE_ASSETS", "INDICT"]
+      }
+    ]
+  }
+}

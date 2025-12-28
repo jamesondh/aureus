@@ -1,0 +1,295 @@
+{
+  "operators": [
+    {
+      "id": "OP_INFORMATION_ARBITRAGE",
+      "type": "thriller",
+      "tags": ["finance", "market", "speed"],
+      "prereqs": [
+        { "expr": "actor.stats.wealth > 50" }
+      ],
+      "effects": [
+        { "path": "actor.stats.wealth", "op": "add", "value": 10 }
+      ],
+      "side_effect_risks": [
+        { "id": "risk_senate_inquiry", "text": "Senate investigates insider trading", "prob": 0.3, "consequence_operator": null, "consequence_delay": "next_episode" }
+      ],
+      "scene_suggestions": ["courier_arrival", "quiet_buying_spree", "war_room_calculations"],
+      "allowed_inventions": { "extras": 1, "new_facts": 0 },
+      "writer_guidance": {
+        "visual_cues": "Maps, ledgers, exhausted messengers, urgent whispered orders",
+        "success_beat": "The trade executes; actor's wealth visibly increases",
+        "fail_beat": "News leaks early; the market moves before actor can act"
+      }
+    },
+    {
+      "id": "OP_WITNESS_FLIP_FINANCIAL",
+      "type": "thriller",
+      "tags": ["legal", "corruption", "investigation"],
+      "prereqs": [
+        { "expr": "actor.stats.wealth > target.stats.wealth * 2" },
+        { "expr": "relationship.weights.loyalty < 50" }
+      ],
+      "effects": [
+        { "path": "actor.stats.wealth", "op": "subtract", "value": 5 },
+        { "path": "relationship.weights.loyalty", "op": "add", "value": 20 }
+      ],
+      "side_effect_risks": [
+        { "id": "risk_double_cross", "text": "Witness takes money but stays loyal", "prob": 0.2, "consequence_operator": null, "consequence_delay": "same_episode" }
+      ],
+      "scene_suggestions": ["bathhouse_meeting", "slave_proxy_exchange", "midnight_garden"],
+      "writer_guidance": {
+        "visual_cues": "Private location, nervous body language, physical exchange of coins/tokens",
+        "success_beat": "The witness accepts and commits; actor feels powerful but exposed",
+        "fail_beat": "The witness refuses or demands more; actor must escalate or retreat"
+      }
+    },
+    {
+      "id": "OP_SUBPOENA_WITNESS",
+      "type": "thriller",
+      "tags": ["legal", "investigation", "procedural"],
+      "prereqs": [
+        { "expr": "actor.offices includes 'powers.SUBPOENA'" }
+      ],
+      "effects": [
+        { "path": "target.status.subpoenaed", "op": "set", "value": true },
+        { "path": "world.global.legal_exposure", "op": "add", "value": 1 }
+      ],
+      "side_effect_risks": [
+        { "id": "risk_flight", "text": "Witness flees jurisdiction", "prob": 0.2, "consequence_operator": null, "consequence_delay": "same_episode" }
+      ],
+      "scene_suggestions": ["writ_delivery", "courtroom_announcement", "witness_cornered"],
+      "writer_guidance": {
+        "visual_cues": "Official documents, nervous recipients, legal formality",
+        "success_beat": "Witness is compelled; their patron must decide whether to intervene",
+        "fail_beat": "Witness has immunity or protector; subpoena is blocked"
+      }
+    },
+    {
+      "id": "OP_ASSET_FREEZE",
+      "type": "thriller",
+      "tags": ["legal", "attack", "aggressive"],
+      "prereqs": [
+        { "expr": "actor.offices includes 'powers.FREEZE_ASSETS'" },
+        { "expr": "world.global.legal_exposure > 0" }
+      ],
+      "effects": [
+        { "path": "target.stats.wealth", "op": "subtract", "value": 20 },
+        { "path": "world.global.unrest", "op": "add", "value": 1 }
+      ],
+      "side_effect_risks": [
+        { "id": "risk_market_crash", "text": "Panic in the Forum causes general market dip", "prob": 0.4, "consequence_operator": null, "consequence_delay": "immediate" }
+      ],
+      "scene_suggestions": ["forum_proclamation", "bank_run", "doorstep_writ_delivery"],
+      "writer_guidance": {
+        "visual_cues": "Official seals, public announcement, crowds gathering",
+        "success_beat": "Target is publicly humiliated; their allies start to distance",
+        "fail_beat": "Legal challenge delays the freeze; actor looks overreaching"
+      }
+    },
+    {
+      "id": "OP_RUMOR_CAMPAIGN",
+      "type": "thriller",
+      "tags": ["politics", "reputation", "low_blow"],
+      "prereqs": [
+        { "expr": "actor.stats.auctoritas > 30" }
+      ],
+      "effects": [
+        { "path": "target.stats.popularity", "op": "subtract", "value": 10 },
+        { "path": "world.global.scandal_temperature", "op": "add", "value": 2 }
+      ],
+      "side_effect_risks": [
+        { "id": "risk_blowback", "text": "Source traced back to actor", "prob": 0.25, "consequence_operator": null, "consequence_delay": "next_episode" }
+      ],
+      "scene_suggestions": ["graffiti_painting", "tavern_gossip", "opponent_heckled"],
+      "writer_guidance": {
+        "visual_cues": "Street scenes, laughing crowds, crude graffiti",
+        "success_beat": "Target is mocked publicly; they cannot appear without jeers",
+        "fail_beat": "Rumor doesn't stick; target gains sympathy as victim"
+      }
+    },
+    {
+      "id": "OP_DESTROY_EVIDENCE",
+      "type": "thriller",
+      "tags": ["crime", "coverup", "urgent"],
+      "prereqs": [
+        { "expr": "actor.stats.wealth > 20" }
+      ],
+      "effects": [
+        { "path": "world.global.legal_exposure", "op": "subtract", "value": 2 }
+      ],
+      "side_effect_risks": [
+        { "id": "risk_witnessed", "text": "A servant sees the destruction", "prob": 0.5, "consequence_operator": null, "consequence_delay": "same_episode" }
+      ],
+      "scene_suggestions": ["burning_ledger", "bribing_scribe", "night_disposal"],
+      "writer_guidance": {
+        "visual_cues": "Fire, paranoid glances, hurried movements",
+        "success_beat": "Evidence is gone; actor breathes relief but knows they've crossed a line",
+        "fail_beat": "Interrupted mid-act; must flee or explain"
+      }
+    },
+    {
+      "id": "OP_PUBLIC_SNUB",
+      "type": "soap",
+      "tags": ["status", "humiliation", "power_move"],
+      "prereqs": [
+        { "expr": "actor.stats.auctoritas > target.stats.auctoritas" }
+      ],
+      "effects": [
+        { "path": "target.stats.dignitas", "op": "subtract", "value": 8 },
+        { "path": "relationship.weights.resentment", "op": "add", "value": 15 }
+      ],
+      "side_effect_risks": [
+        { "id": "risk_sympathy", "text": "Crowd sides with the victim", "prob": 0.1, "consequence_operator": null, "consequence_delay": "immediate" }
+      ],
+      "scene_suggestions": ["refusing_handshake", "taking_best_seat", "ignoring_greeting"],
+      "writer_guidance": {
+        "visual_cues": "Public setting, witnesses, frozen moment of shock",
+        "success_beat": "Target is visibly diminished; onlookers take note",
+        "fail_beat": "Target recovers with wit; actor looks petty"
+      }
+    },
+    {
+      "id": "OP_CONFESSION_VULNERABLE",
+      "type": "soap",
+      "tags": ["intimacy", "trust", "bonding"],
+      "prereqs": [
+        { "expr": "relationship.weights.loyalty > 40" }
+      ],
+      "effects": [
+        { "path": "relationship.weights.loyalty", "op": "add", "value": 10 },
+        { "path": "relationship.weights.dependency", "op": "add", "value": 5 }
+      ],
+      "side_effect_risks": [
+        { "id": "risk_leverage", "text": "Target now owns dangerous info", "prob": 1.0, "consequence_operator": null, "consequence_delay": "next_episode" }
+      ],
+      "scene_suggestions": ["late_night_wine", "post_defeat_collapse", "pillow_talk"],
+      "writer_guidance": {
+        "visual_cues": "Private setting, low light, physical proximity",
+        "success_beat": "Bond deepens; both feel closer but actor is now exposed",
+        "fail_beat": "Target recoils or judges; intimacy rejected"
+      }
+    },
+    {
+      "id": "OP_STOIC_COUNSEL",
+      "type": "soap",
+      "tags": ["psychology", "calm", "manipulation"],
+      "prereqs": [
+        { "expr": "relationship.weights.loyalty > 30" }
+      ],
+      "effects": [
+        { "path": "relationship.weights.dependency", "op": "add", "value": 5 }
+      ],
+      "side_effect_risks": [],
+      "scene_suggestions": ["garden_walk", "quoting_philosophy", "cold_stare"],
+      "writer_guidance": {
+        "visual_cues": "Calm body language contrasting with agitation, measured speech",
+        "success_beat": "Target de-escalates; sees actor as wise counselor",
+        "fail_beat": "Target rejects advice; may resent the attempt to control"
+      }
+    },
+    {
+      "id": "OP_BACKCHANNEL_NEGOTIATION",
+      "type": "soap",
+      "tags": ["diplomacy", "secret", "pragmatic"],
+      "prereqs": [
+        { "expr": "relationship.weights.respect > 10" }
+      ],
+      "effects": [
+        { "path": "relationship.weights.respect", "op": "add", "value": 10 }
+      ],
+      "side_effect_risks": [
+        { "id": "risk_base_anger", "text": "Core supporters feel betrayed", "prob": 0.4, "consequence_operator": null, "consequence_delay": "next_episode" }
+      ],
+      "scene_suggestions": ["unmarked_carriage", "neutral_ground_temple", "written_cipher"],
+      "writer_guidance": {
+        "visual_cues": "Secrecy, disguises, coded language, mutual wariness",
+        "success_beat": "Truce achieved; both gain breathing room",
+        "fail_beat": "Talks collapse; positions harden"
+      }
+    },
+    {
+      "id": "OP_BETRAYAL_FOR_SURVIVAL",
+      "type": "soap",
+      "tags": ["reversal", "tragedy", "climactic"],
+      "prereqs": [
+        { "expr": "actor.stats.wealth < 30" },
+        { "expr": "relationship.weights.fear > 50" }
+      ],
+      "effects": [
+        { "path": "relationship.weights.loyalty", "op": "set", "value": 0 },
+        { "path": "relationship.weights.resentment", "op": "set", "value": 100 }
+      ],
+      "side_effect_risks": [
+        { "id": "risk_social_death", "text": "Actor labeled a traitor by society", "prob": 0.9, "consequence_operator": null, "consequence_delay": "immediate" }
+      ],
+      "scene_suggestions": ["courtroom_finger_point", "locking_door", "tearful_apology"],
+      "writer_guidance": {
+        "visual_cues": "High stakes, witnesses, irreversible moment",
+        "success_beat": "Actor escapes; target is destroyed; relationship is irrecoverable",
+        "fail_beat": "Betrayal is exposed before it lands; actor loses everything"
+      }
+    },
+    {
+      "id": "OP_THREATEN_FAMILY",
+      "type": "thriller",
+      "tags": ["intimidation", "dark", "escalation"],
+      "prereqs": [
+        { "expr": "actor.stats.auctoritas > 40" }
+      ],
+      "effects": [
+        { "path": "relationship.weights.fear", "op": "add", "value": 30 },
+        { "path": "target.stats.dignitas", "op": "subtract", "value": 5 }
+      ],
+      "side_effect_risks": [
+        { "id": "risk_report", "text": "Target reports threat to authorities", "prob": 0.2, "consequence_operator": null, "consequence_delay": "same_episode" }
+      ],
+      "scene_suggestions": ["dark_alley", "implied_violence", "hostage_mention"],
+      "writer_guidance": {
+        "visual_cues": "Shadows, menacing posture, quiet voice",
+        "success_beat": "Target is cowed; will comply out of fear",
+        "fail_beat": "Target calls bluff; actor must follow through or lose face"
+      }
+    },
+    {
+      "id": "OP_MEDIATE_CONFLICT",
+      "type": "soap",
+      "tags": ["diplomacy", "relationship", "risky"],
+      "prereqs": [
+        { "expr": "actor.stats.auctoritas > 50" }
+      ],
+      "effects": [
+        { "path": "actor.stats.auctoritas", "op": "add", "value": 5 }
+      ],
+      "side_effect_risks": [
+        { "id": "risk_blamed", "text": "Both sides blame mediator for failure", "prob": 0.3, "consequence_operator": null, "consequence_delay": "immediate" }
+      ],
+      "scene_suggestions": ["neutral_dinner", "shuttle_diplomacy", "forced_handshake"],
+      "writer_guidance": {
+        "visual_cues": "Actor between two hostile parties, careful word choice",
+        "success_beat": "Tension reduced; actor gains reputation as peacemaker",
+        "fail_beat": "Talks explode; actor caught in crossfire"
+      }
+    },
+    {
+      "id": "OP_REVEAL_SECRET",
+      "type": "thriller",
+      "tags": ["revelation", "power", "damage"],
+      "prereqs": [
+        { "expr": "actor.stats.auctoritas > 20" }
+      ],
+      "effects": [
+        { "path": "world.global.scandal_temperature", "op": "add", "value": 3 },
+        { "path": "target.stats.dignitas", "op": "subtract", "value": 15 }
+      ],
+      "side_effect_risks": [
+        { "id": "risk_retaliation", "text": "Target reveals actor's secrets in return", "prob": 0.4, "consequence_operator": null, "consequence_delay": "same_episode" }
+      ],
+      "scene_suggestions": ["public_accusation", "letter_circulation", "senate_speech"],
+      "writer_guidance": {
+        "visual_cues": "Shocked faces, gasps, target's world collapsing",
+        "success_beat": "Secret is out; target is devastated; landscape shifts",
+        "fail_beat": "Revelation falls flat; audience doesn't care or doesn't believe"
+      }
+    }
+  ]
+}
