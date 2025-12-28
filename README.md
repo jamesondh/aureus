@@ -10,15 +10,50 @@ A **neuro-symbolic narrative engine** for generating serialized drama. Produces 
 # Install dependencies
 npm install
 
-# Set your Anthropic API key
-export ANTHROPIC_API_KEY=your_key_here
-
 # Build the project
 npm run build
 
-# Generate an episode
+# Generate an episode (see Authentication below)
 npm run generate:episode
 ```
+
+## Authentication
+
+Aureus supports two authentication methods for LLM access:
+
+### Option 1: Anthropic API Key
+
+For direct API access (pay-per-use):
+
+```bash
+export ANTHROPIC_API_KEY=your_key_here
+npm run generate:episode
+```
+
+### Option 2: Claude Max Subscription (Recommended for Personal Use)
+
+Use your existing Claude Max subscription via the Claude Code CLI:
+
+```bash
+# 1. Install Claude Code CLI
+curl -fsSL https://claude.ai/install.sh | bash
+
+# 2. Authenticate (select "Claude App" and sign in with your Claude Max account)
+claude
+
+# 3. Run the generator
+npm run generate:episode -- --use-claude-max
+
+# Or set the environment variable for convenience
+export USE_CLAUDE_MAX=1
+npm run generate:episode
+```
+
+### Auto-Detection
+
+If neither flag is specified:
+- Uses **API mode** if `ANTHROPIC_API_KEY` is set
+- Uses **Claude Max mode** otherwise (requires Claude Code CLI to be installed and authenticated)
 
 ## Architecture
 
@@ -185,7 +220,7 @@ Full specification available in `/docs`:
 - [x] Director + Writer + Verifier pipeline
 - [x] BDI-lite agent proposals
 - [x] Pipeline orchestrator
-- [ ] End-to-end episode generation testing
+- [x] End-to-end episode generation testing
 
 ### v3.1 — Production Pipeline
 - [ ] Voice synthesis via ElevenLabs

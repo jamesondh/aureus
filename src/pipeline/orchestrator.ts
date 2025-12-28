@@ -124,7 +124,7 @@ export class PipelineOrchestrator {
       const commitResult = await this.stageH_Commit(plan, sceneResults);
       
       // Save artifacts
-      await this.saveArtifacts(plan, sceneResults, commitResult);
+      await this.saveArtifacts(plan, sceneResults, packets, commitResult);
       
       console.log(`\n=== Episode ${this.config.episodeId} Complete ===\n`);
       
@@ -331,6 +331,26 @@ export class PipelineOrchestrator {
   // Stages E-F: Write and Verify
   // ==========================================================================
 
+  /**
+   * Check if an error is a fatal SDK error that should not be retried.
+   */
+  private isFatalSDKError(error: unknown): boolean {
+    if (!(error instanceof Error)) return false;
+    const message = error.message.toLowerCase();
+    
+    // These errors indicate SDK/infrastructure issues, not scene content issues
+    return (
+      message.includes('error_max_turns') ||
+      message.includes('cli not found') ||
+      message.includes('not authenticated') ||
+      message.includes('rate limit') ||
+      message.includes('api key') ||
+      message.includes('timeout') ||
+      message.includes('network') ||
+      message.includes('econnrefused')
+    );
+  }
+
   private async stagesEF_WriteAndVerify(
     packets: ScenePacket[],
     _plan: EpisodePlan
@@ -347,31 +367,45 @@ export class PipelineOrchestrator {
       while (attempts < this.config.maxSceneRetries) {
         attempts++;
         
-        // Stage E: Write
-        output = await this.writer.writeScene(packet);
-        
-        // Stage F: Verify
-        report = await this.verifier.verifyScene(packet, output);
-        
-        // Check if passed
-        if (report.violations.length === 0) {
-          // Passed deterministic checks
-          if (!report.llm_critic_result || report.llm_critic_result.verdict === 'PASS') {
-            // Fully passed
-            break;
+        try {
+          // Stage E: Write
+          output = await this.writer.writeScene(packet);
+          
+          // Stage F: Verify
+          report = await this.verifier.verifyScene(packet, output);
+          
+          // Check if passed
+          if (report.violations.length === 0) {
+            // Passed deterministic checks
+            if (!report.llm_critic_result || report.llm_critic_result.verdict === 'PASS') {
+              // Fully passed
+              break;
+            }
+            
+            // Failed LLM critic - try punch-up
+            if (!report.llm_critic_result.hook_present) {
+              output = await this.writer.punchUpEnding(output, report.fix_instructions);
+            }
+          } else {
+            // Failed deterministic checks
+            console.log(`    Attempt ${attempts} failed: ${report.violations[0]?.message}`);
+            this.totalRegenerations++;
+            
+            if (this.totalRegenerations > this.config.maxEpisodeRegenerations) {
+              throw new Error(`Exceeded episode regeneration budget (${this.config.maxEpisodeRegenerations})`);
+            }
+          }
+        } catch (error) {
+          // Check if this is a fatal SDK error that shouldn't be retried
+          if (this.isFatalSDKError(error)) {
+            console.error(`  Fatal SDK error on scene ${packet.packet_meta.scene_id}: ${error instanceof Error ? error.message : String(error)}`);
+            throw error; // Re-throw immediately, don't retry
           }
           
-          // Failed LLM critic - try punch-up
-          if (!report.llm_critic_result.hook_present) {
-            output = await this.writer.punchUpEnding(output, report.fix_instructions);
-          }
-        } else {
-          // Failed deterministic checks
-          console.log(`    Attempt ${attempts} failed: ${report.violations[0]?.message}`);
-          this.totalRegenerations++;
-          
-          if (this.totalRegenerations > this.config.maxEpisodeRegenerations) {
-            throw new Error(`Exceeded episode regeneration budget (${this.config.maxEpisodeRegenerations})`);
+          // For other errors (e.g., JSON parse failures), retry up to the limit
+          console.log(`    Attempt ${attempts} error: ${error instanceof Error ? error.message : String(error)}`);
+          if (attempts >= this.config.maxSceneRetries) {
+            throw error;
           }
         }
       }
@@ -549,6 +583,7 @@ export class PipelineOrchestrator {
   private async saveArtifacts(
     plan: EpisodePlan,
     sceneResults: SceneGenerationResult[],
+    packets: ScenePacket[],
     commit: { deltas: EpisodeDeltas; metrics: EpisodeMetrics; cliffhanger: CliffhangerConstraints }
   ): Promise<void> {
     const { seasonId, episodeId } = this.config;
@@ -556,13 +591,21 @@ export class PipelineOrchestrator {
     // Save episode plan
     await this.store.saveEpisodeArtifact(seasonId, episodeId, 'episode_plan.json', plan);
     
-    // Save scene packets
-    for (let i = 0; i < sceneResults.length; i++) {
+    // Save scene packets (subset - exclude large retrieved_subgraph for storage efficiency)
+    for (let i = 0; i < packets.length; i++) {
+      const packet = packets[i];
+      const packetSubset = {
+        packet_meta: packet.packet_meta,
+        setting: packet.setting,
+        cast: packet.cast,
+        director_instructions: packet.director_instructions,
+        constraints: packet.constraints,
+      };
       await this.store.saveEpisodeArtifact(
         seasonId,
         episodeId,
-        `episode_scene_packets/SC${String(i + 1).padStart(2, '0')}.json`,
-        {} // Would save actual packet
+        `episode_scene_packets/${packet.packet_meta.scene_id}.json`,
+        packetSubset
       );
     }
     

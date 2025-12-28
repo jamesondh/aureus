@@ -1,14 +1,35 @@
 {
   "hard_constraints": [
-    { "id": "H1", "rule": "A dead character cannot speak or act." },
-    { "id": "H2", "rule": "A character cannot be in two locations in the same scene." },
-    { "id": "H3", "rule": "Cash cannot be spent twice; ledger must balance." },
-    { "id": "H4", "rule": "Major events must be triggered by an operator with satisfied prerequisites." }
+    {
+      "id": "H1",
+      "rule": "A dead character cannot speak or act."
+    },
+    {
+      "id": "H2",
+      "rule": "A character cannot be in two locations in the same scene."
+    },
+    {
+      "id": "H3",
+      "rule": "Cash cannot be spent twice; ledger must balance."
+    },
+    {
+      "id": "H4",
+      "rule": "Major events must be triggered by an operator with satisfied prerequisites."
+    }
   ],
   "soft_constraints": [
-    { "id": "S1", "rule": "Avoid modern bureaucratic language; maintain Rome vibes." },
-    { "id": "S2", "rule": "Every scene ends on a hook/button line." },
-    { "id": "S3", "rule": "Characters should speak in their established voice tags." }
+    {
+      "id": "S1",
+      "rule": "Avoid modern bureaucratic language; maintain Rome vibes."
+    },
+    {
+      "id": "S2",
+      "rule": "Every scene ends on a hook/button line."
+    },
+    {
+      "id": "S3",
+      "rule": "Characters should speak in their established voice tags."
+    }
   ],
   "production_constraints": {
     "visual_style_prompt": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",

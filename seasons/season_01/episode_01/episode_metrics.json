@@ -1,0 +1,30 @@
+{
+  "episode_id": "episode_01",
+  "tension": 7.333333333333333,
+  "pacing": 9,
+  "volatility": 1,
+  "thread_progress": {
+    "thr_grain_shortage": {
+      "advanced": true,
+      "delta": 2
+    },
+    "thr_varo_investigation": {
+      "advanced": true,
+      "delta": 6
+    },
+    "thr_drusilla_secret": {
+      "advanced": true,
+      "delta": 5
+    },
+    "thr_marcus_loyalty": {
+      "advanced": true,
+      "delta": 5
+    }
+  },
+  "beat_counts": {
+    "reveals": 1,
+    "reversals": 1,
+    "confrontations": 1,
+    "cliffhangers": 1
+  }
+}

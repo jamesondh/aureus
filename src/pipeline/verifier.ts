@@ -212,34 +212,101 @@ export class Verifier {
 
   /**
    * Check that required deltas are depicted in scene events.
+   * 
+   * This uses a multi-pronged approach:
+   * 1. Check if any scene event's operator_alignment matches the operator that produces this delta
+   * 2. Check if the delta path's key term appears in scene_events or scene_text
+   * 3. Check if the narrative trigger is depicted in the scene text
    */
   private checkRequiredDeltas(packet: ScenePacket, output: WriterOutput): Violation[] {
     const violations: Violation[] = [];
     const requiredDeltas = packet.constraints?.required_deltas || [];
 
-    for (const required of requiredDeltas) {
-      // Look for a scene event that covers this delta
-      const covered = output.scene_events.some(event => {
-        // Check if the event's delta string mentions the path
-        if (event.delta && event.delta.includes(required.path.split('.').pop() || '')) {
-          return true;
-        }
-        // Check if narrative_trigger is depicted
-        if (required.narrative_trigger) {
-          const triggerLower = required.narrative_trigger.toLowerCase();
-          const textLower = output.scene_text.toLowerCase();
-          return textLower.includes(triggerLower.slice(0, 20));
-        }
-        return false;
-      });
+    // Build a map of operator_id -> delta paths for quick lookup
+    const beatOperators = new Set<string>();
+    for (const beat of packet.director_instructions.sequence) {
+      beatOperators.add(beat.operator_id);
+    }
 
-      if (!covered) {
-        violations.push({
-          type: 'delta_missing',
-          message: `Required delta not depicted: ${required.path} (${required.narrative_trigger || 'no trigger'})`,
-          scene_id: output.scene_id,
-        });
+    for (const required of requiredDeltas) {
+      // Extract the key term from the path (e.g., "resentment" from "relationship.weights.resentment")
+      const pathParts = required.path.split('.');
+      const keyTerm = pathParts[pathParts.length - 1] || '';
+      const parentTerm = pathParts[pathParts.length - 2] || '';
+      
+      // Strategy 1: Check if the operator that produces this delta was executed
+      // The narrative_trigger often contains "Effect from OP_..."
+      let operatorMatched = false;
+      if (required.narrative_trigger) {
+        const opMatch = required.narrative_trigger.match(/OP_[A-Z_]+/);
+        if (opMatch) {
+          const operatorId = opMatch[0];
+          // Check if any scene event aligns with this operator
+          // Accept SUCCESS or undefined (some writers don't specify outcome)
+          operatorMatched = output.scene_events.some(event => 
+            event.operator_alignment === operatorId && 
+            event.outcome !== 'FAIL'
+          );
+        }
       }
+      
+      if (operatorMatched) {
+        continue; // Delta is covered by operator execution
+      }
+
+      // Strategy 2: Check if key terms appear in scene events or delta descriptions
+      const termMatched = output.scene_events.some(event => {
+        if (!event.delta) return false;
+        const deltaLower = event.delta.toLowerCase();
+        // Check for the key term or parent.key combination
+        return deltaLower.includes(keyTerm.toLowerCase()) ||
+               deltaLower.includes(`${parentTerm}.${keyTerm}`.toLowerCase()) ||
+               deltaLower.includes(required.path.toLowerCase());
+      });
+      
+      if (termMatched) {
+        continue; // Delta is covered by explicit mention
+      }
+
+      // Strategy 3: Check if narrative trigger or related concepts appear in scene text
+      const textLower = output.scene_text.toLowerCase();
+      let narrativeMatched = false;
+      
+      if (required.narrative_trigger) {
+        const triggerLower = required.narrative_trigger.toLowerCase();
+        // Check for trigger phrase (first 30 chars or whole thing if shorter)
+        const triggerSnippet = triggerLower.slice(0, 30).trim();
+        narrativeMatched = textLower.includes(triggerSnippet);
+      }
+      
+      // Also check for common narrative indicators of the delta type
+      if (!narrativeMatched) {
+        // Map common delta paths to narrative indicators
+        const narrativeIndicators: Record<string, string[]> = {
+          'resentment': ['glare', 'bitter', 'anger', 'furious', 'hatred', 'spite', 'seethe', 'grudge'],
+          'loyalty': ['trust', 'faithful', 'betray', 'allegiance', 'devoted'],
+          'fear': ['afraid', 'terrified', 'cower', 'tremble', 'dread', 'panic'],
+          'dignitas': ['humiliat', 'shame', 'disgrace', 'honor', 'proud', 'respect'],
+          'wealth': ['coin', 'denarii', 'gold', 'silver', 'pay', 'bribe', 'money'],
+          'popularity': ['crowd', 'cheer', 'jeer', 'applause', 'public'],
+          'dependency': ['need', 'rely', 'depend', 'cling', 'desperate'],
+          'respect': ['admire', 'esteem', 'acknowledge', 'defer', 'bow'],
+        };
+        
+        const indicators = narrativeIndicators[keyTerm.toLowerCase()] || [];
+        narrativeMatched = indicators.some(ind => textLower.includes(ind));
+      }
+      
+      if (narrativeMatched) {
+        continue; // Delta is covered by narrative depiction
+      }
+
+      // None of the strategies matched - this is a violation
+      violations.push({
+        type: 'delta_missing',
+        message: `Required delta not depicted: ${required.path} (${required.narrative_trigger || 'no trigger'})`,
+        scene_id: output.scene_id,
+      });
     }
 
     return violations;

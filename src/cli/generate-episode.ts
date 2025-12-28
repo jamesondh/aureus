@@ -15,13 +15,24 @@
  *   --output <path>    Path to output directory (default: ./seasons)
  *   --dry-run          Plan only, don't write scenes
  *   --verbose          Enable verbose logging
+ *   --use-api          Force API mode (requires ANTHROPIC_API_KEY)
+ *   --use-claude-max   Force Claude Max mode (requires Claude Code CLI)
  *   --help             Show this help message
  * 
- * Environment Variables:
- *   ANTHROPIC_API_KEY  Required. Your Anthropic API key.
+ * Authentication:
+ *   The CLI supports two authentication modes:
+ *   
+ *   1. API Key (default if ANTHROPIC_API_KEY is set):
+ *      export ANTHROPIC_API_KEY=your-key-here
+ *   
+ *   2. Claude Max subscription (via Claude Code CLI):
+ *      - Install: curl -fsSL https://claude.ai/install.sh | bash
+ *      - Login: claude (select "Claude App" and log in with your Claude Max account)
+ *      - Run with: --use-claude-max flag or set USE_CLAUDE_MAX=1
  */
 
 import { PipelineOrchestrator, type PipelineConfig } from '../pipeline/orchestrator.js';
+import { getLLMClient, resetLLMClient, type AuthMode } from '../llm/client.js';
 import * as fs from 'fs/promises';
 import * as path from 'path';
 
@@ -37,6 +48,7 @@ interface CLIOptions {
   dryRun: boolean;
   verbose: boolean;
   help: boolean;
+  authMode?: AuthMode;
 }
 
 function parseArgs(args: string[]): CLIOptions {
@@ -52,7 +64,7 @@ function parseArgs(args: string[]): CLIOptions {
 
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
-    
+
     switch (arg) {
       case '--season':
         options.season = args[++i] || options.season;
@@ -71,6 +83,13 @@ function parseArgs(args: string[]): CLIOptions {
         break;
       case '--verbose':
         options.verbose = true;
+        break;
+      case '--use-api':
+        options.authMode = 'api';
+        break;
+      case '--use-claude-max':
+      case '--use-agent-sdk':
+        options.authMode = 'agent-sdk';
         break;
       case '--help':
       case '-h':
@@ -100,17 +119,45 @@ Options:
   --output <path>    Path to output directory (default: ./seasons)
   --dry-run          Plan episode only, don't generate scene prose
   --verbose          Enable verbose logging
+  --use-api          Force API mode (requires ANTHROPIC_API_KEY)
+  --use-claude-max   Force Claude Max mode (requires Claude Code CLI)
   --help, -h         Show this help message
 
-Environment Variables:
-  ANTHROPIC_API_KEY  Required. Your Anthropic API key.
+Authentication:
+  The CLI supports two authentication modes:
+
+  1. API Key Mode (requires ANTHROPIC_API_KEY):
+     export ANTHROPIC_API_KEY=your-key-here
+     npm run generate:episode
+
+  2. Claude Max Mode (uses your Claude Max subscription):
+     a. Install Claude Code CLI:
+        curl -fsSL https://claude.ai/install.sh | bash
+     
+     b. Authenticate with your Claude Max account:
+        claude
+        (Select "Claude App" during login, then sign in with your Claude Max account)
+     
+     c. Run the generator:
+        npm run generate:episode -- --use-claude-max
+        
+        Or set the environment variable:
+        export USE_CLAUDE_MAX=1
+        npm run generate:episode
+
+  Auto-detection:
+    If ANTHROPIC_API_KEY is set, API mode is used.
+    Otherwise, Claude Max mode is attempted automatically.
 
 Examples:
-  # Generate episode 1 of season 1
+  # Generate episode 1 of season 1 (auto-detect auth)
   npm run generate:episode
 
-  # Generate episode 3 of season 1
-  npm run generate:episode -- --episode episode_03
+  # Generate using Claude Max subscription
+  npm run generate:episode -- --use-claude-max
+
+  # Generate episode 3 of season 1 with API key
+  npm run generate:episode -- --episode episode_03 --use-api
 
   # Dry run (planning only)
   npm run generate:episode -- --dry-run --verbose
@@ -125,12 +172,20 @@ Examples:
 // ============================================================================
 
 async function validateEnvironment(options: CLIOptions): Promise<void> {
-  // Check API key
-  if (!process.env.ANTHROPIC_API_KEY) {
+  // Check authentication based on mode
+  const hasApiKey = !!process.env.ANTHROPIC_API_KEY;
+
+  if (options.authMode === 'api' && !hasApiKey) {
     throw new Error(
-      'Missing ANTHROPIC_API_KEY environment variable.\n' +
-      'Set it with: export ANTHROPIC_API_KEY=your-key-here'
+      'API mode requires ANTHROPIC_API_KEY environment variable.\n' +
+      'Set it with: export ANTHROPIC_API_KEY=your-key-here\n\n' +
+      'Or use --use-claude-max to authenticate with your Claude Max subscription.'
     );
+  }
+
+  if (!options.authMode && !hasApiKey) {
+    // Will use agent-sdk mode, just print info
+    console.log('No ANTHROPIC_API_KEY found. Using Claude Max mode via Claude Code CLI.\n');
   }
 
   // Check world directory exists
@@ -170,8 +225,8 @@ async function validateEnvironment(options: CLIOptions): Promise<void> {
 
   // Check season goals
   const seasonGoalsPath = path.resolve(
-    options.outputPath, 
-    options.season, 
+    options.outputPath,
+    options.season,
     'season_goals.json'
   );
   try {
@@ -192,7 +247,7 @@ async function validateEnvironment(options: CLIOptions): Promise<void> {
 async function createDefaultSeasonGoals(options: CLIOptions): Promise<void> {
   const seasonDir = path.resolve(options.outputPath, options.season);
   await fs.mkdir(seasonDir, { recursive: true });
-  
+
   const defaultGoals = {
     season_id: options.season,
     theme: "Power, betrayal, and survival in ancient Rome",
@@ -219,7 +274,7 @@ async function createDefaultSeasonGoals(options: CLIOptions): Promise<void> {
     forbidden_resolutions: [],
     required_payoffs: []
   };
-  
+
   await fs.writeFile(
     path.join(seasonDir, 'season_goals.json'),
     JSON.stringify(defaultGoals, null, 2)
@@ -261,9 +316,17 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
+  // Initialize LLM client with explicit mode if specified
+  resetLLMClient();
+  const llmClient = getLLMClient(options.authMode ? { mode: options.authMode } : undefined);
+  const authMode = llmClient.getMode();
+
+  console.log(`Authentication: ${authMode === 'api' ? 'Anthropic API' : 'Claude Max (via Claude Code)'}`);
+  console.log('');
+
   // Configure pipeline
   const config: PipelineConfig = {
-    basePath: path.resolve(options.worldPath),
+    basePath: path.resolve('.'),
     seasonId: options.season,
     episodeId: options.episode,
     maxSceneRetries: 3,
@@ -291,10 +354,10 @@ async function main(): Promise<void> {
       console.log('\n========================================');
       console.log('         GENERATION COMPLETE           ');
       console.log('========================================\n');
-      
+
       console.log(`Time Elapsed: ${elapsed}s`);
       console.log(`Scenes Generated: ${result.sceneOutputs?.length || 0}`);
-      
+
       if (result.episodeMetrics) {
         console.log('\nMetrics:');
         console.log(`  Tension:     ${result.episodeMetrics.tension.toFixed(1)}/10`);
@@ -311,36 +374,36 @@ async function main(): Promise<void> {
       console.log('  - episode_metrics.json');
       console.log('  - cliffhanger_constraints.json');
       console.log('  - verifier_report.json');
-      
+
     } else {
       console.error('\n========================================');
       console.error('         GENERATION FAILED             ');
       console.error('========================================\n');
-      
+
       console.error(`Time Elapsed: ${elapsed}s`);
       console.error('Errors:', result.errors?.join('\n  '));
-      
+
       if (result.checkpointPath) {
         console.error(`\nCheckpoint saved: ${result.checkpointPath}`);
       }
-      
+
       process.exit(1);
     }
   } catch (error) {
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
-    
+
     console.error('\n========================================');
     console.error('         UNEXPECTED ERROR              ');
     console.error('========================================\n');
-    
+
     console.error(`Time Elapsed: ${elapsed}s`);
     console.error('Error:', error instanceof Error ? error.message : error);
-    
+
     if (options.verbose && error instanceof Error) {
       console.error('\nStack trace:');
       console.error(error.stack);
     }
-    
+
     process.exit(1);
   }
 }

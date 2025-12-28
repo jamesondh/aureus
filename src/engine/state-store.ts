@@ -318,7 +318,13 @@ export class StateStore {
 
   private async saveJsonFile(path: string, data: unknown): Promise<void> {
     await this.ensureDir(dirname(path));
-    await writeFile(path, JSON.stringify(data, null, 2));
+    
+    // Handle markdown files as raw text, not JSON
+    if (path.endsWith('.md') && typeof data === 'string') {
+      await writeFile(path, data);
+    } else {
+      await writeFile(path, JSON.stringify(data, null, 2));
+    }
   }
 
   private async ensureDir(path: string): Promise<void> {

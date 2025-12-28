@@ -1,0 +1,83 @@
+{
+  "episode_id": "episode_01",
+  "deltas": [
+    {
+      "path": "world.global.legal_exposure",
+      "op": "add",
+      "value": 1,
+      "scene_id": "SC04"
+    },
+    {
+      "path": "world.global.legal_exposure",
+      "op": "add",
+      "value": 1,
+      "scene_id": "SC04"
+    },
+    {
+      "path": "world.global.legal_exposure",
+      "op": "add",
+      "value": 1,
+      "scene_id": "SC04"
+    },
+    {
+      "path": "world.global.unrest",
+      "op": "add",
+      "value": 1,
+      "scene_id": "SC05"
+    },
+    {
+      "path": "world.global.unrest",
+      "op": "add",
+      "value": 1,
+      "scene_id": "SC05"
+    },
+    {
+      "path": "world.global.scandal_temperature",
+      "op": "add",
+      "value": 3,
+      "scene_id": "SC11"
+    },
+    {
+      "path": "world.global.scandal_temperature",
+      "op": "add",
+      "value": 3,
+      "scene_id": "SC11"
+    },
+    {
+      "path": "world.global.scandal_temperature",
+      "op": "add",
+      "value": 3,
+      "scene_id": "SC11"
+    },
+    {
+      "path": "world.global.legal_exposure",
+      "op": "subtract",
+      "value": 2,
+      "scene_id": "SC12"
+    },
+    {
+      "path": "world.global.legal_exposure",
+      "op": "subtract",
+      "value": 2,
+      "scene_id": "SC12"
+    },
+    {
+      "path": "world.global.scandal_temperature",
+      "op": "add",
+      "value": 2,
+      "scene_id": "SC15"
+    },
+    {
+      "path": "world.global.scandal_temperature",
+      "op": "add",
+      "value": 2,
+      "scene_id": "SC15"
+    },
+    {
+      "path": "world.global.scandal_temperature",
+      "op": "add",
+      "value": 2,
+      "scene_id": "SC15"
+    }
+  ]
+}

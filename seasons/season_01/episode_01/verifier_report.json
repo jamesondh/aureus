@@ -1,0 +1,154 @@
+{
+  "episode_id": "episode_01",
+  "scenes": [
+    {
+      "scene_id": "SC01",
+      "attempts": 1,
+      "violations": [],
+      "warnings": []
+    },
+    {
+      "scene_id": "SC02",
+      "attempts": 1,
+      "violations": [],
+      "warnings": []
+    },
+    {
+      "scene_id": "SC03",
+      "attempts": 1,
+      "violations": [],
+      "warnings": [
+        {
+          "type": "soft_constraint",
+          "rule": "S1",
+          "message": "Forbidden word \"hour\" found 1 time(s)",
+          "scene_id": "SC03"
+        }
+      ]
+    },
+    {
+      "scene_id": "SC04",
+      "attempts": 1,
+      "violations": [],
+      "warnings": []
+    },
+    {
+      "scene_id": "SC05",
+      "attempts": 1,
+      "violations": [],
+      "warnings": []
+    },
+    {
+      "scene_id": "SC06",
+      "attempts": 1,
+      "violations": [],
+      "warnings": []
+    },
+    {
+      "scene_id": "SC07",
+      "attempts": 1,
+      "violations": [],
+      "warnings": []
+    },
+    {
+      "scene_id": "SC08",
+      "attempts": 1,
+      "violations": [],
+      "warnings": []
+    },
+    {
+      "scene_id": "SC09",
+      "attempts": 1,
+      "violations": [],
+      "warnings": [
+        {
+          "type": "soft_constraint",
+          "rule": "S1",
+          "message": "Forbidden word \"second\" found 2 time(s)",
+          "scene_id": "SC09"
+        }
+      ]
+    },
+    {
+      "scene_id": "SC10",
+      "attempts": 1,
+      "violations": [],
+      "warnings": []
+    },
+    {
+      "scene_id": "SC11",
+      "attempts": 1,
+      "violations": [],
+      "warnings": [
+        {
+          "type": "soft_constraint",
+          "rule": "S1",
+          "message": "Forbidden word \"hour\" found 2 time(s)",
+          "scene_id": "SC11"
+        }
+      ]
+    },
+    {
+      "scene_id": "SC12",
+      "attempts": 1,
+      "violations": [],
+      "warnings": []
+    },
+    {
+      "scene_id": "SC13",
+      "attempts": 1,
+      "violations": [],
+      "warnings": []
+    },
+    {
+      "scene_id": "SC14",
+      "attempts": 1,
+      "violations": [],
+      "warnings": []
+    },
+    {
+      "scene_id": "SC15",
+      "attempts": 1,
+      "violations": [],
+      "warnings": []
+    },
+    {
+      "scene_id": "SC16",
+      "attempts": 1,
+      "violations": [],
+      "warnings": []
+    },
+    {
+      "scene_id": "SC17",
+      "attempts": 1,
+      "violations": [],
+      "warnings": []
+    },
+    {
+      "scene_id": "SC18",
+      "attempts": 1,
+      "violations": [],
+      "warnings": [
+        {
+          "type": "soft_constraint",
+          "rule": "S1",
+          "message": "Forbidden word \"second\" found 1 time(s)",
+          "scene_id": "SC18"
+        }
+      ]
+    },
+    {
+      "scene_id": "SC19",
+      "attempts": 1,
+      "violations": [],
+      "warnings": []
+    },
+    {
+      "scene_id": "SC20",
+      "attempts": 1,
+      "violations": [],
+      "warnings": []
+    }
+  ],
+  "total_regenerations": 0
+}

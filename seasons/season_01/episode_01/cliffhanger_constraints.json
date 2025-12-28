@@ -1,0 +1,20 @@
+{
+  "source_episode": "episode_01",
+  "target_episode": "episode_02",
+  "narrative_state": {
+    "unresolved_scene_id": "SC20",
+    "cliffhanger_type": "revelation"
+  },
+  "temporal_constraints": {
+    "must_start_immediately": false,
+    "max_time_skip_allowed": "1 day"
+  },
+  "location_constraints": {
+    "locked_characters": [
+      "char_marcus_accountant",
+      "char_quintus_fabius",
+      "char_caelus_varo",
+      "assassin"
+    ]
+  }
+}

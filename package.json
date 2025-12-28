@@ -11,7 +11,8 @@
     "test": "vitest",
     "test:run": "vitest run",
     "lint": "eslint src/**/*.ts",
-    "generate:episode": "tsx src/cli/generate-episode.ts"
+    "generate:episode": "tsx src/cli/generate-episode.ts",
+    "fix:script": "tsx src/cli/fix-script-format.ts"
   },
   "keywords": [
     "narrative",
@@ -23,6 +24,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.1.76",
     "@anthropic-ai/sdk": "^0.32.1",
     "zod": "^3.23.8"
   },

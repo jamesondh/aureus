@@ -19,22 +19,58 @@
       },
       "bdi": {
         "beliefs": [
-          { "id": "b_varo_1", "text": "Information arriving one hour early is worth more than a province.", "confidence": 1.0 },
-          { "id": "b_varo_2", "text": "The Senate is a theater for ugly people to pretend they are noble.", "confidence": 0.9 },
-          { "id": "b_varo_3", "text": "Everyone has a price; the question is whether you can afford it.", "confidence": 0.85 }
+          {
+            "id": "b_varo_1",
+            "text": "Information arriving one hour early is worth more than a province.",
+            "confidence": 1
+          },
+          {
+            "id": "b_varo_2",
+            "text": "The Senate is a theater for ugly people to pretend they are noble.",
+            "confidence": 0.9
+          },
+          {
+            "id": "b_varo_3",
+            "text": "Everyone has a price; the question is whether you can afford it.",
+            "confidence": 0.85
+          }
         ],
         "desires": [
-          { "id": "d_varo_1", "text": "Crush the Asian tax contract auction before news of the Pontic revolt reaches the Forum.", "priority": 1.0 },
-          { "id": "d_varo_2", "text": "Humiliate Quintus Fabius without technically breaking the law.", "priority": 0.6 }
+          {
+            "id": "d_varo_1",
+            "text": "Crush the Asian tax contract auction before news of the Pontic revolt reaches the Forum.",
+            "priority": 1
+          },
+          {
+            "id": "d_varo_2",
+            "text": "Humiliate Quintus Fabius without technically breaking the law.",
+            "priority": 0.6
+          }
         ],
         "intentions": [
-          { "id": "i_varo_1", "operator_id": "OP_INFORMATION_ARBITRAGE", "commitment": 0.9, "target": "contract_asia_minor" }
+          {
+            "id": "i_varo_1",
+            "operator_id": "OP_INFORMATION_ARBITRAGE",
+            "commitment": 0.9,
+            "target": "contract_asia_minor"
+          }
         ],
-        "constraints": ["MUST_NOT_HOLD_PUBLIC_OFFICE"]
+        "constraints": [
+          "MUST_NOT_HOLD_PUBLIC_OFFICE"
+        ]
       },
       "voice": {
-        "tags": ["staccato", "mathematical", "profane", "impatient"],
-        "tells": ["tugs at short tunic", "checks sun position frequently", "interrupts pleasantries"]
+        "tags": [
+          "staccato",
+          "mathematical",
+          "profane",
+          "impatient"
+        ],
+        "tells": [
+          "tugs at short tunic",
+          "checks sun position frequently",
+          "interrupts pleasantries"
+        ]
       },
       "visual_dna": {
         "physical": "A man in his late 50s with a sharp, hawkish nose and deep-set weary eyes. Clean-shaven with short-cropped gray hair. Lean, wiry build suggesting restless energy.",
@@ -62,22 +98,59 @@
       },
       "bdi": {
         "beliefs": [
-          { "id": "b_quin_1", "text": "Profit without labor is a cancer on the Republic.", "confidence": 1.0 },
-          { "id": "b_quin_2", "text": "My wife is the only thing keeping this house standing.", "confidence": 0.8 },
-          { "id": "b_quin_3", "text": "The ancestors watch and judge every action.", "confidence": 0.95 }
+          {
+            "id": "b_quin_1",
+            "text": "Profit without labor is a cancer on the Republic.",
+            "confidence": 1
+          },
+          {
+            "id": "b_quin_2",
+            "text": "My wife is the only thing keeping this house standing.",
+            "confidence": 0.8
+          },
+          {
+            "id": "b_quin_3",
+            "text": "The ancestors watch and judge every action.",
+            "confidence": 0.95
+          }
         ],
         "desires": [
-          { "id": "d_quin_1", "text": "Secure the Consulship to restore the family name.", "priority": 1.0 },
-          { "id": "d_quin_2", "text": "Find the 'smoking gun' ledger that links Varo to the pirate bribes.", "priority": 0.9 }
+          {
+            "id": "d_quin_1",
+            "text": "Secure the Consulship to restore the family name.",
+            "priority": 1
+          },
+          {
+            "id": "d_quin_2",
+            "text": "Find the 'smoking gun' ledger that links Varo to the pirate bribes.",
+            "priority": 0.9
+          }
         ],
         "intentions": [
-          { "id": "i_quin_1", "operator_id": "OP_SUBPOENA_WITNESS", "commitment": 0.8, "target": "char_marcus_accountant" }
+          {
+            "id": "i_quin_1",
+            "operator_id": "OP_SUBPOENA_WITNESS",
+            "commitment": 0.8,
+            "target": "char_marcus_accountant"
+          }
         ],
-        "constraints": ["CANNOT_ACCEPT_BRIBE", "MUST_CITE_PRECEDENT"]
+        "constraints": [
+          "CANNOT_ACCEPT_BRIBE",
+          "MUST_CITE_PRECEDENT"
+        ]
       },
       "voice": {
-        "tags": ["archaic", "moralizing", "latin-purist", "defensive"],
-        "tells": ["adjusts toga fold", "quotes Ennius", "refuses to look at gold coins"]
+        "tags": [
+          "archaic",
+          "moralizing",
+          "latin-purist",
+          "defensive"
+        ],
+        "tells": [
+          "adjusts toga fold",
+          "quotes Ennius",
+          "refuses to look at gold coins"
+        ]
       },
       "visual_dna": {
         "physical": "A man in his mid-40s with a broad, honest face showing the strain of principle. Strong Roman features—pronounced nose, heavy brow. Dark hair with distinguished gray at temples.",
@@ -105,22 +178,58 @@
       },
       "bdi": {
         "beliefs": [
-          { "id": "b_dru_1", "text": "Men differ only in the price of their toys.", "confidence": 0.9 },
-          { "id": "b_dru_2", "text": "Varo is a sharp blade; Quintus is a heavy shield. I need both.", "confidence": 0.95 },
-          { "id": "b_dru_3", "text": "Emotion is information about yourself you give away for free.", "confidence": 0.85 }
+          {
+            "id": "b_dru_1",
+            "text": "Men differ only in the price of their toys.",
+            "confidence": 0.9
+          },
+          {
+            "id": "b_dru_2",
+            "text": "Varo is a sharp blade; Quintus is a heavy shield. I need both.",
+            "confidence": 0.95
+          },
+          {
+            "id": "b_dru_3",
+            "text": "Emotion is information about yourself you give away for free.",
+            "confidence": 0.85
+          }
         ],
         "desires": [
-          { "id": "d_dru_1", "text": "Prevent Quintus from discovering my investment portfolio managed by Varo.", "priority": 1.0 },
-          { "id": "d_dru_2", "text": "Maintain the household's financial stability regardless of Quintus's crusade.", "priority": 0.8 }
+          {
+            "id": "d_dru_1",
+            "text": "Prevent Quintus from discovering my investment portfolio managed by Varo.",
+            "priority": 1
+          },
+          {
+            "id": "d_dru_2",
+            "text": "Maintain the household's financial stability regardless of Quintus's crusade.",
+            "priority": 0.8
+          }
         ],
         "intentions": [
-          { "id": "i_dru_1", "operator_id": "OP_MEDIATE_CONFLICT", "commitment": 0.7, "target": "rel_varo_quintus" }
+          {
+            "id": "i_dru_1",
+            "operator_id": "OP_MEDIATE_CONFLICT",
+            "commitment": 0.7,
+            "target": "rel_varo_quintus"
+          }
         ],
-        "constraints": ["CANNOT_BE_SEEN_IN_SUBURA"]
+        "constraints": [
+          "CANNOT_BE_SEEN_IN_SUBURA"
+        ]
       },
       "voice": {
-        "tags": ["clinical", "stoic", "low-volume", "diagnostic"],
-        "tells": ["unblinking eye contact", "perfect posture", "silence as a weapon"]
+        "tags": [
+          "clinical",
+          "stoic",
+          "low-volume",
+          "diagnostic"
+        ],
+        "tells": [
+          "unblinking eye contact",
+          "perfect posture",
+          "silence as a weapon"
+        ]
       },
       "visual_dna": {
         "physical": "A woman in her early 40s with sharp aristocratic features—high cheekbones, straight nose, strong jaw. Cool gray eyes. Dark hair pulled back severely, streaked with early silver.",
@@ -148,19 +257,46 @@
       },
       "bdi": {
         "beliefs": [
-          { "id": "b_marc_1", "text": "Varo knows where the bodies are buried because he put them there.", "confidence": 0.95 },
-          { "id": "b_marc_2", "text": "The courts are just another market where the highest bidder wins.", "confidence": 0.8 }
+          {
+            "id": "b_marc_1",
+            "text": "Varo knows where the bodies are buried because he put them there.",
+            "confidence": 0.95
+          },
+          {
+            "id": "b_marc_2",
+            "text": "The courts are just another market where the highest bidder wins.",
+            "confidence": 0.8
+          }
         ],
         "desires": [
-          { "id": "d_marc_1", "text": "Survive the coming storm without losing everything.", "priority": 1.0 },
-          { "id": "d_marc_2", "text": "Get my family out of Rome before the investigation closes in.", "priority": 0.85 }
+          {
+            "id": "d_marc_1",
+            "text": "Survive the coming storm without losing everything.",
+            "priority": 1
+          },
+          {
+            "id": "d_marc_2",
+            "text": "Get my family out of Rome before the investigation closes in.",
+            "priority": 0.85
+          }
         ],
         "intentions": [],
-        "constraints": ["CANNOT_FLEE_WITHOUT_FAMILY"]
+        "constraints": [
+          "CANNOT_FLEE_WITHOUT_FAMILY"
+        ]
       },
       "voice": {
-        "tags": ["nervous", "precise", "deferential", "calculating"],
-        "tells": ["wipes hands on tunic", "eyes dart to exits", "speaks in numbers"]
+        "tags": [
+          "nervous",
+          "precise",
+          "deferential",
+          "calculating"
+        ],
+        "tells": [
+          "wipes hands on tunic",
+          "eyes dart to exits",
+          "speaks in numbers"
+        ]
       }
     },
     {
@@ -182,21 +318,51 @@
       },
       "bdi": {
         "beliefs": [
-          { "id": "b_gaius_1", "text": "Every problem is a negotiation waiting to happen.", "confidence": 0.9 },
-          { "id": "b_gaius_2", "text": "Varo is the future; the old families are the past.", "confidence": 0.75 }
+          {
+            "id": "b_gaius_1",
+            "text": "Every problem is a negotiation waiting to happen.",
+            "confidence": 0.9
+          },
+          {
+            "id": "b_gaius_2",
+            "text": "Varo is the future; the old families are the past.",
+            "confidence": 0.75
+          }
         ],
         "desires": [
-          { "id": "d_gaius_1", "text": "Position myself as indispensable to whoever wins the Varo-Fabius conflict.", "priority": 0.9 },
-          { "id": "d_gaius_2", "text": "Acquire a Senate seat through any means necessary.", "priority": 0.7 }
+          {
+            "id": "d_gaius_1",
+            "text": "Position myself as indispensable to whoever wins the Varo-Fabius conflict.",
+            "priority": 0.9
+          },
+          {
+            "id": "d_gaius_2",
+            "text": "Acquire a Senate seat through any means necessary.",
+            "priority": 0.7
+          }
         ],
         "intentions": [
-          { "id": "i_gaius_1", "operator_id": "OP_BACKCHANNEL_NEGOTIATION", "commitment": 0.6, "target": "char_quintus_fabius" }
+          {
+            "id": "i_gaius_1",
+            "operator_id": "OP_BACKCHANNEL_NEGOTIATION",
+            "commitment": 0.6,
+            "target": "char_quintus_fabius"
+          }
         ],
         "constraints": []
       },
       "voice": {
-        "tags": ["smooth", "accommodating", "double-meaning", "jovial"],
-        "tells": ["touches arm while talking", "laughs too readily", "remembers everyone's name"]
+        "tags": [
+          "smooth",
+          "accommodating",
+          "double-meaning",
+          "jovial"
+        ],
+        "tells": [
+          "touches arm while talking",
+          "laughs too readily",
+          "remembers everyone's name"
+        ]
       }
     }
   ]
