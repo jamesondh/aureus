@@ -1,0 +1,72 @@
+{
+  "packet_meta": {
+    "episode_id": "episode_01",
+    "scene_id": "SC13",
+    "sequence": 13,
+    "estimated_duration_min": 2.5
+  },
+  "setting": {
+    "location_id": "rome_forum",
+    "time_of_day": "morning",
+    "atmosphere": [
+      "Public humiliation montage; the reach of Varo's vindictiveness"
+    ]
+  },
+  "cast": [
+    {
+      "character_id": "char_gaius_crassipes",
+      "mood": "defensive"
+    }
+  ],
+  "director_instructions": {
+    "beat_type": "DECISION",
+    "pacing": "Public humiliation montage; the reach of Varo's vindictiveness",
+    "sequence": [
+      {
+        "beat_id": "b_13",
+        "operator_id": "OP_RUMOR_CAMPAIGN",
+        "actor": "char_caelus_varo",
+        "target": "char_gaius_crassipes",
+        "outcome": "SUCCESS",
+        "narrative_directives": {
+          "action": "In the Forum, Varo's agents spread whispers about Crassipes—crude graffiti appears, rumors of his failed negotiations with the prosecutor paint him as weak and compromised. Street crowds laugh at the senator's expense. Crassipes is mocked as he passes through public spaces.",
+          "beat_resolution": "Varo punishes Crassipes for the failed negotiation, showing his reach and vindictiveness"
+        },
+        "required_deltas": [
+          {
+            "path": "target.stats.popularity",
+            "op": "subtract",
+            "value": 10,
+            "description": "Effect from OP_RUMOR_CAMPAIGN"
+          },
+          {
+            "path": "world.global.scandal_temperature",
+            "op": "add",
+            "value": 2,
+            "description": "Effect from OP_RUMOR_CAMPAIGN"
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": {
+    "required_deltas": [
+      {
+        "path": "target.stats.popularity",
+        "op": "subtract",
+        "value": 10,
+        "narrative_trigger": "Effect from OP_RUMOR_CAMPAIGN"
+      },
+      {
+        "path": "world.global.scandal_temperature",
+        "op": "add",
+        "value": 2,
+        "narrative_trigger": "Effect from OP_RUMOR_CAMPAIGN"
+      }
+    ],
+    "allowed_inventions": {
+      "extras": 2
+    },
+    "hook_requirement": "End with a button line that creates anticipation"
+  }
+}

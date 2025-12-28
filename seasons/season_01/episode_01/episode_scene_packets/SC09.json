@@ -1,0 +1,65 @@
+{
+  "packet_meta": {
+    "episode_id": "episode_01",
+    "scene_id": "SC09",
+    "sequence": 9,
+    "estimated_duration_min": 2.5
+  },
+  "setting": {
+    "location_id": "villa_varo_tablinum",
+    "time_of_day": "evening",
+    "atmosphere": [
+      "Tense negotiation that turns hostile; power dynamics shift"
+    ]
+  },
+  "cast": [
+    {
+      "character_id": "char_drusilla",
+      "mood": "frustrated",
+      "active_objective": "Drusilla's mediation backfires; Varo suspects her—SIDE EFFECT: risk_blamed triggered, she's caught in crossfire"
+    },
+    {
+      "character_id": "char_caelus_varo",
+      "mood": "under_pressure"
+    }
+  ],
+  "director_instructions": {
+    "beat_type": "SETUP",
+    "pacing": "Tense negotiation that turns hostile; power dynamics shift",
+    "sequence": [
+      {
+        "beat_id": "b_09",
+        "operator_id": "OP_MEDIATE_CONFLICT",
+        "actor": "char_drusilla",
+        "target": "char_caelus_varo",
+        "outcome": "FAIL",
+        "narrative_directives": {
+          "action": "Drusilla attempts to mediate between Varo and her husband through intermediaries, trying to reduce tensions that threaten her double game. She meets Varo privately, urging restraint, positioning herself as a voice of reason. But Varo sees through the attempt—he blames her for divided loyalties and makes veiled threats.",
+          "beat_resolution": "Drusilla's mediation backfires; Varo suspects her—SIDE EFFECT: risk_blamed triggered, she's caught in crossfire"
+        },
+        "required_deltas": [
+          {
+            "path": "actor.stats.auctoritas",
+            "op": "add",
+            "value": 5,
+            "description": "Effect from OP_MEDIATE_CONFLICT"
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": {
+    "required_deltas": [
+      {
+        "path": "actor.stats.auctoritas",
+        "op": "add",
+        "value": 5,
+        "narrative_trigger": "Effect from OP_MEDIATE_CONFLICT"
+      }
+    ],
+    "allowed_inventions": {
+      "extras": 2
+    },
+    "hook_requirement": "End with a button line that creates anticipation"
+  }
+}

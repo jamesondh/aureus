@@ -12,6 +12,7 @@
     "test:run": "vitest run",
     "lint": "eslint src/**/*.ts",
     "generate:episode": "tsx src/cli/generate-episode.ts",
+    "editorial-review": "tsx src/cli/editorial-review.ts",
     "fix:script": "tsx src/cli/fix-script-format.ts"
   },
   "keywords": [

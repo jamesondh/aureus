@@ -1,0 +1,61 @@
+{
+  "packet_meta": {
+    "episode_id": "episode_01",
+    "scene_id": "SC08",
+    "sequence": 8,
+    "estimated_duration_min": 2.5
+  },
+  "setting": {
+    "location_id": "subura_tavern",
+    "time_of_day": "evening",
+    "atmosphere": [
+      "Secretive and urgent; the danger of being observed adds suspense"
+    ]
+  },
+  "cast": [
+    {
+      "character_id": "char_drusilla",
+      "mood": "determined",
+      "active_objective": "Drusilla profits from insider knowledge but is noticed—SIDE EFFECT: risk_senate_inquiry triggered"
+    }
+  ],
+  "director_instructions": {
+    "beat_type": "DECISION",
+    "pacing": "Secretive and urgent; the danger of being observed adds suspense",
+    "sequence": [
+      {
+        "beat_id": "b_08",
+        "operator_id": "OP_INFORMATION_ARBITRAGE",
+        "actor": "char_drusilla",
+        "target": "char_caelus_varo",
+        "outcome": "SUCCESS",
+        "narrative_directives": {
+          "action": "That evening, Drusilla slips away to meet a contact. Using information gleaned from Quintus about the asset freeze, she positions her own hidden investments before the market reacts. Maps and ledgers spread before her, she whispers urgent orders. But she's observed—a senator's aide notes her presence.",
+          "beat_resolution": "Drusilla profits from insider knowledge but is noticed—SIDE EFFECT: risk_senate_inquiry triggered"
+        },
+        "required_deltas": [
+          {
+            "path": "actor.stats.wealth",
+            "op": "add",
+            "value": 10,
+            "description": "Effect from OP_INFORMATION_ARBITRAGE"
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": {
+    "required_deltas": [
+      {
+        "path": "actor.stats.wealth",
+        "op": "add",
+        "value": 10,
+        "narrative_trigger": "Effect from OP_INFORMATION_ARBITRAGE"
+      }
+    ],
+    "allowed_inventions": {
+      "extras": 2
+    },
+    "hook_requirement": "End with a button line that creates anticipation"
+  }
+}

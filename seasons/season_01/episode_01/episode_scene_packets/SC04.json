@@ -1,0 +1,77 @@
+{
+  "packet_meta": {
+    "episode_id": "episode_01",
+    "scene_id": "SC04",
+    "sequence": 4,
+    "estimated_duration_min": 2.5
+  },
+  "setting": {
+    "location_id": "rome_forum",
+    "time_of_day": "noon",
+    "atmosphere": [
+      "Formal, procedural energy; the weight of official action"
+    ]
+  },
+  "cast": [
+    {
+      "character_id": "char_quintus_fabius",
+      "mood": "determined",
+      "active_objective": "Quintus successfully subpoenas Marcus, forcing Varo to respond"
+    },
+    {
+      "character_id": "char_marcus_accountant",
+      "mood": "defensive"
+    }
+  ],
+  "director_instructions": {
+    "beat_type": "DECISION",
+    "pacing": "Formal, procedural energy; the weight of official action",
+    "sequence": [
+      {
+        "beat_id": "b_04",
+        "operator_id": "OP_SUBPOENA_WITNESS",
+        "actor": "char_quintus_fabius",
+        "target": "char_marcus_accountant",
+        "outcome": "SUCCESS",
+        "narrative_directives": {
+          "action": "In the courts, Quintus formally issues a subpoena compelling Marcus to testify about Varo's grain trading. The document bears official seals. Marcus receives it with trembling hands while Varo's agents watch from the gallery. The legal machinery begins to turn.",
+          "beat_resolution": "Quintus successfully subpoenas Marcus, forcing Varo to respond"
+        },
+        "required_deltas": [
+          {
+            "path": "target.status.subpoenaed",
+            "op": "set",
+            "value": true,
+            "description": "Effect from OP_SUBPOENA_WITNESS"
+          },
+          {
+            "path": "world.global.legal_exposure",
+            "op": "add",
+            "value": 1,
+            "description": "Effect from OP_SUBPOENA_WITNESS"
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": {
+    "required_deltas": [
+      {
+        "path": "target.status.subpoenaed",
+        "op": "set",
+        "value": true,
+        "narrative_trigger": "Effect from OP_SUBPOENA_WITNESS"
+      },
+      {
+        "path": "world.global.legal_exposure",
+        "op": "add",
+        "value": 1,
+        "narrative_trigger": "Effect from OP_SUBPOENA_WITNESS"
+      }
+    ],
+    "allowed_inventions": {
+      "extras": 2
+    },
+    "hook_requirement": "End with a button line that creates anticipation"
+  }
+}

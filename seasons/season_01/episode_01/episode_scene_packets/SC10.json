@@ -1,0 +1,65 @@
+{
+  "packet_meta": {
+    "episode_id": "episode_01",
+    "scene_id": "SC10",
+    "sequence": 10,
+    "estimated_duration_min": 2.5
+  },
+  "setting": {
+    "location_id": "rome_forum",
+    "time_of_day": "evening",
+    "atmosphere": [
+      "Coded language and political maneuvering; Quintus's principles tested"
+    ]
+  },
+  "cast": [
+    {
+      "character_id": "char_quintus_fabius",
+      "mood": "under_pressure"
+    },
+    {
+      "character_id": "char_gaius_crassipes",
+      "mood": "frustrated",
+      "active_objective": "Crassipes fails to broker a deal; Quintus's refusal angers moderates—SIDE EFFECT: risk_base_anger triggered"
+    }
+  ],
+  "director_instructions": {
+    "beat_type": "SETUP",
+    "pacing": "Coded language and political maneuvering; Quintus's principles tested",
+    "sequence": [
+      {
+        "beat_id": "b_10",
+        "operator_id": "OP_BACKCHANNEL_NEGOTIATION",
+        "actor": "char_gaius_crassipes",
+        "target": "char_quintus_fabius",
+        "outcome": "FAIL",
+        "narrative_directives": {
+          "action": "Gaius Crassipes, a political fixer and senator, invites Quintus to a private meeting at a secluded garden. Speaking in coded language, he suggests a possible arrangement—Quintus eases the investigation, Varo makes certain concessions. Quintus listens but his face hardens; he refuses any compromise with corruption.",
+          "beat_resolution": "Crassipes fails to broker a deal; Quintus's refusal angers moderates—SIDE EFFECT: risk_base_anger triggered"
+        },
+        "required_deltas": [
+          {
+            "path": "relationship.weights.respect",
+            "op": "add",
+            "value": 10,
+            "description": "Effect from OP_BACKCHANNEL_NEGOTIATION"
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": {
+    "required_deltas": [
+      {
+        "path": "relationship.weights.respect",
+        "op": "add",
+        "value": 10,
+        "narrative_trigger": "Effect from OP_BACKCHANNEL_NEGOTIATION"
+      }
+    ],
+    "allowed_inventions": {
+      "extras": 2
+    },
+    "hook_requirement": "End with a button line that creates anticipation"
+  }
+}

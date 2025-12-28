@@ -1,0 +1,37 @@
+{
+  "packet_meta": {
+    "episode_id": "episode_01",
+    "scene_id": "SC03",
+    "sequence": 3,
+    "estimated_duration_min": 2.5
+  },
+  "setting": {
+    "location_id": "domus_fabius_atrium",
+    "time_of_day": "morning",
+    "atmosphere": [
+      "Warm surface with undercurrents of tension; plant subtle clues of Drusilla's secrets"
+    ]
+  },
+  "cast": [
+    {
+      "character_id": "char_quintus_fabius",
+      "mood": "neutral"
+    },
+    {
+      "character_id": "char_drusilla",
+      "mood": "neutral"
+    }
+  ],
+  "director_instructions": {
+    "beat_type": "SETUP",
+    "pacing": "Warm surface with undercurrents of tension; plant subtle clues of Drusilla's secrets",
+    "sequence": []
+  },
+  "constraints": {
+    "required_deltas": [],
+    "allowed_inventions": {
+      "extras": 2
+    },
+    "hook_requirement": "End with a button line that creates anticipation"
+  }
+}

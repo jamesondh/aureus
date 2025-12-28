@@ -1,0 +1,77 @@
+{
+  "packet_meta": {
+    "episode_id": "episode_01",
+    "scene_id": "SC07",
+    "sequence": 7,
+    "estimated_duration_min": 2.5
+  },
+  "setting": {
+    "location_id": "rome_forum",
+    "time_of_day": "afternoon",
+    "atmosphere": [
+      "Single-beat confrontation scene; the crowd's silence amplifies the humiliation"
+    ]
+  },
+  "cast": [
+    {
+      "character_id": "char_quintus_fabius",
+      "mood": "defensive"
+    },
+    {
+      "character_id": "char_caelus_varo",
+      "mood": "determined",
+      "active_objective": "Varo publicly humiliates Quintus, establishing the personal stakes of their conflict"
+    }
+  ],
+  "director_instructions": {
+    "beat_type": "CONFRONTATION",
+    "pacing": "Single-beat confrontation scene; the crowd's silence amplifies the humiliation",
+    "sequence": [
+      {
+        "beat_id": "b_07",
+        "operator_id": "OP_PUBLIC_SNUB",
+        "actor": "char_caelus_varo",
+        "target": "char_quintus_fabius",
+        "outcome": "SUCCESS",
+        "narrative_directives": {
+          "action": "At a public gathering in the Forum, Varo encounters Quintus before the assembled citizens. With cold deliberation, Varo publicly snubs the prosecutor—turning his back mid-greeting, loudly questioning whether 'provincial lawyers' understand Roman commerce. The crowd watches in frozen silence. Quintus, caught off-guard, struggles to respond with dignity.",
+          "beat_resolution": "Varo publicly humiliates Quintus, establishing the personal stakes of their conflict"
+        },
+        "required_deltas": [
+          {
+            "path": "target.stats.dignitas",
+            "op": "subtract",
+            "value": 8,
+            "description": "Effect from OP_PUBLIC_SNUB"
+          },
+          {
+            "path": "relationship.weights.resentment",
+            "op": "add",
+            "value": 15,
+            "description": "Effect from OP_PUBLIC_SNUB"
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": {
+    "required_deltas": [
+      {
+        "path": "target.stats.dignitas",
+        "op": "subtract",
+        "value": 8,
+        "narrative_trigger": "Effect from OP_PUBLIC_SNUB"
+      },
+      {
+        "path": "relationship.weights.resentment",
+        "op": "add",
+        "value": 15,
+        "narrative_trigger": "Effect from OP_PUBLIC_SNUB"
+      }
+    ],
+    "allowed_inventions": {
+      "extras": 2
+    },
+    "hook_requirement": "End with a button line that creates anticipation"
+  }
+}

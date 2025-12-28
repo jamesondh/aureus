@@ -11,10 +11,8 @@
   },
   "location_constraints": {
     "locked_characters": [
-      "char_marcus_accountant",
       "char_quintus_fabius",
-      "char_caelus_varo",
-      "assassin"
+      "char_drusilla"
     ]
   }
 }

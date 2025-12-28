@@ -375,3 +375,48 @@ export const SeasonGoalsSchema = z.object({
 });
 
 export type SeasonGoals = z.infer<typeof SeasonGoalsSchema>;
+
+// ============================================================================
+// Editorial Review (Stage F.5)
+// ============================================================================
+
+export const EditorialIssueSchema = z.object({
+  id: z.string(),
+  severity: z.enum(['major', 'minor', 'nitpick']),
+  category: z.enum(['repetition', 'dialogue', 'pacing', 'craft']),
+  location: z.string(),
+  description: z.string(),
+  suggestion: z.string(),
+  rule_reference: z.string().optional(),
+});
+
+export const EditorialReviewSchema = z.object({
+  overall_grade: z.enum(['A', 'B', 'C', 'D', 'F']),
+  grade_rationale: z.string(),
+  issues: z.array(EditorialIssueSchema),
+  strengths: z.array(z.object({
+    location: z.string(),
+    description: z.string(),
+  })),
+  revision_priority: z.array(z.string()),
+  proceed_recommendation: z.enum(['commit', 'revise', 'manual_review']),
+});
+
+export type EditorialIssue = z.infer<typeof EditorialIssueSchema>;
+export type EditorialReview = z.infer<typeof EditorialReviewSchema>;
+
+// ============================================================================
+// Repetition Violation (§9.5)
+// ============================================================================
+
+export const RepetitionViolationSchema = z.object({
+  rule: z.enum(['R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7']),
+  character_id: z.string().optional(),
+  pattern: z.string(),
+  count: z.number(),
+  threshold: z.number(),
+  verdict: z.enum(['WARNING', 'FAIL']),
+  fix_instruction: z.string(),
+});
+
+export type RepetitionViolation = z.infer<typeof RepetitionViolationSchema>;

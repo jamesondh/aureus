@@ -1,0 +1,65 @@
+{
+  "packet_meta": {
+    "episode_id": "episode_01",
+    "scene_id": "SC15",
+    "sequence": 15,
+    "estimated_duration_min": 2.5
+  },
+  "setting": {
+    "location_id": "subura_tavern",
+    "time_of_day": "afternoon",
+    "atmosphere": [
+      "Quiet persuasion; appeal to conscience over self-interest"
+    ]
+  },
+  "cast": [
+    {
+      "character_id": "char_quintus_fabius",
+      "mood": "determined",
+      "active_objective": "Quintus plants seeds of doubt in Marcus, offering an alternative to Varo's corruption"
+    },
+    {
+      "character_id": "char_marcus_accountant",
+      "mood": "neutral"
+    }
+  ],
+  "director_instructions": {
+    "beat_type": "DECISION",
+    "pacing": "Quiet persuasion; appeal to conscience over self-interest",
+    "sequence": [
+      {
+        "beat_id": "b_15",
+        "operator_id": "OP_STOIC_COUNSEL",
+        "actor": "char_quintus_fabius",
+        "target": "char_drusilla",
+        "outcome": "SUCCESS",
+        "narrative_directives": {
+          "action": "Quintus, despite Drusilla's counsel, prepares for Marcus's testimony. He visits the accountant personally, speaking of duty to Rome, of immunity for cooperation. Marcus wavers—torn between Varo's gold and his own conscience. He asks for time to decide.",
+          "beat_resolution": "Quintus plants seeds of doubt in Marcus, offering an alternative to Varo's corruption"
+        },
+        "required_deltas": [
+          {
+            "path": "relationship.weights.dependency",
+            "op": "add",
+            "value": 5,
+            "description": "Effect from OP_STOIC_COUNSEL"
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": {
+    "required_deltas": [
+      {
+        "path": "relationship.weights.dependency",
+        "op": "add",
+        "value": 5,
+        "narrative_trigger": "Effect from OP_STOIC_COUNSEL"
+      }
+    ],
+    "allowed_inventions": {
+      "extras": 2
+    },
+    "hook_requirement": "End with a button line that creates anticipation"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "packet_meta": {
+    "episode_id": "episode_01",
+    "scene_id": "SC17",
+    "sequence": 17,
+    "estimated_duration_min": 2.5
+  },
+  "setting": {
+    "location_id": "subura_tavern",
+    "time_of_day": "evening",
+    "atmosphere": [
+      "Opportunistic scheming; everyone has an angle"
+    ]
+  },
+  "cast": [
+    {
+      "character_id": "char_gaius_crassipes",
+      "mood": "determined",
+      "active_objective": "Crassipes profits from Marcus's information while observing his wavering loyalty"
+    },
+    {
+      "character_id": "char_marcus_accountant",
+      "mood": "defensive"
+    }
+  ],
+  "director_instructions": {
+    "beat_type": "SETUP",
+    "pacing": "Opportunistic scheming; everyone has an angle",
+    "sequence": [
+      {
+        "beat_id": "b_17",
+        "operator_id": "OP_INFORMATION_ARBITRAGE",
+        "actor": "char_gaius_crassipes",
+        "target": "char_marcus_accountant",
+        "outcome": "SUCCESS",
+        "narrative_directives": {
+          "action": "Crassipes, working both sides, meets with Marcus. Using the accountant's knowledge, he positions his own grain investments. Exhausted messengers carry his orders. But Crassipes also takes note of Marcus's divided loyalties—useful information for later leverage.",
+          "beat_resolution": "Crassipes profits from Marcus's information while observing his wavering loyalty"
+        },
+        "required_deltas": [
+          {
+            "path": "actor.stats.wealth",
+            "op": "add",
+            "value": 10,
+            "description": "Effect from OP_INFORMATION_ARBITRAGE"
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": {
+    "required_deltas": [
+      {
+        "path": "actor.stats.wealth",
+        "op": "add",
+        "value": 10,
+        "narrative_trigger": "Effect from OP_INFORMATION_ARBITRAGE"
+      }
+    ],
+    "allowed_inventions": {
+      "extras": 2
+    },
+    "hook_requirement": "End with a button line that creates anticipation"
+  }
+}

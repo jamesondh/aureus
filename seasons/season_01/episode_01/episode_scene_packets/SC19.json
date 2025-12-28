@@ -1,0 +1,77 @@
+{
+  "packet_meta": {
+    "episode_id": "episode_01",
+    "scene_id": "SC19",
+    "sequence": 19,
+    "estimated_duration_min": 2.5
+  },
+  "setting": {
+    "location_id": "thermae_publicae",
+    "time_of_day": "late_night",
+    "atmosphere": [
+      "Devastating revelation; the truth shatters Quintus's certainties"
+    ]
+  },
+  "cast": [
+    {
+      "character_id": "char_marcus_accountant",
+      "mood": "determined",
+      "active_objective": "Marcus reveals Drusilla's secret financial dealings to Quintus—the prosecutor's world is shattered"
+    },
+    {
+      "character_id": "char_quintus_fabius",
+      "mood": "defensive"
+    }
+  ],
+  "director_instructions": {
+    "beat_type": "REVEAL",
+    "pacing": "Devastating revelation; the truth shatters Quintus's certainties",
+    "sequence": [
+      {
+        "beat_id": "b_19",
+        "operator_id": "OP_REVEAL_SECRET",
+        "actor": "char_marcus_accountant",
+        "target": "char_quintus_fabius",
+        "outcome": "SUCCESS",
+        "narrative_directives": {
+          "action": "A disturbed Marcus, seeking leverage against all parties, makes a calculated revelation. Meeting secretly with Quintus, he doesn't speak of Varo's crimes—instead he whispers of financial irregularities closer to home. He shows transactions bearing Drusilla's hidden seal. Quintus's world tilts. His wife is entangled with the very forces he fights.",
+          "beat_resolution": "Marcus reveals Drusilla's secret financial dealings to Quintus—the prosecutor's world is shattered"
+        },
+        "required_deltas": [
+          {
+            "path": "world.global.scandal_temperature",
+            "op": "add",
+            "value": 3,
+            "description": "Effect from OP_REVEAL_SECRET"
+          },
+          {
+            "path": "target.stats.dignitas",
+            "op": "subtract",
+            "value": 15,
+            "description": "Effect from OP_REVEAL_SECRET"
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": {
+    "required_deltas": [
+      {
+        "path": "world.global.scandal_temperature",
+        "op": "add",
+        "value": 3,
+        "narrative_trigger": "Effect from OP_REVEAL_SECRET"
+      },
+      {
+        "path": "target.stats.dignitas",
+        "op": "subtract",
+        "value": 15,
+        "narrative_trigger": "Effect from OP_REVEAL_SECRET"
+      }
+    ],
+    "allowed_inventions": {
+      "extras": 2
+    },
+    "hook_requirement": "End with a button line that creates anticipation"
+  }
+}

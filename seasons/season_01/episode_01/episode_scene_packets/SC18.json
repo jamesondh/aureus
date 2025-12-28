@@ -1,0 +1,77 @@
+{
+  "packet_meta": {
+    "episode_id": "episode_01",
+    "scene_id": "SC18",
+    "sequence": 18,
+    "estimated_duration_min": 2.5
+  },
+  "setting": {
+    "location_id": "subura_tavern",
+    "time_of_day": "night",
+    "atmosphere": [
+      "Chilling threat scene; Drusilla reveals her capacity for darkness"
+    ]
+  },
+  "cast": [
+    {
+      "character_id": "char_drusilla",
+      "mood": "determined",
+      "active_objective": "Drusilla threatens Marcus's family, revealing her willingness to cross moral lines"
+    },
+    {
+      "character_id": "char_marcus_accountant",
+      "mood": "defensive"
+    }
+  ],
+  "director_instructions": {
+    "beat_type": "DECISION",
+    "pacing": "Chilling threat scene; Drusilla reveals her capacity for darkness",
+    "sequence": [
+      {
+        "beat_id": "b_18",
+        "operator_id": "OP_THREATEN_FAMILY",
+        "actor": "char_drusilla",
+        "target": "char_marcus_accountant",
+        "outcome": "SUCCESS",
+        "narrative_directives": {
+          "action": "Drusilla, learning of Marcus's hesitation from her network, takes drastic action. In shadows, with quiet menace, she visits Marcus. She speaks of his family—his aging mother, his sister's children. Nothing explicit, but the threat is clear. Marcus goes pale. Drusilla has shown a darker side.",
+          "beat_resolution": "Drusilla threatens Marcus's family, revealing her willingness to cross moral lines"
+        },
+        "required_deltas": [
+          {
+            "path": "relationship.weights.fear",
+            "op": "add",
+            "value": 30,
+            "description": "Effect from OP_THREATEN_FAMILY"
+          },
+          {
+            "path": "target.stats.dignitas",
+            "op": "subtract",
+            "value": 5,
+            "description": "Effect from OP_THREATEN_FAMILY"
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": {
+    "required_deltas": [
+      {
+        "path": "relationship.weights.fear",
+        "op": "add",
+        "value": 30,
+        "narrative_trigger": "Effect from OP_THREATEN_FAMILY"
+      },
+      {
+        "path": "target.stats.dignitas",
+        "op": "subtract",
+        "value": 5,
+        "narrative_trigger": "Effect from OP_THREATEN_FAMILY"
+      }
+    ],
+    "allowed_inventions": {
+      "extras": 2
+    },
+    "hook_requirement": "End with a button line that creates anticipation"
+  }
+}

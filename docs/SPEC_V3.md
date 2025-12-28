@@ -1,6 +1,6 @@
 # SPEC_V3 — Aureus: Neuro-Symbolic Narrative Engine
 
-> **Version:** 3.2  
+> **Version:** 3.3  
 > **Status:** Working Draft  
 > **Last Updated:** 2024-12-28  
 > **Appendices:** [Schemas](spec/APPENDIX_A_SCHEMAS.md) | [Operators](spec/APPENDIX_B_OPERATORS.md) | [Examples](spec/APPENDIX_C_EXAMPLES.md) | [Style](spec/APPENDIX_D_STYLE.md) | [Production](spec/APPENDIX_E_PRODUCTION.md)
@@ -143,6 +143,7 @@ All state lives in version-controlled JSON files. See [Appendix A](spec/APPENDIX
 | **Secret** | holders, stats, decay | Information that can be revealed/used |
 | **Thread** | question, priority, cadence | Audience-facing narrative promise |
 | **Operator** | prereqs, effects, risks | Atomic "move" in the simulation |
+| **Narrator** | voice_settings, usage_rules | Omniscient voice for scene prose, transitions, recaps |
 
 ### 3.3 Stat Scales
 
@@ -426,6 +427,31 @@ All rolls are logged in `episode_plan.json`:
    - Plan compliance (did scene achieve its purpose?)
    - Hook requirement (does scene end with button line?)
 
+**Stage F.5 — Editorial Review**
+
+A higher-capability LLM pass for quality refinement beyond binary verification. Runs after all scenes pass Stage F verification, before Stage H commit.
+
+- **Model:** Claude Opus 4.5
+- **Budget:** 1 call per episode
+- **Scope:** Full episode review for craft quality
+
+Evaluates:
+1. Repetition issues (tics, quotes, locations) - cross-references §9.5 rules
+2. Dialogue naturalness (on-the-nose vs. subtext)
+3. Pacing balance across acts
+4. Character voice consistency
+5. Missed opportunities (setup without payoff)
+
+**Response Logic:**
+
+| Grade | Action |
+|-------|--------|
+| A/B | Proceed to commit |
+| C | Generate revision notes, human decides whether to proceed |
+| D/F | Trigger targeted regeneration of flagged scenes |
+
+See §6.5 for Editorial Review prompt specification.
+
 **Stage G — Repair**
 - If deterministic fail: regenerate with explicit prohibitions
 - If quality fail: punch-up pass on last 30-40% of scene
@@ -612,6 +638,15 @@ INSTRUCTIONS:
    - Court/Villa: use 1 rhetorical device (anaphora, sententia)
    - Street/Port: use Thriller Mode (short sentences)
 5. End with hook line per constraints.hook_requirement
+6. Narrator voice:
+   - Use [NARRATOR] blocks for scene-setting, transitions, and button lines
+   - Narrator is omniscient but observes externally (no direct thought access)
+   - End scenes with either a character button line OR a narrator button line, not both
+   - Include tone tag and stability for synthesis: [NARRATOR]: (Tone) [Stability: X.X] text
+7. Repetition control:
+   - Max 2 uses of same quote/reference per character per episode
+   - Max 3 uses of same physical tic per character per episode
+   - Vary character mannerisms across scenes
 
 OUTPUT FORMAT:
 ---SCENE_TEXT---
@@ -654,6 +689,88 @@ OUTPUT:
 }
 ```
 
+### 6.5 Editorial Review Prompt
+
+**Model:** Claude Opus 4.5
+
+**Trigger:** Runs once per episode after all scenes pass Stage F verification.
+
+```
+SYSTEM:
+You are the Editorial Reviewer. Evaluate this complete episode for craft quality.
+Output valid JSON only.
+
+INPUTS:
+- EPISODE_SCRIPT: {{full_episode_script}}
+- EPISODE_PLAN: {{episode_plan}}
+- CHARACTER_DATA: {{characters_json}}
+- REPETITION_RULES: {{repetition_rules_summary}}
+
+TASK:
+Review the complete episode for:
+
+1. REPETITION ISSUES
+   - Verbal tics: same quote/reference used >2x per character
+   - Physical tics: same action described >3x per character
+   - Cross-character: same phrase/quote used by multiple characters
+   - Scene headers: duplicate location+time combinations
+
+2. DIALOGUE QUALITY
+   - On-the-nose dialogue (stating subtext explicitly)
+   - Missed opportunities for subtext
+   - Unnatural exposition dumps
+   - Character voice consistency (does each character sound distinct?)
+
+3. PACING
+   - Act balance (is tension distributed across acts?)
+   - Scene length variance (are all scenes similar length?)
+   - Momentum (does episode build appropriately?)
+
+4. CRAFT ISSUES
+   - Setup without payoff (planted elements not resolved)
+   - Payoff without setup (resolutions that came from nowhere)
+   - Tonal inconsistency
+   - Narrator overuse (>30% of scene word count)
+
+5. STRENGTHS
+   - Note what works well for reinforcement
+
+OUTPUT:
+{
+  "overall_grade": "A|B|C|D|F",
+  "grade_rationale": "Brief explanation of grade",
+  "issues": [
+    {
+      "id": "issue_001",
+      "severity": "major|minor|nitpick",
+      "category": "repetition|dialogue|pacing|craft",
+      "location": "SC04, lines 12-15",
+      "description": "Quintus quotes Ennius for the 5th time",
+      "suggestion": "Replace with original aphorism or silent reaction",
+      "rule_reference": "R1"
+    }
+  ],
+  "strengths": [
+    {
+      "location": "SC09",
+      "description": "Drusilla's reveal scene uses excellent subtext"
+    }
+  ],
+  "revision_priority": ["issue_001", "issue_003"],
+  "proceed_recommendation": "commit|revise|manual_review"
+}
+```
+
+**Grade Definitions:**
+
+| Grade | Meaning | Typical Issue Count |
+|-------|---------|---------------------|
+| A | Publication ready | 0-2 minor issues |
+| B | Minor polish needed | 3-5 minor issues, 0-1 major |
+| C | Revision recommended | 2-3 major issues or 6+ minor |
+| D | Significant revision needed | 4+ major issues |
+| F | Fundamental problems | Structural/voice failures |
+
 ---
 
 ## 7. Model Routing
@@ -666,6 +783,7 @@ OUTPUT:
 | Writer | Sonnet | Creative prose generation |
 | Agent Proposals | Haiku | Simple character-voice tasks |
 | Critic/Summarizer | Haiku | Quick evaluation passes |
+| Editorial Review | Opus 4.5 | Full episode quality review (1 call/episode) |
 | Escalation | Opus | Repeated failures, season synthesis |
 
 ### 7.2 Escalation Policy
@@ -800,6 +918,94 @@ Violations trigger warnings; may pass with LLM critic approval:
 | Plan compliance | Regenerate with required deltas restated |
 | Quality | Punch-up pass on scene ending only |
 
+### 9.5 Repetition Constraints (Soft)
+
+These constraints prevent overuse of character tics, phrases, and structural patterns. Violations generate warnings; exceeding thresholds triggers regeneration.
+
+#### 9.5.1 Verbal Tic Limits
+
+| Rule ID | Constraint | Threshold | Action |
+|---------|------------|-----------|--------|
+| **R1** | Same quote/reference per character | Max 2x per episode | Warning at 2, fail at 3+ |
+| **R2** | Same catchphrase/idiom per character | Max 3x per episode | Warning at 3, fail at 4+ |
+| **R3** | Same quote across different characters | Max 1x per episode | Fail at 2+ |
+
+**Examples:**
+- R1 violation: Quintus quotes Ennius 7 times -> FAIL (max 2)
+- R2 violation: Varo says "the question is only—to whom" 4 times -> FAIL (max 3)
+- R3 violation: Two characters both quote same Ennius line -> FAIL
+
+#### 9.5.2 Physical Tic Limits
+
+| Rule ID | Constraint | Threshold | Action |
+|---------|------------|-----------|--------|
+| **R4** | Same physical tic per character | Max 3x per episode | Warning at 3, fail at 4+ |
+| **R5** | Same tic across different characters | Max 2x per episode | Warning at 2, fail at 3+ |
+
+**Examples:**
+- R4 violation: Marcus "wipes hands on tunic" 5 times -> FAIL (max 3)
+- R5 violation: Both Varo and Quintus "adjust toga fold" 3 times each -> FAIL on combined
+
+#### 9.5.3 Scene Header Deduplication
+
+| Rule ID | Constraint | Threshold | Action |
+|---------|------------|-----------|--------|
+| **R6** | Identical scene headers (location + time) | Max 1x per episode | FAIL at 2+ (unless CONTINUED) |
+| **R7** | Same location, different time | Max 3x per episode | Warning at 3, fail at 4+ |
+
+**Examples:**
+- R6 violation: Two scenes both titled "INT. FABIUS HOUSE - ATRIUM - MORNING" -> FAIL
+- R6 permitted: "INT. FABIUS HOUSE - ATRIUM - MORNING (CONTINUED)" -> PASS
+- R7 warning: 4 scenes in Varo's Study (morning, afternoon, night, next morning) -> FAIL
+
+#### 9.5.4 Implementation
+
+The Verifier performs repetition checking during Stage F:
+
+1. **Extraction pass:** Build frequency maps for:
+   - Quoted text (exact match)
+   - Physical action phrases (fuzzy match via embedding similarity > 0.85)
+   - Scene headers (exact match, excluding CONTINUED suffix)
+
+2. **Threshold check:** Compare frequencies against rule limits
+
+3. **Report generation:**
+```json
+{
+  "repetition_violations": [
+    {
+      "rule": "R1",
+      "character_id": "char_quintus",
+      "pattern": "Ennius wrote: 'Moribus antiquis...'",
+      "count": 7,
+      "threshold": 2,
+      "verdict": "FAIL",
+      "fix_instruction": "Reduce Ennius quotes to max 2. Vary character's rhetorical style."
+    },
+    {
+      "rule": "R4",
+      "character_id": "char_marcus",
+      "pattern": "wipes/wiping hands on tunic",
+      "count": 5,
+      "threshold": 3,
+      "verdict": "FAIL",
+      "fix_instruction": "Vary nervous tic: lip-biting, eye-darting, throat-clearing."
+    }
+  ]
+}
+```
+
+#### 9.5.5 Regeneration Instructions
+
+When repetition violations occur, the Writer regeneration prompt includes:
+
+```
+PROHIBITED PATTERNS (exceeded episode limits):
+- Do NOT use: "Ennius wrote" or quote Ennius (already used 2x)
+- Do NOT use: character wiping hands on tunic (already used 3x)
+- Vary physical tics: suggest alternatives in stage directions
+```
+
 ---
 
 ## 10. Drama Metrics
@@ -919,6 +1125,61 @@ The courier disappeared into the rain. The deed was done.
 Generated from deltas (not prose):
 - "Previously on..." summary
 - State dashboard: unrest, grain index, legal exposure, thread status
+
+### 11.3 Narrator Voice
+
+The narrator is an omniscient voice used for:
+- Scene-setting prose (atmosphere, action description)
+- Transitions ("Three hours later...")
+- Inner revelation summaries (when not dramatized through dialogue)
+- Episode recaps ("Previously on...")
+- Closing commentary / episode buttons
+
+#### 11.3.1 Narrator Block Syntax
+
+Single-line narrator block:
+```
+[NARRATOR]: Scene prose or commentary here.
+```
+
+Multi-paragraph narrator block:
+```
+---NARRATOR---
+Extended prose passage describing scene atmosphere,
+character movement, or transitional information.
+---END NARRATOR---
+```
+
+With performance hints (for audio synthesis):
+```
+[NARRATOR]: (Ominous) [Stability: 0.7] The dead keep better ledgers than the living.
+```
+
+#### 11.3.2 Narrator Constraints
+
+| Rule | Description |
+|------|-------------|
+| **No character interiority** | Narrator describes observable action, not thoughts. Use "His jaw tightened" not "He felt angry." |
+| **No dialogue attribution** | Narrator doesn't say "he said angrily" - performance blocks handle that |
+| **Dramatic irony permitted** | Narrator may know more than characters ("Varo's men have seen enough") |
+| **Scene max** | Narrator blocks should not exceed 30% of scene word count |
+| **Cadence** | At least one narrator block per scene (establishing); max 4-5 per scene |
+
+#### 11.3.3 Narrator Tone Tags
+
+| Tone | Description | Use Case |
+|------|-------------|----------|
+| `(Neutral)` | Default documentary delivery | Standard scene-setting |
+| `(Ominous)` | Lower, slower for foreshadowing | Cliffhangers, threats |
+| `(Urgent)` | Faster tempo | Action sequences, time pressure |
+| `(Ironic)` | Slight detachment | Dramatic irony, commentary |
+
+#### 11.3.4 Production Integration
+
+The narrator is treated as a reserved character in `casting.json` with ID `NARRATOR`. See [Appendix E](spec/APPENDIX_E_PRODUCTION.md) for:
+- Voice synthesis settings
+- Performance block extraction
+- Audio segment handling
 
 ---
 

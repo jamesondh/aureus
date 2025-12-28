@@ -26,6 +26,7 @@ import type {
   CommittedDelta,
   Beat,
 } from '../types/episode.js';
+import type { EditorialReviewResult, RepetitionViolation } from './verifier.js';
 // Effect type used in delta operations
 
 // ============================================================================
@@ -48,6 +49,8 @@ export interface PipelineResult {
   episodeDeltas?: EpisodeDeltas;
   episodeMetrics?: EpisodeMetrics;
   cliffhangerConstraints?: CliffhangerConstraints;
+  editorialReview?: EditorialReviewResult;
+  repetitionViolations?: RepetitionViolation[];
   errors?: string[];
   checkpointPath?: string;
 }
@@ -116,8 +119,41 @@ export class PipelineOrchestrator {
       console.log('Stages E-F: Writing and verifying scenes...');
       const sceneResults = await this.stagesEF_WriteAndVerify(packets, plan);
       
+      // Stage F.5a: Episode-level Repetition Check
+      console.log('Stage F.5a: Checking episode-level repetition...');
+      const repetitionResult = await this.stageF5a_RepetitionCheck(sceneResults, packets);
+      
+      if (repetitionResult.blockingViolations.length > 0) {
+        console.log(`  Found ${repetitionResult.blockingViolations.length} blocking repetition violations`);
+        // For now, log and continue - could trigger regeneration in future
+        for (const v of repetitionResult.blockingViolations) {
+          console.log(`    [${v.rule}] ${v.pattern}: ${v.count}x (max ${v.threshold})`);
+        }
+      }
+      
+      // Stage F.5b: Editorial Review (Claude Opus)
+      console.log('Stage F.5b: Running editorial review...');
+      const editorialResult = await this.stageF5b_EditorialReview(sceneResults, plan);
+      
+      console.log(`  Editorial grade: ${editorialResult.overall_grade}`);
+      console.log(`  Recommendation: ${editorialResult.proceed_recommendation}`);
+      
+      // Handle editorial review result
+      if (editorialResult.proceed_recommendation === 'revise' || 
+          editorialResult.overall_grade === 'D' || 
+          editorialResult.overall_grade === 'F') {
+        console.log(`  Major issues found - logging for review`);
+        const majorIssues = editorialResult.issues.filter(
+          (issue: { severity: string }) => issue.severity === 'major'
+        );
+        for (const issue of majorIssues) {
+          console.log(`    [${issue.category}] ${issue.location}: ${issue.description}`);
+        }
+      }
+      
       // Stage G: Repair (if needed)
-      // Already handled in stagesEF_WriteAndVerify
+      // Already handled in stagesEF_WriteAndVerify for scene-level issues
+      // Episode-level repair would be triggered here based on editorial review
       
       // Stage H: Commit
       console.log('Stage H: Committing episode...');
@@ -135,6 +171,8 @@ export class PipelineOrchestrator {
         episodeDeltas: commitResult.deltas,
         episodeMetrics: commitResult.metrics,
         cliffhangerConstraints: commitResult.cliffhanger,
+        editorialReview: editorialResult,
+        repetitionViolations: repetitionResult.allViolations,
       };
       
     } catch (error) {
@@ -418,6 +456,73 @@ export class PipelineOrchestrator {
     }
     
     return results;
+  }
+
+  // ==========================================================================
+  // Stage F.5a: Episode-Level Repetition Check
+  // ==========================================================================
+
+  private async stageF5a_RepetitionCheck(
+    sceneResults: SceneGenerationResult[],
+    packets: ScenePacket[]
+  ): Promise<{
+    allViolations: RepetitionViolation[];
+    blockingViolations: RepetitionViolation[];
+  }> {
+    // Compile full episode script
+    const fullScript = sceneResults.map(r => r.output.scene_text).join('\n\n---\n\n');
+    
+    // Extract scene headers from packets
+    const sceneHeaders = packets.map(p => {
+      const intExt = p.setting.location_id.includes('forum') ? 'EXT' : 'INT';
+      const location = p.setting.location_id.replace(/_/g, ' ').toUpperCase();
+      const time = (p.setting.time_of_day || 'day').toUpperCase();
+      return `${intExt}. ${location} - ${time}`;
+    });
+    
+    // Run repetition checking
+    const allViolations = this.verifier.checkRepetition(fullScript, sceneHeaders);
+    
+    // Filter to blocking violations (FAIL verdict)
+    const blockingViolations = allViolations.filter(v => v.verdict === 'FAIL');
+    
+    return { allViolations, blockingViolations };
+  }
+
+  // ==========================================================================
+  // Stage F.5b: Editorial Review (Claude Opus)
+  // ==========================================================================
+
+  private async stageF5b_EditorialReview(
+    sceneResults: SceneGenerationResult[],
+    plan: EpisodePlan
+  ): Promise<EditorialReviewResult> {
+    // Compile full episode script
+    const fullScript = sceneResults.map(r => r.output.scene_text).join('\n\n---\n\n');
+    
+    // Get character data for context
+    const characters: Record<string, unknown> = {};
+    const state = this.store.getWorldState();
+    for (const char of state.characters.characters) {
+      characters[char.id] = {
+        name: char.name,
+        archetype: char.archetype,
+        voice: char.voice,
+      };
+    }
+    
+    // Run editorial review
+    const result = await this.verifier.runEditorialReview(
+      fullScript,
+      {
+        episode_id: plan.episode_id,
+        beats: plan.beats,
+        scenes: plan.scenes,
+      },
+      characters
+    );
+    
+    return result;
   }
 
   // ==========================================================================

@@ -1,0 +1,33 @@
+{
+  "packet_meta": {
+    "episode_id": "episode_01",
+    "scene_id": "SC01",
+    "sequence": 1,
+    "estimated_duration_min": 2.5
+  },
+  "setting": {
+    "location_id": "rome_forum",
+    "time_of_day": "dawn",
+    "atmosphere": [
+      "Slow, atmospheric opening establishing the city's tension through visual storytelling"
+    ]
+  },
+  "cast": [
+    {
+      "character_id": "char_quintus_fabius",
+      "mood": "neutral"
+    }
+  ],
+  "director_instructions": {
+    "beat_type": "SETUP",
+    "pacing": "Slow, atmospheric opening establishing the city's tension through visual storytelling",
+    "sequence": []
+  },
+  "constraints": {
+    "required_deltas": [],
+    "allowed_inventions": {
+      "extras": 2
+    },
+    "hook_requirement": "End with a button line that creates anticipation"
+  }
+}

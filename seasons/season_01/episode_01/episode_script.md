@@ -1,973 +1,939 @@
 ## SC01 — EXT. THE ROMAN FORUM - DAWN
 
-Mist clings to the cobblestones like a shroud reluctant to lift. The Temple of Saturn rises gray against a sky bleeding pink at its eastern edge, its columns casting long shadows across the empty speaking platform. A crow circles the Rostra once, twice, then settles on the bronze prow of a ship—one of those ancient trophies bolted there since the wars with Antium.
+Mist clings to the flagstones like a shroud. The temples emerge from grey half-light, their marble columns stained amber where the first sun touches them. A street sweeper—old, bent, forgotten—drags his broom between the shuttered stalls of money-changers. The scrape of bristles against stone is the only sound.
 
-The first sounds are small. Sandals on stone. The creak of a handcart's wooden wheel. A temple door groaning open somewhere beyond the Basilica Aemilia.
+The Forum lies empty. Waiting.
 
-A FISH MERCHANT, bent under the weight of his pole and its hanging catch, shuffles past the Comitium. His companion, a GRAIN SELLER with flour dusting his forearms, walks beside him.
+QUINTUS FABIUS MAXIMUS enters from the direction of the Palatine, his toga praetexta immaculate, its purple stripe sharp against the white. He walks alone—no clients trail behind him, no slaves carry his documents. This absence speaks louder than any retinue.
 
-FISH MERCHANT: (Weary, Hushed) [Stability: 0.6] "Three nights now. Lictors at the Subura crossings. They took old Gnaeus from his stall—said he owed tribute to someone."
+He stops before the Rostra, that ancient platform where his father once thundered against Carthage. His hand moves to his toga fold, adjusting it with the precision of ritual.
 
-GRAIN SELLER: (Guarded, Low) [Stability: 0.5] "Tribute. A new word for theft." 
+A FRUIT VENDOR unlocks her stall nearby, stealing glances at the senator. She knows his face from better days.
 
-He glances toward the Senate House, its doors still barred.
+QUINTUS: (Contemplative, Measured) [Stability: 0.7] "Moribus antiquis res stat Romana virisque."
 
-GRAIN SELLER: (Bitter, Muttered) [Stability: 0.5] "The fathers sleep late while the rest of us wonder who vanishes next."
+He speaks to no one. To everyone. The Ennius quotation hangs in the morning air—'On ancient customs and men stands the Roman state.'
 
-A HERALD emerges from the shadow of the Arch of Augustus, bronze horn tucked under his arm. He moves with the measured pace of a man who has walked this route ten thousand mornings. He passes the merchants without acknowledgment, ascending the Rostra steps.
+The FRUIT VENDOR pauses her work, listening.
 
-The Forum is filling now. CITIZENS drift in through the archways—a freedman adjusting his cap, a matron with her slave trailing behind, two young men in student's garb debating in whispers they think no one hears.
+QUINTUS: (Bitter, Controlled) [Stability: 0.6] "The ancestors built this Forum stone by stone. With hands that knew labor. With purses that knew restraint."
 
-The Herald reaches the platform's edge. He does not lift the horn. Not yet.
+He turns slowly, surveying the gilded facades of the new basilicas, the imported marble, the ostentation that has crept into every corner.
 
-HERALD: (Neutral, Formal) [Stability: 0.8] "The Senate convenes at the third watch. By order of the Consul."
+QUINTUS: (Rising Anger, Still Measured) [Stability: 0.5] "Now we build with borrowed gold and broken oaths."
 
-No one stops. No one reacts. The words dissolve into the ambient murmur of commerce beginning, prayers half-spoken, bargains struck in undertones.
+A YOUNG CLERK hurries past, ledgers clutched to his chest, heading toward the banking quarter. He does not meet the senator's eyes. No one meets them anymore.
 
-But beneath the Arch, a HOODED FIGURE has paused. Face obscured. Hands hidden in the folds of a dark cloak. Watching.
+Quintus watches him go. His jaw tightens.
 
-The crow on the Rostra takes flight, its harsh cry splitting the morning air.
+He reaches into his toga and withdraws a small clay tablet—a debt marker, covered in figures. He does not look at it directly, as a man might avoid looking at a wound.
 
-The Hooded Figure turns and melts back into the street, swallowed by the city that birthed him.
+QUINTUS: (Quiet, Defensive) [Stability: 0.6] "Drusilla says I must learn to bend. That the old ways buy nothing but empty rooms and silent clients."
 
-And the Herald, alone now on the speaking platform, looks down at the horn in his hands as if he has forgotten what it is for—or perhaps remembered too well what news it will soon carry.
+He adjusts his toga fold again. The gesture is compulsive now.
 
-HERALD: (Quiet, To Himself) [Stability: 0.4] "Three days. They give us three days to choose our masters."
+QUINTUS: (Hardening, Resolved) [Stability: 0.7] "Let them have their gold, then. Let Varo count his coins until his fingers bleed. The ancestors watch. The ancestors judge."
+
+The sun breaks fully over the eastern temples. Light floods the Forum, and with it comes the sound of the city waking—footsteps, cart wheels, the first calls of vendors.
+
+Quintus turns toward the Curia. His walk is steady, his back straight. But the clay tablet remains in his hand, unread, undestroyed.
+
+The FRUIT VENDOR watches him go, then spits once on the stones for luck.
+
+FRUIT VENDOR: (Low, To Herself) [Stability: 0.8] "Dead men walking look just like that."
+
+The Forum fills with light and noise. The day begins. But somewhere in the banking quarter, ledgers are already open, and debts are being tallied.
 
 ---
 
 ## SC02 — INT. VARO'S STUDY - MORNING
 
-Dawn light cuts through the latticed windows, striping the marble floor with gold and shadow. The air carries cedar smoke from a bronze tripod, masking the sweat of three messengers who stand dripping in the doorway. Scrolls cascade across Varo's desk—shipping manifests, harbor logs, a map of the grain routes from Alexandria pinned with lead weights. Wax tablets bearing calculations lie scattered like fallen leaves after a storm.
+Incense smoke curls through slanted light. The room reeks of sandalwood and ambition—cedar tables heaped with scrolls, a bronze astrolabe catching the sun, maps of Mediterranean shipping lanes pinned to every wall. Two exhausted messengers slump against the doorframe, their cloaks still damp with harbor spray.
 
-Varo does not look up. His stylus moves across a tablet, scratching figures.
+Varo stands at the central table, his short tunic already tugged loose at the collar. He traces a finger along the African coast, then checks the sun's position through the window. His accountant Marcus hunches over a wax tablet, stylus trembling.
 
-VARO: (Clipped, impatient) [Stability: 0.7] "The Alexandrian fleet. Where?"
+CAELUS VARO: (Impatient, Clipped) [Stability: 0.7] "The Alexandrian convoy. How many days delayed?"
 
-The first messenger, a gaunt man with salt-crusted sandals, steps forward.
+MARCUS LICINIUS: (Nervous, Precise) [Stability: 0.4] "Seven, Patron. Storm damage off Crete. Three ships taking water, two more turned back entirely."
 
-MESSENGER PRIMUS: (Breathless, deferential) [Stability: 0.4] "Storm-bound at Creta, Dominus. Three days. Perhaps four."
+Marcus wipes his palms against his tunic. His eyes flick toward the door.
 
-Varo's stylus stops. He glances toward the window, checking the sun's angle against the roofline, then tugs at his short tunic—a merchant's garment, not a senator's toga.
+CAELUS VARO: (Calculating, Staccato) [Stability: 0.8] "Seven days. The Subura doesn't know. The Senate doesn't know. The grain factors in Ostia are still quoting yesterday's prices."
 
-VARO: (Cold, mathematical) [Stability: 0.8] "Four days. The Ostia warehouses hold perhaps six days of grain. After that—" He snaps his fingers. "Panic. Prices triple."
+He tugs at his tunic again, a predator's grin spreading across his face.
 
-He rises, moving to the map, tracing the sea routes with a calloused finger. Behind him, Gaius Crassipes enters without announcement—a privilege of allies. The banker's bulk fills the doorway; his smile arrives before his greeting.
+CAELUS VARO: (Profane, Triumphant) [Stability: 0.7] "By Jupiter's swollen cock, we buy everything. Every future contract. Every warehouse option south of the Palatine."
 
-CRASSIPES: (Jovial, probing) [Stability: 0.6] "Caelus, my friend! Your slave tells me you've been awake since the third watch. Surely even your ledgers require rest—"
+MARCUS LICINIUS: (Deferential, Uneasy) [Stability: 0.3] "Patron, the quantities you're describing—when the price spikes, families will go hungry. Children will—"
 
-VARO: (Interrupting, staccato) [Stability: 0.7] "Skip the pleasantries. I need your network. Every banking house from here to Puteoli."
+CAELUS VARO: (Sharp, Interrupting) [Stability: 0.6] "Children. Spare me. Rome is always hungry for something. Today it's grain. Tomorrow it's games. The mob's belly is not my burden."
 
-Crassipes touches Varo's arm—an intimate gesture, calculated warmth—and laughs too readily.
+He shoves a fresh tablet toward Marcus, who catches it with fumbling hands.
 
-CRASSIPES: (Smooth, accommodating) [Stability: 0.6] "Such urgency. What fortune requires so many hands?"
+CAELUS VARO: (Mathematical, Cold) [Stability: 0.8] "Forty thousand modii through Decimus at the Emporium. Another thirty through that Phoenician—what's his name—"
 
-Varo gestures at the manifests.
+MARCUS LICINIUS: (Quick, Calculating) [Stability: 0.5] "Hanno. He operates from the third warehouse past the Temple of Portunus."
 
-VARO: (Low, intense) [Stability: 0.7] "The grain fleet is delayed. I know this. The Senate does not. The merchants do not." He leans closer. "Information arriving one watch before the market opens is worth more than a province."
+CAELUS VARO: (Satisfied, Dismissive) [Stability: 0.7] "Hanno. Done. Execute before the third watch. I want our position locked before the first rumor crawls up from the docks."
 
-Crassipes's smile tightens, but his eyes sharpen—a predator scenting blood.
+Marcus scratches figures onto the tablet—his hands steady now, falling into the mathematics of corruption. He knows these numbers. He has always known them.
 
-CRASSIPES: (Careful, double-meaning) [Stability: 0.6] "And you wish me to... facilitate purchases? Through various names, I assume. Discreetly."
+MARCUS LICINIUS: (Resigned, Precise) [Stability: 0.5] "At projected scarcity prices... the margin approaches two hundred thousand sesterces."
 
-VARO: (Profane, decisive) [Stability: 0.8] "Buy every cursed grain future you can find. Use the Capuan agents, the Neapolitan houses. Spread the purchases thin. When the shortage hits—" He snaps his fingers again. "—we hold the city's belly in our fists."
+Varo checks the sun again. He adjusts a weight on his bronze scale—the gesture almost tender.
 
-He tosses a heavy purse onto the desk. It lands with the unmistakable weight of gold.
+CAELUS VARO: (Quiet, Dangerous) [Stability: 0.8] "Information arriving before the markets open is worth more than a province, Marcus. Remember that."
 
-Crassipes lifts the purse, testing its heft. His laugh this time carries genuine warmth.
+Marcus bows his head, already moving toward the door. He pauses.
 
-CRASSIPES: (Admiring, conspiratorial) [Stability: 0.7] "The old families play at politics. You, Caelus—you understand the only game that matters."
+MARCUS LICINIUS: (Fearful, Low) [Stability: 0.3] "And if someone investigates? The records will show—"
 
-Varo turns back to his maps, already dismissing him.
+CAELUS VARO: (Contemptuous, Final) [Stability: 0.9] "The records show what I pay them to show. Now go. Rome's hunger waits for no man."
 
-VARO: (Cold, certain) [Stability: 0.8] "Everyone eats. Everyone pays. The question is only—to whom."
+Marcus exits. Varo returns to his maps, humming softly. Outside, a messenger's horse stamps in the courtyard—carrying news that will starve a city and fill his coffers.
 
-He glances at the rising sun, calculating.
+He smiles at the African coast and whispers to no one:
 
-VARO: (Quiet, razor-sharp) [Stability: 0.9] "By noon tomorrow, half the Senate will owe us grain. And senators, Crassipes—senators remember their debts."
+CAELUS VARO: (Satisfied, Intimate) [Stability: 0.9] "Let Quintus Fabius sniff around the courts all he likes. By the time he smells the rot, he'll already be standing in it."
 
 ---
 
 ## SC03 — INT. FABIUS HOUSE - ATRIUM - MORNING
 
-Pale light filters through the compluvium, casting a square of silver upon the impluvium's still water. The atrium smells of old wool and cedar—the scent of ancestors preserved in wax masks along the walls. Scrolls lie scattered across a marble table, their edges weighted with bronze figurines of Romulus and Remus.
+Sunlight falls through the compluvium in a single bright column, catching the dust motes that drift above the impluvium's still water. The smell of fresh bread from the kitchens mingles with something sharper—burnt herbs, perhaps, from an early morning offering. A slave girl arranges cut roses on a bronze stand near the lararium, her movements quick and silent.
 
-Quintus Fabius Maximus stands with his back to the doorway, adjusting the fold of his toga obsessively, never quite satisfied. His fingers work the fabric as though it were armor.
+Quintus Fabius Maximus stands before the household shrine, adjusting the fold of his toga with practiced fingers. The wax masks of his ancestors stare down from their alcoves, their painted eyes following nothing, seeing everything.
 
-Soft footsteps. Drusilla enters bearing a silver tray—a single cup of watered wine, a small bowl of figs. Her posture is immaculate. She moves like water finding its level.
+Drusilla enters from the peristyle. Her stola is the grey of winter seas, her posture perfect as a temple column. She carries a small wax tablet—sealed.
 
-DRUSILLA: (Calm, Measured) [Stability: 0.8] "You have not eaten. The body prosecutes poorly when starved."
+QUINTUS: (Measured, Formal) [Stability: 0.7] "You rise early, wife. The bread is not yet cool."
 
-She sets the tray beside his scrolls. Her eyes find his, and hold. Quintus does not turn.
+Drusilla does not answer immediately. She stops three paces from him, her eyes moving once—briefly—to the sealed tablet before settling on his face. Unblinking.
 
-QUINTUS FABIUS: (Defensive, Bitter) [Stability: 0.5] "Ennius wrote: 'Moribus antiquis res stat Romana virisque.' The Republic stands on ancient custom and her men."
+DRUSILLA: (Neutral, Low) [Stability: 0.8] "I had letters to attend. The household accounts grow complex."
 
-He finally turns, gesturing at the scattered documents.
+Quintus turns from the lararium, and something in his jaw tightens.
 
-QUINTUS FABIUS: (Righteous, Strained) [Stability: 0.5] "Varo has forgotten this. He builds his fortune on Egyptian grain schemes while our fathers' graves go untended. Someone must remind him."
+QUINTUS: (Defensive, Moralizing) [Stability: 0.6] "Accounts. Yes. Ennius wrote that a careful wife is the foundation of the house—but he never imagined a house with so many... correspondences."
 
-DRUSILLA: (Clinical, Low) [Stability: 0.8] "Someone. And that someone stakes this house upon the reminder."
+He gestures vaguely toward the tablet. Drusilla's fingers close over it, drawing it against her hip.
 
-She lifts the wine cup, extends it toward him. Her arm does not waver.
+DRUSILLA: (Clinical, Quiet) [Stability: 0.8] "The grain shipments require coordination. Nothing more."
 
-DRUSILLA: (Diagnostic, Soft) [Stability: 0.8] "Caelus Varo owns three tribunes. Perhaps four. His clients fill the Subura. You take a torch to a wasp nest, husband."
+The slave girl finishes with the roses and withdraws. Somewhere deeper in the house, a door closes.
 
-Quintus accepts the cup. His hand trembles—just slightly. He drinks deeply.
+Quintus steps closer. His hand rises as if to touch the tablet, then falls. He will not look at it directly—as though it were a stack of coins.
 
-QUINTUS FABIUS: (Defensive, Vulnerable) [Stability: 0.4] "You think me a fool."
+QUINTUS: (Uneasy, Halting) [Stability: 0.5] "The Forum speaks of Varo's new contracts. They say he has... connections. Among the old families."
 
-DRUSILLA: (Neutral, Unblinking) [Stability: 0.9] "I think you righteous. Which is more dangerous."
+A pause. Drusilla's face betrays nothing. Her silence fills the atrium like water rising in a basin.
 
-She moves closer, adjusting his toga fold with practiced fingers—the gesture intimate, proprietary. Her touch lingers at his shoulder.
+DRUSILLA: (Soft, Diagnostic) [Stability: 0.8] "Men speak of many things in the Forum. Most of it is wind."
 
-DRUSILLA: (Stoic, Deliberate) [Stability: 0.8] "Strike if you must. But let me know the hour before you strike. This house requires... preparation."
+She moves past him toward the tablinum, the sealed tablet still pressed to her side. At the threshold, she pauses.
 
-Quintus covers her hand with his own. The gesture is grateful. Dependent.
+DRUSILLA: (Precise, Final) [Stability: 0.9] "The ancestors watch, husband. But they cannot read."
 
-QUINTUS FABIUS: (Softened, Weary) [Stability: 0.5] "What would I do without your counsel?"
-
-Drusilla permits herself the ghost of a smile—a thing calculated to the last degree.
-
-DRUSILLA: (Quiet, Ambiguous) [Stability: 0.9] "You would be precisely the man Varo expects."
-
-She withdraws, moving toward the doorway. At the threshold, she pauses. Her shadow falls long across the impluvium's water.
-
-DRUSILLA: (Cool, Final) [Stability: 0.9] "Eat the figs. They came from Varo's own orchards—a gift from his wife. I thought you should know the taste of his hospitality before you refuse it forever."
-
-She is gone. Quintus stares at the bowl of figs as though they were coiled serpents.
+She is gone before he can answer. Quintus stands alone beneath the open sky, the column of light falling just short of where he stands—leaving him in shadow.
 
 ---
 
-## SC04 — INT. FABIUS HOUSE - ATRIUM - MORNING
+## SC04 — EXT. THE ROMAN FORUM - NOON
 
-Pale light filters through the compluvium, catching motes of dust that drift above the impluvium's still water. The household gods watch from their lararium as Quintus Fabius Maximus stands at the head of a heavy oak table, his toga arranged with deliberate severity. Two men in the plain tunics of legal clerks flank him—TERTIUS, gray-bearded and hunched over wax tablets, and young AULUS, whose stylus scratches without pause.
+The sun strikes the marble steps of the Basilica Aemilia without mercy. Heat shimmers rise from the flagstones where advocates gather in tight knots, their voices a constant hum beneath the colonnade's shadow. A lictor stands at the court entrance, his fasces bound with white ribbon—the mark of civil proceedings.
 
-Quintus adjusts the fold of his toga at the shoulder, his jaw set.
+Quintus Fabius Maximus emerges from the shade, a sealed document pressed against his chest. His toga gleams white, freshly chalked, the folds arranged with deliberate care. Behind him, a clerk carries the ink and registry.
 
-QUINTUS: (Measured, Commanding) [Stability: 0.7] "The poet Ennius wrote: 'He who speaks falsely before the law shall find no shadow deep enough.' Varo has lived too long in shadows."
+Near the fountain of Marsyas, Marcus Licinius counts bronze coins into a leather pouch. His eyes dart to the gallery where two men in expensive tunics lean against a column—Varo's watchers, present as always.
 
-Tertius looks up from his tablets, exchanging a glance with Aulus.
+Quintus adjusts his toga fold and approaches with measured steps.
 
-TERTIUS: (Neutral, Deferential) [Stability: 0.6] "Dominus, the contracts Varo files with the treasury bear his seal alone. If there is corruption, it runs through hands other than his own."
+QUINTUS FABIUS: (Resolute, Commanding) [Stability: 0.8] "Marcus Licinius. Keeper of accounts for the house of Caelus Varo."
 
-QUINTUS: (Sharp, Probing) [Stability: 0.7] "Then whose hands?"
+Marcus's hands freeze mid-count. He wipes them on his tunic, leaving dark smears.
 
-Aulus clears his throat, setting down his stylus.
+MARCUS LICINIUS: (Wary, Quiet) [Stability: 0.4] "Advocate Fabius. I have no business with you."
 
-AULUS: (Cautious, Informative) [Stability: 0.5] "There is an accountant. One Marcus. He prepares the ledgers, reconciles the grain tallies. Every falsified weight, every phantom shipment—his calculations would bear the proof."
+QUINTUS FABIUS: (Formal, Deliberate) [Stability: 0.8] "The courts have business with you." *He extends the sealed document.* "By authority of the Praetor Urbanus, you are hereby compelled to testify before the quaestio de repetundis regarding grain contracts held by your patron."
 
-Quintus turns from the table, pacing three steps toward the impluvium. The morning light catches his profile, carving deep lines around his mouth. He does not look at the small chest of coins sitting unopened near the household shrine.
+Marcus stares at the official seals—the red wax of the praetor's office, the imprint of crossed wheat sheaves.
 
-QUINTUS: (Resolved, Cold) [Stability: 0.8] "A man who counts another's crimes counts his own days. This Marcus—he is bound to Varo?"
+MARCUS LICINIUS: (Desperate, Low) [Stability: 0.3] "You do not understand what you ask. The numbers I keep—" *His eyes dart to Varo's men in the gallery.* "There are ledgers that should remain closed."
 
-TERTIUS: (Knowing, Grim) [Stability: 0.6] "Bound by fear, Dominus. Varo keeps such men close. Tightly held. But the law may hold tighter still."
+QUINTUS FABIUS: (Moralizing, Steady) [Stability: 0.7] "As Ennius wrote: 'The good man fears not the light of day.' The ancestors watch, Marcus. They judge every action—yours, mine, and your patron's."
 
-Quintus turns back, his hand falling flat upon the table.
+He presses the document into Marcus's trembling hands. The clerk notes the delivery in his registry with a scratch of stylus on wax.
 
-QUINTUS: (Commanding, Final) [Stability: 0.8] "Then prepare the writ. A formal subpoena, sealed and witnessed. Marcus will answer before the quaestor—or answer to the consequences of refusal."
+MARCUS LICINIUS: (Fearful, Calculating) [Stability: 0.35] "You have just signed my death warrant. And perhaps your own."
 
-Aulus reaches for fresh wax, nodding.
+Quintus refuses to look at the bronze coins scattered across Marcus's counting table.
 
-AULUS: (Efficient, Subdued) [Stability: 0.6] "It shall be done before noon."
+QUINTUS FABIUS: (Grim, Certain) [Stability: 0.75] "Profit without labor is a cancer on the Republic. I mean to cut it out."
 
-Quintus straightens, adjusting his toga fold once more. His gaze drifts briefly toward the lararium, toward the bronze faces of ancestors long dead.
+Above them, Varo's agents push away from the column and slip toward the Forum's northern exit. Word will reach the Palatine before the noon sacrifice concludes.
 
-QUINTUS: (Quiet, To Himself) [Stability: 0.7] "The ancestors watch. Let them see one house that remembers what honor costs."
+Marcus clutches the subpoena against his chest, eyes following the departing watchers.
 
-Tertius rolls the tablets closed and rises. Aulus follows. They bow and withdraw toward the vestibulum, leaving Quintus alone with the still water and the silent gods.
+MARCUS LICINIUS: (Hollow, Prophetic) [Stability: 0.3] "You think this document protects you. But Varo knows where the bodies are buried, Advocate—because he put them there himself."
 
-He stares into the impluvium's reflection. His own face stares back—older than he remembers.
-
-QUINTUS: (Low, Dangerous) [Stability: 0.7] "Come then, Varo. Let us see which of us the law devours first."
-
-The water ripples. Somewhere beyond the atrium, a door closes.
+The lictor's shadow falls across the flagstones as clouds pass before the sun. Somewhere in the Forum, a money-changer drops his scales with a clatter.
 
 ---
 
-## SC05 — EXT. THE ROMAN FORUM - NOON
+## SC05 — INT. PUBLIC BATHS (PRIVATE ALCOVE) - AFTERNOON
 
-The sun stands at its zenith, hammering the marble steps of the Temple of Saturn with merciless light. Smoke from the sacrificial altar mingles with the reek of sweat and copper—coin-metal, blood-metal. The Forum seethes. Ten thousand voices rise and fall like surf against stone.
+Steam coils through marble columns like conspirators gathering in corners. The tepidarium's heat presses close, thick with the scent of olive oil and sweat. Through the haze, slaves move as shadows, their footsteps swallowed by the wet stone. In a recessed alcove, away from the main pool where senators float like pale corpses, two men sit on a bench worn smooth by a thousand nervous conversations.
 
-Quintus Fabius Maximus stands upon the Rostra, his toga praetexta immaculate despite the press of bodies below. Behind him, two lictors bearing fasces. Before him, chaos given human form.
+Varo tugs at his short tunic, checking the angle of light filtering through the high windows. His eyes fix on Marcus like a moneylender calculating interest.
 
-QUINTUS FABIUS: (Resolute, Commanding) [Stability: 0.8] "By the authority vested in this office, I declare the assets of Caelus Varo—his warehouses, his grain stores, his vessels at Ostia—sealed pending investigation for crimes against the Treasury of Rome."
+CAELUS VARO: (Impatient, Clipped) [Stability: 0.7] "Enough pleasantries. The sun moves. I don't."
 
-A clerk named Spurius affixes the red wax seal to the proclamation. The crowd shifts. Murmurs become shouts.
+Marcus wipes his palms on his tunic, leaving dark streaks. His gaze flicks to the archway leading to the main chamber, then back.
 
-MERCHANT 1: (Panicked, Desperate) [Stability: 0.3] "Varo holds my notes! Three hundred thousand sesterces—my family's fortune!"
+MARCUS LICINIUS: (Nervous, Measured) [Stability: 0.4] "Dominus, the records you ask about—they're locked in the basilica vault. Three seals. Two witnesses required for—"
 
-The cry spreads like fire through dry wheat. A grain merchant named Decimus shoves toward the platform, face ashen.
+CAELUS VARO: (Cutting, Mathematical) [Stability: 0.7] "I didn't ask how. I asked how much."
 
-DECIMUS: (Frantic, Pleading) [Stability: 0.2] "The Egyptian shipment—Varo's credit backed our purchase! Without his coin, we cannot pay the sailors!"
+A slave passes with fresh towels. Both men fall silent until the footsteps fade into the steam.
 
-Quintus adjusts the fold of his toga. Does not look at the gold denarii some desperate fool has scattered at the Rostra's base.
+Varo reaches into the folds of his garment and withdraws a leather pouch. The coins within do not clink—they are packed too tightly for that. He sets it on the bench between them. Five talents' weight. A small fortune.
 
-QUINTUS FABIUS: (Defensive, Measured) [Stability: 0.7] "The ancestors teach us—'moribus antiquis stat res Romana virisque.' Rome stands on ancient custom and on men of virtue. Profit without labor is a cancer. I cut it out."
+MARCUS LICINIUS: (Calculating, Torn) [Stability: 0.3] "That is... generous. More than generous."
 
-But the Forum does not hear virtue. It hears ruin.
+CAELUS VARO: (Soft, Menacing) [Stability: 0.8] "Generosity has a sister. Her name is Expectation."
 
-A banker's stall collapses as clients surge forward demanding coin. The money-changers at the Basilica Aemilia slam their shutters. The crash of bronze tablets echoes off temple walls—debts called in, credit vanished, the intricate web of Roman commerce unraveling in the span of fifty breaths.
+Marcus's hand hovers over the pouch. Sweat beads at his temple, and not from the heat.
 
-OFFICIAL: (Urgent, Lowered voice) [Stability: 0.5] "Dominus—the Subura moneylenders have closed their doors. The plebs are already gathering torches."
+MARCUS LICINIUS: (Anguished, Whispered) [Stability: 0.2] "If the magistrates discover—"
 
-Quintus watches a woman clutch her children as a grain-seller boards his shop with trembling hands. His jaw tightens. This was meant to wound Varo. Instead, Rome bleeds.
+CAELUS VARO: (Profane, Final) [Stability: 0.7] "The magistrates eat from my hand like temple dogs. Take the coin, Marcus. Be loyal. Be silent." He leans closer. "Be remembered fondly."
 
-QUINTUS FABIUS: (Troubled, Quiet) [Stability: 0.5] "The corruption had to be excised. The fever will break."
+Marcus's fingers close around the leather. His jaw tightens.
 
-SPURIUS: (Nervous, Hesitant) [Stability: 0.4] "Dominus... Varo's men are already in the streets. They say you have destroyed more wealth in a morning than Hannibal took in a season."
+MARCUS LICINIUS: (Defeated, Precise) [Stability: 0.4] "The shipping manifests. The discrepancies in the grain accounts. I will... forget what I've seen."
 
-Quintus finally looks down at the gold coins scattered before him. They gleam like accusations.
+CAELUS VARO: (Satisfied, Cold) [Stability: 0.8] "Good. Memory is expensive. Forgetfulness—" He taps the pouch. "—is affordable."
 
-QUINTUS FABIUS: (Grim, Hardening) [Stability: 0.6] "Let them say what they will. When the ledgers are opened, Rome will know who truly plundered her."
+Varo stands, checking the sun's position through the steam once more. He adjusts his tunic and moves toward the archway.
 
-He descends from the Rostra. The crowd parts—whether from respect or fear, even he cannot tell.
+Marcus remains seated, clutching the bribe. His eyes find the mosaic floor—Neptune drowning sailors, their faces frozen in terror.
 
-In the shadow of the Temple of Castor, a boy runs toward the Palatine, carrying a message sealed in black wax. Varo will know within the space of a hundred heartbeats.
+MARCUS LICINIUS: (Hollow, To Himself) [Stability: 0.3] "The courts are just another market."
 
-And Varo does not forget.
+Varo pauses at the threshold. Does not turn.
 
----
+CAELUS VARO: (Quiet, Lethal) [Stability: 0.9] "Marcus. Those who betray me—they don't testify at trial. They testify to the river."
 
-## SC06 — INT. VARO'S STUDY - AFTERNOON
+The steam swallows him whole.
 
-Dust motes hang suspended in the amber light slanting through high windows. Wax tablets lie scattered across a cedar desk, their surfaces gouged with fresh calculations—half-finished, abandoned. The room smells of old ink and newer sweat.
+Marcus opens the pouch. Counts. His hands shake as he mouths the sum.
 
-Varo paces before a map of the city's grain routes, his short tunic riding up as he moves. He tugs it down. Tugs again. His shadow cuts across painted districts like a blade.
-
-VARO: (Fury, Staccato) [Stability: 0.3] "They send Lictors to my warehouses. MY warehouses. As if I were some provincial freedman with falsified ledgers."
-
-Crassipes settles into a cushioned chair, uninvited but unhurried. He pours wine from a waiting amphora, the sound deliberate, almost theatrical.
-
-CRASSIPES: (Measured, Accommodating) [Stability: 0.7] "I heard. The whole Aventine heard. Your steward's voice carries remarkably well when he's refusing entry to armed men."
-
-VARO: (Defensive, Impatient) [Stability: 0.4] "Let them count every grain. Every damned amphora. The numbers are clean."
-
-He checks the sun's position through the window. Checks again. His fingers drum against the map.
-
-CRASSIPES: (Smooth, Double-meaning) [Stability: 0.7] "Clean numbers matter little when dirty hands present them, old friend."
-
-Crassipes rises, touches Varo's arm—a gesture that stills the pacing. His laugh comes too easily, too warm for the tension in the room.
-
-CRASSIPES: (Jovial, Calculated) [Stability: 0.8] "You forget—I have navigated three Consular investigations. Each one ended with my enemies explaining themselves to the Tiber."
-
-VARO: (Suspicious, Mathematical) [Stability: 0.5] "And what did that cost you? One part in ten? More?"
-
-CRASSIPES: (Accommodating, Wise) [Stability: 0.7] "It cost patience. The rarest currency in Rome."
-
-He guides Varo toward the desk, clearing space among the scattered tablets. A slave appears at the threshold—young, Greek by his features—and Crassipes waves him away without looking.
-
-CRASSIPES: (Determined, Strategic) [Stability: 0.8] "Fabius moves against you because he believes you isolated. Prove him wrong. Let me speak with Cornelius tomorrow. You will dine with Senator Metellus before the week ends. We build a wall of obligation around this investigation."
-
-Varo's shoulders settle. The tugging stops. He studies Crassipes as one studies a ledger—calculating weight, measuring worth.
-
-VARO: (Grudging, Controlled) [Stability: 0.6] "And if Fabius's advocate finds something before your wall is built?"
-
-Crassipes smiles—the expression of a man who has already counted every outcome.
-
-CRASSIPES: (Smooth, Ominous) [Stability: 0.8] "Then we ensure the advocate finds something far more interesting elsewhere. Every man follows a trail, Varo. We simply choose where it leads."
-
-Varo nods slowly. His hand finds the map again, but this time his finger traces routes with purpose rather than rage.
-
-VARO: (Cold, Resolved) [Stability: 0.7] "So be it. But if this costs me the Ostian contracts—"
-
-CRASSIPES: (Jovial, Threatening) [Stability: 0.7] "It will cost Fabius considerably more. Information arriving at dawn is worth more than a province, yes? I know what arrives at his door each morning."
-
-The afternoon light has shifted. Neither man notices. They are already elsewhere—three moves ahead, counting bodies not yet fallen.
+In the main pool, a senator laughs at nothing. The sound echoes like judgment.
 
 ---
 
-## SC07 — INT. THE CROOKED CUP TAVERN - EVENING
+## SC06 — EXT. THE ROMAN FORUM - AFTERNOON
 
-Smoke curls from cheap tallow candles, their weak flames throwing shadows across wine-stained tables. The tavern reeks of sour wine and fear-sweat. In the far corner, away from the dockhands nursing their cups, Caelus Varo sits with his back to the wall. His fingers drum the table—counting something invisible.
+The midday heat presses down upon the flagstones like a creditor's hand. Incense from a nearby shrine mingles with the sharper tang of sweat and coin-dust rising from the Basilica Aemilia. A crowd has gathered—wool-merchants abandoning their stalls, grain-factors pausing mid-negotiation, slaves pressing close enough to catch the words of their betters. All eyes fix upon the steps where Quintus Fabius Maximus stands rigid as a temple column, a scroll bearing the quaestor's seal clutched in his weathered hand.
 
-Marcus Licinius enters, eyes sweeping the room like a hunted animal. He spots Varo and his hand goes immediately to his tunic, wiping, wiping.
+QUINTUS FABIUS: (Resolute, Thundering) [Stability: 0.7] "Citizens of Rome! Hear the judgment of the treasury upon one who has made mockery of our grain supply!"
 
-VARO: (Impatient, clipped) [Stability: 0.7] "You're late. I counted forty-three breaths past when you should have been here."
+He adjusts his toga fold with deliberate care, refusing to meet the glint of gold denarii scattered near a money-changer's table.
 
-Marcus slides onto the bench opposite, keeping one shoulder angled toward the door.
+QUINTUS FABIUS: (Righteous, Measured) [Stability: 0.7] "As Ennius wrote: 'Moribus antiquis res stat Romana virisque.' By ancient custom and by worthy men does Rome endure. Not by speculation. Not by hoarding whilst the plebs hunger."
 
-MARCUS: (Nervous, rapid) [Stability: 0.4] "The subpoena came. Three lictors. They want the ledgers from the Aventine warehouses. The grain accounts. Everything."
+A lictor steps forward, pressing an iron seal against the warehouse manifest. The crowd gasps—a collective intake of breath that echoes off the marble.
 
-Varo tugs at his short tunic, a muscle jumping in his jaw. A serving girl moves past; he waves her away without looking.
+Varo pushes through the throng, his short tunic drawing sneers from patrician onlookers. He tugs at the hem, checking the sun's position even as fury twists his features.
 
-VARO: (Hard, mathematical) [Stability: 0.6] "How many pages?"
+CAELUS VARO: (Incredulous, Clipped) [Stability: 0.4] "You seal my warehouses? My grain? On what authority—on what evidence beyond rumor and spite?"
 
-MARCUS: (Calculating, fearful) [Stability: 0.3] "Forty-seven. Maybe fifty if they demand the supplemental tallies. Twelve thousand sesterces that cannot be explained. The weight of it—"
+QUINTUS FABIUS: (Cold, Formal) [Stability: 0.8] "On evidence sufficient for the quaestor. Your assets are frozen until investigation concludes. The seals are affixed. It is done."
 
-VARO: (Interrupting, profane) [Stability: 0.5] "Fuck the weight. Numbers are nothing. Numbers can burn."
+A second lictor moves through the crowd, affixing notices to the wooden posts near the grain exchange. Traders begin shouting—first confusion, then alarm. A stout factor named Horatius shoves past a slave, bellowing for his clerks. Prices called across the forum swing wildly: three sesterces, then five, then two.
 
-Marcus's hands flutter to his tunic again. His eyes dart to the exit.
+CAELUS VARO: (Seething, Staccato) [Stability: 0.3] "You fool. You self-righteous, moralizing fool. Do you understand what you have done? One breath from now, every contract in this city becomes worthless paper."
 
-MARCUS: (Desperate, deferential) [Stability: 0.3] "Dominus, if I refuse the Quaestor's summons—"
+The crowd's murmur rises to a roar. A grain-carrier drops his basket; wheat spills across the stones. Near the Temple of Castor, a young scribe named Tertius—employed by neither man but caught in the current—scrambles to record the chaos, his stylus flying.
 
-VARO: (Controlled, dangerous) [Stability: 0.7] "You won't refuse. You'll appear. You'll be the perfect little accountant, confused by your own records."
+QUINTUS FABIUS: (Defensive, Quiet) [Stability: 0.6] "The ancestors watch. Some prices must be paid."
 
-Varo reaches into his cloak and withdraws a leather pouch. It lands on the table with the unmistakable weight of gold. Five aurei gleam in the candlelight.
+Varo steps close, close enough that only Quintus can hear.
 
-VARO: (Direct, cold) [Stability: 0.8] "Everyone has a price. This is yours. Take it."
+CAELUS VARO: (Venomous, Whispered) [Stability: 0.2] "Then let us speak of prices, Fabius. Ask your wife what she knows of mine."
 
-Marcus stares at the coins. His hand trembles as it moves toward them.
-
-MARCUS: (Anguished, quiet) [Stability: 0.4] "And the ledgers?"
-
-VARO: (Staccato, final) [Stability: 0.7] "Lose them. Misplace them. If necessary—" He mimes striking flint. "—accidents happen in warehouses."
-
-Marcus's fingers close around the pouch. The leather creaks. Something dies behind his eyes.
-
-MARCUS: (Hollow, broken) [Stability: 0.3] "It is well. I am... your man."
-
-VARO: (Satisfied, predatory) [Stability: 0.8] "You always were."
-
-Varo rises, adjusting his tunic, checking the fading light through the tavern's single high window. Third watch approaches.
-
-VARO: (Quiet, threatening) [Stability: 0.7] "Remember, Marcus—the courts are just another market. I always pay my debts."
-
-He pauses at Marcus's shoulder, voice dropping to a whisper.
-
-VARO: (Intimate, dangerous) [Stability: 0.8] "Both kinds."
-
-Marcus sits alone, the gold heavy in his palm, staring at the door long after Varo has vanished into the evening crowds.
+Quintus's hand freezes upon his toga. The crowd surges. Somewhere in the chaos, a man screams that the grain markets are collapsing.
 
 ---
 
-## SC08 — EXT. THE ROMAN FORUM - EVENING
+## SC07 — EXT. THE ROMAN FORUM - AFTERNOON
 
-The dying sun bleeds copper across the Temple of Saturn's columns, casting long shadows that stripe the worn travertine like prison bars. Merchants fold their awnings. The day's last petitioners drift toward the basilica steps, their sandals scraping stone still warm from the afternoon heat. A crowd lingers near the Rostra—senators, their clients, a few grain-traders hoping to catch a patron's eye.
+The afternoon sun beats down upon the marble flagstones, throwing sharp shadows from the Temple of Saturn's columns across the milling crowd. The smell of heated stone mingles with olive oil from a nearby vendor's cart. Near the Rostra, a cluster of citizens has gathered—wool merchants, a pair of scribes, an elderly freedman leaning on his stick—their conversation dying as two figures approach from opposite ends of the Via Sacra.
 
-Quintus Fabius Maximus stands with two companions near the Column of Maenias, adjusting the precise fold of his toga praetexta. His fingers work the wool as if arranging armor.
+Quintus Fabius Maximus walks with the measured dignity of a man who has prosecuted in these very courts for three decades. His toga virilis, precisely draped, speaks of the old ways. Behind him, a young clerk carries a bundle of wax tablets.
 
-Caelus Varo approaches from the direction of the Basilica Aemilia, his tunic deliberately short, his stride too fast for the Forum's measured dignity. He tugs at the hem. Checks the sun's position against the Temple roof. His lips move silently—counting something.
+From the direction of the Basilica Aemilia comes Caelus Varo—shorter, leaner, his tunic cut unfashionably brief above the knee. He tugs at the hem as he walks, eyes flicking toward the sun's position above the rooftops.
 
-A grain-merchant named Spurius nudges his companion. They watch.
+Their paths intersect before the Temple of Castor.
 
-VARO: (Sharp, Calculated) [Stability: 0.7] "Quintus Fabius. Still here? I thought your ancestors preferred to do their business in shadow."
+QUINTUS FABIUS: (Formal, Measured) [Stability: 0.7] "Varo. The gods grant you—"
 
-Quintus stiffens. His hand freezes on his toga fold.
+Varo pivots on his heel. Turns his back. The motion is unhurried, deliberate as a blade drawn from its sheath.
 
-QUINTUS: (Guarded, Measured) [Stability: 0.6] "Varo. The Forum belongs to all citizens. Even those who confuse commerce with virtue."
+CAELUS VARO: (Cold, Projected toward the crowd) [Stability: 0.8] "Gnaeus. Spurius. I wonder—do they teach Roman commercial law in the provinces these days? Or do they still rely on sheep-counting and the testimony of goatherds?"
 
-Varo laughs—a sound like coins dropped on marble. He turns to address the gathering crowd, arms spread wide.
+A nervous laugh ripples through the wool merchants. The elderly freedman looks away.
 
-VARO: (Theatrical, Venomous) [Stability: 0.7] "Citizens! Here stands Quintus Fabius Maximus. Moralist. Traditionalist. Descendant of the great Cunctator himself." He pauses. His voice drops to something intimate, something worse. "Tell me, Quintus—when your grandfather sold short-weight grain during the Hannibalic famine, did the ancestors watch then too?"
+Quintus's hand moves to adjust his toga fold—once, twice. His jaw tightens.
 
-The crowd's murmur rises like wind before a storm. Spurius exchanges a look with his companion.
+QUINTUS FABIUS: (Strained, Fighting for composure) [Stability: 0.5] "You forget yourself, Varo. My family held the praetorship when yours was still—"
 
-QUINTUS: (Wounded, Struggling) [Stability: 0.4] "You speak lies. Slander. My house has served Rome for—"
+CAELUS VARO: (Dismissive, Interrupting) [Stability: 0.8] "Held. Past tense. A breath ago, your grandfather mattered." *He checks the sun again.* "Now? You prosecute fishmongers for short weights while actual Romans conduct actual business."
 
-VARO: (Cutting, Precise) [Stability: 0.8] "Three hundred years. Yes. Three hundred years of selling rotten grain to starving legionaries while your women wore Tyrian purple." He steps closer. "I have the ledgers, Fabius. Ink fades. Numbers do not."
+The crowd's silence thickens. A scribe pretends to examine his stylus. No one meets Quintus's eyes.
 
-Quintus's face drains of color. He will not look at the crowd. He quotes, reflexively—
+QUINTUS FABIUS: (Wounded, Barely controlled) [Stability: 0.4] "As Ennius wrote—'Whom the gods would destroy, they first—'"
 
-QUINTUS: (Desperate, Hollow) [Stability: 0.3] "Moribus antiquis res stat Romana virisque..."
+CAELUS VARO: (Bored, Already walking away) [Stability: 0.9] "Spare me your dead poets, provincial."
 
-VARO: (Contemptuous, Final) [Stability: 0.8] "Ennius. How fitting. A dead poet defending dead honor."
+Varo's sandals strike the flagstones as he departs toward the Argiletum, not once looking back. The wool merchants drift away. The freedman shuffles toward a water basin.
 
-Varo turns on his heel and walks away. The crowd parts for him. Whispers multiply like flies on carrion.
+Quintus stands alone before the temple, the afternoon light harsh upon his face. His clerk hovers, uncertain.
 
-Quintus stands alone. His hand falls from his toga. The fold has come undone.
+Quintus's voice, when it comes, is barely above a whisper—but in the emptied space, it carries.
 
-Spurius leans to his companion, voice low: "The Fabii are finished."
+QUINTUS FABIUS: (Quiet, Cold fury building) [Stability: 0.3] "My wife will hear of this. And she... she knows things about that man's ledgers that would make the Rostra weep."
 
-But across the Forum, near the shadow of the Temple of Castor, a slave in Fabius household colors watches. And remembers.
-
-Varo's voice carries back, not turning: "Ask your wife, Quintus. She knows what true ledgers contain."
+His hand falls from his toga. He does not adjust it again.
 
 ---
 
-## SC09 — INT. FABIUS HOUSE - ATRIUM - LATE NIGHT
+## SC08 — INT. THE CROOKED CUP TAVERN - EVENING
 
-A single oil lamp throws trembling shadows across the impluvium. The household sleeps, but beneath the lararium, behind a panel disguised as decorative scrollwork, lies a chamber no slave has ever cleaned.
+Smoke from cheap tallow candles hangs low beneath warped beams. The tavern reeks of spilled wine and wet wool. In the back corner, behind a curtain of rough-spun linen, Drusilla sits alone at a table scarred by knife marks and old burns. Before her: a map of grain routes, three wax tablets, and a leather pouch heavy with coin.
 
-Drusilla moves through the darkness like water finding its level. Her sleeping gown has been exchanged for a simple tunica—practical, forgettable. She presses three tiles in sequence. Stone grinds against stone.
+She does not look up when MILO, a wiry freedman with ink-stained fingers, slips through the curtain.
 
-The hidden room smells of cedar and old wax. Tablets line the walls, each marked with symbols that correspond to no Roman accounting system. She lights a second lamp, positions it beside her private ledgers, and begins.
+MILO: (Nervous, hushed) [Stability: 0.4] "Domina. The word from the Forum—they vote on the asset freeze at dawn."
 
-DRUSILLA: (Clinical, barely audible) [Stability: 0.8] "Grain futures from Ostia. The Sardinian mines. The Egyptian textile routes."
+Drusilla traces a finger along the grain route from Sicilia. Her posture is marble-still.
 
-Her finger traces columns of figures. Where her husband sees an investigation into Varo's corruption, she sees opportunity—advance knowledge of which merchants will face prosecution, which contracts will suddenly need new partners.
+DRUSILLA: (Clinical, low-volume) [Stability: 0.8] "The Claudian warehouses. The Ostian granaries. Who holds the contracts?"
 
-A soft knock. Three taps, pause, two more.
+MILO: (Eager, quick) [Stability: 0.4] "Mostly Fabius interests, Domina. But the secondary shares—those trade freely until the freeze takes hold."
 
-Drusilla does not startle. She opens the door a hand's width.
+Drusilla opens the leather pouch. Gold aurei catch the dim light. She counts out fifteen coins with the precision of a surgeon.
 
-A MESSENGER stands in the corridor, face gaunt from too many sleepless nights running between the Fabius villa and the harbor. Behind him, a second figure waits—a SCRIBE carrying sealed tablets.
+DRUSILLA: (Measured, diagnostic) [Stability: 0.8] "Buy the secondary shares before the third watch. All of them. Use the Alexandrian name."
 
-MESSENGER: (Exhausted, deferential) [Stability: 0.5] "Domina. The Alexandrian shipment clears port at dawn. Varo's agent secured the manifest adjustments as requested."
+Milo's hands tremble as he takes the coins. He hesitates.
 
-Drusilla takes the sealed tablets without expression. Her eyes move across the wax with the precision of a physician examining a wound.
+MILO: (Worried, pleading) [Stability: 0.3] "If anyone traces this back—"
 
-DRUSILLA: (Satisfied, controlled) [Stability: 0.8] "The margin on the Cyrenaican grain?"
+DRUSILLA: (Cold, absolute) [Stability: 0.9] "They will trace nothing. You will be in Puteoli by morning. I will be in my husband's bed."
 
-MESSENGER: (Nervous) [Stability: 0.4] "Fourteen talents, Domina. Perhaps more when the shortage takes hold."
+She holds his gaze—unblinking, patient as a viper. Milo swallows hard and vanishes through the curtain.
 
-Fourteen talents. Enough to buy a senator's loyalty. Enough to make a widow comfortable for life. She permits herself the ghost of a smile—gone before the lamplight catches it.
+Drusilla permits herself one slow breath. She rolls the map, stacks the tablets. Her investments will triple when the freeze strikes. Quintus will never know he armed her.
 
-DRUSILLA: (Commanding, low) [Stability: 0.9] "Distribute six talents through the usual channels. The rest goes to the Puteoli account. Varo's name appears nowhere."
+The curtain stirs again. She freezes.
 
-She produces a stylus and begins inscribing a coded response on fresh wax—instructions that will reach Varo's networks before sunrise.
+A young man in a senator's toga praetexta stands in the gap—SERVIUS, aide to the Elder Cato. His eyes move from Drusilla's face to the ledgers to the pouch.
 
-SCRIBE: (Hesitant) [Stability: 0.5] "Domina... if the Consul discovers—"
+SERVIUS: (Calculating, soft) [Stability: 0.6] "The wife of Fabius. In such a... modest establishment."
 
-Drusilla's gaze rises. Unblinking. The scribe's words die in his throat.
+Drusilla rises. Perfect posture. She meets his gaze with silence—her oldest weapon.
 
-DRUSILLA: (Cold, diagnostic) [Stability: 0.9] "My husband hunts shadows while I count the coins they drop. He believes himself the hunter in this house."
+SERVIUS: (Probing, careful) [Stability: 0.6] "Strange hours for a woman of your standing. Strange company, too."
 
-She seals the tablet with a ring that bears no family crest—anonymous, untraceable.
+DRUSILLA: (Stoic, dangerously calm) [Stability: 0.8] "I visit where I choose. As do you, it seems."
 
-DRUSILLA: (Quiet, final) [Stability: 0.8] "Let him believe what keeps him useful."
+Servius smiles—the smile of a man cataloguing ammunition.
 
-The messengers withdraw. Drusilla extinguishes the lamp and stands alone in perfect darkness, wealth accumulating in distant ports while her husband dreams of justice beside an empty bed.
+SERVIUS: (Knowing, quiet) [Stability: 0.7] "The Elder Cato takes great interest in... irregular transactions. Especially before significant votes."
 
-Somewhere in the house, a door creaks. Footsteps. Her husband's voice, sleep-thick, calling her name.
+He withdraws. The curtain falls.
 
-She does not answer. Not yet. Let him wonder where his loyal wife has gone.
+Drusilla stands motionless. Her face betrays nothing. But her hand, resting on the table, presses down hard enough to whiten her knuckles.
 
----
+The gold is won. The watcher is loose. And the scales have begun to tip.
 
-## SC10 — EXT. THE ROMAN FORUM - NIGHT
+She whispers to the empty air:
 
-Torchlight from the Temple of Saturn throws long shadows across empty flagstones. The shops are shuttered, the money-changers gone. Only the bronze she-wolf watches from her plinth as two figures meet beneath the Rostra, where orators thunder by day but now only whispers dare.
-
-Gaius Crassipes waits in a rough-spun cloak, his banker's rings hidden beneath wool. His breath mists in the cold air. A serving boy stands three paces back, holding a small cedar chest.
-
-Quintus Fabius Maximus approaches from the direction of the Basilica Aemilia, his toga's distinctive purple border visible even in this light. He adjusts the fold at his shoulder—once, twice—before stopping at arm's length.
-
-GAIUS CRASSIPES: (Warm, Practiced ease) [Stability: 0.7] "Quintus Fabius. How many years since we stood together at Lucius's triumph? You had just won your first case. The crowd loved you."
-
-He reaches out, touches Quintus's arm. Quintus does not return the gesture.
-
-QUINTUS FABIUS MAXIMUS: (Cold, Measured) [Stability: 0.6] "You did not summon me to the Forum at third watch to reminisce, Crassipes. Speak your purpose."
-
-Crassipes laughs—too readily, the sound swallowed by darkness. He gestures to the serving boy, who opens the cedar chest. Gold coins gleam within, catching torchlight.
-
-Quintus turns his face away.
-
-GAIUS CRASSIPES: (Smooth, Double-meaning) [Stability: 0.7] "A practical matter. Certain accounts—minor discrepancies in the grain contracts—these things complicate an investigation. Muddy the waters. Perhaps your inquiry need not wade so deep into the Tiber's mud?"
-
-QUINTUS FABIUS MAXIMUS: (Bitter, Rising heat) [Stability: 0.5] "You speak of Varo's accounts. His theft from the public stores."
-
-GAIUS CRASSIPES: (Accommodating, Gentle pressure) [Stability: 0.6] "I speak of complications. Your wife—the Lady Drusilla—she keeps your household standing, does she not? The burdens she carries. This gold might ease—"
-
-Quintus steps forward. His hand finds the chest's lid and slams it shut.
-
-QUINTUS FABIUS MAXIMUS: (Righteous, Barely contained) [Stability: 0.4] "Ennius wrote: 'Moribus antiquis res stat Romana virisque.' The Republic stands on ancient custom and her men. Not on your master's coin."
-
-GAIUS CRASSIPES: (Frustrated, Mask slipping) [Stability: 0.5] "You are a man of principle, Quintus. I respect that. Truly. But the old families cannot hold the future at bay forever."
-
-QUINTUS FABIUS MAXIMUS: (Defiant, Quiet steel) [Stability: 0.6] "Then let the future come honestly, or not at all. Tell Varo his gold means nothing. The investigation continues."
-
-He turns and walks into shadow. Crassipes watches him go, then looks down at the closed chest.
-
-GAIUS CRASSIPES: (To himself, Soft menace) [Stability: 0.7] "Principle. Such a brittle thing to stake a family upon."
-
-The serving boy shifts uneasily. Somewhere in the dark, a dog howls.
-
-Crassipes touches the cedar lid, almost tenderly.
-
-GAIUS CRASSIPES: (Quiet, Resolved) [Stability: 0.8] "Send word to Varo. The Fabii have chosen the harder road. Let us see how far they walk it."
+DRUSILLA: (Quiet, steel beneath silk) [Stability: 0.7] "One blade drawn invites another."
 
 ---
 
-## SC11 — EXT. THE ROMAN FORUM - NIGHT
+## SC09 — INT. VARO'S STUDY - EVENING
 
-Torchlight bleeds across the marble steps of the Temple of Saturn, casting long shadows between the columns. The Forum lies empty at this hour—empty save for the rats, the beggars huddled beneath the Rostra, and Marcus Licinius, who stumbles from behind a statue of Janus with wine-stink on his breath and terror in his eyes.
+Lamplight catches the bronze fittings of Varo's counting table, throwing crooked shadows across scrolls weighted with silver coins. The air tastes of old ink and sandalwood—the scent of calculation. Through narrow windows, the dying sun bleeds copper across Rome's rooftops. Varo stands with his back to the door, tugging at his short tunic, watching the light fail.
 
-Quintus Fabius Maximus draws his toga tighter against the chill. He has come because the summons was desperate. He will leave wishing he had not.
+A slave admits Drusilla without announcement. She enters like smoke—silent, contained, her dark stola arranged with geometric precision.
 
-MARCUS: (Frantic, slurred) [Stability: 0.3] "Quintus Fabius—Quintus, please, a breath of your time. Only a breath."
+VARO: (Impatient, Clipped) [Stability: 0.5] "You come at dusk. Like a physician to a deathbed."
 
-Marcus wipes his palms on his tunic, leaving dark streaks. His eyes dart to the colonnade, to the shadows pooling at the base of the Basilica Aemilia.
+DRUSILLA: (Clinical, Measured) [Stability: 0.7] "I come when summoned, Varo. You sent word through Philo."
 
-QUINTUS: (Cold, measured) [Stability: 0.7] "You reek of Falernian and fear, accountant. Speak, if you must. But do not waste what patience the hour has left me."
+Varo turns. His eyes perform their familiar inventory—her hands, her posture, the distance she keeps from the door.
 
-MARCUS: (Desperate, confessional) [Stability: 0.2] "The grain futures. For seven months—seven—Varo has been bleeding the harvest before it leaves Alexandria. Phantom ships. Ledgers that vanish. I kept the tallies, Quintus. Gods forgive me, I kept every one."
+VARO: (Suspicious, Mathematical) [Stability: 0.5] "I sent word three days past. You arrive now. After your husband's advocate filed against my shipping interests."
 
-He lurches closer. Quintus does not retreat, but his hand moves to the fold of his toga, adjusting it like armor.
+DRUSILLA: (Stoic, Low-volume) [Stability: 0.7] "I am not Quintus's keeper. Nor his advocate."
 
-QUINTUS: (Contemptuous, quoting) [Stability: 0.6] "'The man who counts another's coin soon loses count of his own soul.' Ennius knew your kind."
+She does not blink. Varo circles the counting table, fingers trailing across stacked tablets.
 
-MARCUS: (Breaking, anguished) [Stability: 0.2] "You do not understand! The payments—there is a company, a shell, nothing but names and seals. But the coin flows to one house. YOUR house."
+VARO: (Profane, Staccato) [Stability: 0.4] "No. You are his wife. Who whispers in my ear while he sharpens his blade for my throat."
 
-Quintus goes still. The torchlight flickers.
+DRUSILLA: (Diagnostic, Controlled) [Stability: 0.6] "I came to propose restraint. On both sides. This feud serves neither house."
 
-QUINTUS: (Dangerous, quiet) [Stability: 0.5] "Choose your next words as if the ancestors themselves were listening. Because they are."
+VARO: (Bitter, Accusatory) [Stability: 0.4] "Restraint." He spits the word. "You play the mediator while standing with one foot in each camp. Tell me, Drusilla—when the ground splits, which half swallows you?"
 
-MARCUS: (Terrified, precise) [Stability: 0.3] "Drusilla. Your wife. Forty thousand sesterces since the Kalends of Martius. I have seen the seals. I have COUNTED the coin."
+Drusilla's perfect posture does not waver, but her silence stretches a breath too long. Varo sees it. His smile has no warmth.
 
-Quintus staggers back as though struck. His face drains of color. For a long moment, he cannot speak—this man who quotes the old poets, who believes his wife the pillar of his house.
+VARO: (Threatening, Low) [Stability: 0.5] "Information arriving before noon is worth more than a province. Arriving after?" He picks up a stylus, examines its point. "It suggests the messenger chose when to deliver. And to whom."
 
-QUINTUS: (Devastated, hollow) [Stability: 0.4] "You lie. You must lie."
+DRUSILLA: (Frustrated, Contained) [Stability: 0.5] "I have kept your confidences for three winters. My loyalty—"
 
-MARCUS: (Pleading, desperate) [Stability: 0.2] "Would that I did, Dominus. Would that I did."
+VARO: (Cutting, Sharp) [Stability: 0.4] "Your loyalty is to yourself. As is mine. The difference is I do not pretend otherwise."
 
-In the shadows beneath the Basilica, two figures shift. One raises a hand—a signal. The other melts backward into the darkness, moving toward the Subura with purpose.
+He drops the stylus. It clatters against bronze.
 
-Varo's men have seen enough.
+VARO: (Cold, Final) [Stability: 0.6] "Return to your husband. Tell him nothing. Tell me nothing. You have made yourself a bridge, Drusilla. Bridges get walked upon. Or burned."
 
-Quintus turns away, his toga suddenly too heavy, his dignitas crumbling like old mortar. Marcus watches him go, then looks to the Temple of Saturn—where oaths are sworn and broken.
+Drusilla inclines her head—the barest acknowledgment. At the threshold, she pauses.
 
-MARCUS: (Hollow, to himself) [Stability: 0.3] "The books always balance. One way or another."
+DRUSILLA: (Quiet, Diagnostic) [Stability: 0.7] "Bridges also charge tolls, Varo. Remember that when you need to cross."
 
-From somewhere in the Forum, a dog begins to howl—and in the Palatine above, a lamp burns in Caelus Varo's study, waiting for news that is already on its way.
+She withdraws into shadow. Varo stares at the empty doorway, then at the failing light.
 
----
+VARO: (To himself, Calculating) [Stability: 0.5] "The wife or the husband. One must be bought. One must be broken."
 
-## SC12 — INT. THE CROOKED CUP TAVERN, UPPER ROOM - NIGHT
-
-Smoke curls thick as wool through the cramped chamber. A brazier, meant for warmth, now devours scrolls—the flames casting Marcus's shadow huge and trembling against the cracked plaster. Below, the tavern's noise masks his destruction. Almost.
-
-Marcus feeds another ledger to the fire, hands shaking so violently that parchment tears. His eyes dart between the brazier and the single shuttered window. Three more ledgers wait. Three more witnesses to Varo's grain scheme.
-
-MARCUS: (Muttering, frantic) [Stability: 0.3] "Two hundred amphorae at Ostia. The Sicilian shipments. Burn it all, burn it—"
-
-He wipes his hands on his tunic, leaving ash-grey streaks. The smoke thickens. His eyes water.
-
-Below, a woman's voice rises sharp: "Fire! There's fire above!"
-
-Marcus freezes. The brazier crackles, indifferent. Footsteps pound the wooden stairs.
-
-MARCUS: (Panicked, hissing) [Stability: 0.2] "No. No, not yet. I need—"
-
-He grabs the remaining ledgers, but his hands betray him. One tumbles, spilling open on the floor—columns of figures, names, dates. Varo's signature, clear as a death warrant.
-
-The door splinters inward. A TAVERN KEEPER, thick-armed and furious, barrels through with a water bucket. Behind him, a YOUNG SERVING BOY gapes at the smoke.
-
-TAVERN KEEPER: (Enraged, commanding) [Stability: 0.7] "Gods below! You trying to burn us all alive, fool?"
-
-He hurls water on the brazier. Steam and ash explode upward. Marcus stumbles back, clutching two ledgers to his chest like stolen children.
-
-MARCUS: (Desperate, pleading) [Stability: 0.3] "It was an accident—the coals, they scattered—I'll pay for damages, whatever the cost—"
-
-The Tavern Keeper's eyes fall to the fallen ledger. The columns. The figures.
-
-TAVERN KEEPER: (Suspicious, slow) [Stability: 0.6] "What manner of accounts need burning at the third watch?"
-
-Marcus's face goes grey as the ash coating his fingers. The Young Serving Boy edges closer, peering at the scattered parchment.
-
-YOUNG SERVING BOY: (Curious, innocent) [Stability: 0.8] "Those are shipping marks, aren't they? My father worked the docks—"
-
-MARCUS: (Threatening, shrill) [Stability: 0.2] "Touch nothing! This is—these are private affairs of my patron. You understand nothing!"
-
-He wipes his hands again, compulsively. His eyes find the window. The drop would break bones, but bones heal. Witnesses do not forget.
-
-The Tavern Keeper blocks the door now, arms crossed. Somewhere in the street below, a voice calls for the Vigiles.
-
-TAVERN KEEPER: (Cold, decided) [Stability: 0.7] "Private affairs that smoke like a pyre. You'll wait here, accountant. The Watch will sort what's worth burning and what's worth saving."
-
-Marcus looks at the ruined brazier, the fallen ledger, the two he still clutches. Half-destroyed. Half-intact. Enough to damn, not enough to damn completely.
-
-MARCUS: (Hollow, realizing) [Stability: 0.3] "Varo will know. By dawn, Varo will know."
-
-The Tavern Keeper's smile holds no warmth.
-
-TAVERN KEEPER: (Grim, quiet) [Stability: 0.7] "Then I'd spend tonight praying your patron values you more than whatever you were burning."
+He reaches for his tablets. The lamplight flickers. Somewhere in the house, a door closes with the finality of a tomb.
 
 ---
 
-## SC13 — INT. FABIUS HOUSE - ATRIUM - NIGHT
+## SC10 — EXT. THE ROMAN FORUM - EVENING
 
-Oil lamps throw wavering shadows across the impluvium, the water black and still as a seer's mirror. The household slaves have been dismissed—only the distant scrape of a broom somewhere in the servants' quarters breaks the silence. Quintus stands before the lararium, his back to his wife, one hand adjusting the fold of his toga as if armor could be made from wool.
+The dying light bleeds copper across the Temple of Saturn, casting the Forum's marble into shadow. Vendors fold their stalls. A slave sweeps ash from the steps of the Rostra. In the colonnade beside the Basilica Aemilia, where the crowd thins and senators may speak without witnesses, GAIUS CRASSIPES waits with the patience of a man who has brokered a hundred such meetings.
 
-Drusilla sits on the marble bench beside the reflecting pool, her posture perfect, her eyes fixed on her husband's shoulder blades. She has not blinked in three breaths.
+QUINTUS FABIUS MAXIMUS approaches, his toga praetexta catching the evening wind. He walks as though the ancestors themselves observe his gait.
 
-QUINTUS: (Controlled, Strained) [Stability: 0.5] "You took silver from Varo. From *Varo*." 
+CRASSIPES touches Quintus's arm in greeting, his smile immediate and practiced.
 
-He does not turn. His fingers find the toga's edge again, worrying the fabric.
+GAIUS CRASSIPES: (Warm, Collegial) [Stability: 0.7] "Quintus Fabius! How long since we've spoken properly? Your father—may the gods keep his shade—would be proud to see you standing so firm in these... turbulent waters."
 
-QUINTUS: (Bitter, Measured) [Stability: 0.5] "Ennius wrote that the man who sells his honor piece by piece wakes one morning to find he has sold himself entire. Did you think I would not discover it?"
+Quintus does not return the touch. He adjusts the fold of his toga, eyes fixed on the darkening sky beyond the columns.
 
-DRUSILLA: (Clinical, Soft) [Stability: 0.8] "I think you discovered it precisely when I intended you to."
+QUINTUS FABIUS: (Guarded, Formal) [Stability: 0.6] "Crassipes. You did not summon me here to speak of my father."
 
-Quintus turns at last. His jaw works, but she is already continuing, her voice low as a physician delivering prognosis.
+A litter passes nearby, borne by four Numidian slaves. Crassipes waits until it rounds the corner before continuing, his voice dropping.
 
-DRUSILLA: (Measured, Diagnostic) [Stability: 0.8] "The grain contracts are failing. Gaius Crassipes whispers that the Senate may move against our interests in Sicilia. I took insurance. Nothing more."
+GAIUS CRASSIPES: (Smooth, Conspiratorial) [Stability: 0.7] "There are men—reasonable men—who believe the current... unpleasantness need not continue. Certain interests might find satisfaction. Other interests might discover unexpected flexibility."
 
-QUINTUS: (Frustrated, Rising) [Stability: 0.4] "Insurance? You call it insurance? That man would see this house burned to ash if it served his ledgers!"
+He laughs softly, as though sharing a jest. His hand finds Quintus's arm again.
 
-He steps toward her. She does not flinch. Does not move at all.
+GAIUS CRASSIPES: (Coaxing, Measured) [Stability: 0.6] "Rome requires balance, Quintus. Not martyrs."
 
-DRUSILLA: (Stoic, Unblinking) [Stability: 0.7] "Then I have placed a portion of our fortune where the fire cannot reach it."
+Quintus's jaw tightens. He turns to face Crassipes directly, and where the broker sees negotiation, Quintus offers only stone.
 
-QUINTUS: (Wounded, Defensive) [Stability: 0.4] "The ancestors watch, Drusilla. They watch and they judge—"
+QUINTUS FABIUS: (Cold, Declarative) [Stability: 0.8] "Ennius wrote that a man's worth is measured not by what he gains, but by what he refuses to sell. You speak of flexibility—I hear only the sound of chains being forged."
 
-DRUSILLA: (Cool, Precise) [Stability: 0.8] "The ancestors are dead. Our children are not. I will do what preserves them."
+Crassipes's smile falters. He releases Quintus's arm.
 
-Silence. The lamp flames shudder in some imperceptible draft. Quintus's hand moves toward her, then falls. He cannot bridge this distance. He needs her too desperately to try.
+GAIUS CRASSIPES: (Frustrated, Warning) [Stability: 0.5] "The moderates grow weary, Fabius. There are those who would stand with you—if you would but meet them halfway. Push them aside, and you stand alone."
 
-QUINTUS: (Defeated, Quiet) [Stability: 0.4] "You have made me complicit in my own ruin."
+Quintus does not look at him. His gaze falls upon a bronze coin that has rolled to rest near his sandal—dropped by some careless merchant. He makes no move to retrieve it.
 
-DRUSILLA: (Soft, Final) [Stability: 0.7] "I have made you *surviving*, husband. The distinction matters only to the living."
+QUINTUS FABIUS: (Resolute, Quiet) [Stability: 0.7] "Then I stand alone. But I stand."
 
-She rises, smooth as water finding its level, and moves toward the corridor. At the threshold she pauses, her profile lit by flickering bronze light.
+He turns and walks into the gathering dusk. Crassipes watches him go, the easy warmth draining from his face.
 
-DRUSILLA: (Neutral, Deliberate) [Stability: 0.8] "When Varo calls upon us—and he will—you may refuse him nothing. That was the price."
+GAIUS CRASSIPES: (Bitter, Under Breath) [Stability: 0.5] "So be it, old friend. But the Senate remembers who could not bend—and who broke instead."
 
-She is gone before he can answer. Quintus stands alone in the atrium, staring at the black water, at his own fractured reflection.
-
----
-
-## SC14 — INT. PUBLIC BATHS - MORNING
-
-Steam rises from the caldarium in slow, deliberate coils, transforming the marble columns into ghosts of themselves. The morning crowd has not yet arrived—only a scattered few, their voices swallowed by water and stone. In the tepidarium's antechamber, where the heat is bearable and the walls thick, Drusilla waits. Her stola is simple. Her posture is not.
-
-Marcus Licinius enters through the servants' passage, escorted by a bath attendant who vanishes at Drusilla's nod. He stands dripping, wrapped in linen, eyes already measuring the distance to every exit.
-
-DRUSILLA: (Clinical, measured) [Stability: 0.8] "You arrived through the back. Good. You understand discretion."
-
-Marcus wipes his palms against his tunic. The gesture is quick, compulsive.
-
-MARCUS: (Nervous, deferential) [Stability: 0.4] "The Domina requested. I attend. But I do not understand why—"
-
-DRUSILLA: (Low, diagnostic) [Stability: 0.8] "Because Varo is looking for leaks. And you, Marcus Licinius, are damp."
-
-She lets the silence work. Three breaths. Four. Marcus shifts his weight, calculating, always calculating—the habit of a man who thinks in ledgers.
-
-MARCUS: (Precise, fearful) [Stability: 0.3] "I have given him no cause—"
-
-DRUSILLA: (Stoic, interrupting) [Stability: 0.7] "You have given him numbers. Numbers that lead to questions. Questions that lead to names." She tilts her head, unblinking. "My name, among others."
-
-Marcus's eyes dart to the doorway. A slave passes, carrying towels. Neither moves until the footsteps fade.
-
-MARCUS: (Calculating, desperate) [Stability: 0.4] "What do you want from me?"
-
-DRUSILLA: (Clinical, soft) [Stability: 0.8] "Your silence. Which you will give me freely, or not at all—but you will give it."
-
-She produces a small wax tablet from beneath her palla. Sets it on the stone bench between them.
-
-DRUSILLA: (Measured, final) [Stability: 0.8] "A letter of introduction to my husband's grain factor in Puteoli. Should you need to... travel. Should Varo's attention grow too warm."
-
-Marcus stares at the tablet. His hands tremble, but he does not reach for it.
-
-MARCUS: (Nervous, probing) [Stability: 0.4] "And if I speak to Varo of this meeting?"
-
-DRUSILLA: (Cold, absolute) [Stability: 0.9] "Then you will learn what I learned long ago: that Varo disposes of men who bring him problems. And you, Marcus, would become a problem the moment you opened your mouth."
-
-She rises. The steam swirls around her like a veil being drawn.
-
-DRUSILLA: (Clinical, quiet) [Stability: 0.8] "Take the tablet. Say nothing. When the time comes, I will send word."
-
-Marcus takes it. His fingers are cold against the wax.
-
-MARCUS: (Deferential, broken) [Stability: 0.3] "And if the time never comes?"
-
-Drusilla pauses at the threshold, her silhouette framed by vapor and morning light.
-
-DRUSILLA: (Stoic, soft) [Stability: 0.9] "Then you will have lived longer than you deserved. Be grateful."
-
-She disappears into the steam. Marcus stands alone, the tablet in his hand, the water dripping from somewhere deep within the baths—counting out time like a verdict yet to fall.
+The Forum empties. The bronze coin catches the last light of the sun before a slave's broom sweeps it into shadow.
 
 ---
 
-## SC15 — EXT. THE ROMAN FORUM - AFTERNOON
+## SC11 — INT. FABIUS HOUSE - ATRIUM - NIGHT
 
-The afternoon sun bleaches the marble steps of the Basilica Aemilia, throwing harsh shadows across the milling crowds. The air tastes of dust and copper—election season, when even the walls have opinions. Marcus Licinius moves through the throng with his head down, clutching a wax tablet to his chest like armor.
+A single oil lamp gutters on the household shrine, throwing the bronze lares into dancing shadow. The impluvium lies still as black glass. From somewhere deep in the house, a slave's bare feet whisper across tile—then silence. The kind of silence that settles over a home when its master returns wounded.
 
-He freezes.
+Quintus Fabius Maximus paces the length of the atrium, his toga half-undone, the purple stripe catching lamplight with each turn. He stops. Adjusts the fold at his shoulder. Resumes pacing. The ancestors watch from their painted alcoves, and he cannot meet their eyes.
 
-On the Column of Maeniana, fresh paint still wet: MARCUS LICINIUS—SERPENT'S TONGUE. BEWARE THE ACCOUNTANT WHO COUNTS HIS FRIENDS LAST.
+A rustle of linen. Drusilla emerges from the corridor leading to the private chambers, her stola the color of old bone. She does not hurry. She never hurries.
 
-MARCUS: (Panicked, breathless) [Stability: 0.3] "No. No, no—this cannot—"
+DRUSILLA: (Measured, Clinical) [Stability: 0.8] "The third watch passed. You were expected at the second."
 
-He spins. Another column. Another wall. The graffiti spreads like plague sores across the Forum's face—twelve messages, perhaps fifteen, all bearing his name.
+Quintus halts. His hand finds the toga fold again.
 
-A FISH VENDOR pauses at his stall, squinting at the nearest inscription.
+QUINTUS FABIUS: (Defensive, Strained) [Stability: 0.5] "Crassipes brought word from the customs office. The ledgers—there are discrepancies. Varo's hands are in it, I know it. But the trail..."
 
-FISH VENDOR: (Amused, loud) [Stability: 0.7] "Says here this Marcus fellow sold false tales about the banker Crassipes. Claims Crassipes was skimming from his own clients." He laughs. "Someone traced the lie back to its maker, eh?"
+He trails off. Drusilla crosses to the marble bench beside the impluvium and sits, her posture perfect, her gaze unblinking.
 
-Marcus wipes his hands against his tunic, leaving damp streaks. His eyes dart toward the Rostra, toward the Temple of Saturn, toward every exit blocked by curious bodies.
+DRUSILLA: (Stoic, Low-Volume) [Stability: 0.85] "The trail is cold. Or cooling."
 
-A WOOL MERCHANT joins the vendor, arms crossed.
+QUINTUS FABIUS: (Frustrated, Moralizing) [Stability: 0.45] "'Moribus antiquis res stat Romana virisque.' The old ways and the old men—that is what Ennius wrote. That is what holds Rome together. And Varo tears at it like a dog at carrion."
 
-WOOL MERCHANT: (Contemptuous, pointed) [Stability: 0.6] "I know that name. Keeps the books for Caelus Varo." He spits. "If the servant lies, what does that say about the master's house?"
+Drusilla lets the silence stretch. Three breaths. Four. When she speaks, her voice is soft as the lamp's dying hiss.
 
-MARCUS: (Desperate, too loud) [Stability: 0.2] "These are falsehoods! Fabrications meant to—"
+DRUSILLA: (Diagnostic, Intimate) [Stability: 0.8] "A dog tires itself, husband. It snaps at shadows. While the patient hunter waits at the burrow's mouth."
 
-FISH VENDOR: (Interrupting, dismissive) [Stability: 0.7] "Fabrications? Like the ones you spread about Crassipes? One part in ten of the city knows your face now, friend. And none of them trust it."
+Quintus turns to her. His shoulders drop, the defensive hunch easing.
 
-Marcus backs away. The tablet slips from his fingers and cracks against the paving stones. He does not retrieve it. Around him, the crowd's murmur rises—his name passing from lip to lip, each utterance stripping another layer of protection.
+QUINTUS FABIUS: (Uncertain, Seeking) [Stability: 0.5] "You counsel delay?"
 
-MARCUS: (Hollow, to himself) [Stability: 0.3] "Crassipes's allies. They found me. They found—"
+DRUSILLA: (Careful, Deliberate) [Stability: 0.85] "I counsel consolidation. You have friends in the Senate still. Let them speak of Varo's excesses. Let rumor do the labor your advocates cannot."
 
-He looks up at the Capitoline Hill, where Varo's influence once seemed unassailable.
+She rises. Crosses to him. Places one hand—cool, steady—against his cheek.
 
-MARCUS: (Trembling, precise) [Stability: 0.3] "Eighty-seven transactions I have recorded for him. Eighty-seven opportunities to learn too much." He swallows. "And now I am worth nothing as a witness—who would believe a man the walls call traitor?"
+DRUSILLA: (Warm, Controlled) [Stability: 0.9] "The house needs you whole. I need you whole."
 
-The wool merchant laughs. The fish vendor returns to his scales. The Forum continues its business, indifferent to the small man unraveling at its center.
+Quintus covers her hand with his own. He does not see how her eyes slide toward the shrine, toward the shadows beyond it, calculating.
 
-Marcus stands alone, graffiti surrounding him like an arena's walls.
+QUINTUS FABIUS: (Resigned, Grateful) [Stability: 0.6] "So be it. A tenday, perhaps. To let the waters settle."
 
-MARCUS: (Quiet, broken) [Stability: 0.2] "He will hear of this before nightfall. And when Varo hears—"
+DRUSILLA: (Neutral, Final) [Stability: 0.9] "It is well."
 
-He does not finish. He does not need to. The walls have already spoken for him.
+She guides him toward the corridor. The lamp gutters once more, and the ancestors' painted eyes seem to narrow.
+
+In the darkness of the atrium, unseen, a folded wax tablet rests beneath Drusilla's discarded mantle—sealed with a device that is not the Fabii crest.
 
 ---
 
-## SC16 — INT. VARO'S STUDY - AFTERNOON
+## SC12 — INT. VARO'S STUDY - NIGHT
 
-Watery light filters through the high windows, casting pale rectangles across ledgers stacked with the precision of a military formation. The room smells of ink, old parchment, and the faint metallic tang of coins recently counted. A bronze abacus sits on the desk, its beads arranged in a configuration that speaks of debts calculated to the last quadrans.
+Oil lamps throw restless shadows across ledgers stacked like fortifications. The air tastes of old parchment and cold sweat. Caelus Varo stands at his desk, tugging at his short tunic as though it constricts him, his fingers moving across scattered tablets with the jerky precision of a man counting enemies.
 
-Gaius Crassipes stands before the window, his back to the door, fingers drumming a patient rhythm against a wax tablet. Two men wait near the doorway—Numerius, a thin-faced freedman who handles delicate acquisitions, and beside him a broader figure called Sextus, who carries a leather satchel heavy with documents.
+A slave enters, refills a wine cup that Varo ignores. The liquid trembles in the vessel.
 
-CRASSIPES: (Satisfied, measured) [Stability: 0.8] "The Ostian properties. The warehouse shares. Even that pitiful vineyard in Campania."
+Marcus Licinius waits near the doorway, hands wiping unconsciously against his tunic. His eyes flick to the corridor behind him—measuring the distance to escape.
 
-He turns, and his smile carries the warmth of a winter sun—bright, but offering no heat.
+VARO: (Agitated, Clipped) [Stability: 0.4] "Three ships. Three. Impounded at Ostia. The weight of my grain fortune rotting in their holds while some magistrate's seal gathers dust."
 
-CRASSIPES: (Amused, silken) [Stability: 0.8] "Our friend Marcus has been quite industrious, hiding his little treasures. One almost admires the effort."
+MARCUS: (Cautious, Measured) [Stability: 0.5] "Dominus, the freeze is temporary. Legal delays favor those with patience. In thirty days—perhaps forty—the Advocate can—"
 
-Numerius steps forward, producing a scroll from his sleeve.
+VARO: (Sharp, Interrupting) [Stability: 0.3] "Thirty days. Forty days."
 
-NUMERIUS: (Neutral, professional) [Stability: 0.7] "The grain merchant Calvus held three of the warehouse shares in trust. He was... amenable to discussion once we clarified his own outstanding obligations."
+He sweeps a wax tablet from the desk. It cracks against the mosaic floor.
 
-Crassipes laughs—too readily, the sound filling the study like spilled wine.
+VARO: (Contemptuous, Staccato) [Stability: 0.3] "You speak like a man who has never watched coin bleed from his accounts. Information arriving a watch early is worth more than a province, and you counsel me to wait?"
 
-CRASSIPES: (Jovial, deliberate) [Stability: 0.7] "Amenable. I do appreciate a man who understands the poetry of leverage."
+Marcus steps forward, palms raised—a supplicant's gesture worn smooth by years of use.
 
-He crosses to the desk, touching Numerius's arm in that familiar gesture of false intimacy.
+MARCUS: (Nervous, Deferential) [Stability: 0.4] "The courts are markets, Dominus. The highest bidder wins. But one must know which purse to open, and when. If we move too quickly, we draw the Senate's eye—"
 
-CRASSIPES: (Calculating, soft) [Stability: 0.8] "And the vineyard?"
+VARO: (Explosive, Profane) [Stability: 0.2] "The Senate? That theater for ugly men pretending at nobility?"
 
-SEXTUS: (Flat, reporting) [Stability: 0.7] "Purchased outright through a third party this morning. The previous holder believed he was selling to a Neapolitan merchant."
+He rounds on Marcus, closing the distance between them. The accountant's eyes dart again to the exit.
 
-Crassipes lifts the abacus, slides a single bead across with his thumb. Then another. The soft clicking sounds like the tumblers of a lock falling into place.
+VARO: (Venomous, Mathematical) [Stability: 0.3] "You count my denarii but not my dangers. I need action. Not patience. Not your trembling caution."
 
-CRASSIPES: (Contemplative, smooth) [Stability: 0.8] "Poor Marcus. He sought to build a raft from the wreckage of his master's ship. Now he discovers someone else owns the very planks."
+MARCUS: (Wounded, Precise) [Stability: 0.5] "I have served you fifteen years, Dominus. Every number in these ledgers bears my hand. Every—"
 
-He sets down the abacus and turns to face his men, his expression settling into something harder beneath the accommodating smile.
+VARO: (Dismissive, Cold) [Stability: 0.4] "Every number proves you are useful. Not indispensable."
 
-CRASSIPES: (Determined, double-edged) [Stability: 0.8] "Varo believes he holds Marcus by the throat. Fabius circles like a hungry dog. And neither understands that a man's loyalty flows not to whoever threatens loudest, but to whoever controls his bread."
+The word hangs between them like a blade.
 
-He moves toward the door, pausing to adjust the folds of his toga with deliberate care.
+Marcus straightens slowly. Something shifts behind his calculating eyes—a weight settling, a sum being tallied for the first time.
 
-CRASSIPES: (Quiet, final) [Stability: 0.9] "Send word to our desperate accountant. Tell him a friend wishes to discuss his future—and remind him that friends, unlike patrons, rarely demand blood."
+MARCUS: (Quiet, Hollow) [Stability: 0.6] "It is well, Dominus. I shall prepare more... aggressive options."
 
-The bronze abacus catches the afternoon light, its beads now arranged in a new configuration entirely.
+He bows and retreats toward the door. His hands no longer wipe at his tunic.
+
+Varo turns back to his scattered tablets, alone with his paranoia.
+
+MARCUS pauses at the threshold, speaking without turning.
+
+MARCUS: (Neutral, Deliberate) [Stability: 0.7] "You know, Dominus—I have always wondered. When a man buries so many bodies... does he remember where he placed the shovel?"
+
+He is gone before Varo can respond.
+
+The oil lamp gutters. Shadows multiply.
+
+---
+
+## SC13 — EXT. THE ROMAN FORUM - MORNING
+
+Sunlight cuts sharp across the marble paving stones, gilding the columns of the Basilica Aemilia. The Forum thrums with its usual commerce—merchants hawking, clients seeking patrons, advocates rehearsing arguments beneath the rostra. The smell of fresh bread from a nearby stall mingles with the tang of sweat and ambition.
+
+Gaius Crassipes moves through the crowd with practiced ease, his toga freshly chalked, his smile ready. He touches a grain merchant's arm in greeting, laughs at a jest from a passing equestrian. All as it should be.
+
+Then he sees it.
+
+Crude letters scratched into the base of a statue—CRASSIPES LICKS THE PROSECUTOR'S SANDALS. A cluster of freedmen read it aloud, snickering. One mimics a groveling posture.
+
+Crassipes's smile freezes.
+
+A STREET VENDOR: (Mocking, Loud) [Stability: 0.7] "There he walks! The senator who begged for mercy and received none!"
+
+Laughter ripples through the crowd. A boy throws an overripe fig. It spatters against the stones at Crassipes's feet.
+
+Crassipes quickens his pace, but the whispers follow like flies on carrion. At every turn, fresh graffiti. On the wall of a tavern: THE ADVOCATE CRASSIPES—ASK HIM ABOUT HIS FAILED BARGAINS. Near the Temple of Castor: VARO'S DOG, BUT NOT A GOOD ONE.
+
+A WOOL-SELLER: (Contemptuous, Casual) [Stability: 0.6] "My wife negotiates better than that man, and she cannot read."
+
+More laughter. Crassipes's hand drifts to his arm—the gesture meant for others, now turned inward, gripping his own flesh through the wool.
+
+GAIUS CRASSIPES: (Defensive, Strained) [Stability: 0.4] "These are lies. Slander. I have served this city—"
+
+No one listens. A group of young men take up a chant, their voices carrying across the stones:
+
+"Crassipes the Crawler! Crassipes the Crawler!"
+
+He breaks into a near-run, dignity abandoned, heading for the shadow of the Tabularium. Behind him, a street artist adds another line to the growing graffiti: AND VARO REMEMBERS.
+
+Crassipes presses himself against a column, chest heaving. His eyes dart across the Forum—seeing now what he missed before. The careful choreography of it. The agents positioned at corners. The timing of each insult. This is no random mockery.
+
+This is architecture.
+
+GAIUS CRASSIPES: (Bitter, Quiet) [Stability: 0.3] "Every problem is a negotiation waiting to happen..."
+
+He laughs—the sound hollow, mirthless. The laugh of a man who has just discovered the limits of his own philosophy.
+
+Across the Forum, a figure in a plain tunic watches, then slips away toward the Palatine. The message delivered. The punishment complete.
+
+Crassipes stares at his trembling hands. When he looks up, his expression has changed. Fear remains, but beneath it, something harder is forming.
+
+GAIUS CRASSIPES: (Cold, Resolved) [Stability: 0.5] "So. Varo wishes me to understand the weight of his displeasure."
+
+He straightens his toga with deliberate care.
+
+GAIUS CRASSIPES: (Quiet, Dangerous) [Stability: 0.6] "Then let him understand this: even dogs have teeth."
+
+---
+
+## SC14 — INT. VARO'S STUDY - AFTERNOON
+
+Dust motes drift through slanted light where the shutters hang ajar. Scrolls lie scattered across the cedar desk—accounts, debts, leverage—the architecture of a man who counts the world in coins and favors. The smell of ink and old leather mingles with something sharper: wine gone sour in a forgotten cup.
+
+Varo stands at the window, tugging at his short tunic, measuring the sun's descent toward the rooftops. His fingers drum against the sill. Three breaths. Four.
+
+The steward announces: Gaius Crassipes.
+
+Varo does not turn.
+
+CRASSIPES: (Warm, Measured) [Stability: 0.7] "Caelus, my friend. You've redecorated since my last visit. Or is that merely a new arrangement of your enemies' IOUs?"
+
+VARO: (Clipped, Guarded) [Stability: 0.5] "Say what you came to say. I've no taste for pleasantries."
+
+Crassipes crosses to the desk, fingers brushing a scroll as if by accident. He chuckles—the sound too ready, too warm for the cold room.
+
+CRASSIPES: (Jovial, Probing) [Stability: 0.7] "The Forum speaks of nothing but your assault on Fabius. Brilliant theater. Devastating. And yet—"
+
+VARO: (Cutting) [Stability: 0.4] "And yet what? He bleeds. Good. Let him bleed."
+
+CRASSIPES: (Gentle, Insistent) [Stability: 0.6] "And yet you've given every cautious man in the Senate reason to fear you. Fear unites enemies, Caelus. It is the one currency that multiplies when spent."
+
+Varo turns now, eyes narrow. His hand finds the window frame, knuckles white.
+
+VARO: (Defensive, Mathematical) [Stability: 0.5] "I counted the votes. Fabius stands alone."
+
+CRASSIPES: (Smooth, Double-Edged) [Stability: 0.7] "Today. But you burn too bright, too fast. Even allies begin to wonder: if he devours Fabius so publicly, what stops him devouring me?"
+
+Crassipes moves closer, touches Varo's arm—light, familiar, calculated. His smile never wavers.
+
+CRASSIPES: (Accommodating, Firm) [Stability: 0.7] "The blade in the dark serves better than the torch in the Forum. Let them see a statesman. Let them never see the knife."
+
+Varo's jaw tightens. He checks the sun again—a breath closer to evening. When he speaks, the profanity is gone, replaced by something colder.
+
+VARO: (Reluctant, Calculating) [Stability: 0.6] "You counsel patience. Fabius festers while I smile?"
+
+CRASSIPES: (Satisfied, Conspiratorial) [Stability: 0.8] "Patience in public. Pressure in private. His accountant, Marcus—he reports to you still, does he not? Let the ledgers do what speeches cannot."
+
+Varo is silent. His fingers still. Then—
+
+VARO: (Measured, Dangerous) [Stability: 0.7] "So be it. I will wear the mask. But Crassipes—"
+
+He steps close, voice dropping.
+
+VARO: (Cold, Precise) [Stability: 0.7] "When the mask comes off, you had best be standing beside me. Not in front."
+
+Crassipes laughs—this time, the warmth does not reach his eyes.
+
+CRASSIPES: (Light, Unreadable) [Stability: 0.7] "Where else would I stand, my friend? The view is so much better from your shadow."
+
+The sun slips behind a cloud. The room dims.
+
+Varo turns back to the window, and when he speaks, it is almost to himself.
+
+VARO: (Quiet, Ominous) [Stability: 0.6] "Fabius believes he knows what I am. Let him learn what I become when I stop making noise."
+
+---
+
+## SC15 — INT. THE CROOKED CUP TAVERN - AFTERNOON
+
+Weak light filters through shutters warped by salt air, casting bars across a table where two amphorae stand untouched. The tavern smells of stale wine and fish oil. At the back, away from the handful of dock workers nursing their cups, a man in a toga too fine for this establishment sits across from another who cannot stop moving his hands.
+
+MARCUS LICINIUS wipes his palms against his tunic for the third time since sitting down. His eyes flick to the door, to the kitchen passage, back to the door.
+
+QUINTUS FABIUS MAXIMUS adjusts a fold of his toga, deliberate, unhurried. He has not touched the cup before him.
+
+QUINTUS: (Measured, Paternal) [Stability: 0.7] "You keep accounts for Caelus Varo. Every denarius that passes through his hands—you have weighed it, recorded it, understood where it flows."
+
+Marcus's fingers find the edge of his cup, rotate it without drinking.
+
+MARCUS: (Guarded, Precise) [Stability: 0.5] "I keep records. Nothing more. Columns of figures. What they purchase is not my concern."
+
+QUINTUS: (Soft, Probing) [Stability: 0.7] "Ennius wrote that mortal men have earned the gift of divinity through their deeds. But what of the man who enables another's corruption? Does he share in that stain?"
+
+Marcus's hand trembles. He pulls it from the cup.
+
+MARCUS: (Nervous, Deflecting) [Stability: 0.4] "I am a freedman. I count. I tally. The weight of thirty thousand sesterces moved last month alone—that is what I know. Not philosophy."
+
+Quintus leans forward. His hand reaches toward the small leather purse at his belt, then stops. He withdraws it, deliberately refusing to produce coin.
+
+QUINTUS: (Earnest, Determined) [Stability: 0.8] "I offer no gold. Varo offers gold aplenty, does he not? I offer something his coin cannot purchase."
+
+A serving girl—young, Numidian, her wrists bearing old rope scars—passes with a pitcher. Both men fall silent until she withdraws.
+
+MARCUS: (Bitter, Calculating) [Stability: 0.4] "And what is that?"
+
+QUINTUS: (Solemn, Weighted) [Stability: 0.7] "Immunity. The Praetor's word, sealed. Testify to what you have witnessed, and you walk free. The ancestors watch and judge every action, Marcus Licinius. What will they see when they look upon yours?"
+
+Marcus's eyes dart to the door once more. A docker at the front laughs at something. The sound dies quickly.
+
+MARCUS: (Torn, Afraid) [Stability: 0.3] "Varo knows where the bodies are buried. He knows because—"
+
+He stops himself. His throat works.
+
+QUINTUS: (Gentle, Pressing) [Stability: 0.7] "Because he put them there. Yes. I know this. And so do you."
+
+Silence stretches between them. Marcus wipes his hands again, leaving damp marks on the worn linen.
+
+MARCUS: (Wavering, Desperate) [Stability: 0.3] "Give me... give me time. Three days. I must think on this."
+
+Quintus rises, adjusting his toga fold once more. He looks down at the accountant with something almost like pity.
+
+QUINTUS: (Quiet, Final) [Stability: 0.8] "Three days, then. But consider this, freedman: Varo's gold will spend the same in your tomb as out of it."
+
+He turns and walks toward the light of the doorway, leaving Marcus alone with his untouched wine and his trembling hands.
+
+---
+
+## SC16 — INT. VARO'S STUDY - EVENING
+
+The brazier casts dancing shadows across the walls of Varo's archive room. Cedar shelves groan under the weight of scrolls and leather-bound ledgers. The air tastes of old ink and something sharper—fear, perhaps, or the copper tang of a man's conscience finally waking.
+
+Marcus Licinius stands alone before the flames, three ledgers clutched against his chest like a dying man clutching prayers. His hands are damp. He wipes them on his tunic, leaving dark streaks across the wool.
+
+MARCUS: (Whispered, to himself) [Stability: 0.3] "Three ledgers. Forty-seven entries. Enough to see a man's neck stretched."
+
+He steps toward the brazier. The heat licks at his face. His eyes dart to the doorway—no footsteps, no guards. Varo dines with Crassipes this night. The household slaves know better than to enter this room unbidden.
+
+MARCUS: (Strained, trembling) [Stability: 0.3] "Burn them. Burn them and walk free. Is it not simple arithmetic?"
+
+His fingers find the first ledger's spine. He extends it toward the flames.
+
+And stops.
+
+Quintus's voice echoes in his memory—something about Rome, about what a man leaves behind when his accounts are finally settled. Marcus had dismissed it then. The idle philosophy of a man who never had to count another's coins to survive.
+
+But now, in the dancing light, he sees the names written in his own hand. The bribes. The false tallies. The shipments that arrived empty because Varo had already sold their cargo twice over.
+
+MARCUS: (Bitter, resigned) [Stability: 0.4] "The courts are just another market. But markets... markets can be cornered."
+
+He pulls the ledger back. Sets it on Varo's desk with exaggerated care.
+
+From his belt pouch, he withdraws a blank wax tablet. His stylus moves with the precision of a man who has spent twenty winters turning lies into columns. He does not copy everything—only the weight of it. The essential entries. The names Varo believes are buried with the men who bore them.
+
+His eyes dart again to the door. His hand moves faster.
+
+When he finishes, Marcus wraps the tablet in a scrap of linen and slips it beneath a loose stone behind the third shelf—a hiding place he discovered while reorganizing Varo's wine accounts two summers past.
+
+He replaces the ledgers exactly as he found them. Adjusts the brazier's coals.
+
+MARCUS: (Controlled, calculating) [Stability: 0.5] "I have not chosen sides. I have merely... created options."
+
+He smooths his tunic. Wipes his hands one final time.
+
+MARCUS: (Cold, quiet) [Stability: 0.6] "Varo knows where the bodies are buried. But now, so do I."
+
+He slips from the archive room like smoke from a dying fire, leaving the brazier to gutter and fade—and the evidence exactly where Varo left it, waiting for the hand that will finally reach for it.
 
 ---
 
 ## SC17 — INT. THE CROOKED CUP TAVERN - EVENING
 
-Smoke from cheap tallow candles thickens the air, catching the dying light that bleeds through gaps in the shuttered windows. The tavern keeper—a man with fingers missing and questions never asked—has cleared the back corner as instructed. Two denarii for privacy. Three for silence.
+Smoke from cheap tallow candles hangs low beneath warped ceiling beams. The tavern reeks of sour wine and ambition—every whispered conversation here trades in futures, most of them stolen. In the back corner, where the lamplight fails to reach, Gaius Crassipes has claimed a table with the ease of a man who knows that coin buys silence.
 
-Marcus Licinius sits with his back to the wall, a habit of men who count other people's coins. His wine sits untouched. His hands move across his tunic, wiping, wiping.
+A serving boy—gap-toothed, no older than twelve—brings a second cup without being asked. Crassipes presses a copper into his palm.
 
-Drusilla enters without announcement. Her cloak is plain wool, beneath her station—deliberate anonymity. She takes the seat across from him, spine straight as a temple column, and waits.
+CRASSIPES: (Warm, Expansive) [Stability: 0.8] "Titus, isn't it? Your mother still works the fullers' quarter?"
 
-The silence stretches. Marcus breaks first. He always does.
+The boy nods, startled to be remembered, and retreats.
 
-MARCUS: (Nervous, rushed) [Stability: 0.4] "I thank you for coming. I know the risk you take, meeting with a man in my... position."
+Marcus Licinius enters through the side door, scanning the room twice before spotting his host. He wipes his hands on his tunic as he approaches—a nervous habit worn into the fabric itself. His eyes catalogue the exits: three. The patrons: eight. The armed men: two, both belonging to a wool merchant near the hearth.
 
-Drusilla says nothing. Her eyes find his and hold.
+CRASSIPES: (Jovial, Double-Meaning) [Stability: 0.7] "Marcus! Sit, sit. I've taken the liberty of ordering the Falernian. A poor vintage, but honest—rather like the company one finds here."
 
-MARCUS: (Calculating, desperate) [Stability: 0.3] "Varo's ledgers—I kept them. Every shipment. Every bribe. Forty-three officials. Nine senators. The weight of it would sink him, Domina."
+Marcus settles onto the bench, shoulders hunched.
 
-His eyes dart to the door. To the window. Back to her unblinking gaze.
+MARCUS: (Nervous, Precise) [Stability: 0.4] "You asked about the Alexandrian shipments. The numbers don't lie, Crassipes. Three vessels delayed. The harbor master's ledgers show spoilage claims on two more."
 
-MARCUS: (Pleading) [Stability: 0.3] "You have influence with him. You could speak on my behalf. Make him see reason before—"
+Crassipes touches Marcus's arm—a gesture of friendship that lingers a breath too long.
 
-DRUSILLA: (Clinical, soft) [Stability: 0.8] "Before what, precisely?"
+CRASSIPES: (Smooth, Accommodating) [Stability: 0.8] "And what does our mutual friend Varo make of this shortage?"
 
-MARCUS: (Hardening, bitter) [Stability: 0.4] "Before I am forced to remember other things. Things perhaps... closer to your heart."
+MARCUS: (Calculating, Deferential) [Stability: 0.5] "He's holding reserves. Seven granaries worth. When the price rises—and it will, by the next market day—one part in ten of every sesterce spent on grain flows to his coffers."
 
-He wipes his palms again. Leans forward.
+Crassipes laughs—too readily, too warmly.
 
-MARCUS: (Low, threatening) [Stability: 0.3] "Your children take their lessons at the house near the Temple of Vesta. Third watch, each morning. The tutor is old. The porter drinks. Such a long walk through narrow streets."
+CRASSIPES: (Accommodating, Pointed) [Stability: 0.7] "You serve your patron well, Marcus. Though I wonder—does a man who counts another's gold ever dream of counting his own?"
 
-The air between them turns to iron.
+Marcus's eyes dart to the nearest exit. His hands find his tunic again.
 
-Drusilla's posture does not change. Her breathing does not quicken. She regards him as a physician might regard an interesting wound.
+MARCUS: (Defensive, Sharp) [Stability: 0.3] "Varo knows where every coin rests. Every debt. Every... body."
 
-DRUSILLA: (Ice, measured) [Stability: 0.9] "You have miscounted, Marcus Licinius."
+A messenger boy appears at Crassipes's elbow—one of his own runners, breathless from the Forum. Crassipes scrawls instructions on a wax tablet without looking up: buy grain futures, all available contracts, before dawn.
 
-MARCUS: (Confused) [Stability: 0.4] "I—what?"
+CRASSIPES: (Smooth, Dismissive) [Stability: 0.8] "Run. Don't stop until my factor has this in hand."
 
-DRUSILLA: (Diagnostic, final) [Stability: 0.9] "You have counted my children. You have counted Varo's enemies. You have not counted the men who would open your throat for the price of a meal—and I know all their names."
+The boy vanishes. Crassipes turns back to Marcus, refilling his cup with paternal care.
 
-She rises. Her shadow falls across him like a blade.
+CRASSIPES: (Jovial, Layered) [Stability: 0.7] "You're a good man, Marcus. Loyal. Though loyalty, I've found, flows best toward those who'll still be standing when the flood recedes."
 
-DRUSILLA: (Quiet, absolute) [Stability: 0.9] "I came here to offer you my hand. You have chosen instead to show me the worm in your heart."
+Marcus says nothing. His silence speaks in numbers—calculating odds, weighing patrons, measuring the distance to the door.
 
-Marcus's face drains of color. His mouth opens, closes. The numbers have failed him.
+Crassipes raises his cup in toast, smile never wavering.
 
-DRUSILLA: (Cold, soft) [Stability: 0.9] "You wished to know consequences, accountant. You shall have a full reckoning."
-
-She walks to the door, pauses, speaks without turning.
-
-DRUSILLA: (Lethal, whispered) [Stability: 0.9] "I shall send flowers to your mother. She will need them before the next full moon."
-
-The door closes behind her. Marcus sits alone with his untouched wine and his trembling hands, and understands at last that some debts cannot be tallied.
+CRASSIPES: (Warm, Ominous) [Stability: 0.8] "To Varo's health, then. May it last as long as it proves... useful."
 
 ---
 
-## SC18 — INT. VARO'S STUDY - NIGHT
+## SC18 — INT. THE CROOKED CUP TAVERN - NIGHT
 
-A single oil lamp gutters on the desk, throwing long shadows across wax tablets stacked like tombstones. The room smells of old parchment and something sharper—the tang of ink mixed with something medicinal. Caelus Varo stands at the window, his back to the two men who wait in the doorway, their sandals scraping against the stone floor.
+Smoke from cheap tallow candles hangs like burial shrouds beneath the low beams. The tavern keeper has been paid to vanish. Only the scuttling of rats behind the walls breaks the silence—that, and the drip of condensation from the ceiling onto Marcus Licinius's untouched cup of posca.
 
-Varo does not turn. His fingers drum against the windowsill—a merchant's calculation, each tap a denarius counted.
+He sits in the corner booth, spine rigid against the damp wood. His hands move compulsively across his tunic, wiping, wiping. The door creaks. A figure in a dark palla glides through, face half-hidden, but he knows. Everyone knows Drusilla by her stillness.
 
-VARO: (Flat, Clipped) [Stability: 0.8] "Close the door."
+She takes the seat across from him. Does not speak. The silence stretches until Marcus's eyes dart to the kitchen passage, then the street door. Both blocked by shadows that were not there before.
 
-The taller of the two agents—a thick-necked Campanian with a scar bisecting his left eyebrow—pushes the oak shut. The latch falls with a sound like a trap springing.
+MARCUS LICINIUS: (Nervous, Rapid) [Stability: 0.4] "Domina, this is—I was not expecting—the ledgers are in order, I swear by Jupiter's stone—"
 
-Varo tugs at his short tunic, adjusting the hem where it has ridden up. Still he does not turn.
+DRUSILLA: (Clinical, Near-Whisper) [Stability: 0.8] "Your mother."
 
-VARO: (Cold, Mathematical) [Stability: 0.8] "Quintus Fabius. You know his villa on the Caelian."
+Marcus freezes. His hand stops mid-wipe.
 
-CAMPANIAN AGENT: (Cautious, Low) [Stability: 0.6] "We know it, Dominus."
+DRUSILLA: (Stoic, Measured) [Stability: 0.8] "Lucia Licinia. Widow. Lives in the Aventine insula, third floor. The stairs trouble her knees now. She takes barley water for her cough."
 
-VARO: (Impatient, Dismissive) [Stability: 0.7] "His wife leaves for her family's estates before dawn. The third watch. He will be alone save for two household slaves."
+MARCUS LICINIUS: (Strangled, Defensive) [Stability: 0.3] "How do you—why would you—"
 
-He turns now. The lamplight catches his face—unremarkable features arranged into something that might be boredom, might be appetite.
+DRUSILLA: (Diagnostic, Unblinking) [Stability: 0.9] "Your sister's children. The twins. Gaius and Spurius. Seven summers old. They walk to the grammaticus alone each morning. The route passes three alleys without witnesses."
 
-VARO: (Matter-of-fact, Profane) [Stability: 0.8] "Make it look like thieves. The usual shit—ransacked rooms, stolen silver. Let them find the body by morning."
+Marcus's face drains of color. He grips the table edge. The cup of posca trembles, sends ripples across its surface.
 
-The second agent, younger, shifts his weight. His jaw works.
+MARCUS LICINIUS: (Desperate, Hushed) [Stability: 0.2] "Domina, I have served Varo faithfully for twelve years. I know every denarius, every transaction—"
 
-YOUNGER AGENT: (Uneasy, Quiet) [Stability: 0.5] "The Senator has guards, Dominus. Two at least."
+DRUSILLA: (Low-Volume, Final) [Stability: 0.9] "Then you understand how books can be corrected. Entries erased. Names... removed."
 
-VARO: (Staccato, Cutting) [Stability: 0.8] "Three. The third drinks at a tavern near the Porta Capena until the stars turn. I have paid his tab for a month."
+She rises. Her posture remains perfect, hands folded before her like a Vestal at prayer. She has not raised her voice. She has not needed to.
 
-He moves to the desk. Picks up a small leather purse. Tosses it. The Campanian catches it without looking.
+DRUSILLA: (Clinical, Soft) [Stability: 0.8] "Varo requires your continued discretion. I require your active cooperation. These are not different things."
 
-VARO: (Flat, Final) [Stability: 0.9] "Half now. The rest when I read the announcement in the Forum."
+MARCUS LICINIUS: (Broken, Barely Audible) [Stability: 0.2] "It is well. Whatever you need. It is well."
 
-The agents exchange a glance. The Campanian tucks the purse beneath his cloak.
+Drusilla pauses at the threshold. The shadows behind her have already dissolved into the night.
 
-CAMPANIAN AGENT: (Grim, Professional) [Stability: 0.7] "It is well, Dominus."
+DRUSILLA: (Stoic, Quiet) [Stability: 0.9] "Men differ only in the price of their toys, Marcus. Your price is your blood. Remember that it remains... affordable."
 
-They turn to leave. Varo's voice stops them at the door.
+She is gone. Marcus sits alone in the guttering candlelight, hands shaking. When the tavern keeper returns three breaths later, he finds the accountant weeping silently into his palms.
 
-VARO: (Soft, Dangerous) [Stability: 0.9] "One more thing."
-
-He sits, reaching for a stylus as though already moving on to the next matter of business.
-
-VARO: (Cold, Almost Amused) [Stability: 0.8] "His ring. The one with the bull signet. Bring it to me. I want him to know, wherever the dead know anything, that I took everything."
-
-The lamp flickers. The door opens and closes.
-
-Varo begins to write, the scratch of stylus against wax the only sound—a man composing letters while murder walks the streets in his name.
+The cup of posca has not been touched. It never will be.
 
 ---
 
-## SC19 — INT. FABIUS HOUSE - ATRIUM - NIGHT
+## SC19 — INT. PUBLIC BATHS, FRIGIDARIUM — LATE NIGHT
 
-The oil lamp gutters, throwing restless shadows across the impluvium's still water. Quintus Fabius Maximus sits alone on the marble bench where his father once received clients, where his grandfather once planned campaigns. The wax tablets and scrolls spread before him catch the flame's trembling light—column after column of figures, names, dates. The evidence of his own ruin.
+The cold pool lies still as a dead man's eye. Torchlight from the colonnade throws wavering shadows across the marble, and the water reflects nothing but darkness. At this watch, the baths belong to rats and conspirators. The furnace slaves have banked their fires; the only warmth here is the kind that kills.
 
-His toga has slipped from one shoulder. He does not adjust it.
+Quintus Fabius Maximus stands at the pool's edge, toga adjusted precisely despite the chill. Across from him, the accountant Marcus Licinius clutches a leather satchel to his chest like a child might hold a stolen honey-cake. His sandals leave wet prints on the stone—he has been pacing.
 
-QUINTUS: (Hollow, Barely audible) [Stability: 0.3] "Three generations. Three generations of service to the Republic, and it ends with... with this."
+MARCUS: (Nervous, Rapid) [Stability: 0.4] "I should not be here. If Varo learns I spoke to you—"
 
-He traces a finger down one column. Ships that never sailed. Grain that never arrived. Yet somewhere, the gold moved. Always the gold moved.
+His eyes dart toward the entrance, then to the service corridor. Always mapping his retreat.
 
-The household is silent. Even the slaves have retreated to their quarters, sensing the storm that gathers in their master's stillness. Only old Philo, the freedman doorkeeper, remains at his post in the vestibule, too deaf now to hear his master's whispered reckonings.
+QUINTUS: (Cold, Imperious) [Stability: 0.7] "You summoned me from my bed with promises of evidence against that merchant-prince. Speak, or waste no more of my time."
 
-QUINTUS: (Rising anger, Controlled) [Stability: 0.4] "Caelus Varo. You wove this web with patient hands, did you not? While I stood in the Forum defending the old ways, you were here—"
+He adjusts the fold of his toga. The gesture of a man who believes the ancestors watch.
 
-He stops. The next scroll bears his wife's seal.
+MARCUS: (Calculating, Soft) [Stability: 0.5] "Not Varo's crimes, Prosecutor. His... associations."
 
-His hands do not shake as he unrolls it. A Fabius does not shake. His father taught him that before the siege of Numantia took him. But his breath catches—one breath, two—as he reads what Drusilla's own hand has recorded.
+Marcus wipes his hands on his tunic, leaving dark smears. He opens the satchel with trembling fingers and produces a wax tablet, then another. Five in total, arranged on the marble bench like offerings at a funeral.
 
-QUINTUS: (Devastated, Whispered) [Stability: 0.2] "'The weight of it.' She used those very words. Our words."
+MARCUS: (Deferential, Precise) [Stability: 0.4] "Eighteen thousand sesterces. Moved through a grain factor in Ostia. Twelve thousand more through a fullers' guild. The seal is concealed, but I know it."
 
-He sets the scroll down with terrible care, as though it might shatter.
+QUINTUS: (Dismissive, Irritated) [Stability: 0.6] "Varo's laundered coin. I have suspected as much for—"
 
-From somewhere in the house, a door closes. The sound of his wife's sandals on mosaic—the distinctive rhythm he has known for twenty years. She is awake. She is coming.
+MARCUS: (Cutting, Desperate) [Stability: 0.3] "Not Varo's seal, Prosecutor."
 
-Quintus gathers the evidence. Not to hide it—no, that time has passed like water through his fingers. He gathers it because a man should face his destroyer with clear eyes and ordered thoughts.
+He turns the largest tablet toward the torchlight. The wax bears an impression: a dove clutching laurel. Quintus goes still as temple stone.
 
-He quotes softly, almost to himself:
+MARCUS: (Quiet, Watching) [Stability: 0.5] "Your wife's. The Lady Drusilla's private mark."
 
-QUINTUS: (Bitter, Resigned) [Stability: 0.4] "'Moribus antiquis res stat Romana virisque.' The Roman state stands on ancient customs and men. So wrote Ennius."
+The silence stretches. Water drips somewhere in the dark. Quintus's hand moves toward the tablet, stops, trembles.
 
-He looks toward the lararium, where the death masks of his ancestors watch from their niches, bronze eyes gleaming in the lamplight.
+QUINTUS: (Strained, Breaking) [Stability: 0.3] "Forgeries. Varo has manufactured—"
 
-QUINTUS: (Cold, Steady) [Stability: 0.5] "But what stands when the customs rot from within the house itself?"
+MARCUS: (Precise, Relentless) [Stability: 0.5] "Three years of transactions. One part in ten of your household's reported income. I have the corresponding records from Varo's own ledgers. She has been his silent partner since the African grain shortage."
 
-The footsteps grow closer. He does not turn.
+Quintus staggers. His hand finds the column, grips it. The prosecutor who quotes Ennius, who lectures on ancestral virtue—he looks now like a man watching his house burn.
 
-QUINTUS: (Quiet, Dangerous) [Stability: 0.6] "Come then, wife. Let us speak of loyalty—and of the price Varo paid for yours."
+QUINTUS: (Hollow, Lost) [Stability: 0.2] "The weight of it... all this time, beneath my own roof..."
 
----
+Marcus is already backing toward the shadows, satchel clutched tight again.
 
-## SC20 — EXT. THE ROMAN FORUM / INT. VARO'S WAREHOUSE / INT. FABIUS VILLA - NIGHT
+MARCUS: (Nervous, Final) [Stability: 0.4] "I have given you truth, Prosecutor. What you build from it—that burden is yours."
 
-Torchlight fractures across the Forum's wet stones. The temples loom like judges. Somewhere, a dog howls at nothing.
+He vanishes into the service corridor. Quintus remains, staring at the tablets. The dove and laurel. His wife's secret, carved in wax.
 
----
+The cold pool reflects his face: a man whose certainties have drowned.
 
-**THE FORUM**
+QUINTUS: (Whispered, Hollow) [Stability: 0.2] "The only thing keeping this house standing."
 
-Marcus Licinius presses himself against the Column of Phocas, his breath visible in the cold. His hands move compulsively across his tunic, wiping, wiping. A shadow detaches from the Temple of Saturn.
+He laughs—a sound like breaking pottery.
 
-MARCUS: (Terrified, Stammering) [Stability: 0.3] "I counted every denarius. Every shipment. The ledgers are clean—I swear by my father's shade—"
-
-The ASSASSIN steps into the torchlight. Young. Provincial accent. A blade that catches no reflection.
-
-ASSASSIN: (Cold, Professional) [Stability: 0.8] "The patron sends his regards."
-
-Marcus's eyes dart to the exits. The Basilica Aemilia—too far. The Rostra—exposed.
-
-MARCUS: (Desperate, Rapid) [Stability: 0.2] "Wait—wait—I know where the Greek documents are hidden! Varo's contingency, the one even she doesn't know about—"
+QUINTUS: (Bitter, To Himself) [Stability: 0.3] "And she was selling the foundations all along."
 
 ---
 
-**VARO'S WAREHOUSE**
+## SC20 — INT. FABIUS HOUSE - ATRIUM - LATE NIGHT
 
-Caelus Varo stands amid amphorae, checking the moon's position through a crack in the timber roof. A DOCK FOREMAN waits, shifting weight.
+The impluvium reflects nothing. Oil lamps have burned low, their smoke hanging motionless beneath the painted ceiling where ancestors stare down with fixed disapproval. A letter lies open on the marble table between them—Varo's seal unmistakable, crimson wax cracked like a wound.
 
-CAELUS: (Impatient, Clipped) [Stability: 0.7] "The shipment from Ostia. It arrived at the third watch?"
+Quintus Fabius stands at the far column, his back to his wife. His fingers work the fold of his toga, adjusting, readjusting. The household slaves have been dismissed. Even the night porter holds his breath somewhere beyond the vestibulum.
 
-DOCK FOREMAN: (Nervous, Deferential) [Stability: 0.5] "Aye, Dominus. But the seals—"
+DRUSILLA: (Clinical, Measured) [Stability: 0.8] "You have read it three times now."
 
-CAELUS: (Sharp, Cutting) [Stability: 0.6] "I did not ask about seals. I asked about arrival."
+Silence. The fountain drips. One drop. Another.
 
-He tugs at his short tunic. His jaw works.
+QUINTUS FABIUS: (Strained, Without Turning) [Stability: 0.5] "Ennius wrote that fortune favors not the bold, but the prepared. I was neither."
 
-CAELUS: (Calculating, Quiet) [Stability: 0.7] "Marcus should have sent word by now. The accountant is never late. Numbers are his god."
+Drusilla does not move from her seated position on the marble bench. Her posture remains architectural—spine aligned with the column behind her, hands folded precisely in her lap. She watches his shoulders, reading the tension there as a physician reads a pulse.
 
----
+DRUSILLA: (Low, Diagnostic) [Stability: 0.8] "The letter concerns grain contracts. Not philosophy."
 
-**FABIUS VILLA**
+QUINTUS FABIUS: (Bitter, Still Averted) [Stability: 0.4] "Everything Varo touches becomes philosophy. The philosophy of rot."
 
-Quintus Fabius Maximus adjusts his toga fold before the household shrine. The flames gutter. Wax drips like old blood.
+He turns at last. His face carries the hollowness of a man who has not slept, who has paced this atrium since the third watch began. His eyes avoid the letter as they would a corpse.
 
-QUINTUS: (Moralizing, Grave) [Stability: 0.8] "As Ennius wrote: 'The Roman state stands on ancient customs and men.' Tonight, we remind them what customs mean."
+QUINTUS FABIUS: (Accusatory, Defensive) [Stability: 0.4] "He writes to my house. My house. With terms. As though I were some freedman negotiating passage on his ships."
 
-His wife DRUSILLA enters, her face unreadable.
+Drusilla's gaze does not waver. Unblinking. The silence stretches until it becomes its own pressure.
 
-DRUSILLA: (Measured, Probing) [Stability: 0.6] "You sent the message?"
+DRUSILLA: (Flat, Surgical) [Stability: 0.9] "You are negotiating. You simply refuse to name it."
 
-QUINTUS: (Defensive, Formal) [Stability: 0.7] "The ancestors watch and judge. I merely... aligned their will with opportunity."
+Quintus's hand freezes on his toga. The cloth bunches beneath white knuckles.
 
-He refuses to look at the small purse on the altar table. Gold glints within.
+QUINTUS FABIUS: (Wounded, Moralizing) [Stability: 0.3] "The ancestors—"
 
----
+DRUSILLA: (Cutting, Final) [Stability: 0.9] "The ancestors are dead. Their grain stores are dust. Their Republic needed their swords. This one requires different instruments."
 
-**THE FORUM**
+She rises. One fluid motion. She crosses to the table and folds the letter closed with precise fingers, then slides it toward him.
 
-The assassin advances. Marcus stumbles backward, palms raised.
+DRUSILLA: (Quiet, Absolute) [Stability: 0.9] "You will respond by dawn. Or I will."
 
-MARCUS: (Pleading, Breaking) [Stability: 0.2] "I can give you Varo! Everything he's done—the bribes, the murders, the Senator's wife—"
+She moves past him toward the corridor. At the threshold, she pauses—her profile carved in lamplight.
 
-ASSASSIN: (Flat, Final) [Stability: 0.9] "Who do you think paid me?"
+DRUSILLA: (Ice, Diagnostic) [Stability: 0.9] "Consider, husband: when a house needs both shield and blade, it is not the shield that cuts the terms."
 
-The blade rises.
-
-Marcus opens his mouth—
-
----
-
-**FREEZE.**
-
-Three locations. Three breaths held.
-
-In the warehouse, Varo's hand stops mid-reach for a wine cup.
-
-In the villa, Drusilla's fingers brush the purse, and Quintus pretends not to see.
-
-In the Forum, Marcus's scream begins—
-
-—and the blade descends.
-
-**BLACKOUT.**
-
-*The dead keep better ledgers than the living.*
+She vanishes into shadow. Quintus stares at the letter. His hand will not move to touch it.

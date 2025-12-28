@@ -1,0 +1,77 @@
+{
+  "packet_meta": {
+    "episode_id": "episode_01",
+    "scene_id": "SC06",
+    "sequence": 6,
+    "estimated_duration_min": 2.5
+  },
+  "setting": {
+    "location_id": "rome_forum",
+    "time_of_day": "afternoon",
+    "atmosphere": [
+      "High energy, public spectacle; crowd reactions punctuate the bold move"
+    ]
+  },
+  "cast": [
+    {
+      "character_id": "char_quintus_fabius",
+      "mood": "determined",
+      "active_objective": "Quintus freezes Varo's assets but triggers market instability—SIDE EFFECT: risk_market_crash activates"
+    },
+    {
+      "character_id": "char_caelus_varo",
+      "mood": "defensive"
+    }
+  ],
+  "director_instructions": {
+    "beat_type": "DECISION",
+    "pacing": "High energy, public spectacle; crowd reactions punctuate the bold move",
+    "sequence": [
+      {
+        "beat_id": "b_06",
+        "operator_id": "OP_ASSET_FREEZE",
+        "actor": "char_quintus_fabius",
+        "target": "char_caelus_varo",
+        "outcome": "SUCCESS",
+        "narrative_directives": {
+          "action": "Quintus, acting on initial evidence, moves aggressively. At the Basilica, he announces an asset freeze on Varo's grain holdings. Official seals are affixed to warehouse doors. The crowd gasps at the audacity—no one attacks Varo openly. But the action triggers panic in the markets; prices swing wildly as traders scramble.",
+          "beat_resolution": "Quintus freezes Varo's assets but triggers market instability—SIDE EFFECT: risk_market_crash activates"
+        },
+        "required_deltas": [
+          {
+            "path": "target.stats.wealth",
+            "op": "subtract",
+            "value": 20,
+            "description": "Effect from OP_ASSET_FREEZE"
+          },
+          {
+            "path": "world.global.unrest",
+            "op": "add",
+            "value": 1,
+            "description": "Effect from OP_ASSET_FREEZE"
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": {
+    "required_deltas": [
+      {
+        "path": "target.stats.wealth",
+        "op": "subtract",
+        "value": 20,
+        "narrative_trigger": "Effect from OP_ASSET_FREEZE"
+      },
+      {
+        "path": "world.global.unrest",
+        "op": "add",
+        "value": 1,
+        "narrative_trigger": "Effect from OP_ASSET_FREEZE"
+      }
+    ],
+    "allowed_inventions": {
+      "extras": 2
+    },
+    "hook_requirement": "End with a button line that creates anticipation"
+  }
+}

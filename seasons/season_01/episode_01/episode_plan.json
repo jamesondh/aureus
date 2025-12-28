@@ -8,25 +8,25 @@
     {
       "id": "b_01",
       "type": "SETUP",
-      "description": "Dawn in Rome. The grain markets buzz with nervous energy as merchants check empty warehouses. We establish the city's precarious state—bread lines grow longer, tempers shorter. A herald reads Praetor Quintus Fabius's announcement: a formal investigation into grain speculation is underway.",
+      "description": "Dawn over Rome. A sweating messenger races through the Forum as grain prices are chalked higher on the boards. We establish the city's anxiety—empty market stalls, thin bread, hungry eyes watching the harbor. Quintus Fabius, stern and purposeful, walks past the crowds toward the courts, observed by unseen watchers.",
       "primary_thread_id": "thr_grain_shortage",
       "associated_operators": [],
       "emotional_value": {
         "tension_delta": 1,
-        "hope_delta": 0
+        "hope_delta": -1
       },
-      "required_outcome": "Establish the twin crises of grain shortage and impending investigation that will define the season"
+      "required_outcome": "Establish the grain crisis as backdrop and introduce Quintus as a man of principle walking through a city on edge"
     },
     {
       "id": "b_02",
       "type": "SETUP",
-      "description": "In the opulent atrium of Caelus Varo's villa, exhausted messengers arrive with shipping manifests. Varo studies maps and ledgers, dispatching agents with urgent whispered orders. He exploits advance knowledge of delayed grain shipments to corner the market through Gaius Crassipes's banking network.",
-      "primary_thread_id": "thr_grain_shortage",
+      "description": "In Varo's opulent villa, exhausted messengers arrive with shipping reports. Varo studies maps and ledgers with Marcus, his accountant, orchestrating trades before news of delayed grain ships reaches the public markets. Marcus executes the orders with visible unease, understanding they're profiting from Rome's hunger.",
+      "primary_thread_id": "thr_varo_investigation",
       "associated_operators": [
         {
           "operator_id": "OP_INFORMATION_ARBITRAGE",
           "actor_id": "char_caelus_varo",
-          "target_id": "char_gaius_crassipes",
+          "target_id": "char_marcus_accountant",
           "intent": "pass"
         }
       ],
@@ -34,31 +34,24 @@
         "tension_delta": 1,
         "hope_delta": -1
       },
-      "required_outcome": "Varo successfully executes his trade, establishing his ruthless financial methods and alliance with Crassipes"
+      "required_outcome": "Show Varo's ruthless profiteering mechanism and Marcus's complicity, establishing the crime Quintus will investigate"
     },
     {
       "id": "b_03",
       "type": "SETUP",
-      "description": "In the Fabius household, Quintus prepares his case against Varo. His wife Drusilla brings him wine, offering measured counsel about the dangers of taking on such a powerful enemy. Her calm demeanor masks deeper concerns.",
-      "primary_thread_id": "thr_varo_investigation",
-      "associated_operators": [
-        {
-          "operator_id": "OP_STOIC_COUNSEL",
-          "actor_id": "char_drusilla",
-          "target_id": "char_quintus_fabius",
-          "intent": "pass"
-        }
-      ],
+      "description": "Quintus arrives home to find Drusilla reviewing household accounts with unusual intensity. She smoothly conceals certain ledgers as he enters. Their greeting is warm but something passes unsaid between them. She asks about his new investigation; he speaks of justice while she listens with hidden calculation.",
+      "primary_thread_id": "thr_drusilla_secret",
+      "associated_operators": [],
       "emotional_value": {
-        "tension_delta": 0,
-        "hope_delta": 1
+        "tension_delta": 1,
+        "hope_delta": 0
       },
-      "required_outcome": "Establish the Fabius marriage as seemingly supportive while planting seeds of Drusilla's hidden agenda"
+      "required_outcome": "Plant seeds of Drusilla's double life and her access to Quintus's legal strategies"
     },
     {
       "id": "b_04",
-      "type": "SETUP",
-      "description": "Quintus meets with his legal team to identify weak points in Varo's organization. They focus on Marcus, Varo's accountant, as a potential witness. Quintus orders an official subpoena prepared.",
+      "type": "DECISION",
+      "description": "In the courts, Quintus formally issues a subpoena compelling Marcus to testify about Varo's grain trading. The document bears official seals. Marcus receives it with trembling hands while Varo's agents watch from the gallery. The legal machinery begins to turn.",
       "primary_thread_id": "thr_varo_investigation",
       "associated_operators": [
         {
@@ -72,50 +65,12 @@
         "tension_delta": 1,
         "hope_delta": 1
       },
-      "required_outcome": "Quintus successfully issues the subpoena, forcing Marcus into the spotlight and pressuring Varo"
+      "required_outcome": "Quintus successfully subpoenas Marcus, forcing Varo to respond"
     },
     {
       "id": "b_05",
-      "type": "DECISION",
-      "description": "Quintus makes a bold move—he announces a freeze on Varo's assets pending investigation. Official seals are placed on Varo's warehouses as crowds gather. But the action triggers panic: merchants who depend on Varo's credit begin to fail. The market crashes.",
-      "primary_thread_id": "thr_varo_investigation",
-      "associated_operators": [
-        {
-          "operator_id": "OP_ASSET_FREEZE",
-          "actor_id": "char_quintus_fabius",
-          "target_id": "char_caelus_varo",
-          "intent": "pass"
-        }
-      ],
-      "emotional_value": {
-        "tension_delta": 2,
-        "hope_delta": -1
-      },
-      "required_outcome": "The asset freeze succeeds but triggers the market crash side effect, complicating Quintus's moral position"
-    },
-    {
-      "id": "b_06",
       "type": "SETUP",
-      "description": "In a private chamber, Gaius Crassipes counsels the furious Varo. With calm measured speech, the veteran banker urges patience and strategy rather than immediate retaliation. Varo's agitation slowly subsides as he listens to Crassipes's wisdom.",
-      "primary_thread_id": "thr_varo_investigation",
-      "associated_operators": [
-        {
-          "operator_id": "OP_STOIC_COUNSEL",
-          "actor_id": "char_gaius_crassipes",
-          "target_id": "char_caelus_varo",
-          "intent": "pass"
-        }
-      ],
-      "emotional_value": {
-        "tension_delta": -1,
-        "hope_delta": 0
-      },
-      "required_outcome": "Crassipes calms Varo and they begin plotting a coordinated response to the investigation"
-    },
-    {
-      "id": "b_07",
-      "type": "SETUP",
-      "description": "Marcus the accountant, terrified by the subpoena, meets secretly with Varo. In a shadowy warehouse, coins change hands. Marcus agrees to remain loyal and, if necessary, destroy incriminating ledgers.",
+      "description": "At a private bath house, Varo meets with Marcus. In the steam and shadows, coins change hands. Varo speaks softly of loyalty, of rewards, of what happens to those who betray him. Marcus, sweating from more than the heat, accepts the bribe and commits to silence.",
       "primary_thread_id": "thr_marcus_loyalty",
       "associated_operators": [
         {
@@ -129,12 +84,31 @@
         "tension_delta": 1,
         "hope_delta": -1
       },
-      "required_outcome": "Marcus accepts Varo's bribe, establishing his compromised position but also his fear"
+      "required_outcome": "Varo successfully bribes Marcus, but Marcus's conscience is visibly troubled"
     },
     {
-      "id": "b_08",
+      "id": "b_06",
+      "type": "DECISION",
+      "description": "Quintus, acting on initial evidence, moves aggressively. At the Basilica, he announces an asset freeze on Varo's grain holdings. Official seals are affixed to warehouse doors. The crowd gasps at the audacity—no one attacks Varo openly. But the action triggers panic in the markets; prices swing wildly as traders scramble.",
+      "primary_thread_id": "thr_varo_investigation",
+      "associated_operators": [
+        {
+          "operator_id": "OP_ASSET_FREEZE",
+          "actor_id": "char_quintus_fabius",
+          "target_id": "char_caelus_varo",
+          "intent": "pass"
+        }
+      ],
+      "emotional_value": {
+        "tension_delta": 2,
+        "hope_delta": 1
+      },
+      "required_outcome": "Quintus freezes Varo's assets but triggers market instability—SIDE EFFECT: risk_market_crash activates"
+    },
+    {
+      "id": "b_07",
       "type": "CONFRONTATION",
-      "description": "At a public gathering in the Forum, Varo encounters Quintus. Before a crowd of witnesses, Varo delivers a cutting public snub—questioning Quintus's family wealth, implying his ancestors sold grain short during an earlier famine. Quintus is visibly shaken; onlookers whisper.",
+      "description": "At a public gathering in the Forum, Varo encounters Quintus before the assembled citizens. With cold deliberation, Varo publicly snubs the prosecutor—turning his back mid-greeting, loudly questioning whether 'provincial lawyers' understand Roman commerce. The crowd watches in frozen silence. Quintus, caught off-guard, struggles to respond with dignity.",
       "primary_thread_id": "thr_varo_investigation",
       "associated_operators": [
         {
@@ -148,12 +122,12 @@
         "tension_delta": 2,
         "hope_delta": -1
       },
-      "required_outcome": "Varo publicly humiliates Quintus, shifting public sympathy and demonstrating his social power"
+      "required_outcome": "Varo publicly humiliates Quintus, establishing the personal stakes of their conflict"
     },
     {
-      "id": "b_09",
+      "id": "b_08",
       "type": "DECISION",
-      "description": "Late at night, Drusilla slips from her bed. In a hidden room, she studies her own ledgers and sends coded messages via exhausted messengers. She's been exploiting her husband's investigation for personal financial gain, trading on advance knowledge through Varo's networks.",
+      "description": "That evening, Drusilla slips away to meet a contact. Using information gleaned from Quintus about the asset freeze, she positions her own hidden investments before the market reacts. Maps and ledgers spread before her, she whispers urgent orders. But she's observed—a senator's aide notes her presence.",
       "primary_thread_id": "thr_drusilla_secret",
       "associated_operators": [
         {
@@ -164,15 +138,34 @@
         }
       ],
       "emotional_value": {
+        "tension_delta": 2,
+        "hope_delta": -1
+      },
+      "required_outcome": "Drusilla profits from insider knowledge but is noticed—SIDE EFFECT: risk_senate_inquiry triggered"
+    },
+    {
+      "id": "b_09",
+      "type": "SETUP",
+      "description": "Drusilla attempts to mediate between Varo and her husband through intermediaries, trying to reduce tensions that threaten her double game. She meets Varo privately, urging restraint, positioning herself as a voice of reason. But Varo sees through the attempt—he blames her for divided loyalties and makes veiled threats.",
+      "primary_thread_id": "thr_drusilla_secret",
+      "associated_operators": [
+        {
+          "operator_id": "OP_MEDIATE_CONFLICT",
+          "actor_id": "char_drusilla",
+          "target_id": "char_caelus_varo",
+          "intent": "fail"
+        }
+      ],
+      "emotional_value": {
         "tension_delta": 1,
         "hope_delta": -1
       },
-      "required_outcome": "Reveal Drusilla's secret financial dealings, establishing her as a player with her own agenda"
+      "required_outcome": "Drusilla's mediation backfires; Varo suspects her—SIDE EFFECT: risk_blamed triggered, she's caught in crossfire"
     },
     {
       "id": "b_10",
       "type": "SETUP",
-      "description": "Gaius Crassipes sends a discreet message to Quintus, requesting a clandestine meeting. In a private garden, disguised in plain robes, the banker offers a pragmatic bargain: certain financial irregularities overlooked in exchange for limiting the investigation's scope.",
+      "description": "Gaius Crassipes, a political fixer and senator, invites Quintus to a private meeting at a secluded garden. Speaking in coded language, he suggests a possible arrangement—Quintus eases the investigation, Varo makes certain concessions. Quintus listens but his face hardens; he refuses any compromise with corruption.",
       "primary_thread_id": "thr_varo_investigation",
       "associated_operators": [
         {
@@ -186,12 +179,164 @@
         "tension_delta": 1,
         "hope_delta": 0
       },
-      "required_outcome": "Quintus refuses the deal, hardening battle lines but revealing Crassipes as willing to negotiate"
+      "required_outcome": "Crassipes fails to broker a deal; Quintus's refusal angers moderates—SIDE EFFECT: risk_base_anger triggered"
     },
     {
       "id": "b_11",
+      "type": "DECISION",
+      "description": "Late at night, a shaken Quintus returns home. Drusilla finds him pacing. With measured calm, she counsels patience—perhaps the investigation moves too fast, perhaps he should consolidate before striking again. Her words are wise, but her motives are mixed. Quintus, seeing only his supportive wife, agrees to slow his approach.",
+      "primary_thread_id": "thr_drusilla_secret",
+      "associated_operators": [
+        {
+          "operator_id": "OP_STOIC_COUNSEL",
+          "actor_id": "char_drusilla",
+          "target_id": "char_quintus_fabius",
+          "intent": "pass"
+        }
+      ],
+      "emotional_value": {
+        "tension_delta": -1,
+        "hope_delta": 0
+      },
+      "required_outcome": "Drusilla successfully manipulates Quintus into slowing the investigation, buying time for her schemes"
+    },
+    {
+      "id": "b_12",
+      "type": "SETUP",
+      "description": "Varo, rattled by the asset freeze and market turmoil, grows paranoid. Marcus attempts to calm him, speaking of patience and legal delays. But Varo, in his agitation, snaps at his accountant—dismissing his counsel and demanding more aggressive action. The relationship frays.",
+      "primary_thread_id": "thr_marcus_loyalty",
+      "associated_operators": [
+        {
+          "operator_id": "OP_STOIC_COUNSEL",
+          "actor_id": "char_marcus_accountant",
+          "target_id": "char_caelus_varo",
+          "intent": "fail"
+        }
+      ],
+      "emotional_value": {
+        "tension_delta": 1,
+        "hope_delta": 0
+      },
+      "required_outcome": "Marcus's advice is rejected; he begins to question his loyalty to Varo"
+    },
+    {
+      "id": "b_13",
+      "type": "DECISION",
+      "description": "In the Forum, Varo's agents spread whispers about Crassipes—crude graffiti appears, rumors of his failed negotiations with the prosecutor paint him as weak and compromised. Street crowds laugh at the senator's expense. Crassipes is mocked as he passes through public spaces.",
+      "primary_thread_id": "thr_varo_investigation",
+      "associated_operators": [
+        {
+          "operator_id": "OP_RUMOR_CAMPAIGN",
+          "actor_id": "char_caelus_varo",
+          "target_id": "char_gaius_crassipes",
+          "intent": "pass"
+        }
+      ],
+      "emotional_value": {
+        "tension_delta": 1,
+        "hope_delta": -1
+      },
+      "required_outcome": "Varo punishes Crassipes for the failed negotiation, showing his reach and vindictiveness"
+    },
+    {
+      "id": "b_14",
+      "type": "SETUP",
+      "description": "Crassipes, stung by public ridicule, meets privately with Varo. The older senator offers counsel—this scorched-earth approach will unite enemies, patience is required. Varo, seeing political wisdom, reluctantly agrees to temper his public aggression while intensifying covert pressure.",
+      "primary_thread_id": "thr_varo_investigation",
+      "associated_operators": [
+        {
+          "operator_id": "OP_STOIC_COUNSEL",
+          "actor_id": "char_gaius_crassipes",
+          "target_id": "char_caelus_varo",
+          "intent": "pass"
+        }
+      ],
+      "emotional_value": {
+        "tension_delta": -1,
+        "hope_delta": 0
+      },
+      "required_outcome": "Crassipes successfully counsels Varo toward subtler tactics"
+    },
+    {
+      "id": "b_15",
+      "type": "DECISION",
+      "description": "Quintus, despite Drusilla's counsel, prepares for Marcus's testimony. He visits the accountant personally, speaking of duty to Rome, of immunity for cooperation. Marcus wavers—torn between Varo's gold and his own conscience. He asks for time to decide.",
+      "primary_thread_id": "thr_marcus_loyalty",
+      "associated_operators": [
+        {
+          "operator_id": "OP_STOIC_COUNSEL",
+          "actor_id": "char_quintus_fabius",
+          "target_id": "char_drusilla",
+          "intent": "pass"
+        }
+      ],
+      "emotional_value": {
+        "tension_delta": 1,
+        "hope_delta": 1
+      },
+      "required_outcome": "Quintus plants seeds of doubt in Marcus, offering an alternative to Varo's corruption"
+    },
+    {
+      "id": "b_16",
+      "type": "REVERSAL",
+      "description": "Alone in Varo's archive room, Marcus stares at the incriminating ledgers. He lights a small fire in a brazier. But as he moves to burn the evidence, he hesitates—remembering Quintus's words about Rome, about legacy. At the last moment, he copies key entries onto a wax tablet and hides it, leaving the originals. He hasn't chosen sides yet, but he's created options.",
+      "primary_thread_id": "thr_marcus_loyalty",
+      "associated_operators": [
+        {
+          "operator_id": "OP_DESTROY_EVIDENCE",
+          "actor_id": "char_marcus_accountant",
+          "target_id": "char_caelus_varo",
+          "intent": "fail"
+        }
+      ],
+      "emotional_value": {
+        "tension_delta": 2,
+        "hope_delta": 1
+      },
+      "required_outcome": "Marcus fails to destroy evidence—instead secretly preserves proof of Varo's crimes"
+    },
+    {
+      "id": "b_17",
+      "type": "SETUP",
+      "description": "Crassipes, working both sides, meets with Marcus. Using the accountant's knowledge, he positions his own grain investments. Exhausted messengers carry his orders. But Crassipes also takes note of Marcus's divided loyalties—useful information for later leverage.",
+      "primary_thread_id": "thr_varo_investigation",
+      "associated_operators": [
+        {
+          "operator_id": "OP_INFORMATION_ARBITRAGE",
+          "actor_id": "char_gaius_crassipes",
+          "target_id": "char_marcus_accountant",
+          "intent": "pass"
+        }
+      ],
+      "emotional_value": {
+        "tension_delta": 1,
+        "hope_delta": 0
+      },
+      "required_outcome": "Crassipes profits from Marcus's information while observing his wavering loyalty"
+    },
+    {
+      "id": "b_18",
+      "type": "DECISION",
+      "description": "Drusilla, learning of Marcus's hesitation from her network, takes drastic action. In shadows, with quiet menace, she visits Marcus. She speaks of his family—his aging mother, his sister's children. Nothing explicit, but the threat is clear. Marcus goes pale. Drusilla has shown a darker side.",
+      "primary_thread_id": "thr_marcus_loyalty",
+      "associated_operators": [
+        {
+          "operator_id": "OP_THREATEN_FAMILY",
+          "actor_id": "char_drusilla",
+          "target_id": "char_marcus_accountant",
+          "intent": "pass"
+        }
+      ],
+      "emotional_value": {
+        "tension_delta": 2,
+        "hope_delta": -2
+      },
+      "required_outcome": "Drusilla threatens Marcus's family, revealing her willingness to cross moral lines"
+    },
+    {
+      "id": "b_19",
       "type": "REVEAL",
-      "description": "Marcus, drunk and terrified, corners Quintus after dark. In a moment of desperate confession, he reveals that Varo has been manipulating grain futures for months—but also names Drusilla as receiving payments through a shell company. Quintus is devastated. Immediately, shadowy figures loyal to Varo witness the exchange.",
+      "description": "A disturbed Marcus, seeking leverage against all parties, makes a calculated revelation. Meeting secretly with Quintus, he doesn't speak of Varo's crimes—instead he whispers of financial irregularities closer to home. He shows transactions bearing Drusilla's hidden seal. Quintus's world tilts. His wife is entangled with the very forces he fights.",
       "primary_thread_id": "thr_drusilla_secret",
       "associated_operators": [
         {
@@ -205,133 +350,19 @@
         "tension_delta": 2,
         "hope_delta": -2
       },
-      "required_outcome": "Marcus reveals Drusilla's involvement to Quintus; the retaliation risk triggers as Varo's agents observe"
+      "required_outcome": "Marcus reveals Drusilla's secret financial dealings to Quintus—the prosecutor's world is shattered"
     },
     {
-      "id": "b_12",
-      "type": "DECISION",
-      "description": "Varo's agents report Marcus's betrayal. In cold fury, Varo orders immediate action. Marcus, paranoid and trembling, attempts to destroy evidence—burning ledgers in his small apartment. But the fire attracts attention before he can finish.",
-      "primary_thread_id": "thr_marcus_loyalty",
-      "associated_operators": [
-        {
-          "operator_id": "OP_DESTROY_EVIDENCE",
-          "actor_id": "char_marcus_accountant",
-          "target_id": "char_caelus_varo",
-          "intent": "fail"
-        }
-      ],
-      "emotional_value": {
-        "tension_delta": 2,
-        "hope_delta": 0
-      },
-      "required_outcome": "Marcus is interrupted mid-destruction, leaving some evidence intact and himself exposed"
-    },
-    {
-      "id": "b_13",
-      "type": "SETUP",
-      "description": "Quintus confronts Drusilla privately. She uses all her rhetorical skill, speaking calmly of survival, of protecting their family's future in uncertain times. She counsels him to see reason—the money is insurance, nothing more.",
-      "primary_thread_id": "thr_drusilla_secret",
-      "associated_operators": [
-        {
-          "operator_id": "OP_STOIC_COUNSEL",
-          "actor_id": "char_quintus_fabius",
-          "target_id": "char_drusilla",
-          "intent": "fail"
-        }
-      ],
-      "emotional_value": {
-        "tension_delta": 1,
-        "hope_delta": -1
-      },
-      "required_outcome": "Quintus attempts to reason with Drusilla but she deflects; their marriage fractures but doesn't break"
-    },
-    {
-      "id": "b_14",
-      "type": "SETUP",
-      "description": "Drusilla, sensing Marcus as a loose end, arranges a secret meeting. Positioning herself between Marcus's panic and Varo's wrath, she attempts to broker a solution—offering Marcus protection in exchange for silence about her involvement.",
-      "primary_thread_id": "thr_drusilla_secret",
-      "associated_operators": [
-        {
-          "operator_id": "OP_MEDIATE_CONFLICT",
-          "actor_id": "char_drusilla",
-          "target_id": "char_marcus_accountant",
-          "intent": "pass"
-        }
-      ],
-      "emotional_value": {
-        "tension_delta": 0,
-        "hope_delta": 0
-      },
-      "required_outcome": "Drusilla successfully positions herself as Marcus's potential ally, gaining leverage over him"
-    },
-    {
-      "id": "b_15",
-      "type": "REVERSAL",
-      "description": "Marcus, growing desperate, tries to protect himself by spreading rumors about Gaius Crassipes—suggesting the banker has been skimming from his own clients. But the rumor campaign backfires spectacularly: Crassipes's allies trace the source, and Marcus finds graffiti naming HIM as a traitor appearing across the city.",
-      "primary_thread_id": "thr_marcus_loyalty",
-      "associated_operators": [
-        {
-          "operator_id": "OP_RUMOR_CAMPAIGN",
-          "actor_id": "char_marcus_accountant",
-          "target_id": "char_gaius_crassipes",
-          "intent": "fail"
-        }
-      ],
-      "emotional_value": {
-        "tension_delta": 2,
-        "hope_delta": -1
-      },
-      "required_outcome": "Marcus's rumor campaign fails with blowback—he becomes publicly marked as unreliable and treacherous"
-    },
-    {
-      "id": "b_16",
-      "type": "DECISION",
-      "description": "Crassipes, now aware of multiple betrayals, uses his financial intelligence network to discover Marcus's remaining hidden assets. Through intermediaries, he moves to acquire leverage over the desperate accountant.",
-      "primary_thread_id": "thr_marcus_loyalty",
-      "associated_operators": [
-        {
-          "operator_id": "OP_INFORMATION_ARBITRAGE",
-          "actor_id": "char_gaius_crassipes",
-          "target_id": "char_marcus_accountant",
-          "intent": "pass"
-        }
-      ],
-      "emotional_value": {
-        "tension_delta": 1,
-        "hope_delta": -1
-      },
-      "required_outcome": "Crassipes gains financial leverage over Marcus, adding another player seeking to control him"
-    },
-    {
-      "id": "b_17",
-      "type": "SETUP",
-      "description": "Marcus, cornered on all sides, makes a dark choice. He arranges a private meeting with Drusilla under pretense of accepting her protection—but instead delivers a veiled threat against her family, her children, if she doesn't use her influence to save him.",
-      "primary_thread_id": "thr_drusilla_secret",
-      "associated_operators": [
-        {
-          "operator_id": "OP_THREATEN_FAMILY",
-          "actor_id": "char_marcus_accountant",
-          "target_id": "char_drusilla",
-          "intent": "fail"
-        }
-      ],
-      "emotional_value": {
-        "tension_delta": 2,
-        "hope_delta": -1
-      },
-      "required_outcome": "Drusilla refuses to be intimidated; Marcus has made a powerful enemy and must now face consequences"
-    },
-    {
-      "id": "b_18",
+      "id": "b_20",
       "type": "CLIFFHANGER",
-      "description": "Night falls on Rome. Quintus sits alone with the charred remnants of Marcus's ledgers, finding just enough evidence to damn both Varo AND his own wife. Across the city, Varo receives word of the surviving documents. He gives a single order. In a dark alley, Marcus walks home—and a blade flashes in the torchlight. We freeze on Marcus's face, mid-scream, as the episode ends.",
-      "primary_thread_id": "thr_marcus_loyalty",
+      "description": "Night. Quintus stands alone in his study, Drusilla's hidden ledger in his hands. Footsteps approach—Drusilla enters, seeing him holding the evidence. Their eyes meet. A frozen moment. Neither speaks. The camera holds on their faces: his betrayal, her calculation, the marriage and the investigation both suspended in terrible silence. Outside, Rome burns with unrest over grain prices, unaware that its prosecutor's house is already in flames.",
+      "primary_thread_id": "thr_drusilla_secret",
       "associated_operators": [],
       "emotional_value": {
         "tension_delta": 2,
-        "hope_delta": -2
+        "hope_delta": -1
       },
-      "required_outcome": "Marcus is attacked (fate unknown), Quintus possesses damning evidence, and the stakes for everyone are now lethal"
+      "required_outcome": "Quintus confronts the evidence of Drusilla's betrayal as she walks in—their marriage and his mission hang in the balance"
     }
   ],
   "scenes": [
@@ -341,15 +372,13 @@
       "location_id": "rome_forum",
       "time_of_day": "dawn",
       "characters": [
-        "herald",
-        "merchants",
-        "citizens"
+        "char_quintus_fabius"
       ],
       "beats_included": [
         "b_01"
       ],
-      "pacing_notes": "Slow, atmospheric opening establishing the city's tension through visual storytelling and ambient sound",
-      "transition_out": "Cut to opulent interior contrast..."
+      "pacing_notes": "Slow, atmospheric opening establishing the city's tension through visual storytelling",
+      "transition_out": "Cut to the opulent contrast of Varo's villa"
     },
     {
       "scene_id": "SC02",
@@ -358,14 +387,13 @@
       "time_of_day": "morning",
       "characters": [
         "char_caelus_varo",
-        "char_gaius_crassipes",
-        "messengers"
+        "char_marcus_accountant"
       ],
       "beats_included": [
         "b_02"
       ],
-      "pacing_notes": "Urgent, business-like rhythm as Varo orchestrates his scheme with cold efficiency",
-      "transition_out": "Cut to humble domestic scene..."
+      "pacing_notes": "Intimate, conspiratorial tone; show the mechanism of corruption",
+      "transition_out": "Cut to Quintus arriving home"
     },
     {
       "scene_id": "SC03",
@@ -379,43 +407,159 @@
       "beats_included": [
         "b_03"
       ],
-      "pacing_notes": "Intimate, measured pace with underlying tension beneath the supportive surface",
-      "transition_out": "Cut to legal preparations..."
+      "pacing_notes": "Warm surface with undercurrents of tension; plant subtle clues of Drusilla's secrets",
+      "transition_out": "Cut to the courts"
     },
     {
       "scene_id": "SC04",
-      "slug": "INT. FABIUS HOUSE - ATRIUM - MORNING",
-      "location_id": "domus_fabius_atrium",
-      "time_of_day": "morning",
-      "characters": [
-        "char_quintus_fabius",
-        "legal_team"
-      ],
-      "beats_included": [
-        "b_04"
-      ],
-      "pacing_notes": "Procedural but purposeful, building momentum toward action",
-      "transition_out": "Cut to public spectacle..."
-    },
-    {
-      "scene_id": "SC05",
-      "slug": "EXT. THE ROMAN FORUM - NOON",
+      "slug": "INT. THE ROMAN FORUM - NOON",
       "location_id": "rome_forum",
       "time_of_day": "noon",
       "characters": [
         "char_quintus_fabius",
-        "officials",
-        "merchants",
-        "crowds"
+        "char_marcus_accountant"
+      ],
+      "beats_included": [
+        "b_04"
+      ],
+      "pacing_notes": "Formal, procedural energy; the weight of official action",
+      "transition_out": "Cut to the steam of the baths"
+    },
+    {
+      "scene_id": "SC05",
+      "slug": "INT. PUBLIC BATHS - AFTERNOON",
+      "location_id": "thermae_publicae",
+      "time_of_day": "afternoon",
+      "characters": [
+        "char_caelus_varo",
+        "char_marcus_accountant"
       ],
       "beats_included": [
         "b_05"
       ],
-      "pacing_notes": "High energy, chaotic scene as triumph curdles into disaster - market panic erupts",
-      "transition_out": "Cut to private reaction..."
+      "pacing_notes": "Claustrophobic and threatening despite the luxury; corruption in whispers",
+      "transition_out": "Cut to the Basilica"
     },
     {
       "scene_id": "SC06",
+      "slug": "INT. THE ROMAN FORUM - AFTERNOON",
+      "location_id": "rome_forum",
+      "time_of_day": "afternoon",
+      "characters": [
+        "char_quintus_fabius",
+        "char_caelus_varo"
+      ],
+      "beats_included": [
+        "b_06"
+      ],
+      "pacing_notes": "High energy, public spectacle; crowd reactions punctuate the bold move",
+      "transition_out": "Cut to the public confrontation"
+    },
+    {
+      "scene_id": "SC07",
+      "slug": "EXT. THE ROMAN FORUM - AFTERNOON",
+      "location_id": "rome_forum",
+      "time_of_day": "afternoon",
+      "characters": [
+        "char_quintus_fabius",
+        "char_caelus_varo"
+      ],
+      "beats_included": [
+        "b_07"
+      ],
+      "pacing_notes": "Single-beat confrontation scene; the crowd's silence amplifies the humiliation",
+      "transition_out": "Cut to evening shadows"
+    },
+    {
+      "scene_id": "SC08",
+      "slug": "INT. THE CROOKED CUP TAVERN - EVENING",
+      "location_id": "subura_tavern",
+      "time_of_day": "evening",
+      "characters": [
+        "char_drusilla"
+      ],
+      "beats_included": [
+        "b_08"
+      ],
+      "pacing_notes": "Secretive and urgent; the danger of being observed adds suspense",
+      "transition_out": "Cut to Drusilla's meeting with Varo"
+    },
+    {
+      "scene_id": "SC09",
+      "slug": "INT. VARO'S STUDY - EVENING",
+      "location_id": "villa_varo_tablinum",
+      "time_of_day": "evening",
+      "characters": [
+        "char_drusilla",
+        "char_caelus_varo"
+      ],
+      "beats_included": [
+        "b_09"
+      ],
+      "pacing_notes": "Tense negotiation that turns hostile; power dynamics shift",
+      "transition_out": "Cut to the secluded garden"
+    },
+    {
+      "scene_id": "SC10",
+      "slug": "EXT. THE ROMAN FORUM - EVENING",
+      "location_id": "rome_forum",
+      "time_of_day": "evening",
+      "characters": [
+        "char_quintus_fabius",
+        "char_gaius_crassipes"
+      ],
+      "beats_included": [
+        "b_10"
+      ],
+      "pacing_notes": "Coded language and political maneuvering; Quintus's principles tested",
+      "transition_out": "Cut to the Fabius home"
+    },
+    {
+      "scene_id": "SC11",
+      "slug": "INT. FABIUS HOUSE - ATRIUM - NIGHT",
+      "location_id": "domus_fabius_atrium",
+      "time_of_day": "night",
+      "characters": [
+        "char_quintus_fabius",
+        "char_drusilla"
+      ],
+      "beats_included": [
+        "b_11"
+      ],
+      "pacing_notes": "Quiet, intimate manipulation; dramatic irony as we know her motives",
+      "transition_out": "Cut to Varo's villa"
+    },
+    {
+      "scene_id": "SC12",
+      "slug": "INT. VARO'S STUDY - NIGHT",
+      "location_id": "villa_varo_tablinum",
+      "time_of_day": "night",
+      "characters": [
+        "char_caelus_varo",
+        "char_marcus_accountant"
+      ],
+      "beats_included": [
+        "b_12"
+      ],
+      "pacing_notes": "Paranoid energy; the cracks in the villain's alliance begin to show",
+      "transition_out": "Cut to the Forum streets"
+    },
+    {
+      "scene_id": "SC13",
+      "slug": "EXT. THE ROMAN FORUM - MORNING",
+      "location_id": "rome_forum",
+      "time_of_day": "morning",
+      "characters": [
+        "char_gaius_crassipes"
+      ],
+      "beats_included": [
+        "b_13"
+      ],
+      "pacing_notes": "Public humiliation montage; the reach of Varo's vindictiveness",
+      "transition_out": "Cut to private meeting"
+    },
+    {
+      "scene_id": "SC14",
       "slug": "INT. VARO'S STUDY - AFTERNOON",
       "location_id": "villa_varo_tablinum",
       "time_of_day": "afternoon",
@@ -424,162 +568,39 @@
         "char_gaius_crassipes"
       ],
       "beats_included": [
-        "b_06"
-      ],
-      "pacing_notes": "Slow burn from fury to calculated calm as Crassipes tempers Varo's rage",
-      "transition_out": "Cut to shadowy meeting..."
-    },
-    {
-      "scene_id": "SC07",
-      "slug": "INT. THE CROOKED CUP TAVERN - EVENING",
-      "location_id": "subura_tavern",
-      "time_of_day": "evening",
-      "characters": [
-        "char_caelus_varo",
-        "char_marcus_accountant"
-      ],
-      "beats_included": [
-        "b_07"
-      ],
-      "pacing_notes": "Tense, conspiratorial atmosphere - coins and whispers in dim light",
-      "transition_out": "Cut to public confrontation..."
-    },
-    {
-      "scene_id": "SC08",
-      "slug": "EXT. THE ROMAN FORUM - EVENING",
-      "location_id": "rome_forum",
-      "time_of_day": "evening",
-      "characters": [
-        "char_caelus_varo",
-        "char_quintus_fabius",
-        "witnesses",
-        "crowds"
-      ],
-      "beats_included": [
-        "b_08"
-      ],
-      "pacing_notes": "Sharp, theatrical confrontation - Varo's verbal assault lands with devastating precision",
-      "transition_out": "Cut to night secrets..."
-    },
-    {
-      "scene_id": "SC09",
-      "slug": "INT. FABIUS HOUSE - ATRIUM - LATE_NIGHT",
-      "location_id": "domus_fabius_atrium",
-      "time_of_day": "late_night",
-      "characters": [
-        "char_drusilla",
-        "messengers"
-      ],
-      "beats_included": [
-        "b_09"
-      ],
-      "pacing_notes": "Quiet, secretive - candlelight reveals Drusilla's hidden machinations",
-      "transition_out": "Cut to clandestine negotiation..."
-    },
-    {
-      "scene_id": "SC10",
-      "slug": "EXT. THE ROMAN FORUM - NIGHT",
-      "location_id": "rome_forum",
-      "time_of_day": "night",
-      "characters": [
-        "char_gaius_crassipes",
-        "char_quintus_fabius"
-      ],
-      "beats_included": [
-        "b_10"
-      ],
-      "pacing_notes": "Tense, whispered negotiation in shadows - the offer and its refusal",
-      "transition_out": "Cut to desperate confession..."
-    },
-    {
-      "scene_id": "SC11",
-      "slug": "EXT. THE ROMAN FORUM - NIGHT",
-      "location_id": "rome_forum",
-      "time_of_day": "night",
-      "characters": [
-        "char_marcus_accountant",
-        "char_quintus_fabius",
-        "varo_agents"
-      ],
-      "beats_included": [
-        "b_11"
-      ],
-      "pacing_notes": "Explosive revelation - drunken desperation meets devastating truth, observed by hidden enemies",
-      "transition_out": "Cut to panicked destruction..."
-    },
-    {
-      "scene_id": "SC12",
-      "slug": "INT. THE CROOKED CUP TAVERN - NIGHT",
-      "location_id": "subura_tavern",
-      "time_of_day": "night",
-      "characters": [
-        "char_marcus_accountant"
-      ],
-      "beats_included": [
-        "b_12"
-      ],
-      "pacing_notes": "Frantic, desperate - flames and fear as Marcus's plan unravels",
-      "transition_out": "Cut to marital confrontation..."
-    },
-    {
-      "scene_id": "SC13",
-      "slug": "INT. FABIUS HOUSE - ATRIUM - NIGHT",
-      "location_id": "domus_fabius_atrium",
-      "time_of_day": "night",
-      "characters": [
-        "char_quintus_fabius",
-        "char_drusilla"
-      ],
-      "beats_included": [
-        "b_13"
-      ],
-      "pacing_notes": "Emotionally charged, intimate betrayal - voices low but wounds deep",
-      "transition_out": "Cut to desperate alliance..."
-    },
-    {
-      "scene_id": "SC14",
-      "slug": "INT. PUBLIC BATHS - MORNING",
-      "location_id": "thermae_publicae",
-      "time_of_day": "morning",
-      "characters": [
-        "char_drusilla",
-        "char_marcus_accountant"
-      ],
-      "beats_included": [
         "b_14"
       ],
-      "pacing_notes": "Calculated calm as Drusilla positions herself, steam obscuring intentions",
-      "transition_out": "Cut to backfiring scheme..."
+      "pacing_notes": "Strategic recalibration; enemies finding common ground",
+      "transition_out": "Cut to Marcus's dwelling"
     },
     {
       "scene_id": "SC15",
-      "slug": "EXT. THE ROMAN FORUM - AFTERNOON",
-      "location_id": "rome_forum",
+      "slug": "INT. THE CROOKED CUP TAVERN - AFTERNOON",
+      "location_id": "subura_tavern",
       "time_of_day": "afternoon",
       "characters": [
-        "char_marcus_accountant",
-        "citizens"
+        "char_quintus_fabius",
+        "char_marcus_accountant"
       ],
       "beats_included": [
         "b_15"
       ],
-      "pacing_notes": "Accelerating dread as Marcus's gambit fails spectacularly - graffiti appears everywhere",
-      "transition_out": "Cut to financial maneuvering..."
+      "pacing_notes": "Quiet persuasion; appeal to conscience over self-interest",
+      "transition_out": "Cut to Varo's archive"
     },
     {
       "scene_id": "SC16",
-      "slug": "INT. VARO'S STUDY - AFTERNOON",
+      "slug": "INT. VARO'S STUDY - EVENING",
       "location_id": "villa_varo_tablinum",
-      "time_of_day": "afternoon",
+      "time_of_day": "evening",
       "characters": [
-        "char_gaius_crassipes",
-        "intermediaries"
+        "char_marcus_accountant"
       ],
       "beats_included": [
         "b_16"
       ],
-      "pacing_notes": "Cool, methodical - Crassipes tightens the noose with banker's precision",
-      "transition_out": "Cut to dangerous threat..."
+      "pacing_notes": "Solo reversal scene; internal conflict externalized through action",
+      "transition_out": "Cut to Crassipes's meeting"
     },
     {
       "scene_id": "SC17",
@@ -587,56 +608,59 @@
       "location_id": "subura_tavern",
       "time_of_day": "evening",
       "characters": [
-        "char_marcus_accountant",
-        "char_drusilla"
+        "char_gaius_crassipes",
+        "char_marcus_accountant"
       ],
       "beats_included": [
         "b_17"
       ],
-      "pacing_notes": "Threatening, desperate - Marcus crosses a line he cannot uncross",
-      "transition_out": "Cut to order given..."
+      "pacing_notes": "Opportunistic scheming; everyone has an angle",
+      "transition_out": "Cut to Drusilla's threat"
     },
     {
       "scene_id": "SC18",
-      "slug": "INT. VARO'S STUDY - NIGHT",
-      "location_id": "villa_varo_tablinum",
+      "slug": "INT. THE CROOKED CUP TAVERN - NIGHT",
+      "location_id": "subura_tavern",
       "time_of_day": "night",
       "characters": [
-        "char_caelus_varo",
-        "agents"
-      ],
-      "beats_included": [],
-      "pacing_notes": "Brief, cold - Varo gives the fatal order with chilling simplicity",
-      "transition_out": "Cut to evidence discovered..."
-    },
-    {
-      "scene_id": "SC19",
-      "slug": "INT. FABIUS HOUSE - ATRIUM - NIGHT",
-      "location_id": "domus_fabius_atrium",
-      "time_of_day": "night",
-      "characters": [
-        "char_quintus_fabius"
-      ],
-      "beats_included": [],
-      "pacing_notes": "Quiet devastation as Quintus reads the damning evidence by lamplight",
-      "transition_out": "Cut to dark alley..."
-    },
-    {
-      "scene_id": "SC20",
-      "slug": "EXT. THE ROMAN FORUM - NIGHT",
-      "location_id": "rome_forum",
-      "time_of_day": "night",
-      "characters": [
-        "char_marcus_accountant",
-        "char_quintus_fabius",
-        "char_caelus_varo",
-        "assassin"
+        "char_drusilla",
+        "char_marcus_accountant"
       ],
       "beats_included": [
         "b_18"
       ],
-      "pacing_notes": "Intercut finale - three locations, one fate. Freeze on Marcus's scream as blade descends",
-      "transition_out": "FADE TO BLACK"
+      "pacing_notes": "Chilling threat scene; Drusilla reveals her capacity for darkness",
+      "transition_out": "Cut to secret meeting"
+    },
+    {
+      "scene_id": "SC19",
+      "slug": "INT. PUBLIC BATHS - LATE_NIGHT",
+      "location_id": "thermae_publicae",
+      "time_of_day": "late_night",
+      "characters": [
+        "char_marcus_accountant",
+        "char_quintus_fabius"
+      ],
+      "beats_included": [
+        "b_19"
+      ],
+      "pacing_notes": "Devastating revelation; the truth shatters Quintus's certainties",
+      "transition_out": "Cut to the Fabius house"
+    },
+    {
+      "scene_id": "SC20",
+      "slug": "INT. FABIUS HOUSE - ATRIUM - LATE_NIGHT",
+      "location_id": "domus_fabius_atrium",
+      "time_of_day": "late_night",
+      "characters": [
+        "char_quintus_fabius",
+        "char_drusilla"
+      ],
+      "beats_included": [
+        "b_20"
+      ],
+      "pacing_notes": "Frozen confrontation; hold on the silence, let tension build to unbearable levels",
+      "transition_out": "Fade to black"
     }
   ],
   "acceptance_checks": [
@@ -650,7 +674,7 @@
       "operator_id": "OP_INFORMATION_ARBITRAGE",
       "risk_id": "risk_senate_inquiry",
       "prob": 0.3,
-      "roll": 0.5433642550800521,
+      "roll": 0.7214216454831565,
       "triggered": false
     },
     {
@@ -658,7 +682,7 @@
       "operator_id": "OP_PUBLIC_SNUB",
       "risk_id": "risk_sympathy",
       "prob": 0.1,
-      "roll": 0.6765517790984571,
+      "roll": 0.383967881667571,
       "triggered": false
     },
     {
@@ -666,7 +690,7 @@
       "operator_id": "OP_WITNESS_FLIP_FINANCIAL",
       "risk_id": "risk_double_cross",
       "prob": 0.2,
-      "roll": 0.8825039601656542,
+      "roll": 0.8170180375688835,
       "triggered": false
     },
     {
@@ -674,15 +698,15 @@
       "operator_id": "OP_SUBPOENA_WITNESS",
       "risk_id": "risk_flight",
       "prob": 0.2,
-      "roll": 0.20841031964663503,
+      "roll": 0.44842919785827473,
       "triggered": false
     },
     {
-      "beat_id": "b_05",
+      "beat_id": "b_06",
       "operator_id": "OP_ASSET_FREEZE",
       "risk_id": "risk_market_crash",
       "prob": 0.4,
-      "roll": 0.10100874929498138,
+      "roll": 0.10992798197586506,
       "triggered": true
     },
     {
@@ -690,23 +714,23 @@
       "operator_id": "OP_INFORMATION_ARBITRAGE",
       "risk_id": "risk_senate_inquiry",
       "prob": 0.3,
-      "roll": 0.42693284237381357,
-      "triggered": false
+      "roll": 0.007539920054862481,
+      "triggered": true
     },
     {
       "beat_id": "b_09",
       "operator_id": "OP_MEDIATE_CONFLICT",
       "risk_id": "risk_blamed",
       "prob": 0.3,
-      "roll": 0.6058813256895418,
-      "triggered": false
+      "roll": 0.15478661396270743,
+      "triggered": true
     },
     {
       "beat_id": "b_10",
       "operator_id": "OP_DESTROY_EVIDENCE",
       "risk_id": "risk_witnessed",
       "prob": 0.5,
-      "roll": 0.5878140182084093,
+      "roll": 0.8417308261660025,
       "triggered": false
     },
     {
@@ -714,39 +738,39 @@
       "operator_id": "OP_REVEAL_SECRET",
       "risk_id": "risk_retaliation",
       "prob": 0.4,
-      "roll": 0.13694038169242495,
-      "triggered": true
+      "roll": 0.8205303115929434,
+      "triggered": false
     },
     {
-      "beat_id": "b_12",
+      "beat_id": "b_13",
       "operator_id": "OP_BACKCHANNEL_NEGOTIATION",
       "risk_id": "risk_base_anger",
       "prob": 0.4,
-      "roll": 0.6819495092497057,
-      "triggered": false
-    },
-    {
-      "beat_id": "b_14",
-      "operator_id": "OP_INFORMATION_ARBITRAGE",
-      "risk_id": "risk_senate_inquiry",
-      "prob": 0.3,
-      "roll": 0.46543800585652284,
-      "triggered": false
+      "roll": 0.21005453947109687,
+      "triggered": true
     },
     {
       "beat_id": "b_15",
-      "operator_id": "OP_RUMOR_CAMPAIGN",
-      "risk_id": "risk_blowback",
-      "prob": 0.25,
-      "roll": 0.19294237011860693,
-      "triggered": true
+      "operator_id": "OP_INFORMATION_ARBITRAGE",
+      "risk_id": "risk_senate_inquiry",
+      "prob": 0.3,
+      "roll": 0.9380893818719747,
+      "triggered": false
     },
     {
       "beat_id": "b_16",
       "operator_id": "OP_THREATEN_FAMILY",
       "risk_id": "risk_report",
       "prob": 0.2,
-      "roll": 0.6178613716880414,
+      "roll": 0.5439938673003873,
+      "triggered": false
+    },
+    {
+      "beat_id": "b_17",
+      "operator_id": "OP_RUMOR_CAMPAIGN",
+      "risk_id": "risk_blowback",
+      "prob": 0.25,
+      "roll": 0.6854653154133852,
       "triggered": false
     }
   ]

@@ -118,6 +118,25 @@ Maps Aureus character IDs to ElevenLabs voice IDs.
     "last_updated": "2024-01-15T10:30:00Z",
     "voice_mappings": [
       {
+        "character_id": "NARRATOR",
+        "eleven_voice_id": "onwK4e9ZLuTAKqWW03F9",
+        "voice_name": "Daniel",
+        "is_narrator": true,
+        "default_settings": {
+          "stability": 0.8,
+          "similarity_boost": 0.7,
+          "style": 0.2,
+          "use_speaker_boost": true
+        },
+        "notes": "British gravitas, documentary style. Authoritative but not cold. Adjust stability per tone tag.",
+        "tone_overrides": {
+          "Neutral": { "stability": 0.8 },
+          "Ominous": { "stability": 0.7, "style": 0.3 },
+          "Urgent": { "stability": 0.6, "style": 0.4 },
+          "Ironic": { "stability": 0.75, "style": 0.25 }
+        }
+      },
+      {
         "character_id": "char_caelus_varo",
         "eleven_voice_id": "pNInz6obpgDQGcFmaJgB",
         "voice_name": "Adam",
@@ -230,6 +249,69 @@ Before sending to ElevenLabs API, the Audio Synth middleware:
 3. Applies character's `default_settings` as base, then overrides
 4. Sends clean dialogue text to API
 
+### E.5.5 Narrator Performance Blocks
+
+The narrator uses a distinct voice in `casting.json` (ID: `NARRATOR`) with specific synthesis rules.
+
+#### Syntax in Script
+
+```
+[NARRATOR]: (Tone) [Stability: X.X] Prose text here.
+```
+
+Or for multi-paragraph blocks:
+
+```
+---NARRATOR---
+(Tone) [Stability: X.X]
+Extended prose passage describing scene atmosphere,
+character movement, or transitional information.
+---END NARRATOR---
+```
+
+#### Tone Options
+
+| Tone | Description | Default Stability |
+|------|-------------|-------------------|
+| `(Neutral)` | Default documentary delivery | 0.8 |
+| `(Ominous)` | Lower, slower for foreshadowing | 0.7 |
+| `(Urgent)` | Faster tempo for action sequences | 0.6 |
+| `(Ironic)` | Slight detachment for dramatic irony | 0.75 |
+
+#### Examples
+
+```markdown
+[NARRATOR]: (Ominous) [Stability: 0.7] The dead keep better ledgers than the living.
+
+[NARRATOR]: (Neutral) [Stability: 0.8] Three locations. Three breaths held. In the warehouse, 
+Varo's hand stops mid-reach for a wine cup.
+
+---NARRATOR---
+(Urgent) [Stability: 0.6]
+The Forum erupted. Ten thousand voices rose and fell like surf against stone. 
+Merchants slammed shutters. The crash of bronze tablets echoed off temple walls.
+---END NARRATOR---
+```
+
+#### Pre-Processing for Narrator
+
+Before sending to ElevenLabs API:
+
+1. Detect narrator block (starts with `[NARRATOR]:` or `---NARRATOR---`)
+2. Extract tone tag from parentheses
+3. Look up tone in narrator's `tone_overrides` for base settings
+4. Apply any explicit stability/style overrides from brackets
+5. Strip formatting markers, send clean prose text to API
+
+#### Narrator Constraints (enforced by Verifier)
+
+| Constraint | Limit |
+|------------|-------|
+| Max narrator word count per scene | 30% of scene total |
+| Min narrator blocks per scene | 1 (establishing shot) |
+| Max narrator blocks per scene | 5 |
+| Narrator + dialogue at scene end | Only one, not both |
+
 ---
 
 ## E.6 Storyboarder (Stage I-A)
@@ -333,14 +415,27 @@ OUTPUT:
 
 ### E.7.1 Extraction
 
-Parse `episode_script.md` to extract dialogue turns:
+Parse `episode_script.md` to extract dialogue turns AND narrator blocks:
 
 ```json
 {
   "scene_id": "SC04",
-  "dialogue_turns": [
+  "audio_segments": [
     {
-      "turn_id": "SC04_d001",
+      "segment_id": "SC04_n001",
+      "type": "narrator",
+      "character_id": "NARRATOR",
+      "raw_text": "(Ominous) [Stability: 0.7] The dead keep better ledgers than the living.",
+      "clean_text": "The dead keep better ledgers than the living.",
+      "performance": {
+        "tone": "Ominous",
+        "stability_override": 0.7,
+        "style_override": null
+      }
+    },
+    {
+      "segment_id": "SC04_d001",
+      "type": "dialogue",
       "character_id": "char_caelus_varo",
       "raw_text": "(Manic, rapid-fire) [Stability: 0.3] \"Three days. That's what we have.\"",
       "clean_text": "Three days. That's what we have.",
@@ -352,6 +447,18 @@ Parse `episode_script.md` to extract dialogue turns:
     }
   ]
 }
+```
+
+#### Segment Type Detection
+
+| Pattern | Type | Character ID |
+|---------|------|--------------|
+| `[NARRATOR]:` or `---NARRATOR---` | `narrator` | `NARRATOR` |
+| `CHARACTER_NAME:` | `dialogue` | Lookup from characters.json |
+
+#### Ordering
+
+Segments are extracted in script order to maintain narrative flow. The timing manifest preserves this order for audio concatenation.
 ```
 
 ### E.7.2 Voice Assignment

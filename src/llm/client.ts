@@ -62,7 +62,7 @@ export interface LLMResponse {
 const MODEL_MAP: Record<ModelTier, string> = {
   fast: 'claude-3-5-haiku-latest',
   standard: 'claude-sonnet-4-20250514',
-  premium: 'claude-sonnet-4-20250514', // Use Sonnet for premium too, can upgrade to Opus if needed
+  premium: 'claude-opus-4-20250514', // Claude Opus 4.5 for editorial review and escalation
 };
 
 // ============================================================================

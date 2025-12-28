@@ -1,0 +1,77 @@
+{
+  "packet_meta": {
+    "episode_id": "episode_01",
+    "scene_id": "SC05",
+    "sequence": 5,
+    "estimated_duration_min": 2.5
+  },
+  "setting": {
+    "location_id": "thermae_publicae",
+    "time_of_day": "afternoon",
+    "atmosphere": [
+      "Claustrophobic and threatening despite the luxury; corruption in whispers"
+    ]
+  },
+  "cast": [
+    {
+      "character_id": "char_caelus_varo",
+      "mood": "determined",
+      "active_objective": "Varo successfully bribes Marcus, but Marcus's conscience is visibly troubled"
+    },
+    {
+      "character_id": "char_marcus_accountant",
+      "mood": "defensive"
+    }
+  ],
+  "director_instructions": {
+    "beat_type": "SETUP",
+    "pacing": "Claustrophobic and threatening despite the luxury; corruption in whispers",
+    "sequence": [
+      {
+        "beat_id": "b_05",
+        "operator_id": "OP_WITNESS_FLIP_FINANCIAL",
+        "actor": "char_caelus_varo",
+        "target": "char_marcus_accountant",
+        "outcome": "SUCCESS",
+        "narrative_directives": {
+          "action": "At a private bath house, Varo meets with Marcus. In the steam and shadows, coins change hands. Varo speaks softly of loyalty, of rewards, of what happens to those who betray him. Marcus, sweating from more than the heat, accepts the bribe and commits to silence.",
+          "beat_resolution": "Varo successfully bribes Marcus, but Marcus's conscience is visibly troubled"
+        },
+        "required_deltas": [
+          {
+            "path": "actor.stats.wealth",
+            "op": "subtract",
+            "value": 5,
+            "description": "Effect from OP_WITNESS_FLIP_FINANCIAL"
+          },
+          {
+            "path": "relationship.weights.loyalty",
+            "op": "add",
+            "value": 20,
+            "description": "Effect from OP_WITNESS_FLIP_FINANCIAL"
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": {
+    "required_deltas": [
+      {
+        "path": "actor.stats.wealth",
+        "op": "subtract",
+        "value": 5,
+        "narrative_trigger": "Effect from OP_WITNESS_FLIP_FINANCIAL"
+      },
+      {
+        "path": "relationship.weights.loyalty",
+        "op": "add",
+        "value": 20,
+        "narrative_trigger": "Effect from OP_WITNESS_FLIP_FINANCIAL"
+      }
+    ],
+    "allowed_inventions": {
+      "extras": 2
+    },
+    "hook_requirement": "End with a button line that creates anticipation"
+  }
+}

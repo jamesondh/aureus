@@ -1,0 +1,61 @@
+{
+  "packet_meta": {
+    "episode_id": "episode_01",
+    "scene_id": "SC16",
+    "sequence": 16,
+    "estimated_duration_min": 2.5
+  },
+  "setting": {
+    "location_id": "villa_varo_tablinum",
+    "time_of_day": "evening",
+    "atmosphere": [
+      "Solo reversal scene; internal conflict externalized through action"
+    ]
+  },
+  "cast": [
+    {
+      "character_id": "char_marcus_accountant",
+      "mood": "frustrated",
+      "active_objective": "Marcus fails to destroy evidence—instead secretly preserves proof of Varo's crimes"
+    }
+  ],
+  "director_instructions": {
+    "beat_type": "REVERSAL",
+    "pacing": "Solo reversal scene; internal conflict externalized through action",
+    "sequence": [
+      {
+        "beat_id": "b_16",
+        "operator_id": "OP_DESTROY_EVIDENCE",
+        "actor": "char_marcus_accountant",
+        "target": "char_caelus_varo",
+        "outcome": "FAIL",
+        "narrative_directives": {
+          "action": "Alone in Varo's archive room, Marcus stares at the incriminating ledgers. He lights a small fire in a brazier. But as he moves to burn the evidence, he hesitates—remembering Quintus's words about Rome, about legacy. At the last moment, he copies key entries onto a wax tablet and hides it, leaving the originals. He hasn't chosen sides yet, but he's created options.",
+          "beat_resolution": "Marcus fails to destroy evidence—instead secretly preserves proof of Varo's crimes"
+        },
+        "required_deltas": [
+          {
+            "path": "world.global.legal_exposure",
+            "op": "subtract",
+            "value": 2,
+            "description": "Effect from OP_DESTROY_EVIDENCE"
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": {
+    "required_deltas": [
+      {
+        "path": "world.global.legal_exposure",
+        "op": "subtract",
+        "value": 2,
+        "narrative_trigger": "Effect from OP_DESTROY_EVIDENCE"
+      }
+    ],
+    "allowed_inventions": {
+      "extras": 2
+    },
+    "hook_requirement": "End with a button line that creates anticipation"
+  }
+}

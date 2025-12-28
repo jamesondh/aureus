@@ -1,0 +1,65 @@
+{
+  "packet_meta": {
+    "episode_id": "episode_01",
+    "scene_id": "SC11",
+    "sequence": 11,
+    "estimated_duration_min": 2.5
+  },
+  "setting": {
+    "location_id": "domus_fabius_atrium",
+    "time_of_day": "night",
+    "atmosphere": [
+      "Quiet, intimate manipulation; dramatic irony as we know her motives"
+    ]
+  },
+  "cast": [
+    {
+      "character_id": "char_quintus_fabius",
+      "mood": "defensive"
+    },
+    {
+      "character_id": "char_drusilla",
+      "mood": "determined",
+      "active_objective": "Drusilla successfully manipulates Quintus into slowing the investigation, buying time for her schemes"
+    }
+  ],
+  "director_instructions": {
+    "beat_type": "DECISION",
+    "pacing": "Quiet, intimate manipulation; dramatic irony as we know her motives",
+    "sequence": [
+      {
+        "beat_id": "b_11",
+        "operator_id": "OP_STOIC_COUNSEL",
+        "actor": "char_drusilla",
+        "target": "char_quintus_fabius",
+        "outcome": "SUCCESS",
+        "narrative_directives": {
+          "action": "Late at night, a shaken Quintus returns home. Drusilla finds him pacing. With measured calm, she counsels patience—perhaps the investigation moves too fast, perhaps he should consolidate before striking again. Her words are wise, but her motives are mixed. Quintus, seeing only his supportive wife, agrees to slow his approach.",
+          "beat_resolution": "Drusilla successfully manipulates Quintus into slowing the investigation, buying time for her schemes"
+        },
+        "required_deltas": [
+          {
+            "path": "relationship.weights.dependency",
+            "op": "add",
+            "value": 5,
+            "description": "Effect from OP_STOIC_COUNSEL"
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": {
+    "required_deltas": [
+      {
+        "path": "relationship.weights.dependency",
+        "op": "add",
+        "value": 5,
+        "narrative_trigger": "Effect from OP_STOIC_COUNSEL"
+      }
+    ],
+    "allowed_inventions": {
+      "extras": 2
+    },
+    "hook_requirement": "End with a button line that creates anticipation"
+  }
+}

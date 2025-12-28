@@ -1,0 +1,65 @@
+{
+  "packet_meta": {
+    "episode_id": "episode_01",
+    "scene_id": "SC12",
+    "sequence": 12,
+    "estimated_duration_min": 2.5
+  },
+  "setting": {
+    "location_id": "villa_varo_tablinum",
+    "time_of_day": "night",
+    "atmosphere": [
+      "Paranoid energy; the cracks in the villain's alliance begin to show"
+    ]
+  },
+  "cast": [
+    {
+      "character_id": "char_caelus_varo",
+      "mood": "under_pressure"
+    },
+    {
+      "character_id": "char_marcus_accountant",
+      "mood": "frustrated",
+      "active_objective": "Marcus's advice is rejected; he begins to question his loyalty to Varo"
+    }
+  ],
+  "director_instructions": {
+    "beat_type": "SETUP",
+    "pacing": "Paranoid energy; the cracks in the villain's alliance begin to show",
+    "sequence": [
+      {
+        "beat_id": "b_12",
+        "operator_id": "OP_STOIC_COUNSEL",
+        "actor": "char_marcus_accountant",
+        "target": "char_caelus_varo",
+        "outcome": "FAIL",
+        "narrative_directives": {
+          "action": "Varo, rattled by the asset freeze and market turmoil, grows paranoid. Marcus attempts to calm him, speaking of patience and legal delays. But Varo, in his agitation, snaps at his accountant—dismissing his counsel and demanding more aggressive action. The relationship frays.",
+          "beat_resolution": "Marcus's advice is rejected; he begins to question his loyalty to Varo"
+        },
+        "required_deltas": [
+          {
+            "path": "relationship.weights.dependency",
+            "op": "add",
+            "value": 5,
+            "description": "Effect from OP_STOIC_COUNSEL"
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": {
+    "required_deltas": [
+      {
+        "path": "relationship.weights.dependency",
+        "op": "add",
+        "value": 5,
+        "narrative_trigger": "Effect from OP_STOIC_COUNSEL"
+      }
+    ],
+    "allowed_inventions": {
+      "extras": 2
+    },
+    "hook_requirement": "End with a button line that creates anticipation"
+  }
+}

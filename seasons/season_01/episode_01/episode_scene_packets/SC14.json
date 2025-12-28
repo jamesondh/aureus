@@ -1,0 +1,65 @@
+{
+  "packet_meta": {
+    "episode_id": "episode_01",
+    "scene_id": "SC14",
+    "sequence": 14,
+    "estimated_duration_min": 2.5
+  },
+  "setting": {
+    "location_id": "villa_varo_tablinum",
+    "time_of_day": "afternoon",
+    "atmosphere": [
+      "Strategic recalibration; enemies finding common ground"
+    ]
+  },
+  "cast": [
+    {
+      "character_id": "char_caelus_varo",
+      "mood": "defensive"
+    },
+    {
+      "character_id": "char_gaius_crassipes",
+      "mood": "determined",
+      "active_objective": "Crassipes successfully counsels Varo toward subtler tactics"
+    }
+  ],
+  "director_instructions": {
+    "beat_type": "SETUP",
+    "pacing": "Strategic recalibration; enemies finding common ground",
+    "sequence": [
+      {
+        "beat_id": "b_14",
+        "operator_id": "OP_STOIC_COUNSEL",
+        "actor": "char_gaius_crassipes",
+        "target": "char_caelus_varo",
+        "outcome": "SUCCESS",
+        "narrative_directives": {
+          "action": "Crassipes, stung by public ridicule, meets privately with Varo. The older senator offers counsel—this scorched-earth approach will unite enemies, patience is required. Varo, seeing political wisdom, reluctantly agrees to temper his public aggression while intensifying covert pressure.",
+          "beat_resolution": "Crassipes successfully counsels Varo toward subtler tactics"
+        },
+        "required_deltas": [
+          {
+            "path": "relationship.weights.dependency",
+            "op": "add",
+            "value": 5,
+            "description": "Effect from OP_STOIC_COUNSEL"
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": {
+    "required_deltas": [
+      {
+        "path": "relationship.weights.dependency",
+        "op": "add",
+        "value": 5,
+        "narrative_trigger": "Effect from OP_STOIC_COUNSEL"
+      }
+    ],
+    "allowed_inventions": {
+      "extras": 2
+    },
+    "hook_requirement": "End with a button line that creates anticipation"
+  }
+}

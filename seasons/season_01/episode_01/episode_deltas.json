@@ -23,61 +23,43 @@
       "path": "world.global.unrest",
       "op": "add",
       "value": 1,
-      "scene_id": "SC05"
+      "scene_id": "SC06"
     },
     {
       "path": "world.global.unrest",
       "op": "add",
       "value": 1,
-      "scene_id": "SC05"
+      "scene_id": "SC06"
     },
     {
       "path": "world.global.scandal_temperature",
       "op": "add",
-      "value": 3,
-      "scene_id": "SC11"
+      "value": 2,
+      "scene_id": "SC13"
     },
     {
       "path": "world.global.scandal_temperature",
       "op": "add",
-      "value": 3,
-      "scene_id": "SC11"
-    },
-    {
-      "path": "world.global.scandal_temperature",
-      "op": "add",
-      "value": 3,
-      "scene_id": "SC11"
+      "value": 2,
+      "scene_id": "SC13"
     },
     {
       "path": "world.global.legal_exposure",
       "op": "subtract",
       "value": 2,
-      "scene_id": "SC12"
+      "scene_id": "SC16"
     },
     {
       "path": "world.global.legal_exposure",
       "op": "subtract",
       "value": 2,
-      "scene_id": "SC12"
+      "scene_id": "SC16"
     },
     {
       "path": "world.global.scandal_temperature",
       "op": "add",
-      "value": 2,
-      "scene_id": "SC15"
-    },
-    {
-      "path": "world.global.scandal_temperature",
-      "op": "add",
-      "value": 2,
-      "scene_id": "SC15"
-    },
-    {
-      "path": "world.global.scandal_temperature",
-      "op": "add",
-      "value": 2,
-      "scene_id": "SC15"
+      "value": 3,
+      "scene_id": "SC19"
     }
   ]
 }

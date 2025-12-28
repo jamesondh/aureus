@@ -1,0 +1,270 @@
+{
+  "episode_id": "episode_01",
+  "timestamp": "2025-12-28T20:42:24.332Z",
+  "repetition_violations": [
+    {
+      "rule": "R1",
+      "character_id": "QUINTUS",
+      "pattern": "Reference to Ennius",
+      "count": 2,
+      "threshold": 2,
+      "verdict": "WARNING",
+      "fix_instruction": "Quote \"Reference to Ennius...\" used 2x (at limit)."
+    },
+    {
+      "rule": "R1",
+      "character_id": "STABILITY",
+      "pattern": "Reference to Ennius",
+      "count": 4,
+      "threshold": 2,
+      "verdict": "FAIL",
+      "fix_instruction": "Reduce uses of \"Reference to Ennius...\" to max 2. Vary rhetorical style."
+    },
+    {
+      "rule": "R3",
+      "pattern": "Reference to Ennius",
+      "count": 6,
+      "threshold": 1,
+      "verdict": "FAIL",
+      "fix_instruction": "Quote \"Reference to Ennius...\" used by multiple characters: QUINTUS, DRUSILLA, CRASSIPES, MARCUS, STABILITY, WROTE. Should be unique."
+    },
+    {
+      "rule": "R3",
+      "pattern": "Reference to cato",
+      "count": 4,
+      "threshold": 1,
+      "verdict": "FAIL",
+      "fix_instruction": "Quote \"Reference to cato...\" used by multiple characters: QUINTUS, DRUSILLA, AIR, WROTE. Should be unique."
+    },
+    {
+      "rule": "R3",
+      "pattern": "Reference to Cato",
+      "count": 2,
+      "threshold": 1,
+      "verdict": "FAIL",
+      "fix_instruction": "Quote \"Reference to Cato...\" used by multiple characters: VARO, SERVIUS. Should be unique."
+    },
+    {
+      "rule": "R4",
+      "character_id": "UNKNOWN",
+      "pattern": "does not",
+      "count": 4,
+      "threshold": 3,
+      "verdict": "FAIL",
+      "fix_instruction": "Reduce physical tic \"does not\" to max 3x. Vary with: eye-darting, throat-clearing, shifting weight."
+    },
+    {
+      "rule": "R6",
+      "pattern": "EXT. THE ROMAN FORUM - AFTERNOON",
+      "count": 2,
+      "threshold": 1,
+      "verdict": "FAIL",
+      "fix_instruction": "Duplicate scene header \"EXT. THE ROMAN FORUM - AFTERNOON\". Add (CONTINUED) suffix or vary time of day."
+    },
+    {
+      "rule": "R6",
+      "pattern": "INT. THE CROOKED CUP TAVERN - EVENING",
+      "count": 2,
+      "threshold": 1,
+      "verdict": "FAIL",
+      "fix_instruction": "Duplicate scene header \"INT. THE CROOKED CUP TAVERN - EVENING\". Add (CONTINUED) suffix or vary time of day."
+    },
+    {
+      "rule": "R6",
+      "pattern": "INT. VARO'S STUDY - EVENING",
+      "count": 2,
+      "threshold": 1,
+      "verdict": "FAIL",
+      "fix_instruction": "Duplicate scene header \"INT. VARO'S STUDY - EVENING\". Add (CONTINUED) suffix or vary time of day."
+    },
+    {
+      "rule": "R7",
+      "pattern": "EXT. THE ROMAN FORUM",
+      "count": 6,
+      "threshold": 3,
+      "verdict": "FAIL",
+      "fix_instruction": "Location \"EXT. THE ROMAN FORUM\" used 6x (max 3). Vary settings for visual variety."
+    },
+    {
+      "rule": "R7",
+      "pattern": "INT. VARO'S STUDY",
+      "count": 5,
+      "threshold": 3,
+      "verdict": "FAIL",
+      "fix_instruction": "Location \"INT. VARO'S STUDY\" used 5x (max 3). Vary settings for visual variety."
+    },
+    {
+      "rule": "R7",
+      "pattern": "INT. THE CROOKED CUP TAVERN",
+      "count": 4,
+      "threshold": 3,
+      "verdict": "FAIL",
+      "fix_instruction": "Location \"INT. THE CROOKED CUP TAVERN\" used 4x (max 3). Vary settings for visual variety."
+    }
+  ],
+  "editorial_review": {
+    "overall_grade": "B",
+    "grade_rationale": "Strong episode with excellent atmosphere, distinctive character voices, and effective dramatic escalation. The craft is generally solid with vivid period detail and tension building toward a devastating cliffhanger. However, repetition of character tics exceeds guidelines, some dialogue is on-the-nose, and a few scenes overuse the same location. Minor polish needed to reach publication quality.",
+    "issues": [
+      {
+        "id": "issue_001",
+        "severity": "major",
+        "category": "repetition",
+        "location": "SC01, SC03, SC04, SC06, SC07, SC10, SC11, SC20",
+        "description": "Quintus adjusts his toga fold 8+ times across the episode, far exceeding the R4 limit of 3 uses per character. The tic becomes distracting rather than characterizing.",
+        "suggestion": "Reduce to 3 total uses. Vary with other nervous gestures: touching his signet ring, straightening his spine, clasping hands behind his back.",
+        "rule_reference": "R4"
+      },
+      {
+        "id": "issue_002",
+        "severity": "major",
+        "category": "repetition",
+        "location": "SC01, SC03, SC04, SC06, SC07, SC10, SC11, SC15, SC19, SC20",
+        "description": "Quintus quotes or references Ennius 6 times, exceeding R1 limit of 2 uses of same quote/reference. 'Moribus antiquis res stat Romana virisque' appears 3 times verbatim.",
+        "suggestion": "Keep 2 Ennius references maximum. The opening and one pivotal moment. Replace others with different classical sources (Cato, Cicero) or original moralizing.",
+        "rule_reference": "R1"
+      },
+      {
+        "id": "issue_003",
+        "severity": "major",
+        "category": "repetition",
+        "location": "SC02, SC05, SC06, SC09, SC12, SC14, SC16",
+        "description": "Varo 'tugs at his tunic' or 'checks the sun' 7+ times across the episode, exceeding R4 limit of 3 uses.",
+        "suggestion": "Reduce to 3 total. Vary with: drumming fingers on desk, weighing coins in palm, adjusting his rings.",
+        "rule_reference": "R4"
+      },
+      {
+        "id": "issue_004",
+        "severity": "major",
+        "category": "repetition",
+        "location": "SC02, SC05, SC08, SC12, SC15, SC16, SC17, SC18",
+        "description": "Marcus 'wipes hands on tunic' 8+ times, far exceeding R4 limit. The gesture becomes mechanical.",
+        "suggestion": "Keep 3 uses maximum. Vary with: clicking stylus, touching his belt pouch, running fingers through hair, swallowing visibly.",
+        "rule_reference": "R4"
+      },
+      {
+        "id": "issue_005",
+        "severity": "minor",
+        "category": "repetition",
+        "location": "SC01, SC04, SC06, SC07, SC10, SC13",
+        "description": "The Roman Forum appears as a location 6 times, exceeding R7 limit of 3 scenes per location.",
+        "suggestion": "Consolidate some Forum scenes or relocate. SC04 could occur at the Basilica interior. SC07 could be moved to the steps of the Curia.",
+        "rule_reference": "R7"
+      },
+      {
+        "id": "issue_006",
+        "severity": "minor",
+        "category": "repetition",
+        "location": "SC08, SC15, SC17, SC18",
+        "description": "The Crooked Cup Tavern appears 4 times, exceeding R7 limit of 3 scenes per location.",
+        "suggestion": "SC17 could occur at a different location (Crassipes's private garden, a warehouse office) to vary the visual palette.",
+        "rule_reference": "R7"
+      },
+      {
+        "id": "issue_007",
+        "severity": "minor",
+        "category": "dialogue",
+        "location": "SC03, lines: Drusilla's exit line",
+        "description": "'The ancestors watch, husband. But they cannot read.' is clever but slightly on-the-nose about her deception. She's essentially telling him she's hiding things in writing.",
+        "suggestion": "Make more oblique: 'The ancestors kept their wisdom. Perhaps we should keep ours.' Maintains mystery without signaling.",
+        "rule_reference": null
+      },
+      {
+        "id": "issue_008",
+        "severity": "minor",
+        "category": "dialogue",
+        "location": "SC05, Varo's line about 'testify to the river'",
+        "description": "The threat is effective but explicit. 'Those who betray me—they don't testify at trial. They testify to the river.' could be more menacing if left incomplete.",
+        "suggestion": "Try: 'Those who betray me... well. The Tiber keeps many secrets.' Let the threat breathe.",
+        "rule_reference": null
+      },
+      {
+        "id": "issue_009",
+        "severity": "minor",
+        "category": "pacing",
+        "location": "SC06 and SC07",
+        "description": "Two consecutive Forum confrontation scenes between Quintus and Varo in the same time period (afternoon) creates repetition. The emotional beats are similar—public humiliation and escalation.",
+        "suggestion": "Combine into one scene with both the asset freeze announcement AND the public snub, creating a single powerful confrontation.",
+        "rule_reference": null
+      },
+      {
+        "id": "issue_010",
+        "severity": "nitpick",
+        "category": "craft",
+        "location": "SC04",
+        "description": "Scene header says 'INT. THE ROMAN FORUM - NOON' but the Forum is an exterior location.",
+        "suggestion": "Change to 'EXT. THE ROMAN FORUM - NOON' for accuracy.",
+        "rule_reference": null
+      },
+      {
+        "id": "issue_011",
+        "severity": "nitpick",
+        "category": "craft",
+        "location": "SC06",
+        "description": "Scene header says 'INT. THE ROMAN FORUM - AFTERNOON' but should be exterior.",
+        "suggestion": "Change to 'EXT. THE ROMAN FORUM - AFTERNOON'.",
+        "rule_reference": null
+      },
+      {
+        "id": "issue_012",
+        "severity": "nitpick",
+        "category": "dialogue",
+        "location": "SC12, Marcus's exit line",
+        "description": "'When a man buries so many bodies... does he remember where he placed the shovel?' is a strong line but feels slightly anachronistic in phrasing.",
+        "suggestion": "Try: 'When a man buries so many... does he remember where he left the spade?' or incorporate Latin idiom.",
+        "rule_reference": null
+      },
+      {
+        "id": "issue_013",
+        "severity": "nitpick",
+        "category": "repetition",
+        "location": "SC04, SC15, SC19",
+        "description": "Marcus mentions 'Varo knows where the bodies are buried' or variants 3 times. The phrase, while thematic, becomes noticeable.",
+        "suggestion": "Keep 2 uses maximum. The third can reference 'what lies beneath Varo's ledgers' or similar.",
+        "rule_reference": "R2"
+      }
+    ],
+    "strengths": [
+      {
+        "location": "SC01",
+        "description": "Exceptional atmospheric opening. The street sweeper, the mist, the Fruit Vendor's 'Dead men walking look just like that'—establishes tone perfectly. Visual storytelling at its finest."
+      },
+      {
+        "location": "SC02",
+        "description": "Varo's voice is razor-sharp and distinct. 'By Jupiter's swollen cock, we buy everything' and 'The mob's belly is not my burden' establish him as memorably ruthless without cartoonish villainy."
+      },
+      {
+        "location": "SC09",
+        "description": "The Drusilla-Varo confrontation is masterfully tense. Her 'Bridges also charge tolls' exit line is perfect—threat and dignity balanced. Their power dynamic is compelling and earned."
+      },
+      {
+        "location": "SC16",
+        "description": "Marcus's reversal—preparing to destroy evidence, then secretly copying it—is beautifully dramatized. His 'I have not chosen sides. I have merely... created options' captures the moral complexity."
+      },
+      {
+        "location": "SC18",
+        "description": "Drusilla's threat scene is chilling precisely because of what she doesn't say. The clinical recitation of family details is more terrifying than explicit threats. Perfect use of her 'stoic' voice."
+      },
+      {
+        "location": "SC19",
+        "description": "The revelation scene in the frigidarium is devastating. Quintus's 'And she was selling the foundations all along' lands with genuine emotional weight. The cold pool imagery reinforces the shattering of certainties."
+      },
+      {
+        "location": "SC20",
+        "description": "The cliffhanger works beautifully. The frozen moment, the unspoken confrontation, the letter as physical evidence—tension built to unbearable levels with remarkable economy."
+      },
+      {
+        "location": "Throughout",
+        "description": "Character voice differentiation is excellent. Varo's staccato profanity, Quintus's archaic moralizing, Drusilla's clinical precision, Marcus's nervous calculations, and Crassipes's oily warmth are all immediately recognizable."
+      }
+    ],
+    "revision_priority": [
+      "issue_001",
+      "issue_002",
+      "issue_003",
+      "issue_004",
+      "issue_009"
+    ],
+    "proceed_recommendation": "revise"
+  }
+}

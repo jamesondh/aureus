@@ -1,0 +1,37 @@
+{
+  "packet_meta": {
+    "episode_id": "episode_01",
+    "scene_id": "SC20",
+    "sequence": 20,
+    "estimated_duration_min": 2.5
+  },
+  "setting": {
+    "location_id": "domus_fabius_atrium",
+    "time_of_day": "late_night",
+    "atmosphere": [
+      "Frozen confrontation; hold on the silence, let tension build to unbearable levels"
+    ]
+  },
+  "cast": [
+    {
+      "character_id": "char_quintus_fabius",
+      "mood": "neutral"
+    },
+    {
+      "character_id": "char_drusilla",
+      "mood": "neutral"
+    }
+  ],
+  "director_instructions": {
+    "beat_type": "CLIFFHANGER",
+    "pacing": "Frozen confrontation; hold on the silence, let tension build to unbearable levels",
+    "sequence": []
+  },
+  "constraints": {
+    "required_deltas": [],
+    "allowed_inventions": {
+      "extras": 2
+    },
+    "hook_requirement": "End with a button line that creates anticipation"
+  }
+}

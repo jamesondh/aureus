@@ -85,7 +85,7 @@
   "global": {
     "unrest": 5,
     "grain_price_index": 1.2,
-    "scandal_temperature": 17,
+    "scandal_temperature": 9,
     "legal_exposure": 0
   },
   "extra_templates": {

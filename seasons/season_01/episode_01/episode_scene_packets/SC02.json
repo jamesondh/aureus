@@ -1,0 +1,65 @@
+{
+  "packet_meta": {
+    "episode_id": "episode_01",
+    "scene_id": "SC02",
+    "sequence": 2,
+    "estimated_duration_min": 2.5
+  },
+  "setting": {
+    "location_id": "villa_varo_tablinum",
+    "time_of_day": "morning",
+    "atmosphere": [
+      "Intimate, conspiratorial tone; show the mechanism of corruption"
+    ]
+  },
+  "cast": [
+    {
+      "character_id": "char_caelus_varo",
+      "mood": "determined",
+      "active_objective": "Show Varo's ruthless profiteering mechanism and Marcus's complicity, establishing the crime Quintus will investigate"
+    },
+    {
+      "character_id": "char_marcus_accountant",
+      "mood": "defensive"
+    }
+  ],
+  "director_instructions": {
+    "beat_type": "SETUP",
+    "pacing": "Intimate, conspiratorial tone; show the mechanism of corruption",
+    "sequence": [
+      {
+        "beat_id": "b_02",
+        "operator_id": "OP_INFORMATION_ARBITRAGE",
+        "actor": "char_caelus_varo",
+        "target": "char_marcus_accountant",
+        "outcome": "SUCCESS",
+        "narrative_directives": {
+          "action": "In Varo's opulent villa, exhausted messengers arrive with shipping reports. Varo studies maps and ledgers with Marcus, his accountant, orchestrating trades before news of delayed grain ships reaches the public markets. Marcus executes the orders with visible unease, understanding they're profiting from Rome's hunger.",
+          "beat_resolution": "Show Varo's ruthless profiteering mechanism and Marcus's complicity, establishing the crime Quintus will investigate"
+        },
+        "required_deltas": [
+          {
+            "path": "actor.stats.wealth",
+            "op": "add",
+            "value": 10,
+            "description": "Effect from OP_INFORMATION_ARBITRAGE"
+          }
+        ]
+      }
+    ]
+  },
+  "constraints": {
+    "required_deltas": [
+      {
+        "path": "actor.stats.wealth",
+        "op": "add",
+        "value": 10,
+        "narrative_trigger": "Effect from OP_INFORMATION_ARBITRAGE"
+      }
+    ],
+    "allowed_inventions": {
+      "extras": 2
+    },
+    "hook_requirement": "End with a button line that creates anticipation"
+  }
+}

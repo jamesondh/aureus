@@ -17,18 +17,11 @@
       "scene_id": "SC03",
       "attempts": 1,
       "violations": [],
-      "warnings": [
-        {
-          "type": "soft_constraint",
-          "rule": "S1",
-          "message": "Forbidden word \"hour\" found 1 time(s)",
-          "scene_id": "SC03"
-        }
-      ]
+      "warnings": []
     },
     {
       "scene_id": "SC04",
-      "attempts": 1,
+      "attempts": 2,
       "violations": [],
       "warnings": []
     },
@@ -42,7 +35,14 @@
       "scene_id": "SC06",
       "attempts": 1,
       "violations": [],
-      "warnings": []
+      "warnings": [
+        {
+          "type": "soft_constraint",
+          "rule": "S1",
+          "message": "Forbidden word \"second\" found 1 time(s)",
+          "scene_id": "SC06"
+        }
+      ]
     },
     {
       "scene_id": "SC07",
@@ -60,18 +60,11 @@
       "scene_id": "SC09",
       "attempts": 1,
       "violations": [],
-      "warnings": [
-        {
-          "type": "soft_constraint",
-          "rule": "S1",
-          "message": "Forbidden word \"second\" found 2 time(s)",
-          "scene_id": "SC09"
-        }
-      ]
+      "warnings": []
     },
     {
       "scene_id": "SC10",
-      "attempts": 1,
+      "attempts": 2,
       "violations": [],
       "warnings": []
     },
@@ -83,7 +76,7 @@
         {
           "type": "soft_constraint",
           "rule": "S1",
-          "message": "Forbidden word \"hour\" found 2 time(s)",
+          "message": "Forbidden word \"second\" found 1 time(s)",
           "scene_id": "SC11"
         }
       ]
@@ -122,20 +115,20 @@
       "scene_id": "SC17",
       "attempts": 1,
       "violations": [],
-      "warnings": []
-    },
-    {
-      "scene_id": "SC18",
-      "attempts": 1,
-      "violations": [],
       "warnings": [
         {
           "type": "soft_constraint",
           "rule": "S1",
           "message": "Forbidden word \"second\" found 1 time(s)",
-          "scene_id": "SC18"
+          "scene_id": "SC17"
         }
       ]
+    },
+    {
+      "scene_id": "SC18",
+      "attempts": 1,
+      "violations": [],
+      "warnings": []
     },
     {
       "scene_id": "SC19",
