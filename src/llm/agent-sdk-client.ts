@@ -15,6 +15,7 @@ import type { LLMRequest, LLMResponse } from './client.js';
 export interface AgentSDKConfig {
   maxTurns?: number;
   timeout?: number;
+  maxRetries?: number;
 }
 
 // ============================================================================
@@ -31,7 +32,47 @@ export class AgentSDKClient {
       // may count internal operations as turns
       maxTurns: config.maxTurns || 5,
       timeout: config.timeout || 120000,
+      maxRetries: config.maxRetries || 3,
     };
+  }
+
+  /**
+   * Check if a JSON string appears to be truncated.
+   * Returns true if the response looks incomplete.
+   */
+  private isJsonTruncated(content: string): boolean {
+    const trimmed = content.trim();
+    if (!trimmed) return true;
+    
+    // Count brackets to detect truncation
+    let braceCount = 0;
+    let bracketCount = 0;
+    let inString = false;
+    let escape = false;
+    
+    for (const char of trimmed) {
+      if (escape) {
+        escape = false;
+        continue;
+      }
+      if (char === '\\') {
+        escape = true;
+        continue;
+      }
+      if (char === '"') {
+        inString = !inString;
+        continue;
+      }
+      if (inString) continue;
+      
+      if (char === '{') braceCount++;
+      else if (char === '}') braceCount--;
+      else if (char === '[') bracketCount++;
+      else if (char === ']') bracketCount--;
+    }
+    
+    // If brackets/braces are unbalanced, it's truncated
+    return braceCount !== 0 || bracketCount !== 0;
   }
 
   /**
@@ -129,42 +170,87 @@ export class AgentSDKClient {
 
   /**
    * Send a request expecting JSON output.
+   * Includes retry logic for truncated or malformed responses.
    */
   async completeJson<T>(
     request: LLMRequest,
     validator?: (data: unknown) => T
   ): Promise<{ data: T; response: LLMResponse }> {
-    // Add JSON instruction to system prompt
-    const jsonSystem = `${request.system}\n\nIMPORTANT: You must respond with valid JSON only. No markdown code blocks, no explanation, just the JSON object.`;
+    // Add JSON instruction to system prompt with emphasis on completion
+    const jsonSystem = `${request.system}\n\nIMPORTANT: You must respond with valid, complete JSON only. No markdown code blocks, no explanation, just the JSON object. Ensure all arrays and objects are properly closed. Keep responses concise to avoid truncation.`;
 
-    const response = await this.complete({
-      ...request,
-      system: jsonSystem,
-    });
-
-    // Parse JSON from response
-    let content = response.content.trim();
+    let lastError: Error | null = null;
+    let lastContent = '';
     
-    // Strip markdown code blocks if present
-    if (content.startsWith('```json')) {
-      content = content.slice(7);
-    } else if (content.startsWith('```')) {
-      content = content.slice(3);
-    }
-    if (content.endsWith('```')) {
-      content = content.slice(0, -3);
-    }
-    content = content.trim();
+    for (let attempt = 1; attempt <= this.config.maxRetries!; attempt++) {
+      try {
+        const response = await this.complete({
+          ...request,
+          system: jsonSystem,
+        });
 
-    try {
-      const parsed = JSON.parse(content);
-      const data = validator ? validator(parsed) : (parsed as T);
-      return { data, response };
-    } catch (error) {
-      throw new Error(
-        `Failed to parse JSON response: ${error instanceof Error ? error.message : String(error)}\n\nResponse was:\n${content}`
-      );
+        // Parse JSON from response
+        let content = response.content.trim();
+        lastContent = content;
+        
+        // Strip markdown code blocks if present
+        if (content.startsWith('```json')) {
+          content = content.slice(7);
+        } else if (content.startsWith('```')) {
+          content = content.slice(3);
+        }
+        if (content.endsWith('```')) {
+          content = content.slice(0, -3);
+        }
+        content = content.trim();
+
+        // Check for truncation before parsing
+        if (this.isJsonTruncated(content)) {
+          const truncationError = new Error(
+            `Response appears truncated (unbalanced brackets/braces). Attempt ${attempt}/${this.config.maxRetries}`
+          );
+          lastError = truncationError;
+          
+          if (attempt < this.config.maxRetries!) {
+            console.warn(`  Warning: ${truncationError.message}. Retrying...`);
+            continue;
+          }
+          throw truncationError;
+        }
+
+        try {
+          const parsed = JSON.parse(content);
+          const data = validator ? validator(parsed) : (parsed as T);
+          return { data, response };
+        } catch (parseError) {
+          lastError = parseError instanceof Error ? parseError : new Error(String(parseError));
+          
+          if (attempt < this.config.maxRetries!) {
+            console.warn(`  Warning: JSON parse failed on attempt ${attempt}/${this.config.maxRetries}. Retrying...`);
+            continue;
+          }
+          throw parseError;
+        }
+      } catch (error) {
+        lastError = error instanceof Error ? error : new Error(String(error));
+        
+        // Don't retry on authentication or CLI errors
+        if (lastError.message.includes('CLI not found') || 
+            lastError.message.includes('auth') || 
+            lastError.message.includes('login')) {
+          throw lastError;
+        }
+        
+        if (attempt < this.config.maxRetries!) {
+          console.warn(`  Warning: Request failed on attempt ${attempt}/${this.config.maxRetries}. Retrying...`);
+          continue;
+        }
+      }
     }
+    
+    throw new Error(
+      `Failed to parse JSON response after ${this.config.maxRetries} attempts: ${lastError?.message || 'Unknown error'}\n\nLast response was:\n${lastContent}`
+    );
   }
 
   /**

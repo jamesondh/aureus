@@ -13,7 +13,11 @@
     "lint": "eslint src/**/*.ts",
     "generate:episode": "tsx src/cli/generate-episode.ts",
     "editorial-review": "tsx src/cli/editorial-review.ts",
-    "fix:script": "tsx src/cli/fix-script-format.ts"
+    "fix:script": "tsx src/cli/fix-script-format.ts",
+    "produce:episode": "tsx src/cli/produce-episode.ts",
+    "produce:storyboard": "tsx src/cli/produce-episode.ts -- --stage storyboard",
+    "produce:audio": "tsx src/cli/produce-episode.ts -- --stage audio",
+    "produce:image": "tsx src/cli/produce-episode.ts -- --stage image"
   },
   "keywords": [
     "narrative",

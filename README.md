@@ -90,6 +90,10 @@ Symbolic Planner (Director) → Neural Realizer (Writer) → Symbolic Verifier �
 | **F. Verification** | Check constraints, validate output | Haiku + deterministic |
 | **G. Repair** | Regenerate failed scenes | Sonnet |
 | **H. Commit** | Apply deltas, save artifacts | None |
+| **I-A. Storyboard** | Visual beat identification | Sonnet |
+| **I-B. Audio** | Voice synthesis | ElevenLabs |
+| **I-C. Images** | Frame generation | DALL-E 3 |
+| **I-D. Video** | Assembly with motion | FFmpeg |
 
 ## Project Structure
 
@@ -110,10 +114,18 @@ aureus/
 │   │   ├── agents.ts                 # BDI-lite proposals
 │   │   ├── writer.ts                 # Scene generation
 │   │   └── verifier.ts               # Constraint checking
+│   ├── production/
+│   │   ├── production-orchestrator.ts # Stage I coordinator
+│   │   ├── storyboarder.ts           # Visual beat identification
+│   │   ├── script-parser.ts          # Dialogue extraction
+│   │   ├── elevenlabs-client.ts      # Voice synthesis API
+│   │   ├── image-client.ts           # DALL-E 3 API
+│   │   └── video-assembler.ts        # FFmpeg generation
 │   └── types/
 │       ├── world.ts                  # World state schemas
 │       ├── operators.ts              # Operator schemas
-│       └── episode.ts                # Episode artifact schemas
+│       ├── episode.ts                # Episode artifact schemas
+│       └── production.ts             # Production pipeline schemas
 ├── world/                            # Canonical world state
 │   ├── world.json                    # Time, locations, global metrics
 │   ├── characters.json               # Principals with BDI models
@@ -122,6 +134,8 @@ aureus/
 │   ├── assets.json                   # Money, contracts, networks
 │   ├── threads.json                  # Open narrative questions
 │   └── constraints.json              # Hard/soft rules
+├── casting/
+│   └── casting.json                  # Character → voice mappings
 ├── operators/
 │   └── operators.json                # Operator library
 ├── seasons/
@@ -210,9 +224,112 @@ Full specification available in `/docs`:
 - [Appendix D](docs/spec/APPENDIX_D_STYLE.md) — Style guide & lexicon
 - [Appendix E](docs/spec/APPENDIX_E_PRODUCTION.md) — Voice/video pipeline
 
+## Production Pipeline
+
+Stage I transforms episode scripts into synthesized audio and video.
+
+### Environment Setup
+
+```bash
+# For voice synthesis (ElevenLabs)
+export ELEVENLABS_API_KEY=your_key_here
+
+# For image generation (OpenAI/DALL-E 3)
+export OPENAI_API_KEY=your_key_here
+```
+
+### Running Production
+
+```bash
+# Full production pipeline
+npm run produce:episode
+
+# Specific episode
+npm run produce:episode -- --episode 02
+
+# Dry run (generates manifests without API calls)
+npm run produce:episode -- --dry-run
+
+# Individual stages (for isolated testing)
+npm run produce:storyboard      # Stage I-A: Visual beat identification
+npm run produce:audio           # Stage I-B: Voice synthesis
+npm run produce:image           # Stage I-C: Image generation
+```
+
+### Production Stages
+
+| Stage | Description | Output |
+|-------|-------------|--------|
+| **I-A** | Storyboarder identifies visual beats | `storyboard.json` |
+| **I-B** | ElevenLabs synthesizes dialogue | `/audio/*.mp3` |
+| **I-C** | DALL-E 3 generates frames | `/frames/*.png` |
+| **I-D** | FFmpeg assembles video | `episode_final.mp4` |
+
+### Casting Registry
+
+Voice mappings are defined in `casting/casting.json`:
+
+```json
+{
+  "casting": {
+    "voice_mappings": [
+      {
+        "character_id": "char_caelus_varo",
+        "eleven_voice_id": "pNInz6obpgDQGcFmaJgB",
+        "voice_name": "Adam",
+        "default_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    ]
+  }
+}
+```
+
+New speaking characters trigger a blocking review item until voice is assigned.
+
+### Visual DNA
+
+Characters and locations require Visual DNA for consistent image generation:
+
+```json
+{
+  "visual_dna": {
+    "physical": "A man in his late 50s with a sharp, hawkish nose...",
+    "costume_default": "A short working tunic in undyed wool...",
+    "distinguishing_marks": "A thin scar across his right palm..."
+  }
+}
+```
+
+### Testing the Production Pipeline
+
+1. **Test storyboarding only** (no API keys needed):
+   ```bash
+   npm run produce:storyboard
+   ```
+   This uses the LLM to identify visual beats and generates `storyboard.json`.
+
+2. **Test with dry run**:
+   ```bash
+   npm run produce:episode -- --dry-run
+   ```
+   Generates all manifests without calling external APIs.
+
+3. **Test audio synthesis** (requires ELEVENLABS_API_KEY):
+   ```bash
+   npm run produce:audio
+   ```
+
+4. **Test image generation** (requires OPENAI_API_KEY):
+   ```bash
+   npm run produce:image
+   ```
+
 ## Roadmap
 
-### v3.0 — Foundation (Current)
+### v3.0 — Foundation
 - [x] JSON world bible + Git commits
 - [x] Expression language evaluator
 - [x] State store and delta engine
@@ -222,10 +339,14 @@ Full specification available in `/docs`:
 - [x] Pipeline orchestrator
 - [x] End-to-end episode generation testing
 
-### v3.1 — Production Pipeline
-- [ ] Voice synthesis via ElevenLabs
-- [ ] Image generation via DALL-E 3
-- [ ] Video assembly via FFmpeg
+### v3.1 — Production Pipeline (Current)
+- [x] Voice synthesis via ElevenLabs
+- [x] Image generation via DALL-E 3
+- [x] Video assembly via FFmpeg
+- [x] Storyboarder for visual beat selection
+- [x] Script parser for dialogue extraction
+- [x] Casting registry with human-in-the-loop
+- [x] Production orchestrator
 
 ### v3.2 — Performance
 - [ ] SQLite index for state queries
