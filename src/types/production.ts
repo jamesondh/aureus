@@ -11,6 +11,21 @@ export const VoiceSettingsSchema = z.object({
   use_speaker_boost: z.boolean().default(true),
 });
 
+// Voice profile for casting assistance (helps match voices to characters)
+export const VoiceProfileSchema = z.object({
+  gender: z.enum(['male', 'female', 'neutral']).optional(),
+  age: z.enum(['child', 'young', 'middle', 'older', 'elderly']).optional(),
+  timbre: z.enum(['deep', 'medium', 'high', 'gravelly', 'smooth', 'breathy']).optional(),
+  accent: z.string().optional(), // e.g., "British", "American Southern", "Italian"
+});
+
+// Audio post-processing settings for volume normalization
+export const AudioProcessingSchema = z.object({
+  gain_db: z.number().min(-20).max(20).default(0), // Volume adjustment in dB
+  apply_limiter: z.boolean().default(false), // Prevent clipping on loud passages
+  normalize_loudness: z.boolean().default(false), // EBU R128 loudness normalization
+});
+
 export const NarratorToneOverridesSchema = z.record(
   z.enum(['Neutral', 'Ominous', 'Urgent', 'Ironic']),
   VoiceSettingsSchema.partial()
@@ -23,6 +38,8 @@ export const VoiceMappingSchema = z.object({
   voice_version: z.number().int().positive().default(1),
   is_narrator: z.boolean().optional(),
   default_settings: VoiceSettingsSchema,
+  voice_profile: VoiceProfileSchema.optional(), // Character voice attributes for casting
+  audio_processing: AudioProcessingSchema.optional(), // Per-voice volume/limiting
   notes: z.string().optional(),
   tone_overrides: NarratorToneOverridesSchema.optional(),
 });
@@ -45,6 +62,8 @@ export const CastingRegistrySchema = z.object({
 });
 
 export type VoiceSettings = z.infer<typeof VoiceSettingsSchema>;
+export type VoiceProfile = z.infer<typeof VoiceProfileSchema>;
+export type AudioProcessing = z.infer<typeof AudioProcessingSchema>;
 export type VoiceMapping = z.infer<typeof VoiceMappingSchema>;
 export type UnassignedVoice = z.infer<typeof UnassignedVoiceSchema>;
 export type CastingRegistry = z.infer<typeof CastingRegistrySchema>;
@@ -90,7 +109,7 @@ export const AudioTimingManifestSchema = z.object({
   scene_id: z.string(),
   audio_segments: z.array(AudioTurnSchema),
   total_duration_ms: z.number(),
-  inter_turn_silence_ms: z.number().default(500),
+  inter_turn_silence_ms: z.number().default(1000), // Default 1 second between dialogue turns
 });
 
 export type PerformanceHints = z.infer<typeof PerformanceHintsSchema>;

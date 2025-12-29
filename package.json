@@ -16,7 +16,8 @@
     "produce:episode": "bun src/cli/produce-episode.ts",
     "produce:storyboard": "bun src/cli/produce-episode.ts -- --stage storyboard",
     "produce:audio": "bun src/cli/produce-episode.ts -- --stage audio",
-    "produce:image": "bun src/cli/produce-episode.ts -- --stage image"
+    "produce:image": "bun src/cli/produce-episode.ts -- --stage image",
+    "regenerate:audio": "bun src/cli/regenerate-audio.ts"
   },
   "keywords": [
     "narrative",

@@ -7,12 +7,14 @@
 
 import * as fs from 'fs/promises';
 import * as path from 'path';
+import { spawn } from 'child_process';
 import type {
   VoiceSettings,
   VoiceMapping,
   AudioSegment,
   CastingRegistry,
   PerformanceHints,
+  AudioProcessing,
 } from '../types/production.js';
 
 // ============================================================================
@@ -338,7 +340,10 @@ export class ElevenLabsClient {
       if (result.success && result.audioBuffer && result.audioBuffer.length > 0) {
         const filePath = path.join(outputDir, filename);
         
+        // Write raw audio directly - per-character audio processing (gain, limiter)
+        // is now applied during master audio concatenation for efficiency
         await fs.writeFile(filePath, result.audioBuffer);
+        
         console.log(`      ✓ Saved: ${filename} (${result.audioBuffer.length} bytes)`);
         
         files.push({
@@ -489,6 +494,90 @@ export class ElevenLabsClient {
 
   private sleep(ms: number): Promise<void> {
     return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  /**
+   * Apply audio processing (gain, limiter) to a file using FFmpeg.
+   * Returns true if processing was successful.
+   */
+  async applyAudioProcessing(
+    inputPath: string,
+    outputPath: string,
+    processing: AudioProcessing
+  ): Promise<{ success: boolean; error?: string }> {
+    // Build FFmpeg audio filter chain
+    const filters: string[] = [];
+    
+    // Apply gain adjustment
+    if (processing.gain_db && processing.gain_db !== 0) {
+      filters.push(`volume=${processing.gain_db}dB`);
+    }
+    
+    // Apply limiter to prevent clipping
+    if (processing.apply_limiter) {
+      // alimiter with limit at -1dB to prevent clipping, with soft knee
+      filters.push('alimiter=limit=0.891:attack=5:release=50');
+    }
+    
+    // Apply EBU R128 loudness normalization
+    if (processing.normalize_loudness) {
+      filters.push('loudnorm=I=-16:TP=-1.5:LRA=11');
+    }
+    
+    if (filters.length === 0) {
+      // No processing needed, just copy
+      try {
+        await fs.copyFile(inputPath, outputPath);
+        return { success: true };
+      } catch (error) {
+        return { 
+          success: false, 
+          error: error instanceof Error ? error.message : String(error) 
+        };
+      }
+    }
+    
+    const filterChain = filters.join(',');
+    
+    return new Promise((resolve) => {
+      const args = [
+        '-y',
+        '-i', inputPath,
+        '-af', filterChain,
+        '-c:a', 'libmp3lame',
+        '-q:a', '2',
+        outputPath
+      ];
+      
+      const ffmpeg = spawn('ffmpeg', args);
+      let stderr = '';
+      
+      ffmpeg.stderr?.on('data', (data) => {
+        stderr += data.toString();
+      });
+      
+      ffmpeg.on('close', (code) => {
+        if (code === 0) {
+          resolve({ success: true });
+        } else {
+          resolve({ success: false, error: stderr || `FFmpeg exit code: ${code}` });
+        }
+      });
+      
+      ffmpeg.on('error', (err) => {
+        resolve({ success: false, error: err.message });
+      });
+    });
+  }
+
+  /**
+   * Get audio processing settings for a character from the casting registry.
+   */
+  getAudioProcessing(characterId: string, casting: CastingRegistry): AudioProcessing | null {
+    const mapping = casting.casting.voice_mappings.find(
+      m => m.character_id === characterId
+    );
+    return mapping?.audio_processing || null;
   }
 }
 

@@ -32,7 +32,8 @@ export interface AssemblyConfig {
   framesDir: string;
   videoSettings?: Partial<VideoSettings>;
   crossfadeDurationMs?: number;
-  interTurnSilenceMs?: number;
+  interTurnSilenceMs?: number;  // Default: 1000ms (1 second between dialogue turns)
+  applyMasterLimiter?: boolean; // Default: true (prevents clipping on master audio)
 }
 
 export interface AssemblyResult {
@@ -248,11 +249,13 @@ export class VideoAssembler {
   /**
    * Concatenate audio segments into a master track.
    * Uses FFmpeg for proper audio concatenation with silences.
+   * Applies a limiter to prevent clipping on the master audio.
    */
   async concatenateAudio(
     audioFiles: string[],
     outputFile: string,
-    silenceMs: number = 500
+    silenceMs: number = 1000,
+    options: { applyLimiter?: boolean } = { applyLimiter: true }
   ): Promise<{ success: boolean; error?: string }> {
     // Use concat demuxer with silence files
     const silenceFile = `silence_${silenceMs}ms.mp3`;
@@ -269,8 +272,12 @@ export class VideoAssembler {
     
     await fs.writeFile(listFile, entries.join('\n'));
     
-    // Run FFmpeg
-    const command = `ffmpeg -f concat -safe 0 -i "${listFile}" -c:a libmp3lame "${outputFile}"`;
+    // Build FFmpeg command with optional limiter to prevent clipping
+    const audioFilter = options.applyLimiter 
+      ? '-af "alimiter=limit=0.891:attack=5:release=50"'  // Limit at -1dB
+      : '';
+    
+    const command = `ffmpeg -f concat -safe 0 -i "${listFile}" ${audioFilter} -c:a libmp3lame -q:a 2 "${outputFile}"`;
     
     return this.runFFmpegCommand(command);
   }

@@ -373,6 +373,9 @@ export class ProductionOrchestrator {
       // Load audio manifests to know expected audio segments per scene
       const audioManifests = await this.loadAudioProgress();
       
+      // Load casting for per-character audio processing
+      const casting = await this.loadCasting();
+      
       // Detect which scenes are complete
       const { complete, incomplete } = await this.detectCompleteScenes(
         storyboard,
@@ -425,18 +428,31 @@ export class ProductionOrchestrator {
       const completeManifests = audioManifests.filter(m => complete.includes(m.scene_id));
       
       // Generate master audio files for each complete scene
+      // Applies per-character audio processing (gain, limiter) from casting.json
       console.log('Generating master audio tracks for complete scenes...');
       for (const manifest of completeManifests) {
         const masterFile = path.join(audioDir, `${manifest.scene_id}_master.mp3`);
-        const audioFiles = manifest.audio_segments.map(s => path.join(audioDir, s.file));
         
-        // Check if master already exists
-        try {
-          await fs.access(masterFile);
-          console.log(`  ${manifest.scene_id}_master.mp3 already exists, skipping`);
-        } catch {
+        // Check if master already exists (skip unless --force)
+        let shouldGenerate = this.config.force;
+        if (!shouldGenerate) {
+          try {
+            await fs.access(masterFile);
+            console.log(`  ${manifest.scene_id}_master.mp3 already exists, skipping`);
+            console.log(`    (use --force to regenerate with updated audio_processing settings)`);
+          } catch {
+            shouldGenerate = true;
+          }
+        }
+        
+        if (shouldGenerate) {
           console.log(`  Generating ${manifest.scene_id}_master.mp3...`);
-          const result = await this.concatenateAudioFiles(audioFiles, masterFile, 500);
+          const result = await this.concatenateAudioFilesWithProcessing(
+            manifest.audio_segments,
+            audioDir,
+            masterFile,
+            casting
+          );
           if (!result.success) {
             errors.push(`Failed to create master audio for ${manifest.scene_id}: ${result.error}`);
           }
@@ -583,19 +599,102 @@ export class ProductionOrchestrator {
   }
 
   /**
-   * Concatenate audio files with silence between them using FFmpeg.
+   * Concatenate audio files with per-character audio processing (gain, limiter).
+   * Uses FFmpeg's filter_complex to apply individual filters to each input before concatenating.
    */
-  private async concatenateAudioFiles(
-    inputFiles: string[],
+  private async concatenateAudioFilesWithProcessing(
+    segments: AudioTimingManifest['audio_segments'],
+    audioDir: string,
     outputFile: string,
-    _silenceMs: number
+    casting: CastingRegistry
+  ): Promise<{ success: boolean; error?: string }> {
+    if (segments.length === 0) {
+      return { success: false, error: 'No segments provided' };
+    }
+    
+    // Build per-character gain map from casting
+    const characterGains = new Map<string, { gain_db: number; apply_limiter: boolean }>();
+    for (const mapping of casting.casting.voice_mappings) {
+      if (mapping.audio_processing) {
+        characterGains.set(mapping.character_id, {
+          gain_db: mapping.audio_processing.gain_db ?? 0,
+          apply_limiter: mapping.audio_processing.apply_limiter ?? false,
+        });
+      }
+    }
+    
+    // Check if any processing is needed
+    const needsProcessing = segments.some(s => {
+      const proc = characterGains.get(s.character_id);
+      return proc && (proc.gain_db !== 0 || proc.apply_limiter);
+    });
+    
+    if (!needsProcessing) {
+      // No processing needed, use simple concat
+      return this.concatenateAudioFilesSimple(
+        segments.map(s => path.join(audioDir, s.file)),
+        outputFile
+      );
+    }
+    
+    // Build FFmpeg command with filter_complex for per-segment processing
+    const inputArgs: string[] = [];
+    const filterParts: string[] = [];
+    const concatInputs: string[] = [];
+    
+    for (let i = 0; i < segments.length; i++) {
+      const segment = segments[i];
+      const filePath = path.join(audioDir, segment.file);
+      const proc = characterGains.get(segment.character_id);
+      
+      inputArgs.push('-i', filePath);
+      
+      // Build filter for this input
+      const filters: string[] = [];
+      if (proc?.gain_db && proc.gain_db !== 0) {
+        filters.push(`volume=${proc.gain_db}dB`);
+      }
+      if (proc?.apply_limiter) {
+        filters.push('alimiter=limit=0.891:attack=5:release=50');
+      }
+      
+      if (filters.length > 0) {
+        filterParts.push(`[${i}:a]${filters.join(',')}[a${i}]`);
+        concatInputs.push(`[a${i}]`);
+      } else {
+        concatInputs.push(`[${i}:a]`);
+      }
+    }
+    
+    // Build the concat filter
+    const concatFilter = `${concatInputs.join('')}concat=n=${segments.length}:v=0:a=1[out]`;
+    const fullFilter = filterParts.length > 0 
+      ? `${filterParts.join('; ')}; ${concatFilter}`
+      : concatFilter;
+    
+    const command = [
+      'ffmpeg', '-y',
+      ...inputArgs,
+      '-filter_complex', fullFilter,
+      '-map', '[out]',
+      '-c:a', 'libmp3lame',
+      '-q:a', '2',
+      outputFile
+    ];
+    
+    return this.runCommand(command);
+  }
+
+  /**
+   * Simple concatenation without per-segment processing.
+   */
+  private async concatenateAudioFilesSimple(
+    inputFiles: string[],
+    outputFile: string
   ): Promise<{ success: boolean; error?: string }> {
     if (inputFiles.length === 0) {
       return { success: false, error: 'No input files provided' };
     }
-    
-    // For simplicity, use FFmpeg's concat filter with adelay for silences
-    // This approach works without pre-generating silence files
     
     const episodeDir = this.getEpisodeDir();
     const listFile = path.join(episodeDir, 'temp_audio_list.txt');
@@ -604,8 +703,6 @@ export class ProductionOrchestrator {
     const entries = inputFiles.map(f => `file '${f}'`).join('\n');
     await fs.writeFile(listFile, entries);
     
-    // Use concat demuxer - silences will be handled by the inter_turn_silence in manifest
-    // For preview, we'll concatenate directly without silences for simplicity
     const command = [
       'ffmpeg', '-y',
       '-f', 'concat',
@@ -1044,7 +1141,7 @@ export class ProductionOrchestrator {
           duration_ms: f.durationMs,
           cumulative_offset_ms: cumulativeOffset,
         };
-        cumulativeOffset += f.durationMs + 500; // 500ms silence between turns
+        cumulativeOffset += f.durationMs + 1000; // 1 second silence between turns
         return segment;
       });
       
@@ -1052,7 +1149,7 @@ export class ProductionOrchestrator {
         scene_id: scene.sceneId,
         audio_segments: audioSegments,
         total_duration_ms: cumulativeOffset,
-        inter_turn_silence_ms: 500,
+        inter_turn_silence_ms: 1000, // 1 second between dialogue turns
       };
       
       manifests.push(sceneManifest);
