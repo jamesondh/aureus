@@ -1,0 +1,16 @@
+{
+  "review_queue": [
+    {
+      "type": "voice_assignment",
+      "reason": "ElevenLabs API key not configured",
+      "blocking": true
+    },
+    {
+      "type": "image_failure",
+      "reason": "OpenAI API key not configured",
+      "blocking": true
+    }
+  ],
+  "blocking_count": 2,
+  "non_blocking_count": 0
+}

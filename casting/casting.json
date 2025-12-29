@@ -1,0 +1,147 @@
+{
+  "casting": {
+    "version": "1.0",
+    "last_updated": "2024-12-28T00:00:00Z",
+    "voice_mappings": [
+      {
+        "character_id": "NARRATOR",
+        "eleven_voice_id": "G17SuINrv2H9FC6nvetn",
+        "voice_name": "Christopher",
+        "is_narrator": true,
+        "default_settings": {
+          "stability": 0.8,
+          "similarity_boost": 0.7,
+          "style": 0.2,
+          "use_speaker_boost": true
+        },
+        "notes": "British gravitas, documentary style. Authoritative but not cold. Adjust stability per tone tag.",
+        "tone_overrides": {
+          "Neutral": {
+            "stability": 0.8
+          },
+          "Ominous": {
+            "stability": 0.7,
+            "style": 0.3
+          },
+          "Urgent": {
+            "stability": 0.6,
+            "style": 0.4
+          },
+          "Ironic": {
+            "stability": 0.75,
+            "style": 0.25
+          }
+        }
+      },
+      {
+        "character_id": "char_caelus_varo",
+        "eleven_voice_id": "yhf80q1381zd2JJQ4tM7",
+        "voice_name": "Dominic",
+        "default_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75,
+          "style": 0.4,
+          "use_speaker_boost": true
+        },
+        "notes": "Sharp, clipped delivery. Reduce stability for emotional scenes. Mathematical, profane, impatient."
+      },
+      {
+        "character_id": "char_quintus_fabius",
+        "eleven_voice_id": "yhf80q1381zd2JJQ4tM7",
+        "voice_name": "Dominic",
+        "default_settings": {
+          "stability": 0.7,
+          "similarity_boost": 0.8,
+          "style": 0.3,
+          "use_speaker_boost": true
+        },
+        "notes": "Archaic, moralizing, dignified. Increase stability for formal speeches. Latin-purist delivery."
+      },
+      {
+        "character_id": "char_drusilla",
+        "eleven_voice_id": "UizRZo250FhTtKlJa6mo",
+        "voice_name": "Diana",
+        "default_settings": {
+          "stability": 0.7,
+          "similarity_boost": 0.8,
+          "style": 0.3,
+          "use_speaker_boost": true
+        },
+        "notes": "Calm, measured, clinical. Increase stability for stoic counsel scenes. Low-volume, diagnostic."
+      },
+      {
+        "character_id": "char_marcus_accountant",
+        "eleven_voice_id": "AmY1pcgcEc15wyuIj50p",
+        "voice_name": "Chris",
+        "default_settings": {
+          "stability": 0.4,
+          "similarity_boost": 0.7,
+          "style": 0.5,
+          "use_speaker_boost": true
+        },
+        "notes": "Nervous, precise, deferential. Lower stability for fearful scenes. Speaks in numbers."
+      },
+      {
+        "character_id": "char_gaius_crassipes",
+        "eleven_voice_id": "goT3UYdM9bhm0n2lmKQx",
+        "voice_name": "Edward",
+        "default_settings": {
+          "stability": 0.6,
+          "similarity_boost": 0.75,
+          "style": 0.4,
+          "use_speaker_boost": true
+        },
+        "notes": "Smooth, accommodating, double-meaning. Jovial surface with calculating undertones."
+      },
+      {
+        "character_id": "char_fruit_vendor",
+        "eleven_voice_id": "NfUrCNRReUL9RXS9upG1",
+        "voice_name": "Scotty",
+        "default_settings": {
+          "stability": 0.6,
+          "similarity_boost": 0.7,
+          "style": 0.3,
+          "use_speaker_boost": true
+        },
+        "notes": "Minor character. Weathered, common speech. Low, superstitious."
+      },
+      {
+        "character_id": "char_milo",
+        "eleven_voice_id": "jcm0A25XPeyOWvAQUhFK",
+        "voice_name": "Pip",
+        "default_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.7,
+          "style": 0.4,
+          "use_speaker_boost": true
+        },
+        "notes": "Minor character. Young, eager, slightly nervous."
+      },
+      {
+        "character_id": "char_servius",
+        "eleven_voice_id": "7cOBG34AiHrAzs842Rdi",
+        "voice_name": "Tarquin",
+        "default_settings": {
+          "stability": 0.6,
+          "similarity_boost": 0.7,
+          "style": 0.3,
+          "use_speaker_boost": true
+        },
+        "notes": "Minor character. Older, gruff, experienced."
+      },
+      {
+        "character_id": "char_a_street_vendor",
+        "eleven_voice_id": "ytcsltLTtCHxNn1vC76H",
+        "voice_name": "Ricky",
+        "default_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.7,
+          "style": 0.4,
+          "use_speaker_boost": true
+        },
+        "notes": "Minor character. Background vendor, hawking wares."
+      }
+    ],
+    "unassigned": []
+  }
+}

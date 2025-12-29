@@ -2,3 +2,15 @@
 node_modules/
 .env*
 dist/
+
+# Generated media assets
+*.mp3
+*.mp4
+*.png
+
+# Auto-generated assembly scripts (contain machine-specific paths)
+*_assemble.sh
+
+# Progress tracking
+.audio_progress/
+.image_progress/

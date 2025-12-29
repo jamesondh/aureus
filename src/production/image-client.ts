@@ -18,7 +18,7 @@ import type {
 
 export interface ImageClientConfig {
   apiKey?: string;
-  model?: 'dall-e-3' | 'gpt-image-1';
+  model?: 'gpt-image-1.5';
   maxRetries?: number;
   retryDelayMs?: number;
 }
@@ -32,8 +32,6 @@ export interface GenerationResult {
 
 export interface ImageGenerationOptions {
   size?: '1024x1024' | '1792x1024' | '1024x1792';
-  quality?: 'standard' | 'hd';
-  style?: 'vivid' | 'natural';
 }
 
 // ============================================================================
@@ -42,14 +40,13 @@ export interface ImageGenerationOptions {
 
 export class ImageClient {
   private apiKey: string;
-  private model: 'dall-e-3' | 'gpt-image-1';
+  private model = 'gpt-image-1.5';
   private maxRetries: number;
   private retryDelayMs: number;
   private baseUrl = 'https://api.openai.com/v1';
 
   constructor(config: ImageClientConfig = {}) {
     this.apiKey = config.apiKey || process.env.OPENAI_API_KEY || '';
-    this.model = config.model || 'dall-e-3';
     this.maxRetries = config.maxRetries || 3;
     this.retryDelayMs = config.retryDelayMs || 2000;
   }
@@ -76,15 +73,12 @@ export class ImageClient {
     }
 
     const url = `${this.baseUrl}/images/generations`;
-    
+
     const body = JSON.stringify({
       model: this.model,
       prompt,
       n: 1,
       size: options.size || '1792x1024', // 16:9 landscape
-      quality: options.quality || 'hd',
-      style: options.style || 'vivid',
-      response_format: 'b64_json',
     });
 
     let lastError: string | undefined;
@@ -102,7 +96,7 @@ export class ImageClient {
 
         if (!response.ok) {
           const errorText = await response.text();
-          
+
           // Check for rate limiting
           if (response.status === 429) {
             const retryAfter = response.headers.get('retry-after');
@@ -111,7 +105,7 @@ export class ImageClient {
             await this.sleep(delay);
             continue;
           }
-          
+
           // Check for content policy violation
           if (response.status === 400 && errorText.includes('content_policy')) {
             return {
@@ -119,14 +113,14 @@ export class ImageClient {
               error: 'Content policy violation. Please simplify or modify the prompt.',
             };
           }
-          
+
           lastError = `API error ${response.status}: ${errorText}`;
-          
+
           // Don't retry on most client errors
           if (response.status >= 400 && response.status < 500 && response.status !== 429) {
             break;
           }
-          
+
           await this.sleep(this.retryDelayMs * Math.pow(2, attempt));
           continue;
         }
@@ -150,7 +144,6 @@ export class ImageClient {
         };
       } catch (error) {
         lastError = error instanceof Error ? error.message : String(error);
-        
         if (attempt < this.maxRetries - 1) {
           await this.sleep(this.retryDelayMs * Math.pow(2, attempt));
         }
@@ -179,40 +172,84 @@ export class ImageClient {
     );
 
     // Determine size based on aspect ratio
-    const size = this.parseAspectRatio(constraints.aspect_ratio);
+    const size = this.parseAspectRatio(constraints.aspect_ratio) as
+      | "1024x1024"
+      | "1792x1024"
+      | "1024x1792"
+      | undefined;
 
-    return this.generate(fullPrompt, { size, quality: 'hd' });
+    return this.generate(fullPrompt, { size });
+  }
+
+  /**
+   * Check if an image file already exists (for recovery).
+   */
+  async checkExistingFile(shotId: string, outputDir: string, format: string = 'png'): Promise<{
+    exists: boolean;
+    file?: string;
+  }> {
+    const filename = `${shotId}.${format}`;
+    const filePath = path.join(outputDir, filename);
+
+    try {
+      const stats = await fs.stat(filePath);
+      // Check that it's not a placeholder (placeholder is tiny, ~70 bytes)
+      if (stats.size > 1000) {
+        return { exists: true, file: filename };
+      }
+    } catch {
+      // File doesn't exist
+    }
+
+    return { exists: false };
   }
 
   /**
    * Generate images for multiple shots and save to files.
+   * Supports recovery by skipping shots that already have image files.
    */
   async generateToFiles(
     shots: Shot[],
     constraints: ProductionConstraints,
-    outputDir: string
+    outputDir: string,
+    options: { force?: boolean } = {}
   ): Promise<{
     success: boolean;
     files: Array<{ shotId: string; file: string }>;
     errors: Array<{ shotId: string; error: string }>;
+    skipped: number;
   }> {
     await fs.mkdir(outputDir, { recursive: true });
 
     const files: Array<{ shotId: string; file: string }> = [];
     const errors: Array<{ shotId: string; error: string }> = [];
+    const ext = constraints.image_format || 'png';
+    let skipped = 0;
 
     for (const shot of shots) {
-      console.log(`  Generating image for ${shot.shot_id}...`);
-      
+      // Check for existing file (recovery)
+      if (!options.force) {
+        const existing = await this.checkExistingFile(shot.shot_id, outputDir, ext);
+        if (existing.exists && existing.file) {
+          files.push({
+            shotId: shot.shot_id,
+            file: existing.file,
+          });
+          skipped++;
+          continue;
+        }
+      }
+
+      console.log(`    Generating image for ${shot.shot_id}...`);
+
       const result = await this.generateShot(shot, constraints);
 
       if (result.success && result.imageBuffer) {
-        const ext = constraints.image_format || 'png';
         const filename = `${shot.shot_id}.${ext}`;
         const filePath = path.join(outputDir, filename);
-        
+
         await fs.writeFile(filePath, result.imageBuffer);
-        
+
         files.push({
           shotId: shot.shot_id,
           file: filename,
@@ -229,6 +266,7 @@ export class ImageClient {
       success: errors.length === 0,
       files,
       errors,
+      skipped,
     };
   }
 
@@ -245,7 +283,7 @@ export class ImageClient {
     // For now, we'll just create an empty file as a marker
     const filename = `${shotId}_placeholder.${format}`;
     const filePath = path.join(outputDir, filename);
-    
+
     // Create a minimal 1x1 pixel PNG as placeholder
     // This is a valid PNG with a single transparent pixel
     const minimalPng = Buffer.from([
@@ -258,9 +296,9 @@ export class ImageClient {
       0x00, 0x00, 0x00, 0x00, 0x49, 0x45, 0x4e, 0x44, // IEND chunk
       0xae, 0x42, 0x60, 0x82
     ]);
-    
+
     await fs.writeFile(filePath, minimalPng);
-    
+
     // Also write metadata about what should be here
     const metaPath = path.join(outputDir, `${shotId}_placeholder.json`);
     await fs.writeFile(metaPath, JSON.stringify({
@@ -269,7 +307,7 @@ export class ImageClient {
       scene_text_preview: sceneText.slice(0, 200),
       needs_manual_generation: true,
     }, null, 2));
-    
+
     return filename;
   }
 
@@ -283,26 +321,26 @@ export class ImageClient {
     styleSuffix: string
   ): string {
     const parts: string[] = [];
-    
+
     if (stylePrompt) {
       parts.push(stylePrompt);
     }
-    
+
     parts.push(visualPrompt);
-    
+
     if (styleSuffix) {
       parts.push(styleSuffix);
     }
-    
+
     return parts.join('\n\n');
   }
 
-  private parseAspectRatio(ratio: string): '1024x1024' | '1792x1024' | '1024x1792' {
+  private parseAspectRatio(ratio: string): '1024x1024' | '1536x1024' | '1024x1536' {
     if (ratio === '16:9' || ratio === '1920x1080') {
-      return '1792x1024'; // Closest to 16:9
+      return '1536x1024'; // Closest to 16:9
     }
     if (ratio === '9:16') {
-      return '1024x1792'; // Portrait
+      return '1024x1536'; // Portrait
     }
     return '1024x1024'; // Default square
   }

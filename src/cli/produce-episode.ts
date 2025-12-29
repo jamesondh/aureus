@@ -26,6 +26,8 @@ interface CliArgs {
   season: string;
   stage?: 'all' | 'storyboard' | 'audio' | 'image' | 'video';
   dryRun: boolean;
+  force: boolean;
+  preview: boolean;
   cadence?: number;
   help: boolean;
 }
@@ -37,6 +39,8 @@ function parseArgs(): CliArgs {
     season: '01',
     stage: 'all',
     dryRun: false,
+    force: false,
+    preview: false,
     help: false,
   };
   
@@ -53,6 +57,10 @@ function parseArgs(): CliArgs {
       result.stage = args[++i] as CliArgs['stage'] || 'all';
     } else if (arg === '--dry-run') {
       result.dryRun = true;
+    } else if (arg === '--force' || arg === '-f') {
+      result.force = true;
+    } else if (arg === '--preview' || arg === '-p') {
+      result.preview = true;
     } else if (arg === '--cadence') {
       result.cadence = parseFloat(args[++i]) || undefined;
     }
@@ -78,6 +86,11 @@ Options:
                         - video: Video assembly (requires FFmpeg)
                         - all: Run complete pipeline (default)
   --dry-run             Generate manifests without calling APIs
+  -f, --force           Regenerate all files (ignore existing progress)
+  -p, --preview         Preview mode: generate video only for scenes with
+                        complete assets (all audio + all real images).
+                        Use this to test casting, image quality, and video
+                        assembly before committing to expensive full generation.
   --cadence <value>     Override visual cadence (0.1-1.0)
   -h, --help            Show this help message
 
@@ -90,6 +103,7 @@ Examples:
   npm run produce:episode -- --episode 02 --dry-run
   npm run produce:episode -- --stage audio
   npm run produce:episode -- --stage storyboard --cadence 0.6
+  npm run produce:episode -- --preview   # Generate preview from complete scenes
 `);
 }
 
@@ -113,11 +127,18 @@ async function main(): Promise<void> {
   console.log(`==========================`);
   console.log(`Season: ${seasonId}`);
   console.log(`Episode: ${episodeId}`);
-  console.log(`Stage: ${args.stage}`);
-  console.log(`Dry run: ${args.dryRun}`);
+  if (args.preview) {
+    console.log(`Mode: preview`);
+  } else {
+    console.log(`Stage: ${args.stage}`);
+    console.log(`Dry run: ${args.dryRun}`);
+  }
+  if (args.force) {
+    console.log(`Force: true (ignoring existing progress)`);
+  }
   
   // Check environment
-  if (!args.dryRun) {
+  if (!args.dryRun && !args.preview) {
     if (args.stage === 'all' || args.stage === 'audio') {
       if (!process.env.ELEVENLABS_API_KEY) {
         console.warn('\nWarning: ELEVENLABS_API_KEY not set. Audio synthesis will fail.');
@@ -140,13 +161,23 @@ async function main(): Promise<void> {
     runImageGen: args.stage === 'all' || args.stage === 'image',
     runVideoAssembly: args.stage === 'all' || args.stage === 'video',
     dryRun: args.dryRun,
+    force: args.force,
     visualCadenceOverride: args.cadence,
   });
   
   // Run appropriate stage(s)
   let result;
   
-  if (args.stage === 'storyboard') {
+  if (args.preview) {
+    console.log('\nRunning preview mode...');
+    const previewResult = await orchestrator.runPreview();
+    console.log(`\nComplete scenes: ${previewResult.complete_scenes.length}`);
+    console.log(`Incomplete scenes: ${previewResult.incomplete_scenes.length}`);
+    if (previewResult.preview_file) {
+      console.log(`Preview video: ${previewResult.preview_file}`);
+    }
+    result = previewResult;
+  } else if (args.stage === 'storyboard') {
     console.log('\nRunning storyboard stage only...');
     const storyboard = await orchestrator.runStoryboardOnly();
     if (storyboard) {
@@ -157,16 +188,22 @@ async function main(): Promise<void> {
     }
   } else if (args.stage === 'audio') {
     console.log('\nRunning audio synthesis only...');
-    const audioResult = await orchestrator.runAudioOnly();
-    console.log(`\nGenerated ${audioResult.files.length} audio files`);
+    const audioResult = await orchestrator.runAudioOnly() as { files: string[]; errors: string[]; skipped?: number };
+    console.log(`\nAudio files: ${audioResult.files.length}`);
+    if (audioResult.skipped && audioResult.skipped > 0) {
+      console.log(`Skipped (existing): ${audioResult.skipped}`);
+    }
     if (audioResult.errors.length > 0) {
       console.log(`Errors: ${audioResult.errors.length}`);
     }
     result = { success: audioResult.errors.length === 0 };
   } else if (args.stage === 'image') {
     console.log('\nRunning image generation only...');
-    const imageResult = await orchestrator.runImageOnly();
-    console.log(`\nGenerated ${imageResult.files.length} images`);
+    const imageResult = await orchestrator.runImageOnly() as { files: string[]; errors: string[]; skipped?: number };
+    console.log(`\nImage files: ${imageResult.files.length}`);
+    if (imageResult.skipped && imageResult.skipped > 0) {
+      console.log(`Skipped (existing): ${imageResult.skipped}`);
+    }
     if (imageResult.errors.length > 0) {
       console.log(`Errors: ${imageResult.errors.length}`);
     }

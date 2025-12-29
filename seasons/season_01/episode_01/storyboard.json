@@ -1,0 +1,1450 @@
+{
+  "episode_id": "SC01",
+  "scenes": [
+    {
+      "scene_id": "SC01",
+      "shot_count": 5,
+      "shots": [
+        {
+          "shot_id": "SC01_shot_001",
+          "sequence": 1,
+          "beat_reference": "Scene opening - establishing the empty Forum at dawn",
+          "timestamp_anchor": "00:00",
+          "shot_type": "wide",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. A wide establishing view of the Roman Forum at dawn, mist clinging to weathered flagstones like a pale shroud. Massive marble plaza stretching between the Capitoline and Palatine hills, ancient pillars casting long shadows. The Rostra speaking platform dominates the midground. Amber-gold light touches the tops of temple columns while the plaza floor remains in grey half-light. A single hunched figure—an old street sweeper—drags his broom between shuttered merchant stalls, tiny against the monumental architecture. Bronze statues of ancestors watch from pedestals like silent judges. Heavy crosshatching for deep shadows under colonnades. Sepia and ochre tones with the first warm light breaking through mist. Empty, waiting, pregnant with meaning.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "solemn",
+            "lighting": "Pre-dawn grey half-light with first amber sun touching only the highest marble columns, deep shadows pooling on flagstones"
+          },
+          "motion_hint": "slow_pan_right"
+        },
+        {
+          "shot_id": "SC01_shot_002",
+          "sequence": 2,
+          "beat_reference": "Quintus enters alone - his isolation speaks volumes",
+          "timestamp_anchor": "00:15",
+          "shot_type": "medium",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. A man in his mid-40s walks alone through the misty Forum—Quintus Fabius Maximus with his broad, honest face showing the strain of principle. Strong Roman features: pronounced nose, heavy brow, dark hair with distinguished gray at temples. His toga praetexta is immaculate, the purple border stripe sharp against white wool, formally draped with studied dignity. His grandfather's signet ring visible on his hand. He moves with deliberate formality, back straight, but notably alone—no clients trailing behind, no slaves carrying documents. The empty space around him emphasized. Weathered pillars and ancestor statues visible in background. Heavy crosshatching defines the folds of his toga and the shadows beneath his heavy brow. Sepia and ochre tones with touches of deep crimson in the purple stripe.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "dignified isolation",
+            "lighting": "Growing dawn light catching the white of his toga, face half in shadow, emphasizing the solitary figure"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC01_shot_003",
+          "sequence": 3,
+          "beat_reference": "Quintus speaks the Ennius quotation - philosophical peak",
+          "timestamp_anchor": "00:35",
+          "shot_type": "close",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Close view of Quintus Fabius Maximus standing before the ancient Rostra platform, his hand adjusting his toga fold with ritualistic precision. His broad face fills the frame—pronounced Roman nose, heavy brow creased with contemplation, slight squint in right eye. Dark hair with gray at temples. His expression is measured but bitter, lips parted as he speaks to no one and everyone: ancient words about Rome's foundations. Behind him, blurred suggestion of the Rostra where his father once thundered against Carthage. A fruit vendor woman visible at the edge of frame, pausing her work to listen. The scar on his left forearm from military service just visible. Heavy crosshatching defines the deep creases of worry on his face. Sepia and ochre tones, the purple border of his toga praetexta catching light.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "contemplative bitterness",
+            "lighting": "Morning light now fully on his face, harsh Mediterranean sun creating strong shadows in the hollows of his features"
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC01_shot_004",
+          "sequence": 4,
+          "beat_reference": "Quintus holds the debt tablet - the wound he cannot face",
+          "timestamp_anchor": "01:00",
+          "shot_type": "extreme_close",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Extreme close-up of Quintus's hands holding a small clay debt tablet covered in incised figures. His grandfather's signet ring prominent on one finger. The hands are those of a nobleman—clean but strong, with a thin scar visible on the left forearm from military service. He holds the tablet at an angle, not looking at it directly, as a man avoids examining a wound. The clay surface shows rows of numbers, debts tallied against his name. His toga fold visible at the edge of frame, the white wool with its purple stripe. Heavy crosshatching creates deep shadows around the object, making it the dark center of the composition. Sepia and ochre tones with the clay tablet rendered in earthy brown, the figures scratched into its surface catching light.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "quiet dread",
+            "lighting": "Direct sunlight on the hands and tablet creating harsh shadows, the numbers clearly legible"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC01_shot_005",
+          "sequence": 5,
+          "beat_reference": "Fruit vendor's omen - the button closing the scene",
+          "timestamp_anchor": "01:30",
+          "shot_type": "medium",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. The fruit vendor woman watches Quintus's departing back as he walks toward the Curia with steady steps and straight spine, the clay tablet still clutched in his hand, unread, undestroyed. She is weathered, practical, her face knowing as she spits once on the flagstones for luck—a ward against the doom she recognizes. Her merchant stall with early fruits frames one side. Quintus in his formal toga praetexta recedes into the now-brightening Forum, his isolation emphasized by the growing crowds beginning to fill the space around him. The Curia building visible in the distance. Light floods the plaza. Heavy crosshatching for the shadows of the colonnade. Sepia and ochre tones with occasional deep crimson accents on the fruits in her stall. The contrast between her earthy superstition and his dignified retreat.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "foreboding",
+            "lighting": "Full morning sun flooding the Forum, harsh Mediterranean light creating deep shadows under colonnades, the brightness almost oppressive"
+          },
+          "motion_hint": "slow_zoom_out"
+        }
+      ]
+    },
+    {
+      "scene_id": "SC02",
+      "shot_count": 5,
+      "shots": [
+        {
+          "shot_id": "SC02_shot_001",
+          "sequence": 1,
+          "beat_reference": "Scene opening - establishing the merchant's war room",
+          "timestamp_anchor": "00:00",
+          "shot_type": "wide",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. A rectangular tablinum with high ceilings, faded maritime frescoes barely visible on walls. Center: a large oak table heaped with scrolls and wax tablets. A bronze astrolabe catches slanted morning light from a high window. Maps of Mediterranean shipping lanes pinned to every wall. Two exhausted messengers slump against the doorframe in damp cloaks. Incense smoke curls through diagonal light beams. Iron strongbox in corner. Clay oil lamps cast long shadows. Heavy crosshatching for deep shadows. Sepia and ochre tones with crimson accents on wax seals.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "tense anticipation",
+            "lighting": "Slanted morning sun through high window cutting through incense smoke, oil lamps adding warm pools of light, deep shadows in corners"
+          },
+          "motion_hint": "slow_pan_right"
+        },
+        {
+          "shot_id": "SC02_shot_002",
+          "sequence": 2,
+          "beat_reference": "Varo receives the news - calculating opportunity",
+          "timestamp_anchor": "00:15",
+          "shot_type": "medium",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Caelus Varo, late 50s, sharp hawkish nose, deep-set weary eyes, clean-shaven with short-cropped gray hair, lean wiry build. Wears a short working tunic in undyed wool, deliberately plain, tugged loose at the collar. Single iron ring on left hand. Ink stains on fingertips. He traces the African coastline on a map spread before him. Across from him, Marcus Licinius hunches over a wax tablet, stylus trembling, wiping palms on his tunic. Heavy crosshatching defines Varo's angular features. Sepia tones, ochre highlights on the bronze map stand.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "calculating tension",
+            "lighting": "Gray daylight from high window illuminating the map, Varo's face half in shadow, oil lamp glow on Marcus's anxious features"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC02_shot_003",
+          "sequence": 3,
+          "beat_reference": "Predator's grin - Varo sees his opportunity",
+          "timestamp_anchor": "00:35",
+          "shot_type": "close",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Extreme focus on Caelus Varo's face: sharp hawkish nose, deep-set weary eyes now glinting with predatory intelligence, clean-shaven jaw, short-cropped gray hair. A predator's grin spreads across his lean features. Thin scar visible across his right palm as his ink-stained fingers rest on the table edge. Heavy crosshatching creates deep shadows under cheekbones and eye sockets. Sepia and ochre tones with the faintest crimson warmth in his expression. The bronze astrolabe catches light behind him.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "triumphant menace",
+            "lighting": "Harsh side-lighting from window accentuating the sharp planes of his face, one eye in shadow, teeth catching the light"
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC02_shot_004",
+          "sequence": 4,
+          "beat_reference": "Marcus's moral collapse - hands steady on corrupt calculations",
+          "timestamp_anchor": "00:55",
+          "shot_type": "extreme_close",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Marcus Licinius's hands scratching figures onto a wax tablet with a bronze stylus - the hands now steady, having surrendered to the mathematics of corruption. Deep crosshatching shows the grooves of calculations in the wax: Roman numerals tallying seventy thousand modii. The stylus moves with resigned precision. Shadows pool in the tablet's wooden frame. Sepia tones dominate, ochre highlights on the bronze stylus tip. A corner of Marcus's plain tunic visible. The geometry of greed rendered in wax.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "resigned complicity",
+            "lighting": "Warm oil lamp glow directly on the tablet surface, stylus casting a thin shadow across the numbers, hands emerging from darkness"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC02_shot_005",
+          "sequence": 5,
+          "beat_reference": "Final button - Varo alone with his conquest",
+          "timestamp_anchor": "01:15",
+          "shot_type": "medium",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Caelus Varo alone at his map table, late 50s, hawkish profile, lean wiry build in plain undyed wool tunic. He leans over the African coastline, a private smile on his thin lips. One ink-stained hand rests possessively on the map. The bronze scale nearby, weight recently adjusted with almost tender care. Through the high window, gray daylight. Empty doorway where Marcus exited. Scrolls and tablets in organized chaos around him. Heavy crosshatching creates pools of shadow. Sepia and ochre tones with deep crimson accent on a wax seal. He whispers to no one, master of information that will starve a city.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "sinister satisfaction",
+            "lighting": "Fading gray daylight from window, oil lamps creating warm islands of light on the map, Varo's face partially illuminated in profile"
+          },
+          "motion_hint": "slow_zoom_out"
+        }
+      ]
+    },
+    {
+      "scene_id": "SC03",
+      "shot_count": 5,
+      "shots": [
+        {
+          "shot_id": "SC03_shot_001",
+          "sequence": 1,
+          "beat_reference": "Scene opening - establishing the atrium with Quintus at lararium",
+          "timestamp_anchor": "00:00",
+          "shot_type": "wide",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. A traditional Roman atrium rendered in sepia and ochre tones with heavy crosshatching. A single column of bright light falls through the compluvium onto the impluvium pool at center, dust motes visible in the beam. In the right third of frame, a man in his mid-40s with broad honest face, pronounced Roman nose, heavy brow, dark hair grayed at temples, stands before a bronze lararium wearing a proper toga praetexta with purple border. Ancestral wax masks with painted eyes line alcoves in the shadowed walls. A slave girl in simple tunic arranges roses on a bronze stand near the shrine. Worn mosaic floor catches fragments of light. Deep crimson accent on the roses only. Atmosphere of quiet dignity and tradition's weight.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "solemn anticipation",
+            "lighting": "Single dramatic shaft of natural light from compluvium creating strong contrast between illuminated pool and shadowed periphery where Quintus stands"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC03_shot_002",
+          "sequence": 2,
+          "beat_reference": "Drusilla's entrance - carrying sealed tablet",
+          "timestamp_anchor": "00:15",
+          "shot_type": "medium",
+          "visual_prompt": "1st-century BCE charcoal sketch style, sepia and ochre tones on rough papyrus texture. A woman in her early 40s enters from peristyle archway at left of frame. Sharp aristocratic features with high cheekbones, straight nose, strong jaw. Cool gray eyes rendered in careful crosshatching. Dark hair pulled back severely showing early silver streaks. Small mole visible above left eyebrow. She wears an elegant stola in charcoal gray, perfectly draped, gold pins catching light at shoulders. Her posture is perfect as a temple column. In her hands she carries a small wax tablet, clearly sealed. Her expression betrays nothing. Background shows glimpse of peristyle garden through the arch. Heavy crosshatching in shadows.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "controlled tension",
+            "lighting": "Softer diffused light from peristyle behind her creating subtle rim light on her silhouette, face lit by reflected light from impluvium"
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC03_shot_003",
+          "sequence": 3,
+          "beat_reference": "Quintus's accusatory gesture toward the tablet - Drusilla protects it",
+          "timestamp_anchor": "00:45",
+          "shot_type": "close",
+          "visual_prompt": "1st-century BCE charcoal sketch, heavy crosshatching for shadows, sepia ochre tones with papyrus texture. Two-shot focusing on hands and midsection. Quintus's hand with his grandfather's signet ring gestures vaguely toward a sealed wax tablet. His fingers are extended but hesitant, not quite pointing. Opposite, Drusilla's elegant fingers with calloused tips close protectively over the tablet, drawing it against the charcoal gray fabric of her stola at her hip. Gold shoulder pin visible at edge of frame. The sealed tablet becomes the visual center of tension. Deep crimson accent on the wax seal. The gesture captures unspoken accusation and quiet defiance.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "suspicious tension",
+            "lighting": "Ambient atrium light creating soft shadows on hands and fabric, emphasizing the textures of skin, wax, and draped wool"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC03_shot_004",
+          "sequence": 4,
+          "beat_reference": "Drusilla's parting line about ancestors - at tablinum threshold",
+          "timestamp_anchor": "01:15",
+          "shot_type": "over_shoulder",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus, sepia and ochre palette. Over Quintus's shoulder from behind, his toga praetexta with purple border visible, scar on left forearm partially visible. He faces Drusilla who stands at the tablinum threshold, half-turned back. Her sharp aristocratic profile in three-quarter view, high cheekbone catching light, cool gray eye visible, small mole above left eyebrow. Dark silver-streaked hair pulled back severely. Expression perfectly composed, almost cold. The sealed tablet still pressed against her hip. Behind her the dark doorway of the tablinum. Ancestral masks visible on walls in peripheral frame, their painted eyes seeming to watch. Heavy crosshatching creates oppressive shadow in the doorway she is about to enter.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "cold finality",
+            "lighting": "Light falls on Drusilla's face from the compluvium while the tablinum behind her remains in deep shadow, creating contrast between her illuminated certainty and the darkness she walks toward"
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC03_shot_005",
+          "sequence": 5,
+          "beat_reference": "Scene closing - Quintus alone in shadow, light falling short",
+          "timestamp_anchor": "01:30",
+          "shot_type": "medium",
+          "visual_prompt": "1st-century BCE charcoal sketch, heavy crosshatching creating deep shadows, sepia and ochre tones on papyrus. Quintus Fabius Maximus stands alone in the atrium, broad honest face showing strain, pronounced nose and heavy brow rendered in careful charcoal lines, slight squint in right eye visible. Dark hair with gray temples. Wearing toga praetexta with purple border, grandfather's signet ring on hand that hangs loosely at his side. He stands just outside the column of light from the compluvium above—the bright shaft falls on the impluvium pool behind him, leaving him in shadow. The ancestral masks on the walls stare down with their painted eyes from shadowed alcoves. Empty space where Drusilla stood. The composition emphasizes his isolation, tradition watching him, truth eluding him. Deep crimson accent only on the distant roses by the lararium.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "isolated defeat",
+            "lighting": "Strong contrast between the brilliant column of natural light on the water and the shadow where Quintus stands, emphasizing he has been left literally and figuratively in the dark"
+          },
+          "motion_hint": "slow_zoom_out"
+        }
+      ]
+    },
+    {
+      "scene_id": "SC04",
+      "shot_count": 5,
+      "shots": [
+        {
+          "shot_id": "SC04_shot_001",
+          "sequence": 1,
+          "beat_reference": "Scene opening - establishing the Forum setting",
+          "timestamp_anchor": "00:00",
+          "shot_type": "wide",
+          "visual_prompt": "Rendered in 1st-century BCE charcoal sketch style on rough papyrus with sepia and ochre tones. Wide establishing shot of the Basilica Aemilia steps under harsh Mediterranean sun. Heat shimmers rise from marble flagstones. Weathered Corinthian columns cast deep crosshatched shadows across the plaza. In the foreground, a lictor stands guard at the court entrance, his fasces bound with white ribbon. Advocates cluster in tight groups beneath the colonnade. The fountain of Marsyas visible mid-ground with bronze statues of ancestors watching from pedestals. Deep perspective toward the Capitoline hill. Heavy crosshatching defines the sharp contrast between blinding sun on marble and cool shadow beneath the portico.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "tense",
+            "lighting": "Harsh overhead Mediterranean sun creating stark contrast between brilliant white marble and deep black shadows under colonnades"
+          },
+          "motion_hint": "slow_pan_right"
+        },
+        {
+          "shot_id": "SC04_shot_002",
+          "sequence": 2,
+          "beat_reference": "Quintus approaches Marcus - the confrontation begins",
+          "timestamp_anchor": "00:15",
+          "shot_type": "medium",
+          "visual_prompt": "Charcoal sketch on rough papyrus, sepia tones with ochre highlights. Medium shot capturing Quintus Fabius Maximus approaching Marcus Licinius near the fountain of Marsyas. Quintus in mid-40s with broad honest face, pronounced Roman nose, heavy brow, dark hair graying at temples. He wears a formal toga praetexta with purple border, freshly chalked white, folds arranged with deliberate care. His grandfather's signet ring visible on his hand. He carries a sealed document pressed to his chest. Before him, Marcus Licinius freezes mid-count, bronze coins scattered on his counting table, leather pouch half-full. Marcus wears a plain tunic with dark smears. In the background, barely visible in the gallery, two figures in expensive tunics lean against a column—Varo's watchers. Crosshatching emphasizes Quintus's rigid formality against Marcus's hunched tension.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "confrontational",
+            "lighting": "Dappled light near the fountain, harsh sun breaking through colonnade shadows, casting geometric patterns across the figures"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC04_shot_003",
+          "sequence": 3,
+          "beat_reference": "The subpoena exchange - legal weight made physical",
+          "timestamp_anchor": "00:35",
+          "shot_type": "close",
+          "visual_prompt": "1st-century BCE charcoal sketch style, heavy crosshatching for shadow. Close shot of hands in exchange. Quintus's steady hand extends the sealed document—red wax seal of the praetor's office visible, imprint of crossed wheat sheaves clear in the wax. His grandfather's signet ring catches light on his finger. Scar visible on his left forearm from military service. Marcus's trembling hands reach to receive, ink-stained fingertips hesitating. Bronze coins lie scattered on the wooden counting table below. The clerk's stylus scratches into wax tablet at the edge of frame. Deep crimson accent on the official seal against sepia-toned papyrus texture. Ochre warmth on the bronze coins.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "ominous",
+            "lighting": "Side lighting emphasizing the texture of the document seals and the tremor in Marcus's fingers, deep shadows pooling beneath the hands"
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC04_shot_004",
+          "sequence": 4,
+          "beat_reference": "Marcus's fear revealed - eyes dart to Varo's watchers",
+          "timestamp_anchor": "00:50",
+          "shot_type": "over_shoulder",
+          "visual_prompt": "Charcoal on rough papyrus, sepia and ochre palette. Over-shoulder shot from behind Marcus clutching the subpoena to his chest. His face in three-quarter profile shows desperation, eyes wide and calculating. In his eyeline, sharply rendered in the gallery above, two men in expensive tunics push away from a marble column—Varo's agents departing. Their figures rendered in lighter strokes, already moving toward the Forum's northern exit. The colonnade frames them like a stage. Marcus's posture hunched, protective, the sealed document crumpled against his plain tunic. Deep crosshatched shadows beneath the gallery. Quintus's broad-shouldered silhouette visible at frame edge, standing straighter, unmoved.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "fearful",
+            "lighting": "Harsh backlight from the Forum beyond the gallery, silhouetting the departing watchers, Marcus's face half in shadow"
+          },
+          "motion_hint": "subtle_shake"
+        },
+        {
+          "shot_id": "SC04_shot_005",
+          "sequence": 5,
+          "beat_reference": "Scene closing - Marcus's prophetic warning",
+          "timestamp_anchor": "01:10",
+          "shot_type": "close",
+          "visual_prompt": "1st-century BCE charcoal sketch, heavy crosshatching, sepia tones with deep crimson accent. Close shot of Marcus Licinius's hollow face as he delivers his warning. His features gaunt, eyes following the departed watchers off-frame. The subpoena clutched against his chest like a death sentence. Behind him, the lictor's shadow falls across the flagstones as clouds pass before the sun—the darkness rendered in bold charcoal strokes creeping across the lower frame. The fountain of Marsyas partially visible, its bronze satyr watching. Marcus's expression prophetic, knowing, already resigned. Quintus's toga-draped shoulder visible at extreme frame edge, unmoved. The shift from harsh light to ominous shadow captured in gradual tonal transition across the composition.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "prophetic",
+            "lighting": "Transitional lighting as clouds obscure the sun, the lictor's shadow falling like a blade across the scene, creating sudden darkness"
+          },
+          "motion_hint": "slow_zoom_in"
+        }
+      ]
+    },
+    {
+      "scene_id": "SC05",
+      "shot_count": 5,
+      "shots": [
+        {
+          "shot_id": "SC05_shot_001",
+          "sequence": 1,
+          "beat_reference": "Scene opening - establishing the tepidarium",
+          "timestamp_anchor": "00:00",
+          "shot_type": "wide",
+          "visual_prompt": "Rendered in 1st-century BCE charcoal sketch style on rough papyrus with heavy crosshatching, sepia and ochre tones. A Roman tepidarium bathhouse interior with vaulted marble ceilings disappearing into coiling steam. Massive columns recede into haze. In the background, pale figures of senators float in the main pool like corpses. Diffused light streams through high arched windows, catching the steam in soft ochre bands. In a recessed alcove at frame right, two small figures sit on a worn marble bench—one lean and alert, the other hunched with anxiety. Bronze strigils and oil flasks rest on nearby ledges. The wet stone floor reflects ghostly shapes. Deep crimson accent on a discarded towel. Atmosphere of conspiracy and humid oppression.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "conspiratorial",
+            "lighting": "Diffused daylight filtering through high windows, softened by thick steam, creating hazy shafts of ochre light with deep crosshatched shadows in alcoves"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC05_shot_002",
+          "sequence": 2,
+          "beat_reference": "Varo's impatience - 'Enough pleasantries'",
+          "timestamp_anchor": "00:15",
+          "shot_type": "medium",
+          "visual_prompt": "Charcoal sketch on rough papyrus, heavy crosshatching for shadows, sepia-ochre palette. Caelus Varo, a man in his late 50s with sharp hawkish nose and deep-set weary eyes, clean-shaven with short-cropped gray hair, sits on a worn marble bench. His lean wiry frame is wrapped in a deliberately plain undyed wool tunic. His restless energy shows in his posture—leaning forward, one hand drumming on his knee, ink-stained fingertips visible. A single iron ring glints on his left hand. His eyes fix on someone off-frame with the calculating intensity of a moneylender. The thin scar across his right palm catches the light as he gestures impatiently. Steam curls around him. His road-worn leather sandals planted firmly. Expression sharp, predatory, time-conscious.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "impatient",
+            "lighting": "Side-lit from high window at left, creating strong crosshatched shadows on hawkish features, steam diffusing the light into soft ochre glow"
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC05_shot_003",
+          "sequence": 3,
+          "beat_reference": "The bribe - leather pouch placed between them",
+          "timestamp_anchor": "00:45",
+          "shot_type": "extreme_close",
+          "visual_prompt": "1st-century BCE charcoal sketch style, rough papyrus texture, deep crosshatching. Extreme close-up of a fat leather pouch resting on worn marble bench between two figures. Varo's ink-stained fingers with iron ring just withdrawing from the leather. The pouch bulges tightly—coins packed so dense they cannot clink. Five talents' weight. Beside it, Marcus's hand hovers, trembling, palm sweating. Dark streaks on his tunic visible at frame edge. The marble bench surface worn smooth by countless nervous conversations, rendered in detailed crosshatch texture. Deep crimson accent in the leather's stitching. Steam wisps curl at edges. The weight of corruption made tangible.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "tense",
+            "lighting": "Overhead diffused light from steam-filtered windows, creating soft highlights on the leather and deep shadows in the bench's worn grooves"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC05_shot_004",
+          "sequence": 4,
+          "beat_reference": "Varo's threat - 'They testify to the river'",
+          "timestamp_anchor": "01:30",
+          "shot_type": "over_shoulder",
+          "visual_prompt": "Charcoal on rough papyrus, sepia-ochre tones with deep crimson accent. Over Marcus's shoulder—we see his hunched form, sweating temple, hand clutching the leather pouch. Before him, Caelus Varo stands at the archway threshold, his lean silhouette half-swallowed by coiling steam. Varo does not turn—we see only his sharp profile, hawkish nose, short gray hair, the tension in his wiry shoulders beneath the plain wool tunic. His posture radiates quiet menace. Steam billows around him like a shroud. The archway frames him as he delivers his final threat. Beyond, the vague shapes of the main chamber. Heavy crosshatching renders the oppressive atmosphere. Marcus small, trapped, corrupted.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "menacing",
+            "lighting": "Backlit by diffused light from main chamber beyond, Varo rendered as dark silhouette with steam-glow halo, Marcus in shadow"
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC05_shot_005",
+          "sequence": 5,
+          "beat_reference": "Marcus alone - counting coins over Neptune mosaic",
+          "timestamp_anchor": "02:00",
+          "shot_type": "close",
+          "visual_prompt": "1st-century BCE charcoal sketch, heavy crosshatching, rough papyrus texture, sepia-ochre palette with crimson accents. Close shot looking down at Marcus Licinius—a nervous man with sweat-beaded temple and hollow eyes. His trembling hands hold the open leather pouch, fingers counting coins, lips moving silently. Below him, the mosaic floor depicting Neptune drowning sailors, their faces frozen in terror—rendered in crosshatched detail as a mirror of Marcus's spiritual state. The mosaic faces stare up accusingly. Marcus's jaw is tight, defeated. In the distant background, barely visible through steam, a senator's laughter echoes—suggested by a pale floating figure. The weight of corruption settling on Marcus's shoulders. Deep shadow under his eyes. A man who has sold his soul.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "hollow",
+            "lighting": "Overhead diffused light casting downward shadows on Marcus's face, the mosaic floor catching pale reflected light, steam softening all edges"
+          },
+          "motion_hint": "slow_zoom_out"
+        }
+      ]
+    },
+    {
+      "scene_id": "SC06",
+      "shot_count": 5,
+      "shots": [
+        {
+          "shot_id": "SC06_shot_001",
+          "sequence": 1,
+          "beat_reference": "Scene opening - establishing the forum confrontation",
+          "timestamp_anchor": "00:00",
+          "shot_type": "wide",
+          "visual_prompt": "Charcoal sketch on rough papyrus depicting the Roman Forum at midday. A massive marble plaza stretches between shadowed colonnades, weathered pillars casting harsh geometric shadows across flagstones. In the center-right, Quintus Fabius Maximus stands elevated on temple steps—a man in his mid-40s with broad honest face, pronounced Roman nose, heavy brow, dark hair graying at temples, wearing formal toga praetexta with purple border. He holds a scroll aloft, rigid as a column. Before him spreads a dense crowd: wool-merchants in rough tunics, grain-factors mid-gesture, slaves pressing forward. Bronze statues of ancestors watch from pedestals. Heavy crosshatching renders the oppressive Mediterranean sun, deep sepia shadows pooling under the colonnade. Ochre dust rises from shuffling feet. Incense smoke curls from a shrine at frame left. The composition emphasizes the lone formal figure against the chaotic mass below.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "tense anticipation",
+            "lighting": "Harsh overhead Mediterranean sun creating sharp contrasts, deep black shadows under colonnades and togas, bright highlights on marble and upturned faces"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC06_shot_002",
+          "sequence": 2,
+          "beat_reference": "Varo's entrance - class tension made visible",
+          "timestamp_anchor": "00:15",
+          "shot_type": "medium",
+          "visual_prompt": "Charcoal and sepia sketch showing Caelus Varo pushing through the patrician crowd. A man in his late 50s with sharp hawkish nose, deep-set weary eyes, clean-shaven with short-cropped gray hair, lean wiry build radiating restless energy. He wears a deliberately plain short working tunic in undyed wool, road-worn leather sandals, a single iron ring on left hand. Ink stains visible on his fingertips as he tugs at his tunic hem. His expression twists with fury, thin scar visible across right palm. Around him, patricians in proper togas sneer down at his common dress. Heavy crosshatching emphasizes the contempt on noble faces. The composition places Varo slightly off-center, isolated by negative space despite the pressing crowd. Ochre tones dominate with crimson accent on a sneering patrician's toga border.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "hostile confrontation",
+            "lighting": "Harsh sidelight from the Mediterranean sun catching Varo's angular features, casting half his face in deep crosshatched shadow, highlighting the texture of his rough wool tunic against smooth patrician fabrics"
+          },
+          "motion_hint": "subtle_shake"
+        },
+        {
+          "shot_id": "SC06_shot_003",
+          "sequence": 3,
+          "beat_reference": "The iron seal - moment of irreversible action",
+          "timestamp_anchor": "00:32",
+          "shot_type": "extreme_close",
+          "visual_prompt": "Charcoal sketch extreme close-up of a lictor's weathered hands pressing an iron seal against a warehouse manifest. The seal bites into wax, crimson accent bleeding across the parchment. Heavy crosshatching renders the texture of aged hands, the cold gleam of iron, the fibrous rough papyrus of the document. In soft focus behind, the crowd's collective gasp suggested by open mouths and wide eyes rendered in lighter strokes. The composition is tight, claustrophobic—the moment of no return captured in the pressure of metal on wax. Sepia and ochre tones with that single bold crimson of the seal impression.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "shock and finality",
+            "lighting": "Dramatic spotlight effect from overhead sun illuminating the hands and seal while the background falls into deeper shadow, emphasizing the gravity of the bureaucratic violence"
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC06_shot_004",
+          "sequence": 4,
+          "beat_reference": "Market chaos - the cascade begins",
+          "timestamp_anchor": "00:48",
+          "shot_type": "wide",
+          "visual_prompt": "Dynamic charcoal sketch of the forum grain exchange in chaos. The composition splits diagonally—order collapsing into pandemonium. At left, a stout grain-factor Horatius shoves past a slave, mouth open in a bellow. Center, a grain-carrier's basket tumbles, wheat spilling across flagstones in a pale cascade against dark stone. Right, traders gesture wildly, hands raised with fingers showing prices—three, five, two. Near the Temple of Castor's columns in the background, young scribe Tertius crouches with stylus flying across tablet, recording history. Crosshatching intensifies toward the edges suggesting mounting disorder. Multiple figures in motion blur slightly. Deep shadows from temple columns cut across the scene. Sepia dominates with ochre wheat providing warm accent against cool marble shadows.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "panic and collapse",
+            "lighting": "Harsh Mediterranean noon creates a flattening effect, minimal shadow on ground but deep black shadows from columns and figures, giving the chaos a stark documentary quality"
+          },
+          "motion_hint": "slow_pan_right"
+        },
+        {
+          "shot_id": "SC06_shot_005",
+          "sequence": 5,
+          "beat_reference": "The poisoned whisper - intimate threat",
+          "timestamp_anchor": "01:05",
+          "shot_type": "close",
+          "visual_prompt": "Intimate charcoal sketch of two faces in profile, nearly touching. Caelus Varo's hawkish features lean close, deep-set eyes burning with venomous satisfaction, thin lips barely parted in whisper. His short-cropped gray hair catches harsh light. Opposite, Quintus Fabius Maximus's broad honest face freezes mid-expression—his hand visible at frame bottom, stopped upon his toga praetexta. His pronounced nose, heavy brow, the military scar on his forearm all rendered in careful crosshatching. His right eye squints. Gray at his temples catches the light. Between them, negative space crackles with unspoken threat. The background dissolves into abstract crosshatched chaos—suggestion of the roaring crowd, a man's scream about collapsing markets rendered as rough gestural marks. Deep sepia shadows, the purple border of Quintus's toga providing the single color accent. The composition traps both men in the frame's intimacy.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "venomous intimacy",
+            "lighting": "Harsh sidelight catches both profiles, Varo's face half-shadowed emphasizing his predatory aspect, Quintus's face more fully lit exposing his sudden vulnerability, the contrast between them stark and unflattering"
+          },
+          "motion_hint": "slow_zoom_in"
+        }
+      ]
+    },
+    {
+      "scene_id": "SC07",
+      "shot_count": 5,
+      "shots": [
+        {
+          "shot_id": "SC07_shot_001",
+          "sequence": 1,
+          "beat_reference": "Scene opening - establishing the Forum confrontation",
+          "timestamp_anchor": "00:00",
+          "shot_type": "wide",
+          "visual_prompt": "Charcoal sketch on rough papyrus. A sweeping view of the Roman Forum under harsh afternoon sun. The Temple of Saturn's massive columns cast deep crosshatched shadows across marble flagstones. In the foreground, a cluster of citizens—wool merchants in rough tunics, two scribes with tablets, an elderly freedman leaning on a gnarled stick—turn their attention toward the Via Sacra. Two distant figures approach from opposite ends: one in formal toga praetexta with purple border walking with measured dignity, the other shorter and leaner in a plain undyed tunic. Bronze statues watch from pedestals. Merchant stalls line the edges. Sepia and ochre tones dominate with deep shadows rendered in heavy crosshatching.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "anticipatory tension",
+            "lighting": "Harsh Mediterranean sun beating down, creating stark contrast between bright marble surfaces and deep black shadows under the colonnades"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC07_shot_002",
+          "sequence": 2,
+          "beat_reference": "Varo's deliberate insult - turning his back",
+          "timestamp_anchor": "00:15",
+          "shot_type": "medium",
+          "visual_prompt": "Charcoal sketch on rough papyrus. Caelus Varo mid-pivot, his back now turned to Quintus Fabius. Varo: late 50s, hawkish nose, deep-set weary eyes, short-cropped gray hair, lean wiry build in a deliberately plain short working tunic cut unfashionably above the knee. His road-worn leather sandals planted firmly. Thin scar visible across right palm, ink stains on fingertips. Behind him, Quintus stands frozen—mid-40s, broad honest face showing strain, dark hair with gray at temples, toga praetexta with purple border precisely draped. His hand hovers near his toga fold. The wool merchants in the background exchange nervous glances. Heavy crosshatching creates tension in the shadows. Sepia tones with crimson accent on Quintus's purple border.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "cold contempt",
+            "lighting": "Afternoon sun catches Varo's profile as he turns, throwing half his face into shadow while Quintus remains in harsh, exposing light"
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC07_shot_003",
+          "sequence": 3,
+          "beat_reference": "Quintus wounded - the crowd's silent judgment",
+          "timestamp_anchor": "00:35",
+          "shot_type": "close",
+          "visual_prompt": "Charcoal sketch on rough papyrus. Tight focus on Quintus Fabius's face—mid-40s, strong Roman features with pronounced nose and heavy brow, dark hair with distinguished gray at temples. His jaw is visibly tightened, slight squint in right eye more pronounced with emotion. Sweat beads at his temple from the harsh sun. His hand grips his toga fold, knuckles white. His grandfather's signet ring catches light. Expression of wounded dignity barely controlled, stability crumbling. In soft focus behind him, the blurred shapes of citizens looking away, refusing to meet his eyes. Deep crosshatching around his eyes and jaw suggests building fury. Sepia and ochre with shadows rendered in near-black charcoal strokes.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "humiliation and simmering rage",
+            "lighting": "Unforgiving direct sunlight on his face, every line and tension rendered visible, no shadows to hide behind"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC07_shot_004",
+          "sequence": 4,
+          "beat_reference": "Varo's dismissive exit - checking the sun",
+          "timestamp_anchor": "00:50",
+          "shot_type": "over_shoulder",
+          "visual_prompt": "Charcoal sketch on rough papyrus. Over Quintus's shoulder—we see the purple-bordered edge of his toga praetexta in foreground, slightly disheveled. Beyond, Caelus Varo walks away toward the Argiletum, never looking back. His lean wiry frame in the plain short tunic, road-worn sandals striking flagstones. His head is tilted slightly upward, checking the sun's position—restless energy even in departure. The wool merchants drift away in the middle distance. The elderly freedman shuffles toward a water basin. Empty space opens around Quintus. The Rostra platform visible to one side. Heavy crosshatching on the flagstones suggests the weight of public shame. Sepia dominates with ochre highlights on sun-struck marble.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "cold dismissal and isolation",
+            "lighting": "Varo walks into the bright afternoon light while shadow begins to creep toward Quintus's position, the sun having moved"
+          },
+          "motion_hint": "slow_pan_right"
+        },
+        {
+          "shot_id": "SC07_shot_005",
+          "sequence": 5,
+          "beat_reference": "Quintus alone - the threat whispered",
+          "timestamp_anchor": "01:10",
+          "shot_type": "extreme_close",
+          "visual_prompt": "Charcoal sketch on rough papyrus. Extreme close on Quintus Fabius's hand as it falls from his toga fold—finally released, no longer adjusting. His grandfather's signet ring prominent on his finger, catching harsh light. The scar on his left forearm from military service visible at frame edge. The toga fabric hangs slightly askew, imperfect for the first time. Behind, rendered in minimal suggestive strokes, the emptied Forum space and the Temple of Castor's columns. His young clerk's sandaled feet hover uncertainly at the edge of frame. The stillness is complete. Deep crosshatching suggests the cold fury building within. Sepia and ochre with a subtle crimson undertone bleeding into the shadows—the color of vengeance forming.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "quiet cold fury crystallizing into purpose",
+            "lighting": "Harsh afternoon light now feels isolating rather than exposing, the shadows lengthening, the moment suspended"
+          },
+          "motion_hint": "static"
+        }
+      ]
+    },
+    {
+      "scene_id": "SC08",
+      "shot_count": 5,
+      "shots": [
+        {
+          "shot_id": "SC08_shot_001",
+          "sequence": 1,
+          "beat_reference": "Scene opening - Drusilla alone with her schemes",
+          "timestamp_anchor": "00:00",
+          "shot_type": "medium",
+          "visual_prompt": "Charcoal sketch on rough papyrus, sepia and ochre tones. A woman in her early 40s sits alone at a knife-scarred wooden table in a dim tavern alcove. Drusilla has sharp aristocratic features—high cheekbones, straight nose, strong jaw. Cool gray eyes focused downward. Dark hair pulled back severely, streaked with early silver. She wears an elegant stola in deep charcoal gray, gold pins at shoulders, minimal jewelry. Before her: a grain route map, three wax tablets, a heavy leather coin pouch. Low smoke-stained ceiling beams above. Rough-spun linen curtain behind her. A single oil lamp casts deep crosshatched shadows across her marble-still posture. Small mole visible above left eyebrow. Her calloused fingertips rest on the map. Atmosphere of conspiracy and calculation.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "tense",
+            "lighting": "Single dim oil lamp from table level, casting upward shadows on her face, deep darkness in corners, smoke visible in the light"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC08_shot_002",
+          "sequence": 2,
+          "beat_reference": "Drusilla counts gold - the transaction",
+          "timestamp_anchor": "00:45",
+          "shot_type": "extreme_close",
+          "visual_prompt": "Charcoal sketch on rough papyrus with crimson accents on the gold. Extreme close-up of hands counting coins on scarred wood. Drusilla's aristocratic fingers with calloused tips from writing arrange fifteen gold aurei with surgical precision. The coins catch dim lamplight—rendered in deep ochre and crimson highlights against sepia shadows. Heavy crosshatching on the ancient knife marks and burn scars of the table surface. One hand emerges from the edge of a charcoal gray stola sleeve. The leather pouch lies open nearby. Each coin placed with deliberate, economical movement. The precision of a predator preparing.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "calculating",
+            "lighting": "Low lamplight catching gold coins, creating warm spots against dark table, sharp contrast between lit coins and shadowed wood"
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC08_shot_003",
+          "sequence": 3,
+          "beat_reference": "Drusilla's viper stare - threatening Milo",
+          "timestamp_anchor": "01:30",
+          "shot_type": "close",
+          "visual_prompt": "Charcoal sketch on rough papyrus, heavy crosshatching. Close-up of Drusilla's face as she delivers her threat. Sharp aristocratic features—high cheekbones, straight nose, strong jaw rendered in confident strokes. Cool gray eyes unblinking, patient as a viper. Dark hair pulled back severely, silver streaks at temples. Small mole above left eyebrow. Her expression betrays nothing—perfect stillness as a weapon. Gold shoulder pins catch minimal light. Background is pure shadow with rough crosshatching. The absolute certainty of a woman who has already won. Sepia tones with deep charcoal shadows emphasizing her cold beauty.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "threatening",
+            "lighting": "Dim upward light from below frame catching cheekbones and brow, eyes in partial shadow, creating predatory intensity"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC08_shot_004",
+          "sequence": 4,
+          "beat_reference": "Servius appears - the threat materializes",
+          "timestamp_anchor": "02:15",
+          "shot_type": "over_shoulder",
+          "visual_prompt": "Charcoal sketch on rough papyrus, sepia and ochre with crimson accent on toga border. Over-the-shoulder view from behind Drusilla—her dark hair with silver streaks and charcoal gray stola visible in foreground. She faces a young man standing in the gap of the rough-spun linen curtain. Servius wears a senator's toga praetexta with purple-crimson border. His calculating eyes move from her face toward the ledgers and coin pouch on the table. Smoke-stained beams and deep shadows of the tavern behind him. The collision of patrician worlds in a low establishment. His smile carries quiet menace. Crosshatched shadows dominate the background.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "dangerous",
+            "lighting": "Dim lamp illuminating the space between them, Servius backlit slightly by tavern glow beyond curtain, faces in competing shadow"
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC08_shot_005",
+          "sequence": 5,
+          "beat_reference": "Scene closing - Drusilla's controlled fear",
+          "timestamp_anchor": "03:00",
+          "shot_type": "close",
+          "visual_prompt": "Charcoal sketch on rough papyrus, heavy sepia shadows. Close shot of Drusilla standing motionless after Servius withdraws. Sharp aristocratic features—high cheekbones, straight nose, strong jaw—composed in perfect stillness. Cool gray eyes betray nothing. Dark hair severely pulled back, silver streaks visible. Small mole above left eyebrow. But her hand presses down on the scarred table edge, knuckles whitened with pressure—the only crack in her marble facade. Gold pins at shoulders of her charcoal stola. Deep crosshatched shadows surround her. The fallen curtain visible in soft focus behind. A woman calculating her next move. The whispered words hang in empty air: one blade drawn invites another.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "ominous",
+            "lighting": "Oil lamp dying low, deep shadows consuming the frame, her face half-lit, hand on table catching final light on white knuckles"
+          },
+          "motion_hint": "slow_zoom_out"
+        }
+      ]
+    },
+    {
+      "scene_id": "SC09",
+      "shot_count": 5,
+      "shots": [
+        {
+          "shot_id": "SC09_shot_001",
+          "sequence": 1,
+          "beat_reference": "Scene opening - Varo alone watching the dying light",
+          "timestamp_anchor": "00:00",
+          "shot_type": "wide",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus with heavy crosshatching. Wide establishing shot of a rectangular tablinum with high ceilings. Faded maritime frescoes on walls. A large oak table dominates center, covered in scrolls and wax tablets weighted with silver coins. Bronze map stand and iron strongbox visible. A man in his late 50s stands with back to viewer, silhouetted against a narrow high window. He has short-cropped gray hair, lean wiry build, wearing a short undyed wool tunic. Dying copper sunlight bleeds through window onto Rome's rooftops beyond. Clay oil lamps cast long crooked shadows across bronze fittings. Sepia and ochre tones with crimson sunset accents.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "melancholic_tension",
+            "lighting": "Copper dying sunlight from narrow window mixing with warm oil lamp glow, long dramatic shadows across scrolls and coins"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC09_shot_002",
+          "sequence": 2,
+          "beat_reference": "Drusilla's entrance - she enters like smoke",
+          "timestamp_anchor": "00:15",
+          "shot_type": "medium",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Medium shot of a woman in her early 40s entering through doorway into shadow-filled tablinum. Sharp aristocratic features with high cheekbones, straight nose, strong jaw. Cool gray eyes. Dark hair pulled back severely with streaks of early silver. Small mole above left eyebrow. Wearing an elegant stola in deep charcoal gray, perfectly draped with geometric precision. Gold pins at shoulders glinting in lamplight. Her posture is perfect stillness, economical, contained. Behind her the doorway frames darkness. Heavy crosshatching defines the contrast between her composed figure and the chaotic scrolls of the room. Sepia and ochre palette.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "controlled_tension",
+            "lighting": "Oil lamp glow from room interior illuminating her face from one side, doorway behind in shadow"
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC09_shot_003",
+          "sequence": 3,
+          "beat_reference": "Varo's accusation - circling the table with menace",
+          "timestamp_anchor": "00:45",
+          "shot_type": "over_shoulder",
+          "visual_prompt": "1st-century BCE charcoal sketch with aggressive crosshatching. Over-shoulder shot from behind Drusilla's perfectly still form in charcoal stola, gold shoulder pins visible. Facing her across the oak table covered in tablets and scrolls: Varo in his late 50s, sharp hawkish nose, deep-set weary eyes, clean-shaven with short gray hair. His lean fingers trail across stacked wax tablets as he circles. Thin scar visible on right palm. Ink-stained fingertips. Short undyed wool tunic, iron ring on left hand. His expression is bitter, accusatory, calculating. Oil lamps throw long shadows between them. Sepia tones with deep ochre shadows.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "accusatory_confrontation",
+            "lighting": "Multiple oil lamp sources creating crossed shadows on table surface, faces half-lit"
+          },
+          "motion_hint": "slow_pan_right"
+        },
+        {
+          "shot_id": "SC09_shot_004",
+          "sequence": 4,
+          "beat_reference": "Varo's threat - examining the stylus point",
+          "timestamp_anchor": "01:15",
+          "shot_type": "extreme_close",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus with fine detailed crosshatching. Extreme close-up of weathered masculine hands holding a bronze stylus, examining its sharp point. Ink stains on fingertips. Thin pale scar across right palm from old knife wound. Iron ring on left hand catching lamplight. The stylus point catches a gleam of crimson light. Background blurred suggestion of scrolls and bronze fittings. Heavy shadows define the threatening gesture. Sepia and ochre with deep crimson accent on the stylus tip.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "threatening_intimacy",
+            "lighting": "Single oil lamp source creating harsh shadows on hands, metallic gleam on stylus point"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC09_shot_005",
+          "sequence": 5,
+          "beat_reference": "Scene closing - Varo alone with his calculation",
+          "timestamp_anchor": "01:45",
+          "shot_type": "close",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Close shot of Varo's face in three-quarter profile, late 50s, sharp hawkish nose, deep-set weary eyes reflecting lamplight. Clean-shaven, short-cropped gray hair. His expression is cold, calculating, isolated. He stares at empty doorway off-frame. Flickering oil lamp light creates unstable shadows across his lean features. Behind him, suggestion of the counting table with tablets, the high window now dark. The room feels like a tomb. Heavy crosshatching defines the hollows of his face. Sepia and ochre tones, deep shadow where the doorway would be.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "cold_resolution",
+            "lighting": "Flickering oil lamp creating unstable shadows, window light completely failed to darkness"
+          },
+          "motion_hint": "subtle_shake"
+        }
+      ]
+    },
+    {
+      "scene_id": "SC10",
+      "shot_count": 5,
+      "shots": [
+        {
+          "shot_id": "SC10_shot_001",
+          "sequence": 1,
+          "beat_reference": "Scene opening - establishing the dying Forum",
+          "timestamp_anchor": "00:00",
+          "shot_type": "wide",
+          "visual_prompt": "Charcoal sketch on rough papyrus. The Roman Forum at dusk, rendered in sepia and ochre tones with deep crosshatched shadows. The Temple of Saturn dominates the left side, its weathered Ionic columns catching copper-red dying light. The marble plaza stretches between the Capitoline and Palatine hills, now emptying of crowds. In the middle distance, vendors fold their merchant stalls, a lone slave sweeps ash from the Rostra speaking platform with a reed broom. The colonnade of the Basilica Aemilia creates a dark architectural frame on the right, its pillars casting long diagonal shadows across the worn paving stones. Bronze statues of ancestors stand on pedestals, silhouetted against the bleeding sunset. Deep crimson accent in the western sky. Mediterranean atmosphere thick with settling dust.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "elegiac",
+            "lighting": "Dying copper sunset bleeding horizontally through columns, casting the marble into deep shadow, warm light on vertical surfaces, cool darkness pooling in the colonnade"
+          },
+          "motion_hint": "slow_pan_right"
+        },
+        {
+          "shot_id": "SC10_shot_002",
+          "sequence": 2,
+          "beat_reference": "Quintus approaches - the man of principle enters",
+          "timestamp_anchor": "00:15",
+          "shot_type": "medium",
+          "visual_prompt": "Charcoal sketch on rough papyrus with sepia and ochre tones. Quintus Fabius Maximus approaches through the colonnade, his toga praetexta with its purple border caught by the evening wind, fabric rippling with studied dignity. A man in his mid-40s with a broad, honest face showing strain—pronounced Roman nose, heavy brow, dark hair with distinguished gray at the temples. His right eye shows a slight squint. He wears his grandfather's signet ring prominently. His posture is deliberately formal, back straight, chin lifted as though the ancestor statues themselves observe his gait. The weathered pillars of the Basilica Aemilia frame him, deep crosshatched shadows falling across the marble floor. In the background, the waiting figure of Crassipes stands in silhouette. Heavy crosshatching creates dramatic contrast.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "solemn",
+            "lighting": "Last horizontal rays of sunset catching the purple border of his toga, face half in warm light half in cool shadow, columns creating striped shadows across the scene"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC10_shot_003",
+          "sequence": 3,
+          "beat_reference": "Crassipes touches Quintus's arm - the political seduction",
+          "timestamp_anchor": "00:35",
+          "shot_type": "close",
+          "visual_prompt": "Charcoal sketch on rough papyrus. Tight two-shot of Gaius Crassipes and Quintus Fabius in the shadowed colonnade. Crassipes's hand grips Quintus's forearm—an unwanted intimacy. Crassipes wears a practiced smile, his features rendered with smooth, ingratiating lines. Quintus's face is stone, jaw tight, his slight squint more pronounced as he stares past his interlocutor at the darkening sky beyond the columns. The scar on Quintus's left forearm from military service visible where the toga has shifted. Deep crimson accent in the fabric of his toga praetexta's purple border. Heavy crosshatching creates shadows between them, emphasizing the moral gulf. Sepia tones dominate with ochre highlights on faces. The marble column behind them catches fading warm light.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "tense",
+            "lighting": "Faces lit from the side by dying sunset filtering through columns, deep shadows in the colonnade behind them, Crassipes's features more warmly lit, Quintus's face harder and cooler"
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC10_shot_004",
+          "sequence": 4,
+          "beat_reference": "Quintus's defiance - 'Then I stand alone. But I stand.'",
+          "timestamp_anchor": "01:15",
+          "shot_type": "close",
+          "visual_prompt": "Charcoal sketch on rough papyrus. Quintus Fabius in near-profile, his broad honest face set with absolute resolve. Heavy brow shadowed, pronounced Roman nose a sharp line, the distinguished gray at his temples catching the last light. His right eye with its slight squint is visible, fixed on some point in the gathering dusk. His grandfather's signet ring glints on his hand. At his sandaled feet, rendered in careful detail, lies a bronze coin dropped by some careless merchant—he makes no move to retrieve it. The coin catches a final ray of sunset, a deep crimson-gold accent against the shadowed marble floor. His jaw is set, lips firm. Sepia and ochre tones, heavy crosshatching in the shadows beneath his brow. The absolute stillness of a man who has chosen his ground.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "resolute",
+            "lighting": "Last rays of sunset catching the side of his face and the bronze coin at his feet, everything else falling into blue-gray dusk shadow, dramatic chiaroscuro"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC10_shot_005",
+          "sequence": 5,
+          "beat_reference": "Scene closing - the coin swept into shadow",
+          "timestamp_anchor": "01:45",
+          "shot_type": "extreme_close",
+          "visual_prompt": "Charcoal sketch on rough papyrus. Extreme close-up of a slave's reed broom sweeping across worn marble paving stones. The bronze coin—bearing an ancestral profile—is caught in the moment before it disappears into shadow, its surface reflecting the very last copper light of the dying sun. Deep crimson accent on the coin's edge. The bristles of the broom are rendered in fine crosshatched detail, casting their own tiny shadows. The marble floor shows centuries of wear, cracks and worn patches sketched in sepia. The coin rolls toward darkness, a metaphor for the fate of those who cannot bend. Ochre tones in the light, deep shadow consuming the edges of the frame. The Forum is empty now; only this small detail remains to mark what transpired.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "melancholic",
+            "lighting": "A single beam of final sunset light falling on the bronze coin, everything else in deep shadow, the light about to be extinguished entirely"
+          },
+          "motion_hint": "static"
+        }
+      ]
+    },
+    {
+      "scene_id": "SC11",
+      "shot_count": 5,
+      "shots": [
+        {
+          "shot_id": "SC11_shot_001",
+          "sequence": 1,
+          "beat_reference": "Scene opening - establishing the wounded household",
+          "timestamp_anchor": "00:00",
+          "shot_type": "wide",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Traditional Roman atrium viewed from entrance, impluvium at center reflecting like black glass. Single oil lamp gutters on household shrine at far end, casting dancing shadows across bronze lares statues. Ancestral masks line the walls in painted alcoves, their eyes seeming to watch. Worn mosaic floor stretches toward the shrine. A figure paces in middle distance—Quintus Fabius Maximus, mid-40s, broad honest face with pronounced Roman nose and heavy brow, dark hair graying at temples, toga praetexta half-undone with purple border catching lamplight. Heavy crosshatching creates deep shadows. Sepia and ochre tones dominate with crimson accent on toga stripe.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "tense",
+            "lighting": "Single guttering oil lamp throws unstable golden light, deep shadows dance across walls, bronze shrine catches occasional gleam"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC11_shot_002",
+          "sequence": 2,
+          "beat_reference": "Drusilla's entrance - the calm predator arrives",
+          "timestamp_anchor": "00:45",
+          "shot_type": "medium",
+          "visual_prompt": "1st-century BCE charcoal sketch style. Drusilla emerges from dark corridor into atrium. Woman in early 40s with sharp aristocratic features—high cheekbones, straight nose, strong jaw. Cool gray eyes. Dark hair pulled back severely, streaked with early silver, small mole visible above left eyebrow. Elegant stola the color of old bone, perfectly draped, gold pins at shoulders catching lamplight. Perfect stillness in her posture, economical movement. She does not hurry. Behind her the corridor recedes into shadow. Heavy crosshatching defines the darkness she emerges from. Sepia and ochre tones with bone-white of her stola as focal point.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "controlled",
+            "lighting": "Lamp light catches her from the side, half her face in shadow, gold pins gleam at shoulders"
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC11_shot_003",
+          "sequence": 3,
+          "beat_reference": "Quintus's frustrated outburst - invoking Ennius",
+          "timestamp_anchor": "01:30",
+          "shot_type": "close",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Close on Quintus Fabius Maximus's face, mid-40s, broad honest features showing strain of principle. Pronounced Roman nose, heavy brow furrowed in frustration. Dark hair distinguished with gray at temples. Right eye shows slight squint. Expression caught between righteous anger and desperation. His grandfather's signet ring visible on raised hand gesturing. Behind him, blurred ancestral masks in alcoves seem to judge. Heavy crosshatching builds shadows under brow and around eyes. Sepia tones with deep ochre shadows. The purple stripe of his toga praetexta visible at edge of frame.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "frustrated",
+            "lighting": "Unstable lamplight from below creates dramatic shadows under brow, catches the moral intensity in his expression"
+          },
+          "motion_hint": "subtle_shake"
+        },
+        {
+          "shot_id": "SC11_shot_004",
+          "sequence": 4,
+          "beat_reference": "Intimate manipulation - Drusilla's hand on his cheek",
+          "timestamp_anchor": "02:15",
+          "shot_type": "medium",
+          "visual_prompt": "1st-century BCE charcoal sketch style. Intimate two-shot. Drusilla's hand—calloused fingertips from writing visible—rests cool and steady against Quintus's cheek. Her sharp aristocratic features composed, gray eyes warm on surface but calculating beneath. His defensive posture has softened, shoulders dropped, face showing vulnerable gratitude. She wears bone-colored stola, he in disheveled toga praetexta. Her eyes slide subtly toward the shrine in background, toward shadows beyond—a detail of her true attention. Impluvium reflects them both like dark mirror. Heavy crosshatching. Sepia and ochre palette with crimson accent of his toga stripe between them.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "intimate",
+            "lighting": "Soft lamplight bathes both faces, creating illusion of warmth and trust, shadows pool behind them"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC11_shot_005",
+          "sequence": 5,
+          "beat_reference": "Scene button - the hidden wax tablet reveals treachery",
+          "timestamp_anchor": "03:00",
+          "shot_type": "extreme_close",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Extreme close on folded wax tablet resting in darkness beneath discarded mantle. The seal is clearly visible—a device that is NOT the Fabii family crest, suggesting secret correspondence with another house. Fabric of mantle pools around it in shadow. Beyond, blurred and distant, the figures of Quintus and Drusilla recede toward corridor, his arm around her shoulder. The ancestors' painted eyes in alcoves seem to narrow in the dying lamplight. Heavy crosshatching creates the surrounding darkness. Deep sepia shadows with the crimson wax seal as the only color accent—a spot of blood-red treachery.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "ominous",
+            "lighting": "Near darkness, only faintest gleam of dying lamp catches the crimson wax seal, everything else in deep shadow"
+          },
+          "motion_hint": "slow_zoom_in"
+        }
+      ]
+    },
+    {
+      "scene_id": "SC12",
+      "shot_count": 5,
+      "shots": [
+        {
+          "shot_id": "SC12_shot_001",
+          "sequence": 1,
+          "beat_reference": "Scene opening - establishing the tablinum",
+          "timestamp_anchor": "00:00",
+          "shot_type": "wide",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. A rectangular Roman tablinum with high ceilings, faded maritime frescoes barely visible on walls. Center: a large oak table buried under scattered scrolls and wax tablets. Caelus Varo stands behind the desk—a lean, wiry man in his late 50s with hawkish nose and deep-set weary eyes, short-cropped gray hair, wearing a plain undyed wool tunic. His fingers move jerkily across tablets. Clay oil lamps throw restless shadows that climb the walls. An iron strongbox lurks in the corner. A slave figure blurs at the edge, refilling a wine cup. Bronze map stand catches lamplight. Heavy crosshatching creates pools of darkness. Sepia and ochre tones dominate with deep crimson accent on the wine.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "paranoid tension",
+            "lighting": "Multiple clay oil lamps casting conflicting shadows, single high window admitting pale gray daylight from above, creating stark contrast between warm lamp glow and cold natural light"
+          },
+          "motion_hint": "slow_pan_right"
+        },
+        {
+          "shot_id": "SC12_shot_002",
+          "sequence": 2,
+          "beat_reference": "Varo's explosive tablet throw",
+          "timestamp_anchor": "00:45",
+          "shot_type": "medium",
+          "visual_prompt": "1st-century BCE charcoal sketch style. Caelus Varo mid-motion, arm extended after sweeping a wax tablet from his desk. His lean frame twisted with fury, hawkish nose sharp in profile, deep-set eyes blazing. The wax tablet caught mid-fall, about to crack against a geometric mosaic floor. His plain undyed wool tunic pulled taut across his wiry frame. Ink-stained fingertips splayed. The thin scar across his right palm visible. Behind him: the chaos of his oak desk, scrolls disturbed, bronze map stand tilted. Heavy crosshatching emphasizes the violence of motion. Sepia tones with deep crimson shadows suggesting suppressed rage.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "explosive anger",
+            "lighting": "Oil lamps flicker violently with the sudden movement, shadows leap and scatter across the faded maritime frescoes, harsh underlighting from low lamp position"
+          },
+          "motion_hint": "subtle_shake"
+        },
+        {
+          "shot_id": "SC12_shot_003",
+          "sequence": 3,
+          "beat_reference": "Varo corners Marcus - power imbalance",
+          "timestamp_anchor": "01:30",
+          "shot_type": "over_shoulder",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Over Varo's shoulder—his short-cropped gray hair and the edge of his hawkish profile visible—as he looms toward Marcus Licinius. Marcus caught against the doorway, a nervous man with calculating eyes that dart toward the corridor behind him. His hands frozen mid-gesture, palms raised in supplication. The accountant's tunic shows where he has been wiping his sweating palms. Varo's iron ring glints on his left hand, extended accusingly. The doorway frames Marcus like a trap. Deep crosshatching creates oppressive shadows closing in. Ochre and sepia with the corridor beyond rendered in cold gray wash.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "menacing intimidation",
+            "lighting": "Warm lamplight from the tablinum behind Varo creates a halo effect while Marcus stands in the threshold between warm interior and cold gray corridor light"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC12_shot_004",
+          "sequence": 4,
+          "beat_reference": "Marcus's internal shift - the decision",
+          "timestamp_anchor": "02:15",
+          "shot_type": "close",
+          "visual_prompt": "1st-century BCE charcoal sketch style. Extreme focus on Marcus Licinius's face as something shifts behind his calculating eyes. His features caught in the moment of transformation—from wounded servant to something harder, colder. A weight settling, a sum being tallied. His jaw sets almost imperceptibly. The nervous moisture gone from his expression, replaced by hollow calm. Heavy crosshatching defines the shadows under his eyes, the lines of a man who has kept accounts for fifteen years. Sepia tones with the faintest crimson reflected in his pupils—the color of ledgers written in blood. The background dissolves into abstract darkness.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "quiet revelation",
+            "lighting": "Half-face lighting, one side illuminated by distant oil lamp, the other falling into deep shadow, emphasizing the duality of his transformation"
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC12_shot_005",
+          "sequence": 5,
+          "beat_reference": "Marcus's exit line - the veiled threat",
+          "timestamp_anchor": "03:00",
+          "shot_type": "medium",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Marcus Licinius paused at the threshold, his back to the room, speaking without turning. His posture transformed—spine straight, hands still at his sides, no longer wiping nervously. Only his profile visible in the gray light of the corridor. In the background, Varo stands alone amid scattered tablets, the large oak table between them, suddenly small in his domain. The oil lamp gutters, its flame bent, multiplying shadows that climb the maritime frescoes like rising water. The doorway frames a before-and-after: warm chaos behind, cold certainty ahead. Heavy crosshatching creates an ominous corridor. Sepia interior bleeds into gray exterior with deep crimson accent on the dying lamp flame.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "ominous departure",
+            "lighting": "The oil lamp guttering, flame unstable, casting multiplying shadows. Gray daylight from the corridor creates a cold rectangle around Marcus's silhouette while warm tones drain from the room"
+          },
+          "motion_hint": "slow_zoom_out"
+        }
+      ]
+    },
+    {
+      "scene_id": "SC13",
+      "shot_count": 5,
+      "shots": [
+        {
+          "shot_id": "SC13_shot_001",
+          "sequence": 1,
+          "beat_reference": "Scene opening - establishing the Forum before humiliation",
+          "timestamp_anchor": "00:00",
+          "shot_type": "wide",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. A sweeping view of the Roman Forum at midday—massive marble plaza stretching between hills, weathered pillars casting long diagonal shadows across paving stones. The Basilica Aemilia's columns catch harsh Mediterranean sunlight on the left. Crowds of toga-clad citizens, merchants at stalls, advocates gesturing near the rostra speaking platform. Bronze statues of ancestors watch from pedestals. In the middle distance, a single figure in a freshly chalked white toga moves through the throng—Gaius Crassipes, not yet named but distinct. Heavy crosshatching renders the deep shadows under colonnades. Sepia and ochre tones dominate, with the white of fresh togas providing contrast against the warm stone.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "bustling anticipation with undercurrent of menace",
+            "lighting": "Harsh Mediterranean sun from above-left, creating sharp shadows under colonnades and beside statues. Bright highlights on marble surfaces, deep blacks in recessed areas."
+          },
+          "motion_hint": "slow_pan_right"
+        },
+        {
+          "shot_id": "SC13_shot_002",
+          "sequence": 2,
+          "beat_reference": "Discovery of graffiti - the moment of shock",
+          "timestamp_anchor": "00:15",
+          "shot_type": "medium",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Gaius Crassipes frozen mid-stride, his freshly chalked toga bright against weathered stone. His face caught in the instant of recognition—smile still fixed but eyes widening with horror. Before him, crude letters scratched into a statue's base visible in foreground: 'CRASSIPES LICKS THE PROSECUTOR'S SANDALS.' A cluster of three freedmen in simple tunics lean toward the inscription, one mimicking a groveling posture, mouths open in laughter. Heavy crosshatching defines Crassipes's rigid posture against the loose, mocking poses of the freedmen. Sepia tones with deep crimson accent on a nearby merchant's awning. The statue's bronze feet visible at frame top, ancestral judgment looming.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "shock and dawning humiliation",
+            "lighting": "Harsh direct sunlight falling on Crassipes's face, emphasizing his frozen expression. The graffiti in partial shadow at statue base, requiring the eye to seek it out."
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC13_shot_003",
+          "sequence": 3,
+          "beat_reference": "Public mockery crescendo - the thrown fig",
+          "timestamp_anchor": "00:35",
+          "shot_type": "close",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Gaius Crassipes's face in three-quarter profile, his politician's mask cracking. Sweat beads at his temple, jaw clenched, eyes darting sideways. His hand visible gripping his own arm through toga wool—the gesture meant for others turned desperately inward. In the background blur, laughing faces and pointing fingers rendered in loose, aggressive strokes. At the bottom of frame, an overripe fig splattered on marble paving stones, its dark pulp spreading like a wound. Deep crosshatching carves hollows under his cheekbones. Sepia and ochre with crimson accent in the fig's ruined flesh. The composition tilts slightly, suggesting his world going off-axis.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "escalating humiliation and desperation",
+            "lighting": "Harsh overhead sun creating unflattering shadows under brow and nose, exposing every line of strain. Bright highlights on sweat."
+          },
+          "motion_hint": "subtle_shake"
+        },
+        {
+          "shot_id": "SC13_shot_004",
+          "sequence": 4,
+          "beat_reference": "Retreat to Tabularium - recognition of the conspiracy",
+          "timestamp_anchor": "00:55",
+          "shot_type": "medium",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Gaius Crassipes pressed against a massive column in the shadow of the Tabularium, chest heaving, toga disheveled. His eyes are wide, scanning the Forum before him with new understanding. In the background, rendered in lighter strokes, the choreographed cruelty reveals itself—agents positioned at corners like chess pieces, a street artist adding fresh graffiti to a wall, young men still chanting. The column's fluting creates vertical lines that cage him. Deep shadow engulfs his figure while the sunlit Forum stretches beyond, now sinister rather than welcoming. Heavy crosshatching in the foreground shadow, lighter sepia washes for the distant crowd. His trembling hands raised before his face, fingers spread.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "paranoid revelation and fear",
+            "lighting": "Deep shadow under the Tabularium colonnade where Crassipes hides, contrasting with the harsh sunlit Forum beyond. His face half-lit, half in darkness."
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC13_shot_005",
+          "sequence": 5,
+          "beat_reference": "Scene closing - the turn toward vengeance",
+          "timestamp_anchor": "01:15",
+          "shot_type": "close",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Gaius Crassipes's face transformed—extreme close on his features as fear crystallizes into cold resolve. His eyes have hardened, reflecting calculation rather than panic. One hand visible adjusting his toga with deliberate care, restoring dignity through will alone. His jaw is set, lips pressed thin. The crosshatching around his eyes suggests sleepless determination rather than terror. Behind him, only the texture of ancient stone, grounding him against Rome itself. Sepia tones dominate but a deep crimson accent bleeds into the shadow at frame edge—the color of coming violence. His expression holds the quiet danger of his final words: 'Even dogs have teeth.'",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "cold resolution and emerging menace",
+            "lighting": "Side-lighting from left catching the hard planes of his face, one eye in shadow, one illuminated. The lighting shift mirrors his psychological transformation."
+          },
+          "motion_hint": "slow_zoom_in"
+        }
+      ]
+    },
+    {
+      "scene_id": "SC14",
+      "shot_count": 5,
+      "shots": [
+        {
+          "shot_id": "SC14_shot_001",
+          "sequence": 1,
+          "beat_reference": "Scene opening - establishing the tablinum and Varo at window",
+          "timestamp_anchor": "00:00",
+          "shot_type": "wide",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Heavy crosshatching for shadows, sepia and ochre tones. A rectangular Roman tablinum with high ceilings, faded maritime frescoes barely visible on walls. A large cedar desk dominates center-left, covered in scattered scrolls, wax tablets, accounts and debt ledgers. Bronze map stand near corner, iron strongbox visible. Clay oil lamps cast long diagonal shadows. At the far window with shutters ajar, a man in his late 50s stands in silhouette—sharp hawkish nose in profile, short-cropped gray hair, lean wiry frame in a plain undyed wool working tunic. Dust motes drift through slanted afternoon light. A forgotten wine cup sits on the desk. Atmosphere of controlled chaos, the lair of a political predator. Deep crimson accent on a wax seal visible among papers.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "brooding tension",
+            "lighting": "Slanted afternoon light through half-open shutters, oil lamps creating long shadows, the figure backlit at window"
+          },
+          "motion_hint": "slow_pan_right"
+        },
+        {
+          "shot_id": "SC14_shot_002",
+          "sequence": 2,
+          "beat_reference": "Crassipes touches scroll - probing Varo's defenses",
+          "timestamp_anchor": "00:45",
+          "shot_type": "medium",
+          "visual_prompt": "1st-century BCE charcoal sketch, sepia and ochre tones with heavy crosshatching. Two figures at the cedar desk. A man in his late 50s with hawkish nose and deep-set weary eyes faces away, tension visible in his lean shoulders under plain wool tunic, iron ring on left hand, ink stains on fingertips. Across from him, Gaius Crassipes—an older patrician with knowing eyes and calculating smile, dressed in fine toga, fingers deliberately brushing a debt scroll as if by accident. The desk between them covered in IOUs and ledgers. Faded maritime fresco visible on wall behind. Oil lamp light catches the bronze map stand. The composition suggests chess players, neither fully trusting the other. Crimson wax seals punctuate the scattered documents.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "political sparring",
+            "lighting": "Oil lamp glow from below mixing with gray daylight from high window, faces half-shadowed"
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC14_shot_003",
+          "sequence": 3,
+          "beat_reference": "Varo turns with white-knuckled grip - defensive reaction to warning",
+          "timestamp_anchor": "01:30",
+          "shot_type": "close",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus, heavy crosshatching creating dramatic shadow. Close on the face and hand of Caelus Varo—late 50s, sharp hawkish nose, deep-set eyes narrowed with defensive anger, clean-shaven with short-cropped gray hair. His hand grips the wooden window frame, knuckles white with tension, the thin scar across his right palm visible, ink stains on restless fingertips. Iron ring glints on left hand. Expression caught between calculation and wounded pride. Behind him, blurred suggestion of scrolls and the dimming window light. Sepia tones dominate with ochre highlights on his weathered face. The face of a man who counts votes like a moneylender counts debts.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "defensive vulnerability",
+            "lighting": "Side-lit from window, half the face in shadow, emphasizing the hawk-like profile"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC14_shot_004",
+          "sequence": 4,
+          "beat_reference": "Crassipes touches Varo's arm - the calculated gesture of false intimacy",
+          "timestamp_anchor": "02:15",
+          "shot_type": "medium",
+          "visual_prompt": "1st-century BCE charcoal sketch, sepia and ochre with crimson accent. Gaius Crassipes reaches out to touch Varo's arm—a light, familiar, calculated gesture. Crassipes shown in three-quarter view, older patrician features composed in an unwavering smile that does not reach his eyes, fine toga draped carefully. Varo's lean frame in plain wool tunic, visibly stiffening at the touch, his wiry build suggesting coiled energy. The physical intimacy is false, political. Oil lamp shadows fall across both figures. The cedar desk with its architecture of debts visible behind them. Crosshatching heavy on Varo's suspicious posture. The moment captures the transaction beneath the friendship—counsel offered, loyalty demanded.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "intimate menace",
+            "lighting": "Warm oil lamp glow creating intimacy that belies the cold calculation of the exchange"
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC14_shot_005",
+          "sequence": 5,
+          "beat_reference": "Scene closing - Varo alone at window, the mask resolved",
+          "timestamp_anchor": "03:30",
+          "shot_type": "over_shoulder",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus, heavy crosshatching. Over-shoulder view of Caelus Varo at the window as the sun slips behind cloud. His lean silhouette in plain wool tunic, short-cropped gray hair, the sharp line of his hawkish profile visible. Through the window shutters, Roman rooftops darken as light fails. The room dims behind him—the cedar desk with its scattered scrolls now in shadow, oil lamps guttering. His fingers are finally still on the sill. The thin scar on his right palm catches the last light. Deep sepia tones fading to charcoal darkness at edges. A man making a decision to become something quieter and more dangerous. Crimson accent bleeds from a wax seal on the desk behind. The composition suggests a predator learning patience.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "cold resolution",
+            "lighting": "Dying afternoon light through window, room falling into oil-lamp shadow, the world dimming"
+          },
+          "motion_hint": "slow_zoom_out"
+        }
+      ]
+    },
+    {
+      "scene_id": "SC15",
+      "shot_count": 5,
+      "shots": [
+        {
+          "shot_id": "SC15_shot_001",
+          "sequence": 1,
+          "beat_reference": "Scene opening - establishing the clandestine meeting",
+          "timestamp_anchor": "00:00",
+          "shot_type": "wide",
+          "visual_prompt": "A dim Roman tavern rendered in charcoal on rough papyrus with sepia and ochre tones. Low smoke-stained beam ceiling, rough wooden tables scattered through the space. Weak light filters through warped wooden shutters, casting horizontal bars of pale illumination across the scene. In the foreground, dock workers hunch over cups at rough benches, their forms sketched with heavy crosshatching. At the back of the tavern, two figures sit at a table with two untouched amphorae between them—one in a fine toga praetexta with purple border (Quintus Fabius, mid-40s, broad honest face, dark hair grayed at temples), the other in a plain tunic, nervously rotating his cup (Marcus Licinius, a freedman accountant). Oil lamps cast pools of amber light amid deep charcoal shadows. The atmosphere suggests secrecy and tension.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "tense, conspiratorial",
+            "lighting": "Weak natural light through shuttered windows creating horizontal bars, supplemented by dim oil lamps casting amber pools amid heavy shadows"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC15_shot_002",
+          "sequence": 2,
+          "beat_reference": "Marcus reveals the scope of corruption - thirty thousand sesterces",
+          "timestamp_anchor": "00:45",
+          "shot_type": "close",
+          "visual_prompt": "Charcoal sketch on rough papyrus, sepia tones with ochre highlights. Close shot of Marcus Licinius's hands—ink-stained fingertips trembling as they grip the edge of a clay wine cup, rotating it nervously without drinking. His worn linen tunic sleeve visible, showing damp marks where he has wiped his sweating palms. The cup sits on scarred wood grain rendered in detailed crosshatching. Deep shadows pool around the edges. The composition captures the physical manifestation of fear and moral conflict in a man caught between powers.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "nervous, fearful",
+            "lighting": "Dim oil lamp light from above casting deep shadows around the hands, highlighting the tremor in the fingers"
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC15_shot_003",
+          "sequence": 3,
+          "beat_reference": "Quintus refuses to offer gold - the moral turning point",
+          "timestamp_anchor": "01:30",
+          "shot_type": "medium",
+          "visual_prompt": "Charcoal rendering on papyrus with sepia and ochre washes. Quintus Fabius Maximus leans forward across the rough tavern table, his broad honest face showing earnest determination. Mid-40s with strong Roman features—pronounced nose, heavy brow, dark hair with distinguished gray at temples. His toga praetexta with purple border is carefully draped despite the rough surroundings. His right hand reaches toward a small leather purse at his belt, then stops mid-gesture—deliberately refusing to produce coin. His grandfather's signet ring catches the lamp light. A slight squint in his right eye. Behind him, smoke-stained beams and deep shadows rendered in heavy crosshatching. The scar on his left forearm from military service visible. His posture radiates studied dignity and moral conviction.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "earnest, principled",
+            "lighting": "Oil lamp light illuminating Quintus from the side, creating strong contrast between his formal attire and the rough tavern setting"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC15_shot_004",
+          "sequence": 4,
+          "beat_reference": "Marcus nearly confesses - the bodies revelation",
+          "timestamp_anchor": "02:15",
+          "shot_type": "extreme_close",
+          "visual_prompt": "Intense charcoal sketch on rough papyrus with deep sepia shadows and a subtle crimson accent. Extreme close-up of Marcus Licinius's face—his throat working as he stops himself mid-confession. Eyes wide with terror, darting toward unseen dangers. Sweat beads on his brow rendered in careful highlight. His mouth half-open, words dying unspoken. Deep crosshatching creates shadows under his eyes and along his jaw, suggesting sleepless nights and mounting dread. The weight of terrible knowledge visible in every line. His expression captures the moment of a man who almost spoke of buried bodies.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "terrified, desperate",
+            "lighting": "Harsh single oil lamp source creating dramatic shadows across the face, emphasizing hollow eyes and working throat"
+          },
+          "motion_hint": "subtle_shake"
+        },
+        {
+          "shot_id": "SC15_shot_005",
+          "sequence": 5,
+          "beat_reference": "Quintus's exit - final warning delivered",
+          "timestamp_anchor": "03:00",
+          "shot_type": "over_shoulder",
+          "visual_prompt": "Charcoal on rough papyrus with sepia and ochre tones. Over-the-shoulder shot from behind Marcus Licinius, showing his hunched form at the table with untouched wine and trembling hands in the foreground. Beyond him, Quintus Fabius Maximus walks toward the bright doorway, his toga praetexta with purple border a formal silhouette against the harsh light. The doorway forms a rectangle of pale illumination, almost blinding compared to the tavern's shadows. Quintus's posture shows studied dignity—he stands straighter as he delivers his final words. The contrast between the light of the Roman street beyond and the darkness where Marcus remains suggests the choice before him. Heavy crosshatching fills the tavern corners with shadow.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "solemn, ominous",
+            "lighting": "Bright daylight flooding through doorway creating silhouette, deep shadows remaining in tavern interior where Marcus sits alone"
+          },
+          "motion_hint": "static"
+        }
+      ]
+    },
+    {
+      "scene_id": "SC16",
+      "shot_count": 5,
+      "shots": [
+        {
+          "shot_id": "SC16_shot_001",
+          "sequence": 1,
+          "beat_reference": "Scene opening - establishing the archive room",
+          "timestamp_anchor": "00:00",
+          "shot_type": "wide",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. A rectangular archive room with high ceilings, cedar shelves groaning under scrolls and leather-bound ledgers. Faded frescoes of maritime scenes visible on walls. A bronze brazier in the center casts dancing orange-crimson light, heavy crosshatching creating deep shadows that crawl across every surface. A solitary male figure stands before the flames, back partially turned, clutching three ledgers against his chest. The figure is small against the towering shelves, suggesting vulnerability and isolation. Oil lamps on the large oak table flicker. An iron strongbox lurks in the corner. Sepia and ochre tones dominate with deep crimson accents from the brazier's glow. Atmosphere of secrecy and moral weight.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "tense",
+            "lighting": "Warm orange glow from central brazier casting long dramatic shadows. Oil lamps provide secondary pools of amber light. High contrast between illuminated areas and deep shadow."
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC16_shot_002",
+          "sequence": 2,
+          "beat_reference": "Marcus extends ledger toward flames - moment of temptation",
+          "timestamp_anchor": "00:15",
+          "shot_type": "medium",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Marcus Licinius, a working-class Roman accountant in his 40s, extends a leather-bound ledger toward the brazier's flames. His face is illuminated from below by the fire, creating dramatic upward shadows across anxious features. His tunic shows dark streaks where damp hands have wiped. Heavy crosshatching emphasizes the sweat on his brow, the tension in his extended arm. The ledger hovers at the edge of the flames, heat visible as wavering lines. His other hand still clutches two more ledgers protectively against his chest. Eyes wide with fear and calculation. Behind him, the dark mass of cedar shelves filled with scrolls. Sepia tones with crimson fire accents.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "desperate",
+            "lighting": "Harsh underlighting from brazier fire creating demonic shadows on face. Warm orange-red glow on extended arm and ledger. Deep shadow behind."
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC16_shot_003",
+          "sequence": 3,
+          "beat_reference": "Marcus pulls back - the decision turns",
+          "timestamp_anchor": "00:30",
+          "shot_type": "close",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Extreme focus on Marcus Licinius's face in three-quarter profile as realization dawns. Heavy crosshatching around deep-set eyes that now show cold calculation rather than fear. His jaw is set with new resolve. Firelight still plays across weathered features—a working man's face with ink-stained fingers visible at frame edge, now pulling the ledger back from destruction. Beads of sweat rendered in careful highlight against sepia-toned skin. The shift from desperation to cunning visible in the subtle change of his expression—mouth firming, eyes narrowing. Ochre and amber tones with crimson reflection in his eyes from the dying flames.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "calculating",
+            "lighting": "Side-lighting from brazier, half face in warm glow, half in shadow. Catchlight of flames reflected in eyes."
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC16_shot_004",
+          "sequence": 4,
+          "beat_reference": "Marcus hides the wax tablet - the secret buried",
+          "timestamp_anchor": "00:45",
+          "shot_type": "medium",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Marcus Licinius crouches beside the third cedar shelf, his body twisted to look over his shoulder toward the unseen doorway. His hands work quickly, sliding a linen-wrapped wax tablet beneath a loose stone in the floor. The hiding place is a dark void, rendered in dense crosshatching. His profile shows alert wariness—eyes darting, body coiled for flight. His plain wool tunic bunches at the waist. Scrolls and ledgers loom on shelves above him. Oil lamp light catches the edge of his stylus still tucked in his belt pouch. The composition emphasizes secrecy—the man small and furtive against the weight of documentation surrounding him. Sepia and ochre tones, deep shadows.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "furtive",
+            "lighting": "Low ambient light from distant oil lamps. Deep shadow around the hiding place. Rim light catching the edge of his profile."
+          },
+          "motion_hint": "subtle_shake"
+        },
+        {
+          "shot_id": "SC16_shot_005",
+          "sequence": 5,
+          "beat_reference": "Scene closing - Marcus slips away, evidence remains",
+          "timestamp_anchor": "01:00",
+          "shot_type": "wide",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. The archive room now dominated by the dying brazier, its coals guttering to deep crimson embers. The doorway at frame left shows only the edge of a departing figure—Marcus Licinius reduced to a shadow slipping away like smoke. The oak table with its orderly scrolls sits undisturbed. The three ledgers rest exactly where Varo left them, rendered with careful detail—innocent objects now laden with terrible weight. Long shadows stretch across the floor toward the hidden stone where the copied tablet waits. The room feels emptier, colder, the maritime frescoes on the walls now ghostly in the fading light. Heavy crosshatching creates atmosphere of aftermath and waiting. Sepia tones cooling to ash gray, final crimson accent in the dying coals.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "ominous",
+            "lighting": "Dying ember glow from brazier, predominantly red-orange fading to gray. Deep shadows claiming the room. Doorway slightly brighter, suggesting escape."
+          },
+          "motion_hint": "slow_zoom_out"
+        }
+      ]
+    },
+    {
+      "scene_id": "SC17",
+      "shot_count": 5,
+      "shots": [
+        {
+          "shot_id": "SC17_shot_001",
+          "sequence": 1,
+          "beat_reference": "Scene opening - establishing the conspiratorial atmosphere",
+          "timestamp_anchor": "00:00",
+          "shot_type": "wide",
+          "visual_prompt": "A murky Roman tavern interior rendered in charcoal on rough papyrus with sepia and ochre tones. Low smoke-stained ceiling beams press down on the scene, crosshatched shadows dominating the composition. In the foreground, rough wooden tables with scarred surfaces, amphorae visible behind a counter at left. Oil lamps cast weak pools of amber light that fail to reach the back corner where a solitary figure sits in darkness. Eight patrons scattered throughout—dice players near the hearth where two armed men in wool merchant colors stand guard. The atmosphere thick with rendered smoke, heavy crosshatching creating oppressive darkness. Deep crimson accent on a wine stain spreading across one table.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "conspiratorial",
+            "lighting": "Dim oil lamps creating isolated pools of warm amber light, heavy shadows between, back corner almost entirely dark"
+          },
+          "motion_hint": "slow_pan_right"
+        },
+        {
+          "shot_id": "SC17_shot_002",
+          "sequence": 2,
+          "beat_reference": "Marcus's entrance - cataloguing threats",
+          "timestamp_anchor": "00:15",
+          "shot_type": "medium",
+          "visual_prompt": "Charcoal sketch on papyrus showing Marcus Licinius frozen mid-step at the tavern's side door, rendered in sepia tones with ochre highlights. A nervous man with hunched shoulders, his hands visibly wiping against his plain tunic—the fabric worn thin at the hips from this repeated gesture. His eyes are wide, darting, captured mid-scan of the room. His face shows the strain of a man who lives by numbers and fears what they reveal. Three exits visible in the composition—the door behind him, a back passage, and a shuttered window. His body angled toward the dark corner where Crassipes waits. Heavy crosshatching on his tunic folds emphasizing his tension. The two armed men by the hearth visible in soft focus behind him.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "tense",
+            "lighting": "Harsh sidelight from nearest oil lamp catching half his face, the other half in shadow, emphasizing his vigilance"
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC17_shot_003",
+          "sequence": 3,
+          "beat_reference": "The conspiratorial touch - Crassipes's manipulative gesture",
+          "timestamp_anchor": "00:45",
+          "shot_type": "close",
+          "visual_prompt": "Intimate charcoal rendering on rough papyrus, extreme focus on two hands at a rough wooden table. Crassipes's well-manicured hand with a heavy gold ring grips Marcus's forearm—the touch lingering, possessive, rendered with careful crosshatching to show the pressure of fingers. Marcus's arm tense beneath the grip, the fabric of his worn tunic bunched. Two wine cups of rough clay visible, the Falernian dark within. Sepia and ochre dominate with a deep crimson accent in the wine. The gesture speaks of false friendship and real threat, the composition tight and claustrophobic.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "intimate-threatening",
+            "lighting": "Warm lamplight from above casting the hands in relief, deep shadows in the spaces between fingers"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC17_shot_004",
+          "sequence": 4,
+          "beat_reference": "The secret transmitted - messenger receives instructions",
+          "timestamp_anchor": "01:15",
+          "shot_type": "over_shoulder",
+          "visual_prompt": "Over Crassipes's shoulder composition in charcoal on papyrus, sepia tones. We see his thick fingers pressing a stylus into a wax tablet, the text illegible but urgent. A breathless messenger boy—young, dusty from the Forum—leans in at frame right, waiting. Marcus visible in soft focus across the table, his eyes fixed on the tablet with calculating intensity, hands gripping his tunic at the thigh. The tablet catches lamplight, its surface rendered in ochre. Crassipes's shoulder and ear visible in sharp foreground detail, establishing his control of the frame. Smoke curls between the figures. The composition emphasizes the covert nature of the exchange.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "urgent",
+            "lighting": "Single lamp overhead creating a spotlight effect on the wax tablet, faces in partial shadow"
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC17_shot_005",
+          "sequence": 5,
+          "beat_reference": "Scene closing - the threatening toast",
+          "timestamp_anchor": "01:45",
+          "shot_type": "medium",
+          "visual_prompt": "Two-shot composition in charcoal on rough papyrus, sepia and ochre with crimson wine accents. Crassipes raises his clay cup in toast, his expression warm but his eyes cold—smile rendered with careful crosshatching that suggests menace beneath bonhomie. Across from him, Marcus sits rigid, his own cup untouched, shoulders hunched, eyes calculating the distance to the exits. The rough wooden table between them littered with evidence of conspiracy—the wax tablet now blank, two cups, spilled drops of wine like blood spots. Smoke from tallow candles curls between them. The low ceiling beams press down oppressively. Crassipes's posture open and expansive; Marcus's closed and defensive. The final button moment before the scene ends.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "ominous",
+            "lighting": "Warm lamplight on Crassipes's face contrasting with deeper shadows on Marcus, creating visual imbalance of power"
+          },
+          "motion_hint": "slow_zoom_out"
+        }
+      ]
+    },
+    {
+      "scene_id": "SC18",
+      "shot_count": 5,
+      "shots": [
+        {
+          "shot_id": "SC18_shot_001",
+          "sequence": 1,
+          "beat_reference": "Scene opening - establishing the threatening intimacy of the empty tavern",
+          "timestamp_anchor": "00:00",
+          "shot_type": "wide",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. A cramped subura tavern interior, low smoke-stained beams pressing down like a coffin lid. Tallow candle smoke hangs in burial-shroud layers beneath the ceiling. In the far corner booth, a nervous man sits rigid—Marcus Licinius, thin and pale, hands compulsively wiping at his plain tunic. Before him sits an untouched cup of posca on the rough wooden table. The door stands ajar, and a woman's silhouette fills the threshold—Drusilla, early 40s, sharp aristocratic features barely visible beneath a dark palla, her stillness absolute and predatory. Heavy crosshatching creates deep shadows in every corner. Sepia and ochre tones dominate, with the faint crimson glow of cheap oil lamps. Empty benches and scarred wooden tables fill the space. Rats' eyes glint from gaps in the walls.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "oppressive dread",
+            "lighting": "Dim, guttering tallow candles casting unstable shadows. Single weak light source from oil lamps on the counter. Deep darkness in the corners and beneath tables."
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC18_shot_002",
+          "sequence": 2,
+          "beat_reference": "Drusilla's threat - naming Marcus's mother and family",
+          "timestamp_anchor": "00:45",
+          "shot_type": "close",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Extreme focus on Drusilla's face—a woman in her early 40s with sharp aristocratic features, high cheekbones, straight nose, strong jaw. Cool gray eyes rendered in precise crosshatching, utterly unblinking. Dark hair pulled back severely with streaks of early silver at the temples. Small mole above left eyebrow. Her lips barely parted, speaking in clinical near-whisper. Gold pins glint faintly at her shoulders where her elegant charcoal-gray stola meets. Her expression shows no malice—only the detached precision of someone describing weather. Sepia and ochre tones with heavy shadow work beneath her cheekbones and eyes. The background dissolves into abstract darkness.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "clinical menace",
+            "lighting": "Single oil lamp light catching the planes of her face from below, creating dramatic shadows under her eyes and cheekbones. Half her face in darkness."
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC18_shot_003",
+          "sequence": 3,
+          "beat_reference": "Marcus's terror - the cup trembling as he grips the table",
+          "timestamp_anchor": "01:30",
+          "shot_type": "extreme_close",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Extreme close-up of Marcus Licinius's hands gripping a rough wooden table edge, knuckles white with tension. Beside them, a terracotta cup of posca trembles, concentric ripples spreading across the murky liquid surface. The hands show ink stains on fingertips, veins standing out with strain. Heavy crosshatching renders the grain of the cheap wood, the chips and scars of countless meals. Sepia tones dominate with deep ochre shadows. The trembling liquid catches faint candlelight—the only movement in the frame. His plain wool tunic sleeve is visible, dark smears where he has been wiping his palms compulsively.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "visceral terror",
+            "lighting": "Warm, unstable candlelight reflecting off the liquid surface. Deep shadows in the wood grain. Light flickers suggest the flame guttering."
+          },
+          "motion_hint": "subtle_shake"
+        },
+        {
+          "shot_id": "SC19_shot_004",
+          "sequence": 4,
+          "beat_reference": "The revelation - Quintus sees Drusilla's seal on the tablet",
+          "timestamp_anchor": "03:00",
+          "shot_type": "medium",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. The frigidarium of public baths, marble columns rising into darkness. Quintus Fabius Maximus, mid-40s, broad honest face now showing devastating shock—pronounced Roman nose, heavy brow, dark hair with distinguished gray at temples. He wears a toga praetexta with purple border, but his studied dignity has collapsed. His hand reaches toward a wax tablet held in torchlight, trembling, not quite touching it. The tablet's surface shows a dove clutching laurel—his wife's private seal. His grandfather's signet ring glints on his finger. Behind him, the cold pool lies still as death, reflecting nothing. His slight squint in his right eye visible as he stares at the evidence. Five tablets arranged on marble bench like funeral offerings. Heavy crosshatching for the deep shadows of the colonnade.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "devastating revelation",
+            "lighting": "Single torch from the colonnade throwing wavering orange light across marble. The seal on the tablet catches direct light. Quintus half in shadow, half illuminated—his world literally divided."
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC19_shot_005",
+          "sequence": 5,
+          "beat_reference": "Scene closing - Quintus alone with drowned certainties",
+          "timestamp_anchor": "04:30",
+          "shot_type": "medium",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Quintus Fabius Maximus stands alone at the edge of the frigidarium's cold pool, one hand gripping a marble column for support. His toga praetexta with purple border hangs askew—the man who always dressed with studied dignity now disheveled. Mid-40s, broad face showing utter devastation, the strain of shattered principle. His reflection wavers in the still, dark water below—distorted, drowning. The wax tablets lie abandoned on the marble bench behind him. Empty colonnade stretches into shadow. His scar from military service visible on his left forearm where his toga has slipped. Heavy crosshatching renders the cold marble, the dark water, the shadows between columns. Sepia and ochre with deep crimson accent from dying torchlight. A man whose certainties have drowned, staring at nothing.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "hollow devastation",
+            "lighting": "Dying torchlight from colonnade, mostly extinguished. Cold blue-gray tones mixing with last orange ember glow. His reflection darker than he is—swallowed by the pool."
+          },
+          "motion_hint": "slow_zoom_out"
+        }
+      ]
+    },
+    {
+      "scene_id": "SC20",
+      "shot_count": 5,
+      "shots": [
+        {
+          "shot_id": "SC20_shot_001",
+          "sequence": 1,
+          "beat_reference": "Scene opening - establishing the weight of tradition and crisis",
+          "timestamp_anchor": "00:00",
+          "shot_type": "wide",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Wide establishing shot of a traditional Roman atrium at night. The impluvium pool at center reflects nothing, its dark water still as obsidian. Oil lamps burn low along the walls, their smoke hanging motionless beneath a painted ceiling where stern ancestral masks stare down with fixed disapproval. Heavy crosshatching renders deep shadows pooling in corners. At the far column stands QUINTUS FABIUS, a man in mid-40s with broad honest face, pronounced Roman nose, heavy brow, dark hair grayed at temples, wearing a proper toga praetexta with purple border—his back turned to the room, fingers working nervously at the toga's folds. Seated on a marble bench against the opposite wall is DRUSILLA, early 40s, sharp aristocratic features with high cheekbones and strong jaw, dark hair pulled back severely with streaks of early silver, wearing an elegant stola in charcoal gray with gold pins at shoulders, her spine perfectly aligned with the column behind her. Between them on a marble table: a letter with cracked crimson wax seal. Sepia and ochre tones dominate with the crimson seal providing the only deep color accent. Worn mosaic floor visible, bronze lararium in background.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "oppressive tension",
+            "lighting": "Low amber glow from dying oil lamps, smoke-diffused, deep shadows in corners, no reflection from the still impluvium"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC20_shot_002",
+          "sequence": 2,
+          "beat_reference": "The letter as wound - Varo's seal demands attention",
+          "timestamp_anchor": "00:15",
+          "shot_type": "extreme_close",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Extreme close-up of an opened letter on white marble table surface. The crimson wax seal is cracked and broken, rendered in deep red pigment against sepia parchment—the wax fractures like a fresh wound. Heavy crosshatching creates texture on the marble. The edge of Quintus's hand visible at frame edge, his grandfather's signet ring catching lamplight, white knuckles gripping the table edge but not touching the letter. Ink script barely visible on the parchment. Ochre and sepia tones with the crimson seal as focal point.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "dread",
+            "lighting": "Single oil lamp casting harsh directional shadow from the seal across marble, emphasizing the broken wax texture"
+          },
+          "motion_hint": "static"
+        },
+        {
+          "shot_id": "SC20_shot_003",
+          "sequence": 3,
+          "beat_reference": "Quintus turns - revealing sleepless anguish and wounded pride",
+          "timestamp_anchor": "00:35",
+          "shot_type": "medium",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Medium shot of QUINTUS FABIUS as he finally turns to face the room. Man in mid-40s, broad honest face now hollow with exhaustion, dark circles beneath eyes rendered in heavy crosshatching. Pronounced Roman nose, heavy brow, dark hair with distinguished gray at temples. His right eye shows its characteristic slight squint. Wearing toga praetexta with purple border, the cloth bunched beneath white-knuckled fingers. His expression carries wounded accusation and defensive pride. The scar on his left forearm from military service visible where the toga has slipped. Behind him, ancestral masks on the wall seem to judge. His studied dignity cracking under strain—he stands straighter as if challenging the room itself. Sepia and ochre tones with deep charcoal shadows.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "wounded defiance",
+            "lighting": "Dying lamp light from below casting upward shadows on his face, hollowing his features, emphasizing exhaustion"
+          },
+          "motion_hint": "subtle_shake"
+        },
+        {
+          "shot_id": "SC20_shot_004",
+          "sequence": 4,
+          "beat_reference": "Drusilla rises and takes control - sliding the letter toward him",
+          "timestamp_anchor": "01:00",
+          "shot_type": "close",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Close shot of DRUSILLA's hands and profile as she folds the letter with surgical precision. Woman in early 40s, sharp aristocratic features in profile—high cheekbones, straight nose, strong jaw carved in lamplight. Cool gray eyes unblinking. Dark hair pulled back severely, early silver streaks visible. Small mole above left eyebrow. Her calloused fingertips from writing visible as they fold the parchment with economical movements. She wears an elegant charcoal gray stola, gold pins at shoulders catching light. Her expression is flat, absolute, diagnostic. She slides the letter across the marble toward the viewer. Heavy crosshatching in the shadows. Sepia and ochre palette with subtle gold accents from her pins.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "cold command",
+            "lighting": "Oil lamp from the side creating sharp profile silhouette, half her face in shadow, the other half precisely rendered"
+          },
+          "motion_hint": "slow_zoom_in"
+        },
+        {
+          "shot_id": "SC20_shot_005",
+          "sequence": 5,
+          "beat_reference": "Drusilla's exit - the blade cuts the terms",
+          "timestamp_anchor": "01:25",
+          "shot_type": "medium",
+          "visual_prompt": "1st-century BCE charcoal sketch on rough papyrus. Medium shot at the threshold to the corridor. DRUSILLA pauses in profile, her figure carved in dying lamplight against absolute darkness beyond. Woman in early 40s, sharp aristocratic features—high cheekbones, straight nose, strong jaw. Dark hair severely pulled back with silver streaks. Wearing elegant charcoal gray stola with gold shoulder pins. Her stillness is weaponized, economical. Half her face illuminated in amber, the other half dissolving into shadow. The corridor behind her is pure black void. In the deep background, barely visible: QUINTUS FABIUS standing frozen, his hand suspended over the letter on the table, unable to touch it. Ancestral masks watch from the walls. Heavy crosshatching renders the transition from light to absolute shadow. Sepia and ochre tones fading to charcoal black.",
+          "gpt_image_params": {
+            "style_suffix": "All images rendered in the style of 1st-century BCE charcoal sketches on rough papyrus. Heavy use of crosshatching for shadows. Sepia and ochre tones with occasional deep crimson accents. No photorealism.",
+            "mood": "icy finality",
+            "lighting": "Strong side-lighting from atrium lamps creating dramatic chiaroscuro, Drusilla half-lit at threshold, corridor beyond in complete darkness"
+          },
+          "motion_hint": "static"
+        }
+      ]
+    }
+  ],
+  "total_shots": 95
+}

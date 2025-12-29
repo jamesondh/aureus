@@ -182,24 +182,67 @@ export class ElevenLabsClient {
   }
 
   /**
+   * Check if an audio file already exists (for recovery).
+   */
+  async checkExistingFile(segmentId: string, outputDir: string): Promise<{
+    exists: boolean;
+    file?: string;
+    durationMs?: number;
+  }> {
+    const filename = `${segmentId}.mp3`;
+    const filePath = path.join(outputDir, filename);
+    
+    try {
+      const stats = await fs.stat(filePath);
+      if (stats.size > 0) {
+        // Estimate duration from file size (MP3 at 128kbps = 16KB per second)
+        const estimatedDurationMs = Math.round((stats.size / 16000) * 1000);
+        return { exists: true, file: filename, durationMs: estimatedDurationMs };
+      }
+    } catch {
+      // File doesn't exist
+    }
+    
+    return { exists: false };
+  }
+
+  /**
    * Synthesize multiple segments and save to files.
+   * Supports recovery by skipping segments that already have audio files.
    */
   async synthesizeToFiles(
     segments: AudioSegment[],
     casting: CastingRegistry,
-    outputDir: string
+    outputDir: string,
+    options: { force?: boolean } = {}
   ): Promise<{
     success: boolean;
     files: Array<{ segmentId: string; file: string; durationMs: number }>;
     errors: Array<{ segmentId: string; error: string }>;
+    skipped: number;
   }> {
     await fs.mkdir(outputDir, { recursive: true });
 
     const files: Array<{ segmentId: string; file: string; durationMs: number }> = [];
     const errors: Array<{ segmentId: string; error: string }> = [];
+    let skipped = 0;
 
     for (const segment of segments) {
-      console.log(`  Synthesizing ${segment.segment_id}...`);
+      // Check for existing file (recovery)
+      if (!options.force) {
+        const existing = await this.checkExistingFile(segment.segment_id, outputDir);
+        if (existing.exists && existing.file) {
+          files.push({
+            segmentId: segment.segment_id,
+            file: existing.file,
+            durationMs: existing.durationMs || 0,
+          });
+          skipped++;
+          continue;
+        }
+      }
+      
+      console.log(`    Synthesizing ${segment.segment_id}...`);
       
       const result = await this.synthesizeSegment(segment, casting);
 
@@ -226,6 +269,7 @@ export class ElevenLabsClient {
       success: errors.length === 0,
       files,
       errors,
+      skipped,
     };
   }
 

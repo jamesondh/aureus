@@ -254,6 +254,53 @@ npm run produce:episode -- --dry-run
 npm run produce:storyboard      # Stage I-A: Visual beat identification
 npm run produce:audio           # Stage I-B: Voice synthesis
 npm run produce:image           # Stage I-C: Image generation
+
+# Preview mode (see below)
+npm run produce:episode -- --preview
+```
+
+### Preview Mode
+
+Preview mode generates a video using only scenes that have complete assets (all audio segments + all real images). This allows you to:
+
+- Test voice casting before committing to full audio generation
+- Validate image quality and style before generating all frames
+- Check video assembly and pacing
+- Avoid expensive regeneration if changes are needed
+
+```bash
+# Generate preview video from complete scenes
+npm run produce:episode -- --preview
+
+# Preview for a specific episode
+npm run produce:episode -- --episode 02 --preview
+```
+
+**How it works:**
+1. Scans for "complete" scenes (scenes with all audio files + all non-placeholder images)
+2. Generates master audio tracks by concatenating dialogue clips
+3. Assembles a preview video (`episode_XX_preview.mp4`) using only complete scenes
+4. Reports which scenes were included vs. incomplete
+
+**Example output:**
+```
+=== Preview Mode: episode_01 ===
+
+Scanning for complete scenes (real audio + real images)...
+
+Complete scenes: SC01
+Incomplete scenes: SC02, SC03, SC04, ...
+
+Generating master audio tracks for complete scenes...
+  Generating SC01_master.mp3...
+
+Generating preview manifest...
+Assembling preview video...
+  Processing SC01...
+
+=== Preview Complete ===
+Scenes included: SC01
+Preview video: seasons/season_01/episode_01/episode_01_preview.mp4
 ```
 
 ### Production Stages
@@ -326,6 +373,14 @@ Characters and locations require Visual DNA for consistent image generation:
    ```bash
    npm run produce:image
    ```
+
+5. **Test with preview mode** (requires FFmpeg):
+   ```bash
+   # Generate a few audio clips and images first, then:
+   npm run produce:episode -- --preview
+   ```
+   Assembles a video using only scenes with complete assets. Useful for validating 
+   casting choices, image style, and video quality before committing to full generation.
 
 ## Roadmap
 
