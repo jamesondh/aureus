@@ -35,6 +35,12 @@ export interface SynthesisResult {
   requestId?: string;
 }
 
+export interface VoiceInfo {
+  voiceId: string;
+  voiceName: string;
+  voiceVersion: number;
+}
+
 // ============================================================================
 // ElevenLabs Client
 // ============================================================================
@@ -158,11 +164,12 @@ export class ElevenLabsClient {
 
   /**
    * Synthesize an audio segment using casting registry.
+   * Returns both the synthesis result and voice info for filename generation.
    */
   async synthesizeSegment(
     segment: AudioSegment,
     casting: CastingRegistry
-  ): Promise<SynthesisResult> {
+  ): Promise<SynthesisResult & { voiceInfo?: VoiceInfo }> {
     // Find voice mapping
     const mapping = casting.casting.voice_mappings.find(
       m => m.character_id === segment.character_id
@@ -178,29 +185,78 @@ export class ElevenLabsClient {
     // Build voice settings
     const settings = this.buildVoiceSettings(mapping, segment.performance);
 
-    return this.synthesize(segment.clean_text, mapping.eleven_voice_id, settings);
+    const result = await this.synthesize(segment.clean_text, mapping.eleven_voice_id, settings);
+    
+    return {
+      ...result,
+      voiceInfo: {
+        voiceId: mapping.eleven_voice_id,
+        voiceName: mapping.voice_name.toLowerCase(),
+        voiceVersion: mapping.voice_version ?? 1,
+      },
+    };
+  }
+
+  /**
+   * Get voice info for a character from the casting registry.
+   */
+  getVoiceInfo(characterId: string, casting: CastingRegistry): VoiceInfo | null {
+    const mapping = casting.casting.voice_mappings.find(
+      m => m.character_id === characterId
+    );
+    
+    if (!mapping) {
+      return null;
+    }
+    
+    return {
+      voiceId: mapping.eleven_voice_id,
+      voiceName: mapping.voice_name.toLowerCase(),
+      voiceVersion: mapping.voice_version ?? 1,
+    };
+  }
+
+  /**
+   * Generate the filename for an audio segment.
+   * Format: {segment_id}_{voice_slug}-v{version}.mp3
+   * Example: SC04_d001_varo_adam-v1.mp3
+   */
+  generateFilename(segment: AudioSegment, voiceInfo: VoiceInfo): string {
+    const voiceSlug = voiceInfo.voiceName.toLowerCase().replace(/[^a-z0-9]/g, '');
+    return `${segment.segment_id}_${voiceSlug}-v${voiceInfo.voiceVersion}.mp3`;
   }
 
   /**
    * Check if an audio file already exists (for recovery).
+   * Now checks for files matching the new naming pattern with any version.
    */
-  async checkExistingFile(segmentId: string, outputDir: string): Promise<{
+  async checkExistingFile(
+    segment: AudioSegment,
+    voiceInfo: VoiceInfo,
+    outputDir: string
+  ): Promise<{
     exists: boolean;
     file?: string;
     durationMs?: number;
+    isCurrentVersion?: boolean;
   }> {
-    const filename = `${segmentId}.mp3`;
-    const filePath = path.join(outputDir, filename);
+    const expectedFilename = this.generateFilename(segment, voiceInfo);
+    const filePath = path.join(outputDir, expectedFilename);
     
     try {
       const stats = await fs.stat(filePath);
       if (stats.size > 0) {
         // Estimate duration from file size (MP3 at 128kbps = 16KB per second)
         const estimatedDurationMs = Math.round((stats.size / 16000) * 1000);
-        return { exists: true, file: filename, durationMs: estimatedDurationMs };
+        return { 
+          exists: true, 
+          file: expectedFilename, 
+          durationMs: estimatedDurationMs,
+          isCurrentVersion: true,
+        };
       }
     } catch {
-      // File doesn't exist
+      // File with current version doesn't exist
     }
     
     return { exists: false };
@@ -208,7 +264,8 @@ export class ElevenLabsClient {
 
   /**
    * Synthesize multiple segments and save to files.
-   * Supports recovery by skipping segments that already have audio files.
+   * Uses new descriptive filename format: {segment_id}_{voice_slug}-v{version}.mp3
+   * Supports recovery by skipping segments that already have audio files with matching version.
    */
   async synthesizeToFiles(
     segments: AudioSegment[],
@@ -217,51 +274,89 @@ export class ElevenLabsClient {
     options: { force?: boolean } = {}
   ): Promise<{
     success: boolean;
-    files: Array<{ segmentId: string; file: string; durationMs: number }>;
+    files: Array<{ 
+      segmentId: string; 
+      file: string; 
+      durationMs: number;
+      characterId: string;
+      voiceId: string;
+      voiceName: string;
+      voiceVersion: number;
+    }>;
     errors: Array<{ segmentId: string; error: string }>;
     skipped: number;
   }> {
     await fs.mkdir(outputDir, { recursive: true });
 
-    const files: Array<{ segmentId: string; file: string; durationMs: number }> = [];
+    const files: Array<{ 
+      segmentId: string; 
+      file: string; 
+      durationMs: number;
+      characterId: string;
+      voiceId: string;
+      voiceName: string;
+      voiceVersion: number;
+    }> = [];
     const errors: Array<{ segmentId: string; error: string }> = [];
     let skipped = 0;
 
     for (const segment of segments) {
-      // Check for existing file (recovery)
+      // Get voice info for this character
+      const voiceInfo = this.getVoiceInfo(segment.character_id, casting);
+      
+      if (!voiceInfo) {
+        errors.push({
+          segmentId: segment.segment_id,
+          error: `No voice mapping found for character: ${segment.character_id}`,
+        });
+        continue;
+      }
+      
+      // Check for existing file with current voice version (recovery)
       if (!options.force) {
-        const existing = await this.checkExistingFile(segment.segment_id, outputDir);
-        if (existing.exists && existing.file) {
+        const existing = await this.checkExistingFile(segment, voiceInfo, outputDir);
+        if (existing.exists && existing.file && existing.isCurrentVersion) {
           files.push({
             segmentId: segment.segment_id,
             file: existing.file,
             durationMs: existing.durationMs || 0,
+            characterId: segment.character_id,
+            voiceId: voiceInfo.voiceId,
+            voiceName: voiceInfo.voiceName,
+            voiceVersion: voiceInfo.voiceVersion,
           });
           skipped++;
           continue;
         }
       }
       
-      console.log(`    Synthesizing ${segment.segment_id}...`);
+      const filename = this.generateFilename(segment, voiceInfo);
+      console.log(`    Synthesizing ${filename}...`);
       
       const result = await this.synthesizeSegment(segment, casting);
 
-      if (result.success && result.audioBuffer) {
-        const filename = `${segment.segment_id}.mp3`;
+      if (result.success && result.audioBuffer && result.audioBuffer.length > 0) {
         const filePath = path.join(outputDir, filename);
         
         await fs.writeFile(filePath, result.audioBuffer);
+        console.log(`      ✓ Saved: ${filename} (${result.audioBuffer.length} bytes)`);
         
         files.push({
           segmentId: segment.segment_id,
           file: filename,
           durationMs: result.durationMs || 0,
+          characterId: segment.character_id,
+          voiceId: voiceInfo.voiceId,
+          voiceName: voiceInfo.voiceName,
+          voiceVersion: voiceInfo.voiceVersion,
         });
       } else {
+        const errorMsg = result.error || (result.audioBuffer?.length === 0 ? 'Empty audio buffer returned' : 'Unknown error');
         errors.push({
           segmentId: segment.segment_id,
-          error: result.error || 'Unknown error',
+          error: errorMsg,
         });
+        console.error(`      ✗ FAILED: ${errorMsg}`);
       }
     }
 

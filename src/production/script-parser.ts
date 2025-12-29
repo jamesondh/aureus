@@ -165,10 +165,12 @@ export class ScriptParser {
       if (NARRATOR_BLOCK_END.test(line)) {
         if (narratorBlockText.length > 0) {
           segmentIndex++;
+          const characterSlug = 'narrator';
           segments.push({
-            segment_id: `${sceneId}_n${String(segmentIndex).padStart(3, '0')}`,
+            segment_id: `${sceneId}_n${String(segmentIndex).padStart(3, '0')}_${characterSlug}`,
             type: 'narrator',
             character_id: 'NARRATOR',
+            character_slug: characterSlug,
             raw_text: narratorBlockText.join(' '),
             clean_text: narratorBlockText.join(' '),
             performance: Object.keys(narratorBlockHints).length > 0 ? narratorBlockHints : undefined,
@@ -198,10 +200,12 @@ export class ScriptParser {
       const narratorMatch = line.match(NARRATOR_SINGLE_REGEX);
       if (narratorMatch) {
         segmentIndex++;
+        const characterSlug = 'narrator';
         segments.push({
-          segment_id: `${sceneId}_n${String(segmentIndex).padStart(3, '0')}`,
+          segment_id: `${sceneId}_n${String(segmentIndex).padStart(3, '0')}_${characterSlug}`,
           type: 'narrator',
           character_id: 'NARRATOR',
+          character_slug: characterSlug,
           raw_text: line,
           clean_text: narratorMatch[4].trim(),
           performance: {
@@ -218,12 +222,14 @@ export class ScriptParser {
       if (dialogueMatch) {
         const characterName = dialogueMatch[1].trim();
         const characterId = this.resolveCharacterId(characterName);
+        const characterSlug = this.extractCharacterSlug(characterId);
         
         segmentIndex++;
         segments.push({
-          segment_id: `${sceneId}_d${String(segmentIndex).padStart(3, '0')}`,
+          segment_id: `${sceneId}_d${String(segmentIndex).padStart(3, '0')}_${characterSlug}`,
           type: 'dialogue',
           character_id: characterId,
+          character_slug: characterSlug,
           raw_text: line,
           clean_text: this.cleanDialogueText(dialogueMatch[5]),
           performance: {
@@ -239,6 +245,40 @@ export class ScriptParser {
       scene_id: sceneId,
       audio_segments: segments,
     };
+  }
+
+  /**
+   * Extract a short slug from a character ID.
+   * e.g., "char_caelus_varo" -> "varo", "char_marcus_accountant" -> "marcus"
+   */
+  private extractCharacterSlug(characterId: string): string {
+    if (characterId === 'NARRATOR') {
+      return 'narrator';
+    }
+    
+    // Remove char_ prefix if present
+    const withoutPrefix = characterId.replace(/^char_/, '');
+    
+    // Split by underscore and take the last meaningful part
+    // For "caelus_varo" -> "varo", for "marcus_accountant" -> "marcus"
+    const parts = withoutPrefix.split('_');
+    
+    // If it's a two-part name like "caelus_varo", use the second part (family name)
+    // If it's a descriptor like "marcus_accountant", use the first part (name)
+    // Heuristic: descriptors tend to be longer common words
+    const descriptors = ['accountant', 'vendor', 'guard', 'slave', 'merchant', 'soldier', 'senator'];
+    
+    if (parts.length >= 2) {
+      const lastPart = parts[parts.length - 1];
+      if (descriptors.includes(lastPart.toLowerCase())) {
+        // It's a descriptor, use the name part
+        return parts[0].toLowerCase();
+      }
+      // It's likely a family name, use it
+      return lastPart.toLowerCase();
+    }
+    
+    return parts[0].toLowerCase();
   }
 
   /**

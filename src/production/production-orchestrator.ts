@@ -26,6 +26,7 @@ import type {
   CharacterVisualDNA,
   LocationVisualDNA,
   ProductionManifest,
+  ProductionShot,
 } from '../types/production.js';
 
 // ============================================================================
@@ -48,6 +49,7 @@ export interface ProductionConfig {
   force?: boolean;   // Regenerate all files, ignoring existing progress
   maxImagesPerScene?: number;
   visualCadenceOverride?: number;
+  disableMotion?: boolean;  // Use static images without pan/zoom effects
 }
 
 export interface PreviewResult {
@@ -628,6 +630,7 @@ export class ProductionOrchestrator {
 
   /**
    * Assemble the preview video from complete scenes.
+   * Uses all shots from the manifest, distributing them across the scene duration.
    */
   private async assemblePreviewVideo(
     manifest: ProductionManifest,
@@ -643,7 +646,7 @@ export class ProductionOrchestrator {
       const sceneVideos: string[] = [];
       
       for (const scene of manifest.scenes) {
-        console.log(`  Processing ${scene.scene_id}...`);
+        console.log(`  Processing ${scene.scene_id} (${scene.shots.length} shots)...`);
         
         // Check if master audio exists
         const masterAudio = path.join(audioDir, scene.audio_track);
@@ -654,43 +657,107 @@ export class ProductionOrchestrator {
           continue;
         }
         
-        // For each scene, we'll create a video with the shots distributed over the audio duration
-        // Using a simpler approach: use the first image for the whole scene duration
-        // (Full shot distribution would require more complex FFmpeg filter graphs)
-        
-        const firstShot = scene.shots[0];
-        if (!firstShot) {
+        if (scene.shots.length === 0) {
           errors.push(`No shots in scene ${scene.scene_id}`);
           continue;
         }
         
-        const imageFile = path.join(framesDir, firstShot.image_file);
+        // Generate video clips for each shot
+        const shotClips: string[] = [];
+        
+        for (const shot of scene.shots) {
+          const imageFile = path.join(framesDir, shot.image_file);
+          const clipFile = path.join(episodeDir, `${shot.shot_id}_clip.mp4`);
+          tempFiles.push(clipFile);
+          
+          // Verify image exists
+          try {
+            await fs.access(imageFile);
+          } catch {
+            errors.push(`Image not found: ${shot.image_file}`);
+            continue;
+          }
+          
+          const durationSec = (shot.end_ms - shot.start_ms) / 1000;
+          const frames = Math.ceil(durationSec * 24);
+          
+          // Build the video filter based on motion type
+          const vf = this.buildMotionFilter(shot.motion, frames);
+          
+          // Create video clip from image
+          const clipCommand = [
+            'ffmpeg', '-y',
+            '-loop', '1',
+            '-i', imageFile,
+            '-t', durationSec.toFixed(3),
+            '-c:v', 'libx264',
+            '-tune', 'stillimage',
+            '-pix_fmt', 'yuv420p',
+            '-r', '24',
+            '-vf', vf,
+            clipFile
+          ];
+          
+          const clipResult = await this.runCommand(clipCommand);
+          if (!clipResult.success) {
+            errors.push(`Failed to create clip for ${shot.shot_id}: ${clipResult.error}`);
+            continue;
+          }
+          
+          shotClips.push(clipFile);
+        }
+        
+        if (shotClips.length === 0) {
+          errors.push(`No shot clips created for ${scene.scene_id}`);
+          continue;
+        }
+        
+        // Concatenate shot clips into a scene video (without audio first)
+        const sceneVideoNoAudio = path.join(episodeDir, `${scene.scene_id}_noaudio.mp4`);
+        tempFiles.push(sceneVideoNoAudio);
+        
+        if (shotClips.length === 1) {
+          await fs.copyFile(shotClips[0], sceneVideoNoAudio);
+        } else {
+          const clipListFile = path.join(episodeDir, `${scene.scene_id}_clips.txt`);
+          const clipEntries = shotClips.map(f => `file '${f}'`).join('\n');
+          await fs.writeFile(clipListFile, clipEntries);
+          tempFiles.push(clipListFile);
+          
+          const concatClipsCommand = [
+            'ffmpeg', '-y',
+            '-f', 'concat',
+            '-safe', '0',
+            '-i', clipListFile,
+            '-c', 'copy',
+            sceneVideoNoAudio
+          ];
+          
+          const concatClipsResult = await this.runCommand(concatClipsCommand);
+          if (!concatClipsResult.success) {
+            errors.push(`Failed to concat clips for ${scene.scene_id}: ${concatClipsResult.error}`);
+            continue;
+          }
+        }
+        
+        // Merge video with audio
         const sceneVideo = path.join(episodeDir, `${scene.scene_id}_preview.mp4`);
         tempFiles.push(sceneVideo);
         
-        // Get audio duration
-        const durationSec = scene.duration_ms / 1000;
-        
-        // Create video from image + audio
-        // Using zoompan for subtle motion effect
-        const command = [
+        const mergeCommand = [
           'ffmpeg', '-y',
-          '-loop', '1',
-          '-i', imageFile,
+          '-i', sceneVideoNoAudio,
           '-i', masterAudio,
-          '-c:v', 'libx264',
-          '-tune', 'stillimage',
+          '-c:v', 'copy',
           '-c:a', 'aac',
           '-b:a', '192k',
-          '-pix_fmt', 'yuv420p',
-          '-vf', `scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2,zoompan=z='1.0+0.001*on':d=${Math.ceil(durationSec * 24)}:s=1920x1080:fps=24`,
           '-shortest',
           sceneVideo
         ];
         
-        const result = await this.runCommand(command);
-        if (!result.success) {
-          errors.push(`Failed to create video for ${scene.scene_id}: ${result.error}`);
+        const mergeResult = await this.runCommand(mergeCommand);
+        if (!mergeResult.success) {
+          errors.push(`Failed to merge audio for ${scene.scene_id}: ${mergeResult.error}`);
           continue;
         }
         
@@ -742,6 +809,55 @@ export class ProductionOrchestrator {
       const message = error instanceof Error ? error.message : String(error);
       errors.push(message);
       return { success: false, errors };
+    }
+  }
+
+  /**
+   * Build FFmpeg video filter for motion effect.
+   * Respects the disableMotion config option.
+   */
+  private buildMotionFilter(
+    motion: ProductionShot['motion'],
+    frames: number
+  ): string {
+    const baseScale = 'scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2';
+    
+    // If motion is disabled globally, use static
+    if (this.config.disableMotion) {
+      return baseScale;
+    }
+    
+    // If no motion specified or static, use simple scale
+    if (!motion || motion.type === 'static') {
+      return baseScale;
+    }
+    
+    // Apply motion effects via zoompan filter
+    switch (motion.type) {
+      case 'slow_zoom_in': {
+        const startScale = motion.start_scale || 1.0;
+        const endScale = motion.end_scale || 1.15;
+        const delta = (endScale - startScale) / frames;
+        return `${baseScale},zoompan=z='${startScale}+${delta}*on':d=${frames}:s=1920x1080:fps=24`;
+      }
+      case 'slow_zoom_out': {
+        const startScale = motion.start_scale || 1.15;
+        const endScale = motion.end_scale || 1.0;
+        const delta = (startScale - endScale) / frames;
+        return `${baseScale},zoompan=z='${startScale}-${delta}*on':d=${frames}:s=1920x1080:fps=24`;
+      }
+      case 'slow_pan_left': {
+        const distance = motion.pan_distance_percent || 10;
+        return `${baseScale},zoompan=z='1.1':x='(iw-iw/zoom)*${distance}/100*on/${frames}':d=${frames}:s=1920x1080:fps=24`;
+      }
+      case 'slow_pan_right': {
+        const distance = motion.pan_distance_percent || 10;
+        return `${baseScale},zoompan=z='1.1':x='(iw-iw/zoom)*(1-${distance}/100*on/${frames})':d=${frames}:s=1920x1080:fps=24`;
+      }
+      case 'subtle_shake':
+        return `${baseScale},zoompan=z='1':x='iw/2-(iw/zoom/2)+random(0)*3':y='ih/2-(ih/zoom/2)+random(1)*3':d=${frames}:s=1920x1080:fps=24`;
+      default:
+        return baseScale;
     }
   }
 
@@ -915,12 +1031,16 @@ export class ProductionOrchestrator {
         console.log(`    Skipped ${result.skipped} existing segments`);
       }
       
-      // Build manifest
+      // Build manifest with voice tracking info
       let cumulativeOffset = 0;
       const audioSegments = result.files.map(f => {
         const segment = {
-          turn_id: f.segmentId,
+          segment_id: f.segmentId,
           file: f.file,
+          character_id: f.characterId,
+          voice_id: f.voiceId,
+          voice_name: f.voiceName,
+          voice_version: f.voiceVersion,
           duration_ms: f.durationMs,
           cumulative_offset_ms: cumulativeOffset,
         };
@@ -946,7 +1066,7 @@ export class ProductionOrchestrator {
         errors.push(`${err.segmentId}: ${err.error}`);
         this.reviewQueue.push({
           type: 'audio_content_flag',
-          turn_id: err.segmentId,
+          segment_id: err.segmentId,
           reason: err.error,
           blocking: false,
         });

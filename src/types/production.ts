@@ -20,6 +20,7 @@ export const VoiceMappingSchema = z.object({
   character_id: z.string(),
   eleven_voice_id: z.string(),
   voice_name: z.string(),
+  voice_version: z.number().int().positive().default(1),
   is_narrator: z.boolean().optional(),
   default_settings: VoiceSettingsSchema,
   notes: z.string().optional(),
@@ -63,6 +64,7 @@ export const AudioSegmentSchema = z.object({
   segment_id: z.string(),
   type: z.enum(['narrator', 'dialogue']),
   character_id: z.string(),
+  character_slug: z.string(),
   raw_text: z.string(),
   clean_text: z.string(),
   performance: PerformanceHintsSchema.optional(),
@@ -74,8 +76,12 @@ export const SceneAudioSchema = z.object({
 });
 
 export const AudioTurnSchema = z.object({
-  turn_id: z.string(),
+  segment_id: z.string(),
   file: z.string(),
+  character_id: z.string(),
+  voice_id: z.string(),
+  voice_name: z.string(),
+  voice_version: z.number().int().positive(),
   duration_ms: z.number(),
   cumulative_offset_ms: z.number(),
 });
@@ -241,7 +247,7 @@ export const ReviewItemSchema = z.object({
   type: z.enum(['voice_assignment', 'image_failure', 'audio_content_flag']),
   character_id: z.string().optional(),
   shot_id: z.string().optional(),
-  turn_id: z.string().optional(),
+  segment_id: z.string().optional(),
   reason: z.string(),
   blocking: z.boolean(),
   placeholder_used: z.boolean().optional(),

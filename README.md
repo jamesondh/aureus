@@ -8,13 +8,10 @@ A **neuro-symbolic narrative engine** for generating serialized drama. Produces 
 
 ```bash
 # Install dependencies
-npm install
-
-# Build the project
-npm run build
+bun install
 
 # Generate an episode (see Authentication below)
-npm run generate:episode
+bun run generate:episode
 ```
 
 ## Authentication
@@ -27,7 +24,7 @@ For direct API access (pay-per-use):
 
 ```bash
 export ANTHROPIC_API_KEY=your_key_here
-npm run generate:episode
+bun run generate:episode
 ```
 
 ### Option 2: Claude Max Subscription (Recommended for Personal Use)
@@ -42,11 +39,11 @@ curl -fsSL https://claude.ai/install.sh | bash
 claude
 
 # 3. Run the generator
-npm run generate:episode -- --use-claude-max
+bun run generate:episode -- --use-claude-max
 
 # Or set the environment variable for convenience
 export USE_CLAUDE_MAX=1
-npm run generate:episode
+bun run generate:episode
 ```
 
 ### Auto-Detection
@@ -204,13 +201,7 @@ Key threads:
 
 ```bash
 # Run tests
-npm test
-
-# Watch mode development
-npm run dev
-
-# Type check
-npm run build
+bun test
 ```
 
 ## Specification
@@ -242,21 +233,21 @@ export OPENAI_API_KEY=your_key_here
 
 ```bash
 # Full production pipeline
-npm run produce:episode
+bun run produce:episode
 
 # Specific episode
-npm run produce:episode -- --episode 02
+bun run produce:episode -- --episode 02
 
 # Dry run (generates manifests without API calls)
-npm run produce:episode -- --dry-run
+bun run produce:episode -- --dry-run
 
 # Individual stages (for isolated testing)
-npm run produce:storyboard      # Stage I-A: Visual beat identification
-npm run produce:audio           # Stage I-B: Voice synthesis
-npm run produce:image           # Stage I-C: Image generation
+bun run produce:storyboard      # Stage I-A: Visual beat identification
+bun run produce:audio           # Stage I-B: Voice synthesis
+bun run produce:image           # Stage I-C: Image generation
 
 # Preview mode (see below)
-npm run produce:episode -- --preview
+bun run produce:episode -- --preview
 ```
 
 ### Preview Mode
@@ -270,10 +261,10 @@ Preview mode generates a video using only scenes that have complete assets (all 
 
 ```bash
 # Generate preview video from complete scenes
-npm run produce:episode -- --preview
+bun run produce:episode -- --preview
 
 # Preview for a specific episode
-npm run produce:episode -- --episode 02 --preview
+bun run produce:episode -- --episode 02 --preview
 ```
 
 **How it works:**
@@ -354,30 +345,30 @@ Characters and locations require Visual DNA for consistent image generation:
 
 1. **Test storyboarding only** (no API keys needed):
    ```bash
-   npm run produce:storyboard
+   bun run produce:storyboard
    ```
    This uses the LLM to identify visual beats and generates `storyboard.json`.
 
 2. **Test with dry run**:
    ```bash
-   npm run produce:episode -- --dry-run
+   bun run produce:episode -- --dry-run
    ```
    Generates all manifests without calling external APIs.
 
 3. **Test audio synthesis** (requires ELEVENLABS_API_KEY):
    ```bash
-   npm run produce:audio
+   bun run produce:audio
    ```
 
 4. **Test image generation** (requires OPENAI_API_KEY):
    ```bash
-   npm run produce:image
+   bun run produce:image
    ```
 
 5. **Test with preview mode** (requires FFmpeg):
    ```bash
    # Generate a few audio clips and images first, then:
-   npm run produce:episode -- --preview
+   bun run produce:episode -- --preview
    ```
    Assembles a video using only scenes with complete assets. Useful for validating 
    casting choices, image style, and video quality before committing to full generation.

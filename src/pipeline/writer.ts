@@ -41,11 +41,27 @@ SCENE STRUCTURE:
 - Close with hook line (threat/reveal/question/irony)
 - No filler dialogue
 
-PERFORMANCE BLOCKS:
+PERFORMANCE BLOCKS (Dialogue):
 - Format: CHARACTER: (Emotion, Delivery) [Stability: X.X] "Dialogue"
 - Low stability (0.2-0.4): Fear, grief, manic
 - Mid stability (0.5-0.6): Tense, argumentative
 - High stability (0.7-0.9): Formal, controlled
+
+NARRATOR BLOCKS (Prose/Action/Description):
+All prose that is NOT dialogue MUST use narrator tags for audio generation:
+
+For multi-paragraph prose (scene openings, extended description):
+---NARRATOR---
+(Tone) [Stability: X.X]
+Prose paragraph here. Can be multiple sentences.
+Another paragraph if needed.
+---END NARRATOR---
+
+For single-line action/transition prose between dialogue:
+[NARRATOR]: (Tone) [Stability: X.X] Single line of prose here.
+
+Tone options: Neutral, Ominous, Dramatic, Contemplative, Tense
+Stability for narrator: 0.7-0.8 (Neutral), 0.7 (Ominous/Dramatic)
 `;
 
 const DEFAULT_LEXICON = `
@@ -186,10 +202,15 @@ CONSTRAINTS:
 
 TASK:
 Write this scene as screenplay-style prose with dialogue. Include:
-1. Opening with sensory detail establishing the location
+1. Opening with sensory detail establishing the location (use ---NARRATOR--- block)
 2. Dialogue with performance blocks: CHARACTER: (Emotion, Delivery) [Stability: X.X] "Line"
-3. Action lines describing physical movement and reactions
+3. Action/prose lines with narrator tags: [NARRATOR]: (Tone) [Stability: X.X] description
 4. A closing hook line
+
+CRITICAL: All prose/description/action that is NOT dialogue MUST have narrator tags:
+- Multi-paragraph openings: Use ---NARRATOR--- (Tone) [Stability: X.X] ... ---END NARRATOR---
+- Single-line prose between dialogue: Use [NARRATOR]: (Tone) [Stability: X.X] text
+- This is required for audio generation. Plain prose without tags will NOT be voiced.
 
 Maximum length: ${this.config.maxSceneWords} words
 
@@ -199,7 +220,7 @@ After the scene text, output:
 
 Output JSON:
 {
-  "scene_text": "## SC04 — INT. LOCATION - TIME\\n\\n[screenplay prose with dialogue]",
+  "scene_text": "## SC04 — INT. LOCATION - TIME\\n\\n---NARRATOR---\\n(Neutral) [Stability: 0.8]\\nOpening prose with sensory detail...\\n---END NARRATOR---\\n\\nCHARACTER: (Emotion, Delivery) [Stability: X.X] \\"Dialogue line.\\"\\n\\n[NARRATOR]: (Neutral) [Stability: 0.8] Action or transition prose.\\n\\nCHARACTER: (Emotion, Delivery) [Stability: X.X] \\"More dialogue.\\"",
   "claims": [
     { "type": "prop|extra|fact", "content": "description", "source_character": "who introduced it" }
   ],

@@ -784,11 +784,14 @@ Generated during Stage I-B, tracks individual dialogue audio files.
       "master_file": "audio/SC04_master.mp3",
       "total_duration_ms": 142500,
       "inter_turn_silence_ms": 500,
-      "dialogue_turns": [
+      "audio_segments": [
         {
-          "turn_id": "SC04_d001",
+          "segment_id": "SC04_d001_varo_dominic-v1",
           "character_id": "char_caelus_varo",
-          "file": "audio/SC04_d001_varo.mp3",
+          "voice_id": "pNInz6obpgDQGcFmaJgB",
+          "voice_name": "dominic",
+          "voice_version": 1,
+          "file": "audio/SC04_d001_varo_dominic-v1.mp3",
           "duration_ms": 2340,
           "cumulative_offset_ms": 0,
           "performance_applied": {
@@ -797,9 +800,12 @@ Generated during Stage I-B, tracks individual dialogue audio files.
           }
         },
         {
-          "turn_id": "SC04_d002",
+          "segment_id": "SC04_d002_drusilla_bella-v1",
           "character_id": "char_drusilla",
-          "file": "audio/SC04_d002_drusilla.mp3",
+          "voice_id": "EXAVITQu4vr4xnSDxMaL",
+          "voice_name": "bella",
+          "voice_version": 1,
+          "file": "audio/SC04_d002_drusilla_bella-v1.mp3",
           "duration_ms": 1890,
           "cumulative_offset_ms": 2840,
           "performance_applied": {

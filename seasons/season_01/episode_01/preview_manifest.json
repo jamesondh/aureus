@@ -11,13 +11,13 @@
     {
       "scene_id": "SC01",
       "audio_track": "SC01_master.mp3",
-      "duration_ms": 37628,
+      "duration_ms": 153032,
       "shots": [
         {
           "shot_id": "SC01_shot_001",
           "image_file": "SC01_shot_001.png",
           "start_ms": 0,
-          "end_ms": 7126,
+          "end_ms": 30206,
           "motion": {
             "type": "slow_pan_right",
             "pan_distance_percent": 10,
@@ -27,8 +27,8 @@
         {
           "shot_id": "SC01_shot_002",
           "image_file": "SC01_shot_002.png",
-          "start_ms": 7626,
-          "end_ms": 14751,
+          "start_ms": 30706,
+          "end_ms": 60913,
           "motion": {
             "type": "slow_zoom_in",
             "start_scale": 1,
@@ -39,8 +39,8 @@
         {
           "shot_id": "SC01_shot_003",
           "image_file": "SC01_shot_003.png",
-          "start_ms": 15251,
-          "end_ms": 22377,
+          "start_ms": 61413,
+          "end_ms": 91619,
           "motion": {
             "type": "static",
             "easing": "linear"
@@ -49,8 +49,8 @@
         {
           "shot_id": "SC01_shot_004",
           "image_file": "SC01_shot_004.png",
-          "start_ms": 22877,
-          "end_ms": 30002,
+          "start_ms": 92119,
+          "end_ms": 122326,
           "motion": {
             "type": "slow_zoom_in",
             "start_scale": 1,
@@ -61,8 +61,8 @@
         {
           "shot_id": "SC01_shot_005",
           "image_file": "SC01_shot_005.png",
-          "start_ms": 30502,
-          "end_ms": 37628,
+          "start_ms": 122826,
+          "end_ms": 153032,
           "motion": {
             "type": "slow_zoom_out",
             "start_scale": 1.15,
@@ -73,5 +73,5 @@
       ]
     }
   ],
-  "total_duration_ms": 37628
+  "total_duration_ms": 153032
 }

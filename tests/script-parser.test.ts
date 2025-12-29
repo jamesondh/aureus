@@ -35,10 +35,12 @@ QUINTUS: "Simple dialogue."`;
       
       expect(scenes).toHaveLength(2);
       expect(scenes[0].sceneId).toBe('SC01');
-      expect(scenes[0].locationId).toContain('varos_study');
+      // Uses location mapping: VARO'S STUDY -> villa_varo_tablinum
+      expect(scenes[0].locationId).toBe('villa_varo_tablinum');
       expect(scenes[0].timeOfDay).toBe('morning');
       expect(scenes[1].sceneId).toBe('SC02');
-      expect(scenes[1].locationId).toContain('the_roman_forum');
+      // Uses location mapping: THE ROMAN FORUM -> rome_forum
+      expect(scenes[1].locationId).toBe('rome_forum');
       expect(scenes[1].timeOfDay).toBe('afternoon');
     });
 
@@ -81,6 +83,8 @@ MARCUS LICINIUS: (Nervous, Precise) [Stability: 0.4] "Seven, Patron."
       const varo = result.audio_segments[0];
       expect(varo.type).toBe('dialogue');
       expect(varo.character_id).toBe('char_caelus_varo');
+      expect(varo.character_slug).toBe('varo');
+      expect(varo.segment_id).toBe('SC01_d001_varo');
       expect(varo.clean_text).toBe("Three days. That's what we have.");
       expect(varo.performance?.stage_direction).toBe('Manic, rapid-fire');
       expect(varo.performance?.stability_override).toBe(0.3);
@@ -88,6 +92,8 @@ MARCUS LICINIUS: (Nervous, Precise) [Stability: 0.4] "Seven, Patron."
       const marcus = result.audio_segments[1];
       expect(marcus.type).toBe('dialogue');
       expect(marcus.character_id).toBe('char_marcus_accountant');
+      expect(marcus.character_slug).toBe('marcus');
+      expect(marcus.segment_id).toBe('SC01_d002_marcus');
     });
 
     it('should extract narrator single-line segments', () => {
@@ -107,6 +113,8 @@ Some other text.
       const first = result.audio_segments[0];
       expect(first.type).toBe('narrator');
       expect(first.character_id).toBe('NARRATOR');
+      expect(first.character_slug).toBe('narrator');
+      expect(first.segment_id).toBe('SC01_n001_narrator');
       expect(first.clean_text).toBe('The dead keep better ledgers than the living.');
       expect(first.performance?.tone).toBe('Ominous');
       expect(first.performance?.stability_override).toBe(0.7);
@@ -129,6 +137,8 @@ Merchants slammed shutters.
       const narrator = result.audio_segments[0];
       expect(narrator.type).toBe('narrator');
       expect(narrator.character_id).toBe('NARRATOR');
+      expect(narrator.character_slug).toBe('narrator');
+      expect(narrator.segment_id).toBe('SC01_n001_narrator');
       expect(narrator.clean_text).toContain('The Forum erupted');
       expect(narrator.clean_text).toContain('Merchants slammed shutters');
       expect(narrator.performance?.tone).toBe('Urgent');

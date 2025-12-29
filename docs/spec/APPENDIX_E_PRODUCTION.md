@@ -109,7 +109,7 @@ The Storyboarder references these templates when generating visual prompts for c
 
 ### E.3.1 casting.json Schema
 
-Maps Aureus character IDs to ElevenLabs voice IDs.
+Maps Aureus character IDs to ElevenLabs voice IDs. Each mapping includes a `voice_version` for tracking voice changes and enabling selective regeneration.
 
 ```json
 {
@@ -121,6 +121,7 @@ Maps Aureus character IDs to ElevenLabs voice IDs.
         "character_id": "NARRATOR",
         "eleven_voice_id": "onwK4e9ZLuTAKqWW03F9",
         "voice_name": "Daniel",
+        "voice_version": 1,
         "is_narrator": true,
         "default_settings": {
           "stability": 0.8,
@@ -140,6 +141,7 @@ Maps Aureus character IDs to ElevenLabs voice IDs.
         "character_id": "char_caelus_varo",
         "eleven_voice_id": "pNInz6obpgDQGcFmaJgB",
         "voice_name": "Adam",
+        "voice_version": 1,
         "default_settings": {
           "stability": 0.5,
           "similarity_boost": 0.75,
@@ -152,6 +154,7 @@ Maps Aureus character IDs to ElevenLabs voice IDs.
         "character_id": "char_drusilla",
         "eleven_voice_id": "EXAVITQu4vr4xnSDxMaL",
         "voice_name": "Bella",
+        "voice_version": 1,
         "default_settings": {
           "stability": 0.7,
           "similarity_boost": 0.8,
@@ -173,6 +176,19 @@ Maps Aureus character IDs to ElevenLabs voice IDs.
   }
 }
 ```
+
+### E.3.3 Voice Versioning
+
+The `voice_version` field enables:
+- **Selective regeneration:** When a voice is changed, increment the version. The production system can detect stale audio files by comparing the version in the filename against the current casting version.
+- **A/B comparison:** Old audio files remain with their original version suffix, allowing side-by-side comparison.
+- **Batch operations:** Find all audio for a character with a specific voice version using filename patterns.
+
+**Workflow for changing a voice:**
+1. Update `eleven_voice_id` and `voice_name` in casting.json
+2. Increment `voice_version`
+3. Run audio synthesis - new files will have the new version suffix
+4. Old files remain for comparison (delete manually if desired)
 
 ### E.3.2 Human-in-the-Loop Workflow
 
@@ -415,16 +431,17 @@ OUTPUT:
 
 ### E.7.1 Extraction
 
-Parse `episode_script.md` to extract dialogue turns AND narrator blocks:
+Parse `episode_script.md` to extract dialogue turns AND narrator blocks. The segment_id includes character slug for traceability:
 
 ```json
 {
   "scene_id": "SC04",
   "audio_segments": [
     {
-      "segment_id": "SC04_n001",
+      "segment_id": "SC04_n001_narrator",
       "type": "narrator",
       "character_id": "NARRATOR",
+      "character_slug": "narrator",
       "raw_text": "(Ominous) [Stability: 0.7] The dead keep better ledgers than the living.",
       "clean_text": "The dead keep better ledgers than the living.",
       "performance": {
@@ -434,9 +451,10 @@ Parse `episode_script.md` to extract dialogue turns AND narrator blocks:
       }
     },
     {
-      "segment_id": "SC04_d001",
+      "segment_id": "SC04_d001_varo",
       "type": "dialogue",
       "character_id": "char_caelus_varo",
+      "character_slug": "varo",
       "raw_text": "(Manic, rapid-fire) [Stability: 0.3] \"Three days. That's what we have.\"",
       "clean_text": "Three days. That's what we have.",
       "performance": {
@@ -448,6 +466,11 @@ Parse `episode_script.md` to extract dialogue turns AND narrator blocks:
   ]
 }
 ```
+
+The `character_slug` is derived from the character_id by:
+1. Removing the `char_` prefix
+2. Taking the first name component (e.g., `char_caelus_varo` → `varo`)
+3. For narrator, the slug is always `narrator`
 
 #### Segment Type Detection
 
@@ -488,28 +511,62 @@ response = elevenlabs.generate(
 
 ### E.7.4 Output
 
-Individual audio files per dialogue turn:
+#### Audio Filename Schema
+
+Audio files use a descriptive naming convention that encodes character, voice, and version information:
+
+```
+{scene_id}_{type}{sequence}_{character_slug}_{voice_slug}-v{version}.mp3
+```
+
+**Components:**
+- `scene_id`: Scene identifier (e.g., `SC04`)
+- `type`: `d` for dialogue, `n` for narrator
+- `sequence`: 3-digit zero-padded sequence number within scene
+- `character_slug`: Lowercase character identifier (e.g., `varo`, `narrator`)
+- `voice_slug`: Lowercase voice name from casting.json (e.g., `adam`, `daniel`)
+- `version`: Voice version from casting.json
+
+**Examples:**
 ```
 /audio/
-  SC04_d001_varo.mp3
-  SC04_d002_drusilla.mp3
+  SC04_d001_varo_adam-v1.mp3
+  SC04_d002_drusilla_bella-v1.mp3
+  SC04_n001_narrator_daniel-v1.mp3
   ...
 ```
 
-Plus a timing manifest:
+This naming scheme enables:
+- **Visual identification:** Immediately know who is speaking and which voice
+- **Batch operations:** `find . -name "*_varo_*"` to locate all Varo audio
+- **Version tracking:** Files with different versions can coexist for A/B comparison
+- **Selective regeneration:** Identify stale files by comparing filename version to casting.json
+
+#### Timing Manifest
+
+The timing manifest tracks voice metadata for each segment:
+
 ```json
 {
   "scene_id": "SC04",
   "audio_segments": [
     {
-      "turn_id": "SC04_d001",
-      "file": "SC04_d001_varo.mp3",
+      "segment_id": "SC04_d001_varo_adam-v1",
+      "file": "SC04_d001_varo_adam-v1.mp3",
+      "character_id": "char_caelus_varo",
+      "voice_id": "pNInz6obpgDQGcFmaJgB",
+      "voice_name": "adam",
+      "voice_version": 1,
       "duration_ms": 2340,
       "cumulative_offset_ms": 0
     },
     {
-      "turn_id": "SC04_d002",
-      "file": "SC04_d002_drusilla.mp3", 
+      "segment_id": "SC04_d002_drusilla_bella-v1",
+      "file": "SC04_d002_drusilla_bella-v1.mp3",
+      "character_id": "char_drusilla",
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "voice_name": "bella",
+      "voice_version": 1,
       "duration_ms": 1890,
       "cumulative_offset_ms": 2840
     }
@@ -518,6 +575,8 @@ Plus a timing manifest:
   "inter_turn_silence_ms": 500
 }
 ```
+
+The `voice_id`, `voice_name`, and `voice_version` fields enable automated stale audio detection. When casting.json is updated with a new voice version, the production system can identify which audio files need regeneration by comparing manifest metadata against current casting.
 
 ### E.7.5 Failure Handling
 
@@ -777,12 +836,12 @@ Items requiring human intervention:
       "blocking": false,
       "placeholder_used": true
     },
-    {
-      "type": "audio_content_flag",
-      "turn_id": "SC08_d015",
-      "reason": "Content filter triggered",
-      "blocking": true
-    }
+      {
+        "type": "audio_content_flag",
+        "segment_id": "SC08_d015_quintus_adam-v1",
+        "reason": "Content filter triggered",
+        "blocking": true
+      }
   ]
 }
 ```

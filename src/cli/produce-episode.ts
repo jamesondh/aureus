@@ -28,6 +28,7 @@ interface CliArgs {
   dryRun: boolean;
   force: boolean;
   preview: boolean;
+  noMotion: boolean;
   cadence?: number;
   help: boolean;
 }
@@ -41,6 +42,7 @@ function parseArgs(): CliArgs {
     dryRun: false,
     force: false,
     preview: false,
+    noMotion: false,
     help: false,
   };
   
@@ -63,6 +65,8 @@ function parseArgs(): CliArgs {
       result.preview = true;
     } else if (arg === '--cadence') {
       result.cadence = parseFloat(args[++i]) || undefined;
+    } else if (arg === '--no-motion') {
+      result.noMotion = true;
     }
   }
   
@@ -91,6 +95,7 @@ Options:
                         complete assets (all audio + all real images).
                         Use this to test casting, image quality, and video
                         assembly before committing to expensive full generation.
+  --no-motion           Disable pan/zoom motion effects on images (static frames)
   --cadence <value>     Override visual cadence (0.1-1.0)
   -h, --help            Show this help message
 
@@ -103,7 +108,8 @@ Examples:
   npm run produce:episode -- --episode 02 --dry-run
   npm run produce:episode -- --stage audio
   npm run produce:episode -- --stage storyboard --cadence 0.6
-  npm run produce:episode -- --preview   # Generate preview from complete scenes
+  npm run produce:episode -- --preview              # Generate preview from complete scenes
+  npm run produce:episode -- --preview --no-motion  # Preview with static images (no pan/zoom)
 `);
 }
 
@@ -136,6 +142,9 @@ async function main(): Promise<void> {
   if (args.force) {
     console.log(`Force: true (ignoring existing progress)`);
   }
+  if (args.noMotion) {
+    console.log(`Motion: disabled (static frames)`);
+  }
   
   // Check environment
   if (!args.dryRun && !args.preview) {
@@ -163,6 +172,7 @@ async function main(): Promise<void> {
     dryRun: args.dryRun,
     force: args.force,
     visualCadenceOverride: args.cadence,
+    disableMotion: args.noMotion,
   });
   
   // Run appropriate stage(s)
